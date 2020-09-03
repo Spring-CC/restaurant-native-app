@@ -3,6 +3,8 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 
+// this component was made by Shaun, feel free to ask if you have questions about the code.
+
 // images 
 const image1 = require('./../assets/1.jpg')
 const image2 = require('./../assets/2.jpg')
