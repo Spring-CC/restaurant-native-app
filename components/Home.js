@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, View, Text } from 'react-native';
 import data from '../data/restaurants.json';
+import Slider from './Pictureslider';
 
 export default function Home() {
 
@@ -23,6 +24,7 @@ export default function Home() {
                 <Link className="choice-no" to="/" style={linkStyle}>No</Link>
                 <Link className="choice-yes" to="/details" style={linkStyle}>Yes</Link>
             </View>
+            <Slider />
             <View>
                 {restaurants.map(restaurant => {
                     return (
