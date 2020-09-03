@@ -27,8 +27,8 @@ export default function Slide() {
       <ScrollView>
       <SliderBox 
   images={array}
-  onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-  currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
+  // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+  // currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
   autoplay
   circleLoop
   dotColor={color1}
