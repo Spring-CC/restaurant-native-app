@@ -40,7 +40,7 @@ export default function Home() {
 
     return (
         <View>
-            <View style={styles.container}>
+            <View>
                 <Button
                     title="No"
                     onPress={() => dispatch(increment())}
@@ -50,18 +50,19 @@ export default function Home() {
                     onPress={() => console.log("yes pressed")}
                 />
             </View>
-            <View style={styles.container}>
+            <View>
                 <ScrollView>
                     <SliderBox
                         images={images}
-                        // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-                        // currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
-                        autoplay
+                        sliderBoxHeight={400}
                         circleLoop
                         dotColor={color1}
                         inactiveDotColor={color2}
-                        // resizeMethod={'resize'}
+                        // autoplay
                         // resizeMode={'cover'}
+                        // resizeMethod={'resize'}
+                        // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                        // currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
                         paginationBoxStyle={{
                             position: "absolute",
                             bottom: 0,
@@ -109,5 +110,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        flexDirection: 'row',
     },
 });
