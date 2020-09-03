@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
+import Details from './details'
 
 // this component was made by Shaun, feel free to ask if you have questions about the code.
 
@@ -57,6 +58,7 @@ export default function About() {
   ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
   imageLoadingColor="#2196F3"
 />
+<Details></Details>
       </ScrollView>
       <StatusBar style="auto" />
     </View>
