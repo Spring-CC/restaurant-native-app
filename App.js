@@ -1,9 +1,9 @@
-import React from 'react';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import About from './components/About';
-import Details from './components/Details';
-import { StyleSheet, View } from 'react-native';
+import React from "react";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import About from "./components/About";
+import Details from "./components/Details";
+import { StyleSheet, View } from "react-native";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
@@ -26,8 +26,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
