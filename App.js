@@ -32,7 +32,7 @@ const Navigator = createAppContainer(AppNavigator);
 
 export default function App() {
   return (
-    <Provider>
+    <Provider store={store}>
       <Navigator />
     </Provider>
   );
