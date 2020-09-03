@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Button, Alert } from 'react-native';
 import data from '../data/restaurants.json';
 import Slider from './Pictureslider';
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
@@ -21,19 +20,23 @@ export default function Home() {
     return (
         <View>
             <View style={styles.container}>
-                <Link className="choice-no" to="/" style={linkStyle}>No</Link>
-                <Link className="choice-yes" to="/details" style={linkStyle}>Yes</Link>
+                <Button
+                    title="No"
+                />
+                <Button
+                    title="Yes"
+                />
             </View>
             <Slider />
             <View>
                 {restaurants.map(restaurant => {
                     return (
-                        <View className="restaurant-info" key={restaurant.id}>
-                            <Text className="title">{restaurant.name}</Text>
-                            <Text className="kana">{restaurant.name_kana}</Text>
-                            <Text className="category">{restaurant.category}</Text>
-                            <Text className="address">{restaurant.address}</Text>
-                            <Text className="open-time">{restaurant.opentime}</Text>
+                        <View key={restaurant.id}>
+                            <Text>{restaurant.name}</Text>
+                            <Text>{restaurant.name_kana}</Text>
+                            <Text>{restaurant.category}</Text>
+                            <Text>{restaurant.address}</Text>
+                            <Text>{restaurant.opentime}</Text>
                         </View>
                     );
                 })}
@@ -47,6 +50,30 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+    },
+    choiceNo: {
+
+    },
+    choiceYes: {
+
+    },
+    restaurantInfo: {
+
+    },
+    title: {
+
+    },
+    kana: {
+
+    },
+    category: {
+
+    },
+    address: {
+
+    },
+    openTime: {
+
     },
 });
