@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
+import Details from './details'
 
 // this component was made by Shaun, feel free to ask if you have questions about the code.
 
@@ -21,10 +22,11 @@ var color5 = "#90be6d" // - Pistachio
 
 const array = [image1, image2, image3, image4, image5]
 
-export default function Slide() {
+export default function About() {
   return (
     <View style={styles.container}>
       <ScrollView>
+        <Text style={{fontSize: 100, textAlign: 'center'}}>About Page</Text>
       <SliderBox 
   images={array}
   onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
@@ -56,6 +58,7 @@ export default function Slide() {
   ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
   imageLoadingColor="#2196F3"
 />
+<Details></Details>
       </ScrollView>
       <StatusBar style="auto" />
     </View>
@@ -68,9 +71,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  h1: {
-    color: '#008F68',
-    fontSize: 40,
-  },
+  }
 });
