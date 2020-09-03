@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, ScrollView } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../actions";
@@ -39,16 +39,20 @@ export default function Home() {
     }
 
     return (
-        <View>
-            <View>
-                <Button
-                    title="No"
-                    onPress={() => dispatch(increment())}
-                />
-                <Button
-                    title="Yes"
-                    onPress={() => console.log("yes pressed")}
-                />
+        <ScrollView style={styles.container}>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.buttons}>
+                    <Text
+                        style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
+                        onPress={() => dispatch(increment())}
+                    >No</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttons}>
+                    <Text
+                        style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
+                        onPress={() => console.log("yes pressed")}
+                    >Yes</Text>
+                </TouchableOpacity>
             </View>
             <View>
                 <ScrollView>
@@ -59,10 +63,6 @@ export default function Home() {
                         dotColor={color1}
                         inactiveDotColor={color2}
                         // autoplay
-                        // resizeMode={'cover'}
-                        // resizeMethod={'resize'}
-                        // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-                        // currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
                         paginationBoxStyle={{
                             position: "absolute",
                             bottom: 0,
@@ -86,30 +86,45 @@ export default function Home() {
                     />
                 </ScrollView>
             </View>
-            <View>
+            <View style={styles.restaurant}>
                 {restaurants.map(restaurant => {
                     return (
                         <View key={restaurant.id}>
-                            <Text>{restaurant.name}</Text>
-                            <Text>{restaurant.name_kana}</Text>
-                            <Text>{restaurant.category}</Text>
-                            <Text>{restaurant.address}</Text>
-                            <Text>{restaurant.opentime}</Text>
+                            <Text style={{ fontSize: 30, fontFamily: 'MPLUS1p-Bold' }}>{restaurant.name}</Text>
+                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Black' }}>{`(${restaurant.name_kana})`}</Text>
+                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Medium' }}>{restaurant.category}</Text>
+                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Medium' }}>{restaurant.address}</Text>
+                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Medium' }}>{restaurant.opentime}</Text>
                         </View>
                     );
                 })}
             </View>
-
-        </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    },
+    buttonContainer: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: 20,
+    },
+    buttons: {
+        height: 50,
+        width: 100,
+        backgroundColor: '#F8961E',
+        borderRadius: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    restaurant: {
+        backgroundColor: "#F9C74F",
+        borderRadius: 12,
+        padding: 5,
+        margin: 7,
+        marginTop: 10,
     },
 });
