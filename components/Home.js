@@ -15,18 +15,19 @@ import Slider from './Pictureslider';
 // }
 
 export default function Home() {
+  const linkStyle = {
+    fontFamily: "verdana",
+  };
 
-    const linkStyle = {
-        fontFamily: "verdana"
+  const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
+  const images = [];
+  for (let key in restaurants[0].image_url) {
+    if (restaurants[0].image_url[key] !== "") {
+      images.push(restaurants[0].image_url[key]);
     }
+  }
 
-    const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
-    const images = [];
-    for (let key in restaurants[0].image_url) {
-        if (restaurants[0].image_url[key] !== "") {
-            images.push(restaurants[0].image_url[key]);
-        }
-    }
+ 
 
     return (
         <View>
@@ -52,9 +53,9 @@ export default function Home() {
                     );
                 })}
             </View>
-        </View>
-    );
-}
+         
+      </View>
+)}
 
 const styles = StyleSheet.create({
     container: {
