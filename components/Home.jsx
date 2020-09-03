@@ -1,11 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, View } from 'react-native';
+// import data from '../data/restaurants.json';
 
 export default function Home() {
+
     const linkStyle = {
         fontFamily: "verdana"
     }
+
+    const restaurants = data.filter((restaurant, idx) => idx === index);
+    const images = [];
+    for (let key in restaurants[0].image_url) {
+        if (restaurants[0].image_url[key] !== "") {
+            images.push(restaurants[0].image_url[key]);
+        }
+    }
+
     return (
         <View>
             <View style={styles.container}>
