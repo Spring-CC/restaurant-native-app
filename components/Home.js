@@ -4,6 +4,7 @@ import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../actions";
 import data from '../data/restaurants.json';
+import Nav from './Nav'
 
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
@@ -18,24 +19,14 @@ import data from '../data/restaurants.json';
 // }
 
 export default function Home() {
-  const linkStyle = {
-    fontFamily: "verdana",
-  };
 
     // colours
     var color1 = "#f94144" // - Red Salsa
     var color2 = "#f3722c" // - Orange Red
 
-    // const linkStyle = {
-    //     fontFamily: "verdana"
-    // }
-//   const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
-//   const images = [];
-//   for (let key in restaurants[0].image_url) {
-//     if (restaurants[0].image_url[key] !== "") {
-//       images.push(restaurants[0].image_url[key]);
-//     }
-//   }
+    const linkStyle = {
+        fontFamily: "verdana"
+    };
 
     const index = useSelector(state => state);
     const dispatch = useDispatch();
@@ -49,6 +40,7 @@ export default function Home() {
     }
 
     return (
+        
         <View>
             <View style={styles.container}>
                 <Button
@@ -57,6 +49,7 @@ export default function Home() {
                 />
                 <Button
                     title="Yes"
+                    onPress={() => console.log("yes pressed")}
                 />
             </View>
             <View style={styles.container}>
@@ -107,9 +100,10 @@ export default function Home() {
                     );
                 })}
             </View>
-         
-      </View>
-)}
+
+        </View>
+    )
+}
 
 const styles = StyleSheet.create({
     container: {

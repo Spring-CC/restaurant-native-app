@@ -1,7 +1,7 @@
 require("dotenv").config();
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const MongoClient = require('mongodb').MongoClient;
-const client = new MongoClient(process.config.API_URL);
+const client = new MongoClient(process.env.API_URL);
 
 function createAccount(user, callback) {
 

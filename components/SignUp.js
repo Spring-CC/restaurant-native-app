@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import { createAccount } from '../api/dbcreate';
+import createAccount from '../api/dbcreate';
 import EmailForm from "./EmailForm"
 
 export default function SignUp({navigation}) {

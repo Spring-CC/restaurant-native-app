@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import Slide from './components/Pictureslider';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './components/Login';
@@ -11,6 +10,7 @@ import Details from './components/Details';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import increment from './reducers/increment';
+
 
 const store = createStore(increment);
 
@@ -23,7 +23,7 @@ const AppNavigator = createStackNavigator(
     Details: Details
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
   }
 );
 

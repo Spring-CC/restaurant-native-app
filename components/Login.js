@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import { login } from '../api/dblogin';
+import login from '../api/dblogin';
 import EmailForm from "./EmailForm"
 
 export default function Login({ navigation }) {
