@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { StyleSheet, View, Text } from 'react-native';
 import data from '../data/restaurants.json';
 import Slider from './Pictureslider';
-
+// <Button title="Login" onPress={() => navigation.navigate('Login')} />
 export default function Home() {
 
     const linkStyle = {
