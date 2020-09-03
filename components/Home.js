@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Alert } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import { useSelector, useDispatch } from "react-redux";
 import data from '../data/restaurants.json';
 import Slider from './Pictureslider';
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
@@ -20,7 +21,10 @@ export default function Home() {
         fontFamily: "verdana"
     }
 
-    const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
+    const index = useSelector(state => state);
+    const dispatch = useDispatch();
+
+    const restaurants = data.filter((restaurant, idx) => idx === index);
     const images = [];
     for (let key in restaurants[0].image_url) {
         if (restaurants[0].image_url[key] !== "") {
@@ -33,6 +37,7 @@ export default function Home() {
             <View style={styles.container}>
                 <Button
                     title="No"
+                    onPress={() => dispatch(increment())}
                 />
                 <Button
                     title="Yes"
