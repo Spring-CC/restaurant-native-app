@@ -12,25 +12,25 @@ var color4 = "#f9c74f" // - Maize Crayola
 var color5 = "#90be6d" // - Pistachio 
 
 export default function Details() {
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Text style={{fontSize: 20, textAlign: 'center'}}>Details Component</Text>
-        <Text>Name</Text>
-        <Text>Type</Text>
-        <Text>Address</Text>
-        <Text>Etc.</Text>
-      </ScrollView>
-      <StatusBar style="auto" />
-    </View>
-  );  
+    return (
+        <View style={styles.container}>
+            <ScrollView>
+                <Text style={{ fontSize: 20, textAlign: 'center' }}>Details Component</Text>
+                <Text>Name</Text>
+                <Text>Type</Text>
+                <Text>Address</Text>
+                <Text>Etc.</Text>
+            </ScrollView>
+            <StatusBar style="auto" />
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
+    container: {
+        flex: 1,
+        backgroundColor: "#fff",
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 });
