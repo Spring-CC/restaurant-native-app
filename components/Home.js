@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import data from '../data/restaurants.json';
 
 export default function Home() {
@@ -27,11 +27,11 @@ export default function Home() {
                 {restaurants.map(restaurant => {
                     return (
                         <View className="restaurant-info" key={restaurant.id}>
-                            <View className="title">{restaurant.name}</View>
-                            <View className="kana">{restaurant.name_kana}</View>
-                            <View className="category">{restaurant.category}</View>
-                            <View className="address">{restaurant.address}</View>
-                            <View className="open-time">{restaurant.opentime}</View>
+                            <Text className="title">{restaurant.name}</Text>
+                            <Text className="kana">{restaurant.name_kana}</Text>
+                            <Text className="category">{restaurant.category}</Text>
+                            <Text className="address">{restaurant.address}</Text>
+                            <Text className="open-time">{restaurant.opentime}</Text>
                         </View>
                     );
                 })}

@@ -15,7 +15,7 @@ export default function Nav({ user }) {
     };
     return (
         <View>
-            <Text h1 style={titleStyle}>Restaurant App</Text>
+            <Text style={titleStyle}>Restaurant App</Text>
             <View className="nav-links">
                 <Link style={navStyle} to="/">
                     <FlatList>Home</FlatList>
