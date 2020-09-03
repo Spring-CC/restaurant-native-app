@@ -12,7 +12,7 @@ const image3 = require('./../assets/3.jpg')
 const image4 = require('./../assets/4.jpg')
 const image5 = require('./../assets/5.jpg')
 
-// colours
+// colourssss
 var color1 = "#f94144" // - Red Salsa
 var color2 = "#f3722c" // - Orange Red
 var color3 = "#f8961e" // - Yellow Orange Color Wheel

@@ -22,7 +22,7 @@ export default function App() {
     </Router>
   );
 }
-// comment
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
