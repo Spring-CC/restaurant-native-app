@@ -18,10 +18,10 @@ export default function Nav({ user }) {
             <Text style={titleStyle}>Restaurant App</Text>
             <View className="nav-links">
                 <Link style={navStyle} to="/">
-                    <FlatList>Home</FlatList>
+                    <Text>Home</Text>
                 </Link>
                 <Link style={navStyle} to="/about">
-                    <FlatList>About</FlatList>
+                    <Text>About</Text>
                 </Link>
                 {!user && (
                     <Link
@@ -31,7 +31,7 @@ export default function Nav({ user }) {
                         }}
                         to="/login"
                     >
-                        <FlatList>Log In</FlatList>
+                        <Text>Log In</Text>
                     </Link>
                 )}
             </View>
