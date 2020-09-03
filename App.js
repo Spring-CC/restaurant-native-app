@@ -5,7 +5,6 @@ import { createStackNavigator } from 'react-navigation-stack';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Home from './components/Home';
-import Slide from './components/Pictureslider'
 import About from './components/About';
 import Details from './components/Details';
 import { createStore } from 'redux';
@@ -19,7 +18,6 @@ const AppNavigator = createStackNavigator(
     Home: Home,
     Login: Login,
     CreateAccount: SignUp,
-    PictureSlider: Slide,
     About: About,
     Details: Details
   },
