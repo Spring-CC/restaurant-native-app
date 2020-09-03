@@ -1,7 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Alert } from 'react-native';
+import { StyleSheet, View, Text, Button, ScrollView } from 'react-native';
+import { SliderBox } from "react-native-image-slider-box";
+import { useSelector, useDispatch } from "react-redux";
+import { increment } from "../actions";
 import data from '../data/restaurants.json';
-import Slider from './Pictureslider';
+
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
 // export default function Home({ navigation }) {
@@ -15,12 +18,29 @@ import Slider from './Pictureslider';
 // }
 
 export default function Home() {
+  const linkStyle = {
+    fontFamily: "verdana",
+  };
+
+    // colours
+    var color1 = "#f94144" // - Red Salsa
+    var color2 = "#f3722c" // - Orange Red
 
     const linkStyle = {
         fontFamily: "verdana"
-    }
+      
+//   const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
+//   const images = [];
+//   for (let key in restaurants[0].image_url) {
+//     if (restaurants[0].image_url[key] !== "") {
+//       images.push(restaurants[0].image_url[key]);
+//     }
+//   }
 
-    const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
+    const index = useSelector(state => state);
+    const dispatch = useDispatch();
+
+    const restaurants = data.filter((restaurant, idx) => idx === index);
     const images = [];
     for (let key in restaurants[0].image_url) {
         if (restaurants[0].image_url[key] !== "") {
@@ -33,12 +53,47 @@ export default function Home() {
             <View style={styles.container}>
                 <Button
                     title="No"
+                    onPress={() => dispatch(increment())}
                 />
                 <Button
                     title="Yes"
                 />
             </View>
-            <Slider />
+            <View style={styles.container}>
+                <ScrollView>
+                    <SliderBox
+                        images={images}
+                        // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                        // currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
+                        autoplay
+                        circleLoop
+                        dotColor={color1}
+                        inactiveDotColor={color2}
+                        // resizeMethod={'resize'}
+                        // resizeMode={'cover'}
+                        paginationBoxStyle={{
+                            position: "absolute",
+                            bottom: 0,
+                            padding: 0,
+                            alignItems: "center",
+                            alignSelf: "center",
+                            justifyContent: "center",
+                            paddingVertical: 10
+                        }}
+                        dotStyle={{
+                            width: 25,
+                            height: 25,
+                            borderRadius: 25,
+                            marginHorizontal: 0,
+                            padding: 0,
+                            margin: 0,
+                            backgroundColor: "rgba(128, 128, 128, 0.92)"
+                        }}
+                        ImageComponentStyle={{ borderRadius: 15, width: '97%', marginTop: 5 }}
+                        imageLoadingColor="#2196F3"
+                    />
+                </ScrollView>
+            </View>
             <View>
                 {restaurants.map(restaurant => {
                     return (
@@ -52,39 +107,15 @@ export default function Home() {
                     );
                 })}
             </View>
-        </View>
-    );
-}
+         
+      </View>
+)}
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    choiceNo: {
-
-    },
-    choiceYes: {
-
-    },
-    restaurantInfo: {
-
-    },
-    title: {
-
-    },
-    kana: {
-
-    },
-    category: {
-
-    },
-    address: {
-
-    },
-    openTime: {
-
+        justifyContent: 'center',
     },
 });
