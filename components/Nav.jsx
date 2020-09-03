@@ -14,7 +14,7 @@ export default function Nav({ user }) {
         fontFamily: "verdana",
     };
     return (
-        <Header>
+        <View>
             <Text h1 style={titleStyle}>Restaurant App</Text>
             <View className="nav-links">
                 <Link style={navStyle} to="/">
@@ -35,6 +35,6 @@ export default function Nav({ user }) {
                     </Link>
                 )}
             </View>
-        </Header>
+        </View>
     );
 }
