@@ -1,19 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Slide from './components/pictureslider';
-import About from './components/about';
-import Details from './components/details'
+import Nav from './components/Nav';
+import Home from './components/Home';
+import About from './components/About';
+import Details from './components/Details';
+import { StyleSheet, View } from 'react-native';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Slide></Slide>
-      <Details></Details>
-      <About></About>
-      <StatusBar style="auto" />
-    </View>
+    <Router>
+      <View className="App">
+        <Nav />
+        <Switch>
+          <Route path="/" exact component={Home} />
+
+          <Route path="/about" component={About} />
+
+          <Route path="/details" component={Details} />
+        </Switch>
+      </View>
+    </Router>
   );
 }
 
