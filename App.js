@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Slide from './components/pictureslider'
+// import Slide from './components/Pictureslider';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Login from './components/Login';
@@ -8,27 +8,31 @@ import SignUp from './components/SignUp';
 import Home from './components/Home';
 import About from './components/About';
 import Details from './components/Details';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import increment from './reducers/increment';
+
+const store = createStore(increment);
 
 const AppNavigator = createStackNavigator(
   {
     Home: Home,
     Login: Login,
     CreateAccount: SignUp,
-    PictureSlider: Slide,
-    About : About,
-    Details : Details
+    About: About,
+    Details: Details
   },
   {
-    initialRouteName: 'Login',
-  },
+    initialRouteName: "Home",
+  }
 );
 
-let Navigation = createAppContainer(AppNavigator);
+const Navigator = createAppContainer(AppNavigator);
 
 export default function App() {
-
-  
-    return (
-      <Navigation/>
-    );
+  return (
+    <Provider store={store}>
+      <Navigator />
+    </Provider>
+  );
 }
