@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import { createAccount } from '../api/mock';
+import { createAccount } from '../api/dbcreate';
 import EmailForm from "./EmailForm"
 
 export default function SignUp({navigation}) {
@@ -8,7 +8,7 @@ export default function SignUp({navigation}) {
 return (
   <EmailForm
   buttonText="Sign up"
-  //onSubmit={createAccount}
+  onSubmit={createAccount}
   onAuthentication={() => navigation.navigate('Home')}
 >
   <Button
