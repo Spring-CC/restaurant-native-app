@@ -19,7 +19,7 @@ var color5 = "#90be6d" // - Pistachio
 
 const array = [image1, image2, image3, image4, image5]
 
-export default function Slide() {
+export default function Slide({navigation}) {
   return (
     <View style={styles.container}>
       <ScrollView>
