@@ -28,7 +28,7 @@ export default function Home() {
 
     const linkStyle = {
         fontFamily: "verdana"
-      
+    }
 //   const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
 //   const images = [];
 //   for (let key in restaurants[0].image_url) {
