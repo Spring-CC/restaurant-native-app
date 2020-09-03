@@ -40,6 +40,7 @@ const AppNavigator = createStackNavigator(
 const Navigator = createAppContainer(AppNavigator);
 
 export default function App() {
+
   const [dataLoaded, setDataLoaded] = useState(false);
 
   if (!dataLoaded) {

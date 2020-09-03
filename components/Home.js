@@ -41,13 +41,17 @@ export default function Home() {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.buttons}>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => dispatch(increment())}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
                         onPress={() => dispatch(increment())}
                     >No</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.buttons}>
+                <TouchableOpacity
+                    style={styles.buttons}
+                    onPress={() => console.log("yes pressed")}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
                         onPress={() => console.log("yes pressed")}
@@ -90,11 +94,11 @@ export default function Home() {
                 {restaurants.map(restaurant => {
                     return (
                         <View key={restaurant.id}>
-                            <Text style={{ fontSize: 30, fontFamily: 'MPLUS1p-Bold' }}>{restaurant.name}</Text>
-                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Black' }}>{`(${restaurant.name_kana})`}</Text>
-                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Medium' }}>{restaurant.category}</Text>
-                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Medium' }}>{restaurant.address}</Text>
-                            <Text style={{ fontSize: 20, fontFamily: 'MPLUS1p-Medium' }}>{restaurant.opentime}</Text>
+                            <Text style={styles.textName}>{restaurant.name}</Text>
+                            <Text style={styles.textKana}>{`(${restaurant.name_kana})`}</Text>
+                            <Text style={styles.textBody}>{restaurant.category}</Text>
+                            <Text style={styles.textBody}>{restaurant.address}</Text>
+                            <Text style={styles.textBody}>{restaurant.opentime}</Text>
                         </View>
                     );
                 })}
@@ -126,5 +130,20 @@ const styles = StyleSheet.create({
         padding: 5,
         margin: 7,
         marginTop: 10,
+    },
+    textName: {
+        fontSize: 30,
+        fontFamily: 'MPLUS1p-Bold',
+        textAlign: 'center',
+    },
+    textKana: {
+        fontSize: 25,
+        fontFamily: 'MPLUS1p-Bold',
+        textAlign: 'center',
+    },
+    textBody: {
+        fontSize: 20,
+        fontFamily: 'MPLUS1p-Bold',
+        textAlign: 'center',
     },
 });
