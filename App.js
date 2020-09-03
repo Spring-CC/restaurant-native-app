@@ -4,22 +4,22 @@ import Home from './components/Home';
 import About from './components/About';
 import Details from './components/Details';
 import { StyleSheet, View } from 'react-native';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { createStore } from 'redux';
+import increment from './reducers/increment';
+import { Provider } from 'react-redux';
+
+const store = createStore(increment);
 
 export default function App() {
   return (
-    <Router>
-      <View className="App">
+    <Provider store={store}>
+      <View>
         <Nav />
-        <Switch>
-          <Route path="/" exact component={Home} />
-
-          <Route path="/about" component={About} />
-
-          <Route path="/details" component={Details} />
-        </Switch>
+        <Home />
+        <About />
+        <Details />
       </View>
-    </Router>
+    </Provider>
   );
 }
 
