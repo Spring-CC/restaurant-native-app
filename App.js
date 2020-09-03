@@ -19,8 +19,16 @@ const AppNavigator = createStackNavigator(
     Details : Details
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
   },
 );
 
-export default createAppContainer(AppNavigator);
+let Navigation = createAppContainer(AppNavigator);
+
+export default function App() {
+
+  
+    return (
+      <Navigation/>
+    );
+}
