@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { StyleSheet, View } from 'react-native';
-// import data from '../data/restaurants.json';
+import data from '../data/restaurants.json';
 
 export default function Home() {
 
@@ -9,13 +9,13 @@ export default function Home() {
         fontFamily: "verdana"
     }
 
-    const restaurants = data.filter((restaurant, idx) => idx === index);
-    const images = [];
-    for (let key in restaurants[0].image_url) {
-        if (restaurants[0].image_url[key] !== "") {
-            images.push(restaurants[0].image_url[key]);
-        }
-    }
+    // const restaurants = data.filter((restaurant, idx) => idx === index);
+    // const images = [];
+    // for (let key in restaurants[0].image_url) {
+    //     if (restaurants[0].image_url[key] !== "") {
+    //         images.push(restaurants[0].image_url[key]);
+    //     }
+    // }
 
     return (
         <View>
@@ -24,7 +24,7 @@ export default function Home() {
                 <Link className="choice-yes" to="/details" style={linkStyle}>Yes</Link>
             </View>
             <View>
-                {restaurants.map(restaurant => {
+                {data.map(restaurant => {
                     return (
                         <View className="restaurant-info" key={restaurant.id}>
                             <View className="title">{restaurant.name}</View>
