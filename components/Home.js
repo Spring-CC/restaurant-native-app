@@ -18,6 +18,9 @@ import data from '../data/restaurants.json';
 // }
 
 export default function Home() {
+  const linkStyle = {
+    fontFamily: "verdana",
+  };
 
     // colours
     var color1 = "#f94144" // - Red Salsa
@@ -25,7 +28,14 @@ export default function Home() {
 
     const linkStyle = {
         fontFamily: "verdana"
-    }
+      
+//   const restaurants = data.filter((restaurant) => restaurant.id === "g398515");
+//   const images = [];
+//   for (let key in restaurants[0].image_url) {
+//     if (restaurants[0].image_url[key] !== "") {
+//       images.push(restaurants[0].image_url[key]);
+//     }
+//   }
 
     const index = useSelector(state => state);
     const dispatch = useDispatch();
@@ -97,9 +107,9 @@ export default function Home() {
                     );
                 })}
             </View>
-        </View>
-    );
-}
+         
+      </View>
+)}
 
 const styles = StyleSheet.create({
     container: {
