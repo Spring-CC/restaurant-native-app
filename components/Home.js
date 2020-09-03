@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, ScrollView } from 'react-native';
+import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../actions";
 import data from '../data/restaurants.json';
-import Slider from './Pictureslider';
+
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
 // export default function Home({ navigation }) {
@@ -17,6 +18,10 @@ import Slider from './Pictureslider';
 // }
 
 export default function Home() {
+
+    // colours
+    var color1 = "#f94144" // - Red Salsa
+    var color2 = "#f3722c" // - Orange Red
 
     const linkStyle = {
         fontFamily: "verdana"
@@ -44,7 +49,41 @@ export default function Home() {
                     title="Yes"
                 />
             </View>
-            <Slider />
+            <View style={styles.container}>
+                <ScrollView>
+                    <SliderBox
+                        images={images}
+                        // onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+                        // currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
+                        autoplay
+                        circleLoop
+                        dotColor={color1}
+                        inactiveDotColor={color2}
+                        // resizeMethod={'resize'}
+                        // resizeMode={'cover'}
+                        paginationBoxStyle={{
+                            position: "absolute",
+                            bottom: 0,
+                            padding: 0,
+                            alignItems: "center",
+                            alignSelf: "center",
+                            justifyContent: "center",
+                            paddingVertical: 10
+                        }}
+                        dotStyle={{
+                            width: 25,
+                            height: 25,
+                            borderRadius: 25,
+                            marginHorizontal: 0,
+                            padding: 0,
+                            margin: 0,
+                            backgroundColor: "rgba(128, 128, 128, 0.92)"
+                        }}
+                        ImageComponentStyle={{ borderRadius: 15, width: '97%', marginTop: 5 }}
+                        imageLoadingColor="#2196F3"
+                    />
+                </ScrollView>
+            </View>
             <View>
                 {restaurants.map(restaurant => {
                     return (
@@ -67,30 +106,6 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'space-between',
-    },
-    choiceNo: {
-
-    },
-    choiceYes: {
-
-    },
-    restaurantInfo: {
-
-    },
-    title: {
-
-    },
-    kana: {
-
-    },
-    category: {
-
-    },
-    address: {
-
-    },
-    openTime: {
-
+        justifyContent: 'center',
     },
 });
