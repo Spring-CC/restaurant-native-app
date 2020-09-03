@@ -1,8 +1,21 @@
 import React from 'react';
+<<<<<<< HEAD
+import { Text, View, Button } from 'react-native';
+
+export default function Home({ navigation }) {
+
+return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Home</Text>
+    <Button title="Log out" onPress={() => navigation.navigate('Login')} />
+  </View>  
+);
+}
+=======
 import { StyleSheet, View, Text, Button, Alert } from 'react-native';
 import data from '../data/restaurants.json';
 import Slider from './Pictureslider';
-
+// <Button title="Login" onPress={() => navigation.navigate('Login')} />
 export default function Home() {
 
     const linkStyle = {
@@ -77,3 +90,4 @@ const styles = StyleSheet.create({
 
     },
 });
+>>>>>>> fede6245b7ca293bd7f0dea77f6feab385990bc4

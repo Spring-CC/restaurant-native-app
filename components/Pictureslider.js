@@ -25,41 +25,41 @@ export default function Slide() {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <SliderBox
-          images={array}
-          onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
-          currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
-          autoplay
-          circleLoop
-          dotColor={color1}
-          inactiveDotColor={color2}
-          // resizeMethod={'resize'}
-          // resizeMode={'cover'}
-          paginationBoxStyle={{
-            position: "absolute",
-            bottom: 0,
-            padding: 0,
-            alignItems: "center",
-            alignSelf: "center",
-            justifyContent: "center",
-            paddingVertical: 10
-          }}
-          dotStyle={{
-            width: 25,
-            height: 25,
-            borderRadius: 25,
-            marginHorizontal: 0,
-            padding: 0,
-            margin: 0,
-            backgroundColor: "rgba(128, 128, 128, 0.92)"
-          }}
-          ImageComponentStyle={{ borderRadius: 15, width: '97%', marginTop: 5 }}
-          imageLoadingColor="#2196F3"
-        />
+      <SliderBox 
+  images={array}
+  onCurrentImagePressed={index => console.warn(`image ${index} pressed`)}
+  currentImageEmitter={index => console.warn(`current pos is: ${index}`)}
+  autoplay
+  circleLoop
+  dotColor={color1}
+  inactiveDotColor={color2}
+  // resizeMethod={'resize'}
+  // resizeMode={'cover'}
+  paginationBoxStyle={{
+    position: "absolute",
+    bottom: 0,
+    padding: 0,
+    alignItems: "center",
+    alignSelf: "center",
+    justifyContent: "center",
+    paddingVertical: 10
+  }}
+  dotStyle={{
+    width: 25,
+    height: 25,
+    borderRadius: 25,
+    marginHorizontal: 0,
+    padding: 0,
+    margin: 0,
+    backgroundColor: "rgba(128, 128, 128, 0.92)"
+  }}
+  ImageComponentStyle={{borderRadius: 15, width: '97%', marginTop: 5}}
+  imageLoadingColor="#2196F3"
+/>
       </ScrollView>
       <StatusBar style="auto" />
     </View>
-  );
+  );  
 }
 
 const styles = StyleSheet.create({
