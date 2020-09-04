@@ -61,10 +61,12 @@ const styles = StyleSheet.create({
     basic_container: {
         backgroundColor: "#F8961E",
         padding: 5,
+        marginBottom: 7,
     },
     location_container: {
         backgroundColor: "#F9C74F",
         padding: 5,
+        marginBottom: 7,
     },
     payment_container: {
         backgroundColor: "#90BE6D",
@@ -91,5 +93,6 @@ const styles = StyleSheet.create({
     image: {
         width: '100%',
         height: 300,
+        marginBottom: 7,
     },
 });
