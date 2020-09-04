@@ -1,0 +1,235 @@
+{
+    "@attributes": {
+        "api_version": "v3"
+    },
+    "total_hit_count": 3,
+    "hit_per_page": 100,
+    "page_offset": 1,
+    "rest": [
+        {
+            "@attributes": {
+                "order": 0
+            },
+            "id": "kdn4900",
+            "update_date": "2020-09-04T11:00:25+09:00",
+            "name": "立ち食い焼肉 牛ごろ",
+            "name_kana": "タチグイヤキニクウシゴロ",
+            "latitude": "34.719699",
+            "longitude": "135.414350",
+            "category": "立ち食いスタイルの焼肉",
+            "url": "https://r.gnavi.co.jp/6np63fs50000/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/kdn4900/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/6np63fs50000/t_0n5d.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/6np63fs50000/t_0n5l.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=kdn4900&q=6"
+            },
+            "address": "〒660-0084 兵庫県尼崎市神田中通3-61",
+            "tel": "050-3491-7833",
+            "tel_sub": "06-6435-9173",
+            "fax": "",
+            "opentime": "月～日・祝前日・祝日 ランチ：11:00～15:00(L.O.14:30)\n月～日・祝前日・祝日 ディナー：17:00～24:00(L.O.23:30)",
+            "holiday": "不定休日あり",
+            "access": {
+                "line": "阪神本線",
+                "station": "尼崎駅",
+                "station_exit": "",
+                "walk": "4",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "気軽に立ち食いで味わえる近江牛の絶品焼肉",
+                "pr_long": "どなたでも気軽に立ち寄れる\n立ち食いスタイルの焼肉屋。\n一枚単位から注文OKで\n希少部位も試しやすいのが魅力的◎\n看板メニューの近江牛をメインに\n新鮮なお肉をご提供します！"
+            },
+            "code": {
+                "areacode": "AREA120",
+                "areaname": "関西",
+                "prefcode": "PREF28",
+                "prefname": "兵庫県",
+                "areacode_s": "AREAS3566",
+                "areaname_s": "尼崎",
+                "category_code_l": [
+                    "RSFST05000",
+                    "RSFST09000"
+                ],
+                "category_name_l": [
+                    "焼肉・ホルモン",
+                    "居酒屋"
+                ],
+                "category_code_s": [
+                    "RSFST05001",
+                    "RSFST09004"
+                ],
+                "category_name_s": [
+                    "焼肉",
+                    "居酒屋"
+                ]
+            },
+            "budget": 3500,
+            "party": "",
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 1
+            },
+            "id": "7343081",
+            "update_date": "2017-09-01T16:29:57+09:00",
+            "name": "立ち食い焼肉 鷹の",
+            "name_kana": "タチグイヤキニクタカノ",
+            "latitude": "35.665416",
+            "longitude": "138.567789",
+            "category": "焼肉",
+            "url": "https://r.gnavi.co.jp/2nk2fm7x0000/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/7343081/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=7343081&q=6"
+            },
+            "address": "〒400-0031 山梨県甲府市丸の内2-3-3 今村ビル1F",
+            "tel": "055-233-5577",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "",
+            "holiday": "",
+            "access": {
+                "line": "JR中央本線（東京-塩尻）",
+                "station": "甲府駅",
+                "station_exit": "南口",
+                "walk": "徒歩4",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "",
+                "pr_long": ""
+            },
+            "code": {
+                "areacode": "AREA130",
+                "areaname": "中部",
+                "prefcode": "PREF19",
+                "prefname": "山梨県",
+                "areacode_s": "AREAS4762",
+                "areaname_s": "甲府駅・県庁・市役所周辺",
+                "category_code_l": [
+                    "RSFST05000",
+                    ""
+                ],
+                "category_name_l": [
+                    "焼肉・ホルモン",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST05001",
+                    ""
+                ],
+                "category_name_s": [
+                    "焼肉",
+                    ""
+                ]
+            },
+            "budget": "",
+            "party": "",
+            "lunch": "",
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 2
+            },
+            "id": "7399269",
+            "update_date": "2017-09-01T17:44:56+09:00",
+            "name": "立ち食い焼肉 おのおの",
+            "name_kana": "タチグイヤキニクオノオノ",
+            "latitude": "33.592190",
+            "longitude": "130.414412",
+            "category": "焼肉",
+            "url": "https://r.gnavi.co.jp/76xkg4vj0000/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/7399269/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=7399269&q=6"
+            },
+            "address": "〒812-0038 福岡県福岡市博多区祇園町3-5 ",
+            "tel": "092-688-2707",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "",
+            "holiday": "",
+            "access": {
+                "line": "福岡市営空港線",
+                "station": "祇園（福岡県）駅",
+                "station_exit": "5番口",
+                "walk": "徒歩2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "",
+                "pr_long": ""
+            },
+            "code": {
+                "areacode": "AREA140",
+                "areaname": "九州",
+                "prefcode": "PREF40",
+                "prefname": "福岡県",
+                "areacode_s": "AREAS5062",
+                "areaname_s": "川端・祇園",
+                "category_code_l": [
+                    "RSFST05000",
+                    ""
+                ],
+                "category_name_l": [
+                    "焼肉・ホルモン",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST05001",
+                    ""
+                ],
+                "category_name_s": [
+                    "焼肉",
+                    ""
+                ]
+            },
+            "budget": "",
+            "party": "",
+            "lunch": "",
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        }
+    ]
+}

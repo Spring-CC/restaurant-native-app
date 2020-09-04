@@ -1,41 +1,88 @@
 import * as React from "react";
 import { Button, View } from "react-native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator } from "react-navigation-drawer";
+import { createAppContainer } from 'react-navigation';
 import { NavigationContainer } from "@react-navigation/native";
-//import Icon from "./Icon"
+import Icon from "react-native-vector-icons/FontAwesome";
+import Login from "./Login";
+import SignUp from "./SignUp";
+import Home from "./Home";
+import About from "./About";
+import Details from "./Details";
+import Userinfo from "./Userinfo";
 
-function HomeScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button
-        onPress={() => {
-          navigation.navigate("Notifications");
-          navigation.openDrawer();
-        }}
-        title="Go to notifications"
-      />
-    </View>
-  );
-}
+// function HomeScreen({ navigation }) {
+//   return (
+//     <View
+//       style={{
+//         flex: 1,
+//         alignItems: "center",
+//         justifyContent: "center",
+//         position: "absolute",
+//         top: 30,
+//         left: 30,
+//       }}
+//     >
+//       <Icon
+//         name="bars"
+//         size={30}
+//         style={{ paddingLeft: 20 }}
+//         onPress={() => {
+//           navigation.navigate("Notifications");
+//           navigation.openDrawer();
+//         }}
+//         title="Go to notifications"
+//       />
+//     </View>
+//   );
+// }
 
-function NotificationsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
-    </View>
-  );
-}
+// function NotificationsScreen({ navigation }) {
+//   return (
+//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+//       <Icon
+//         onPress={() => navigation.goBack()}
+//         name="bars"
+//         size={30}
+//         style={{ paddingLeft: 20, position: "absolute", top: 30, left: 10 }}
+//       />
+//     </View>
+//   );
+// }
 
-const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator({
+  Home: {
+    screen: Home,
+  },
 
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Select" component={Checkbox} />
-        <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
-}
+  Login: {
+    screen: Login,
+  },
+
+  CreateAccount: {
+    screen: SignUp,
+  },
+  About: {
+    screen: About,
+  },
+  Details: {
+   screen: Details,
+  },
+  Profile: {
+    screen: Userinfo,
+   }
+});
+
+// export default function Sidebar() {
+//   return (
+//     <NavigationContainer>
+//       <Drawer.Navigator initialRouteName="Home">
+//         <Drawer.Screen name="Home" component={HomeScreen} />
+//         <Drawer.Screen name="Select" component={Checkbox} />
+//         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+//       </Drawer.Navigator>
+//     </NavigationContainer>
+//   );
+// }
+
+export default createAppContainer(Drawer);

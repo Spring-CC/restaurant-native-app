@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import increment from "./reducers/increment";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import Navigator from "./components/Drawer";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -25,21 +26,22 @@ const fetchFonts = () => {
 
 const store = createStore(increment);
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: Home,
-    Login: Login,
-    CreateAccount: SignUp,
-    About: About,
-    Details: Details,
-    Auth: Auth,
-  },
-  {
-    initialRouteName: "Auth",
-  }
-);
 
-const Navigator = createAppContainer(AppNavigator);
+// const AppNavigator = createStackNavigator(
+//   {
+//     Home: Home,
+//     Sidebar: Sidebar,
+//     Login: Login,
+//     CreateAccount: SignUp,
+//     About: About,
+//     Details: Details,
+//   },
+//   {
+//     initialRouteName: "Home",
+//   }
+// );
+
+// const Navigator = createAppContainer(AppNavigator);
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
