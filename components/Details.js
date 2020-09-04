@@ -1,16 +1,16 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { StyleSheet, Text, ScrollView, View } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
 
 export default function Details() {
 
     const restData = useSelector(state => state.restaurantReducer);
 
     return (
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <Image
                 source={require('../assets/profile.jpeg')}
-                style={styles.text}
+                style={styles.image}
             />
             <View style={styles.basic_container}>
                 <Text style={styles.text_title}>Basic Details</Text>
@@ -58,12 +58,15 @@ export default function Details() {
 const styles = StyleSheet.create({
     basic_container: {
         backgroundColor: "#F8961E",
+        padding: 5,
     },
     location_container: {
         backgroundColor: "#F9C74F",
+        padding: 5,
     },
     payment_container: {
         backgroundColor: "#90BE6D",
+        padding: 5,
     },
     text_title: {
         fontSize: 20,
@@ -75,10 +78,11 @@ const styles = StyleSheet.create({
         fontFamily: 'MPLUS1p-Medium',
     },
     container: {
-
+        flex: 1,
+        margin: 5,
+        borderRadius: 12,
     },
     image: {
-        width: 50,
-        height: 50,
+        width: '100%',
     },
 });
