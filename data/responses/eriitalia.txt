@@ -1,0 +1,160 @@
+{
+    "@attributes": {
+        "api_version": "v3"
+    },
+    "total_hit_count": 2,
+    "hit_per_page": 100,
+    "page_offset": 1,
+    "rest": [
+        {
+            "@attributes": {
+                "order": 0
+            },
+            "id": "g047005",
+            "update_date": "2020-09-01T01:23:37+09:00",
+            "name": "エルトリート 西葛西店",
+            "name_kana": "エルトリート ニシカサイテン",
+            "latitude": "35.663277",
+            "longitude": "139.858514",
+            "category": "メキシカンレストラン",
+            "url": "https://r.gnavi.co.jp/g047005/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g047005/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/g047005/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/g047005/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/4323u30n0000/t_005y.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/4323u30n0000/t_005z.gif",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g047005&q=6"
+            },
+            "address": "〒134-0088 東京都江戸川区西葛西6-10-15 中川ビル1F",
+            "tel": "050-3469-5266",
+            "tel_sub": "03-5696-7488",
+            "fax": "03-5696-7489",
+            "opentime": " 11:00～24:00(L.O.23:00)",
+            "holiday": "無\n※【当面の間、営業時間を変更させて頂きます。】  詳細は店舗までお問い合わせ下さい。よろしくお願い致します。",
+            "access": {
+                "line": "地下鉄東西線",
+                "station": "西葛西駅",
+                "station_exit": "南口",
+                "walk": "2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "【西葛西駅南口徒歩2分】本場メキシカン料理のお店！ 50～100名様までの大人数パーティーも可能★",
+                "pr_long": "全米に展開するレストランチェーンの日本第一号店！\nU.S.仕込みの本格メキシカン料理をたっぷりと味わえます！\n定番タコスやケサディーヤはもちろん\n人気の「ファヒータ」も種類豊富に揃えております。\nディナーは、コロナ／テカテ／といった\nメキシカンビールと一緒にお楽しみください。\nボリューム満点ランチは毎日11：00～15：00まで提供中！\nパーティーでは、50～100名様までの大人数も対応可能！\n結婚式二次会などの貸切パーティーは、80名様～。\nご予約承っております★☆お気軽にご相談ください♪"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2237",
+                "areaname_s": "西葛西・葛西",
+                "category_code_l": [
+                    "RSFST15000",
+                    "RSFST12000"
+                ],
+                "category_name_l": [
+                    "アジア・エスニック料理",
+                    "欧米・各国料理"
+                ],
+                "category_code_s": [
+                    "RSFST15009",
+                    "RSFST12009"
+                ],
+                "category_name_s": [
+                    "メキシコ料理",
+                    "パシフィックリム"
+                ]
+            },
+            "budget": 2500,
+            "party": 3000,
+            "lunch": 1000,
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,アプラス,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 1
+            },
+            "id": "g067106",
+            "update_date": "2020-09-01T02:47:59+09:00",
+            "name": "エルトリート 池袋西口店",
+            "name_kana": "エルトリート イケブクロニシグチテン",
+            "latitude": "35.729607",
+            "longitude": "139.709030",
+            "category": "話題のメキシカン料理",
+            "url": "https://r.gnavi.co.jp/dve0zvry0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g067106/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/dve0zvry0000/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/g067106/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/dve0zvry0000/t_001p.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/dve0zvry0000/t_001q.gif",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g067106&q=6"
+            },
+            "address": "〒171-0021 東京都豊島区西池袋1-10-10 東武アネックススパイスビル3F",
+            "tel": "03-5954-7611",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "月～土 11:00～22:00(L.O.21:30)\n日・祝日 11:00～22:00(L.O.21:00)",
+            "holiday": "不定休日あり",
+            "access": {
+                "line": "ＪＲ",
+                "station": "池袋駅",
+                "station_exit": "西口",
+                "walk": "3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "行列ができるメキシコ料理専門店！料理は全てお店仕込み！賑やかな店内で本格的メキシカンをお楽しみ下さい。池袋駅 西口から徒歩３分",
+                "pr_long": "営業時間のご案内\n通常通り11;00〜22;00となりました\n皆さまのご来店心よりお待ちしております\n「エルトリート」は、1954年、アメリカのカリフォルニアで誕生し、現在全米で人気のあるメキシカンレストランチェーンです。日本でも、Ｕ．Ｓ．レシピそのままの本格的なメキシコ料理を味わえる数少ないメキシカンレストランです。「太陽の国メキシコ」の雰囲気いっぱいのお店で、お店仕込みの自慢のファヒータ、タコスとメキシコ料理には欠かせないマルガリータ、メキシカンビールでちょっとお洒落に陽気に食事をめしあがれ！"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2157",
+                "areaname_s": "池袋西口",
+                "category_code_l": [
+                    "RSFST15000",
+                    ""
+                ],
+                "category_name_l": [
+                    "アジア・エスニック料理",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST15009",
+                    ""
+                ],
+                "category_name_s": [
+                    "メキシコ料理",
+                    ""
+                ]
+            },
+            "budget": 2500,
+            "party": 3000,
+            "lunch": 1000,
+            "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        }
+    ]
+}
