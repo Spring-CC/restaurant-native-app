@@ -13,7 +13,7 @@ function HomeScreen({ navigation }) {
         justifyContent: "center",
         position: "absolute",
         top: 30,
-        left: 10,
+        left: 30,
       }}
     >
       <Icon

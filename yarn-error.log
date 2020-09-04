@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/erishimada/.nvm/versions/node/v12.16.3/bin/node /usr/local/bin/yarn
+  /Users/erishimada/.nvm/versions/node/v12.16.3/bin/node /usr/local/bin/yarn add @react-navigation/native: ^5.7.3,
 
 PATH: 
   /Users/erishimada/.nvm/versions/node/v12.16.3/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/erishimada/opt/anaconda3/bin:/Users/erishimada/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/3.8/bin
@@ -14,12 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/erishimada/cc13/finalproject/restaurant-native-app/package.json: Unexpected token < in JSON at position 531
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+  Error: https://registry.yarnpkg.com/@react-navigation%2fnative:: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140464:22)
+      at Request.emit (events.js:310:20)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141436:10)
+      at Request.emit (events.js:310:20)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:416:28)
+      at IncomingMessage.emit (events.js:322:22)
+      at endReadableNT (_stream_readable.js:1187:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
 
 npm manifest: 
   {
@@ -39,20 +44,12 @@ npm manifest:
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-  <<<<<<< HEAD
-      "react-native-gesture-handler": "^1.7.0",
-      "react-native-image-slider-box": "^1.0.12",
-      "react-native-reanimated": "^1.13.0",
-      "react-native-safe-area-context": "^3.1.7",
-      "react-native-screens": "^2.10.1",
-  =======
       "react-native-gesture-handler": "~1.6.0",
       "react-native-image-slider-box": "^1.0.12",
       "react-native-reanimated": "~1.9.0",
       "react-native-safe-area-context": "~3.0.7",
       "react-native-screens": "~2.9.0",
       "react-native-vector-icons": "^7.0.0",
-  >>>>>>> ee42408991d7d30830d7d2bdda984551dbb79edb
       "react-native-web": "~0.11.7",
       "react-navigation": "^4.4.0",
       "react-navigation-drawer": "^2.5.0",
@@ -4605,10 +4602,10 @@ Lockfile:
       invariant "^2.2.4"
       use-subscription "^1.0.0"
   
-  react-native-gesture-handler@^1.7.0:
-    version "1.7.0"
-    resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.7.0.tgz#0ef74a5ba836832e497dc49eb1ce58baa6c617e5"
-    integrity sha512-1CrjJf8Z6Iz2XWzfZknYtsm2sud5Lu/pLhhokkgBIKttxqGDtetDEVFDJOTJWJyKCrUPk0X5tnWi/diSF4q++w==
+  react-native-gesture-handler@~1.6.0:
+    version "1.6.1"
+    resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.6.1.tgz#678e2dce250ed66e93af409759be22cd6375dd17"
+    integrity sha512-gQgIKhDiYf754yzhhliagLuLupvGb6ZyBdzYzr7aus3Fyi87TLOw63ers+r4kGw0h26oAWTAdHd34JnF4NeL6Q==
     dependencies:
       "@egjs/hammerjs" "^2.0.17"
       hoist-non-react-statics "^2.3.1"
