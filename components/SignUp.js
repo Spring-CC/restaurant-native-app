@@ -35,13 +35,11 @@ export default function SignUp({ navigation }) {
         value={password}
         secureTextEntry
       />
-
       <Button
         title="Back to log in"
         onPress={() => navigation.navigate('Login')}
       />
     </ScrollView>
-
   );
 }
 
