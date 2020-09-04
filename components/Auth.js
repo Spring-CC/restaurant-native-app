@@ -1,43 +1,54 @@
+import React, { useState, useEffect } from "react";
 import * as AuthSession from "expo-auth-session";
-import { StyleSheet, View, Button } from "react-native";
-import React from "react";
+import jwtDecode from "jwt-decode";
+import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 
-import { auth0Domain, auth0ClientId } from "react-native-dotenv";
+const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
+const useProxy = Platform.select({ web: false, default: true });
+const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 
-function toQueryString(params) {
-  return (
-    "?" +
-    Object.entries(params)
-      .map(
-        ([key, value]) =>
-          `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
-      )
-      .join("&")
+export default function Auth() {
+  const [name, setName] = useState(null);
+
+  const [request, result, promptAsync] = AuthSession.useAuthRequest(
+    {
+      redirectUri,
+      clientId: process.env.REACT_APP_APP_AUTHID,
+      // id_token will return a JWT token
+      responseType: "id_token",
+      // retrieve the user's profile
+      scopes: ["openid", "profile"],
+      extraParams: {
+        // ideally, this will be a random value
+        nonce: "nonce",
+      },
+    },
+    { authorizationEndpoint }
   );
-}
-export default function Auth0({ navigation }) {
-  const loginWithAuth0 = async () => {
-    const redirectUrl = AuthSession.getRedirectUrl();
-    let authUrl =
-      `${auth0Domain}/authorize` +
-      toQueryString({
-        client_id: auth0ClientId,
-        response_type: "token",
-        scope: "openid profile email",
-        redirect_uri: redirectUrl,
-      });
-    console.log(`Redirect URL (add this to Auth0): ${redirectUrld}`);
-    console.log(`AuthURL is:  ${authUrl}`);
-    const result = await AuthSession.startAsync({
-      authUrl: authUrl,
-    });
-  };
-  // if (result.type === "success") {
-  //   console.log(result);
-  //   let token = result.params.access_token;
-  //   this.props.setToken(token);
-  //   this.props.navigation.navigate("Next Screen");
-  // }
+
+  // Retrieve the redirect URL, add this to the callback URL list
+  // of your Auth0 application.
+  console.log(`Redirect URL: ${redirectUri}`);
+
+  useEffect(() => {
+    if (result) {
+      if (result.error) {
+        Alert.alert(
+          "Authentication error",
+          result.params.error_description || "something went wrong"
+        );
+        return;
+      }
+      if (result.type === "success") {
+        // Retrieve the JWT token and decode it
+        const jwtToken = result.params.id_token;
+        const decoded = jwtDecode(jwtToken);
+
+        const { name } = decoded;
+        setName(name);
+      }
+    }
+  }, [result]);
 
   return (
     <View style={styles.container}>
@@ -45,10 +56,9 @@ export default function Auth0({ navigation }) {
         <Text style={styles.title}>You are logged in, {name}!</Text>
       ) : (
         <Button
+          disabled={!request}
           title="Log in with Auth0"
-          onPress={() => {
-            loginWithAuth0;
-          }}
+          onPress={() => promptAsync({ useProxy })}
         />
       )}
     </View>
