@@ -18,7 +18,7 @@ import Nav from './Nav';
 // );
 // }
 
-export default function Home() {
+export default function Home({ navigation }) {
 
     var color1 = "#f94144" // - Red Salsa
     var color2 = "#f3722c" // - Orange Red
@@ -38,6 +38,11 @@ export default function Home() {
         }
     }
 
+    function onPress() {
+        dispatch(restaurant(restaurants))
+        navigation.navigate('Details')
+    }
+
     return (
         <ScrollView style={styles.container}>
             <View style={styles.buttonContainer}>
@@ -50,7 +55,7 @@ export default function Home() {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={() => dispatch(restaurant(restaurants))}>
+                    onPress={() => onPress()}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
                     >Yes</Text>

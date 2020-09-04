@@ -1,7 +1,7 @@
 const initialState = [
     {
         "image_url": {
-            "shop_image1": ""
+            "shop_image1": "https://reactnative.dev/img/tiny_logo.png"
         },
         "name": "",
         "name_kana": "",

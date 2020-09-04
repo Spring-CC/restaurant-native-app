@@ -9,7 +9,9 @@ export default function Details() {
     return (
         <ScrollView style={styles.container}>
             <Image
-                source={require('../assets/profile.jpeg')}
+                source={{
+                    uri: restData[0].image_url["shop_image1"],
+                }}
                 style={styles.image}
             />
             <View style={styles.basic_container}>
@@ -84,5 +86,6 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
+        height: 300,
     },
 });
