@@ -4,6 +4,7 @@ import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "../actions";
 import data from '../data/restaurants.json';
+import Nav from './Nav'
 
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
@@ -39,6 +40,7 @@ export default function Home() {
     }
 
     return (
+        
         <View>
             <View style={styles.container}>
                 <Button

@@ -11,6 +11,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import increment from './reducers/increment';
 
+
 const store = createStore(increment);
 
 const AppNavigator = createStackNavigator(
@@ -22,7 +23,7 @@ const AppNavigator = createStackNavigator(
     Details: Details
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
   }
 );
 
