@@ -1,28 +1,66 @@
-import React from 'react';
-import { Text, View, Button } from 'react-native';
-import { login } from '../api/mock';
+import React, {useState} from 'react';
+import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
+import login from '../api/dblogin';
+
+
 
 export default function Login({ navigation }) {
 
-  const loginUser = () => { // test
-    login('test@test.ca', 'password')
-      .then(() => {
-        navigation.navigate('Home');
-      })
-      .catch((err) => console.log('error:', err.message));
-  };
+  const [email, onChangeEmail] = useState('');
+  const [password, onChangePassword] = useState('');
+
+  const callBackFunc = (err) => {
+    return err;
+  }
 
 return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>LoginScreen</Text>
+  <ScrollView contentContainerStyle={styles.container}>
+  <TextInput
+    style={styles.input}
+    onChangeText={(text) => {
+      onChangeEmail(text);
+      console.log(email);
+    }}
+    value={email}
+    keyboardType="email-address"
+  />
+  <TextInput
+    style={styles.input}
+    onChangeText={(text) => {
+      onChangePassword(text);
+      console.log(password)
+    }}
+    value={password}
+    secureTextEntry
+  />
+  <Button title="Login" onPress={()=>{
+    login(email,password, callBackFunc);
+  }}  />
+
+
+  <Button
+    title="Create account"
+    onPress={() => navigation.navigate('CreateAccount')}
+  />
     <Button
-        title="Log in"
-        onPress={() => {loginUser}}
-      />
-      <Button
-        title="Create account"
-        onPress={() => navigation.navigate('CreateAccount')}
-      />
-  </View>  
+    title="Go Home"
+    onPress={() => navigation.navigate('Home')}
+  />
+</ScrollView>
 );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    height: 40,
+    width: 300,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 20,
+  },
+});

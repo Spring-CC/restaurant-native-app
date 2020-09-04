@@ -22,6 +22,7 @@ const fetchFonts = () => {
   });
 };
 
+
 const store = createStore(increment);
 
 const AppNavigator = createStackNavigator(
@@ -33,7 +34,7 @@ const AppNavigator = createStackNavigator(
     Details: Details
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: "Login",
   }
 );
 
