@@ -20,7 +20,6 @@ import Nav from './Nav';
 
 export default function Home() {
 
-    // colours
     var color1 = "#f94144" // - Red Salsa
     var color2 = "#f3722c" // - Orange Red
 
@@ -51,7 +50,7 @@ export default function Home() {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={() => console.log("yes pressed")}>
+                    onPress={() => dispatch(restaurant(restaurants))}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
                     >Yes</Text>
@@ -65,7 +64,6 @@ export default function Home() {
                         circleLoop
                         dotColor={color1}
                         inactiveDotColor={color2}
-                        // autoplay
                         paginationBoxStyle={{
                             position: "absolute",
                             bottom: 0,
