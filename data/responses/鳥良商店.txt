@@ -1,0 +1,1960 @@
+{
+    "@attributes": {
+        "api_version": "v3"
+    },
+    "total_hit_count": 26,
+    "hit_per_page": 100,
+    "page_offset": 1,
+    "rest": [
+        {
+            "@attributes": {
+                "order": 0
+            },
+            "id": "g111339",
+            "update_date": "2020-09-01T00:21:57+09:00",
+            "name": "鳥良商店 新大久保店",
+            "name_kana": "トリヨシショウテン シンオオクボテン",
+            "latitude": "35.701627",
+            "longitude": "139.700062",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/g111339/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111339/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/g111339/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/g111339/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/4n6bnbbd0000/t_0oe5.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/4n6bnbbd0000/t_0oe6.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111339&q=6"
+            },
+            "address": "〒169-0073 東京都新宿区百人町2-4-1 サンビルB1",
+            "tel": "050-3490-8486",
+            "tel_sub": "03-5925-3266",
+            "fax": "03-5925-3265",
+            "opentime": " 11:30～翌5:00(L.O.4:00、ドリンクL.O.4:00)",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ",
+                "station": "新大久保駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2122",
+                "areaname_s": "大久保",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 1
+            },
+            "id": "get2523",
+            "update_date": "2020-08-30T00:52:17+09:00",
+            "name": "鳥良商店 北千住東口店",
+            "name_kana": "トリヨシショウテン キタセンジュヒガシグチテン",
+            "latitude": "35.749598",
+            "longitude": "139.806530",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/ed3dx7r90000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2523/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/ed3dx7r90000/t_0o9c.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/ed3dx7r90000/t_0o9d.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2523&q=6"
+            },
+            "address": "〒120-0026 東京都足立区千住旭町40-28 1・2F",
+            "tel": "050-3461-5102",
+            "tel_sub": "03-5284-1181",
+            "fax": "03-5284-1182",
+            "opentime": " 24時間営業",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ常磐線",
+                "station": "北千住駅",
+                "station_exit": "東口",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2243",
+                "areaname_s": "北千住",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 2500,
+            "party": 3000,
+            "lunch": 1000,
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "楽天Edy,Suica,PASMO,iD,QUICPay,QUICPay＋,PayPay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 2
+            },
+            "id": "gd4u650",
+            "update_date": "2020-08-08T01:11:49+09:00",
+            "name": "鳥良商店 田無北口店",
+            "name_kana": "トリヨシショウテン タナシキタグチテン",
+            "latitude": "35.729280",
+            "longitude": "139.540016",
+            "category": "鶏料理 居酒屋",
+            "url": "https://r.gnavi.co.jp/hm5mkcfj0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u650/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/hm5mkcfj0000/t_0pdo.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/hm5mkcfj0000/t_0pdp.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u650&q=6"
+            },
+            "address": "〒188-0011 東京都西東京市田無町2-2-2 吉野ビル1・2F",
+            "tel": "050-3469-0262",
+            "tel_sub": "042-452-1815",
+            "fax": "042-452-1816",
+            "opentime": " 11:30～翌5:00(L.O.4:00)(※現在、休業中)",
+            "holiday": "年中無休",
+            "access": {
+                "line": "西武新宿線",
+                "station": "田無駅",
+                "station_exit": "北口",
+                "walk": "2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2282",
+                "areaname_s": "田無",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 3
+            },
+            "id": "g111302",
+            "update_date": "2020-09-01T00:32:17+09:00",
+            "name": "鳥良商店 吉祥寺南口店",
+            "name_kana": "トリヨシショウテン キチジョウジミナミグチテン",
+            "latitude": "35.702937",
+            "longitude": "139.577511",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/g111302/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111302/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/g111302/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/g111302/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/9yh3tdwa0000/t_0oa8.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/9yh3tdwa0000/t_0oa9.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111302&q=6"
+            },
+            "address": "〒180-0003 東京都武蔵野市吉祥寺南町1-1-10 ＭＡビル1F",
+            "tel": "050-3462-9384",
+            "tel_sub": "0422-76-7129",
+            "fax": "0422-76-7129",
+            "opentime": " 11:30～翌5:00",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ",
+                "station": "吉祥寺駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2276",
+                "areaname_s": "吉祥寺",
+                "category_code_l": [
+                    "RSFST01000",
+                    "RSFST09000"
+                ],
+                "category_name_l": [
+                    "和食",
+                    "居酒屋"
+                ],
+                "category_code_s": [
+                    "RSFST01015",
+                    "RSFST09004"
+                ],
+                "category_name_s": [
+                    "和食 その他",
+                    "居酒屋"
+                ]
+            },
+            "budget": 2000,
+            "party": 3000,
+            "lunch": 800,
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン",
+            "e_money": "Suica,PASMO,ICOCA,iD,PayPay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 4
+            },
+            "id": "get2503",
+            "update_date": "2020-08-20T16:30:22+09:00",
+            "name": "鳥良商店 町田中町店",
+            "name_kana": "トリヨシショウテン マチダナカマチテン",
+            "latitude": "35.546141",
+            "longitude": "139.446558",
+            "category": "町田・鶏料理・居酒屋",
+            "url": "https://r.gnavi.co.jp/ssan0mmh0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2503/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/ssan0mmh0000/t_0ob3.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/ssan0mmh0000/t_0ob4.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2503&q=6"
+            },
+            "address": "〒194-0021 東京都町田市中町1-16-14 太陽ビル1F",
+            "tel": "050-3466-8619",
+            "tel_sub": "042-710-0561",
+            "fax": "042-710-0562",
+            "opentime": " 11:30～24:00(L.O.23:30、ドリンクL.O.23:30)",
+            "holiday": "年中無休",
+            "access": {
+                "line": "小田急小田原線",
+                "station": "町田駅",
+                "station_exit": "",
+                "walk": "2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2929",
+                "areaname_s": "町田",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": 800,
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 5
+            },
+            "id": "gd4u629",
+            "update_date": "2020-08-08T00:48:56+09:00",
+            "name": "鳥良商店 立石店",
+            "name_kana": "トリヨシショウテン タテイシテン",
+            "latitude": "35.737801",
+            "longitude": "139.849552",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/1d72etrw0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u629/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/1d72etrw0000/t_0pd9.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/1d72etrw0000/t_0pda.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u629&q=6"
+            },
+            "address": "〒124-0012 東京都葛飾区立石1-21-4 京成立石ビル1・2F",
+            "tel": "050-3464-7169",
+            "tel_sub": "03-5671-3465",
+            "fax": "03-5671-3466",
+            "opentime": " 11:00～翌5:00(L.O.4:00、ドリンクL.O.4:30)(※現在、休業中)",
+            "holiday": "年中無休",
+            "access": {
+                "line": "京成押上線",
+                "station": "京成立石駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2246",
+                "areaname_s": "亀有・青砥",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3500,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 6
+            },
+            "id": "gd4u626",
+            "update_date": "2020-08-08T01:06:08+09:00",
+            "name": "鳥良商店 浅草橋駅前店",
+            "name_kana": "トリヨシショウテン アサクサバシエキマエテン",
+            "latitude": "35.697989",
+            "longitude": "139.786296",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/khxtfjmd0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u626/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/khxtfjmd0000/t_0plc.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/khxtfjmd0000/t_0pld.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u626&q=6"
+            },
+            "address": "〒111-0053 東京都台東区浅草橋1-30-12",
+            "tel": "050-3466-0490",
+            "tel_sub": "03-5825-9821",
+            "fax": "03-5825-9822",
+            "opentime": " 11:30～翌5:00",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ総武線",
+                "station": "浅草橋駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2206",
+                "areaname_s": "浅草橋",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3500,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 7
+            },
+            "id": "gd4u672",
+            "update_date": "2020-08-08T00:49:27+09:00",
+            "name": "鳥良商店 武蔵境すきっぷ通り店",
+            "name_kana": "トリヨシショウテンムサシサカイスキップドオリテン",
+            "latitude": "35.702678",
+            "longitude": "139.544387",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/2t997v2g0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u672/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/2t997v2g0000/t_0pd8.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/2t997v2g0000/t_0pd9.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u672&q=6"
+            },
+            "address": "〒180-0022 東京都武蔵野市境1-2-1 聚宝堂ビル1～3F",
+            "tel": "050-3469-0269",
+            "tel_sub": "0422-50-0381",
+            "fax": "0422-50-0382",
+            "opentime": " 11:30～23:00",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ中央線",
+                "station": "武蔵境駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2277",
+                "areaname_s": "三鷹",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3500,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 8
+            },
+            "id": "get2522",
+            "update_date": "2020-08-08T01:02:17+09:00",
+            "name": "鳥良商店 新宿区役所前店",
+            "name_kana": "トリヨシショウテン シンジュククヤクショマエテン",
+            "latitude": "35.693385",
+            "longitude": "139.703769",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/36scmssh0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2522/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/36scmssh0000/t_0o0t.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/36scmssh0000/t_0o0u.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2522&q=6"
+            },
+            "address": "〒160-0021 東京都新宿区歌舞伎町1-2-2 1F",
+            "tel": "050-3461-5101",
+            "tel_sub": "03-5291-8851",
+            "fax": "03-5291-8852",
+            "opentime": " 24時間営業",
+            "holiday": "年中無休",
+            "access": {
+                "line": "地下鉄丸ノ内線",
+                "station": "新宿駅",
+                "station_exit": "B10番出口",
+                "walk": "3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2115",
+                "areaname_s": "新宿東口・歌舞伎町",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 9
+            },
+            "id": "g111311",
+            "update_date": "2020-09-01T02:06:31+09:00",
+            "name": "鳥良商店 南池袋店",
+            "name_kana": "トリヨシショウテン ミナミイケブクロテン",
+            "latitude": "35.727978",
+            "longitude": "139.712765",
+            "category": "鶏料理・串料理・鍋料理",
+            "url": "https://r.gnavi.co.jp/g111311/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111311/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/g111311/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/g111311/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/ejzstzjd0000/t_0nks.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/ejzstzjd0000/t_0nkt.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111311&q=6"
+            },
+            "address": "〒171-0022 東京都豊島区南池袋1-20-1 横田ビル1･2F",
+            "tel": "050-3490-8497",
+            "tel_sub": "03-5979-7766",
+            "fax": "03-5979-7991",
+            "opentime": " 11:30～23:00(L.O.22:00、ドリンクL.O.22:00)(8月3日から31日の間時間短縮営業を行います。  ご理解、ご協力の程、宜しくお願い致します。)",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ",
+                "station": "池袋駅",
+                "station_exit": "",
+                "walk": "3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2261",
+                "areaname_s": "西武東口・南池袋",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3480,
+            "lunch": 730,
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン",
+            "e_money": "楽天Edy,Apple Pay,PayPay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 10
+            },
+            "id": "gd4u688",
+            "update_date": "2020-08-08T00:34:23+09:00",
+            "name": "鳥良商店 JR町田駅ターミナル口店",
+            "name_kana": "トリヨシショウテン ジェイアールマチダエキターミナルグチテン",
+            "latitude": "35.541150",
+            "longitude": "139.448590",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/frvr90ch0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u688/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/frvr90ch0000/t_0ocb.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/frvr90ch0000/t_0occ.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u688&q=6"
+            },
+            "address": "〒194-0013 東京都町田市原町田4-6-1 原町田KSビル1・2F",
+            "tel": "050-3491-0572",
+            "tel_sub": "042-709-5535",
+            "fax": "042-709-5536",
+            "opentime": " 11:30～翌5:00",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ横浜線",
+                "station": "町田駅",
+                "station_exit": "",
+                "walk": "3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2929",
+                "areaname_s": "町田",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 11
+            },
+            "id": "g111379",
+            "update_date": "2020-09-04T00:52:42+09:00",
+            "name": "鳥良商店 西新宿1丁目店",
+            "name_kana": "トリヨシショウテン ニシシンジュクイッチョウメテン",
+            "latitude": "35.688668",
+            "longitude": "139.697237",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/g111379/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111379/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/2c0jhhr60000/t_0pkl.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/2c0jhhr60000/t_0pkm.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111379&q=6"
+            },
+            "address": "〒160-0023 東京都新宿区西新宿1-15-6 NASAビル1・2F",
+            "tel": "050-3462-9344",
+            "tel_sub": "03-5325-1361",
+            "fax": "03-5325-1362",
+            "opentime": " 11:30～翌5:00(L.O.4:00)",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ",
+                "station": "新宿駅",
+                "station_exit": "",
+                "walk": "3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2120",
+                "areaname_s": "新宿西口・都庁前",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3500,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 12
+            },
+            "id": "get2531",
+            "update_date": "2020-09-01T02:03:16+09:00",
+            "name": "鳥良商店 新橋店",
+            "name_kana": "トリヨシショウテン シンバシテン",
+            "latitude": "35.667539",
+            "longitude": "139.754982",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/cju7g1470000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2531/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/cju7g1470000/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/get2531/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/cju7g1470000/t_0nxz.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/cju7g1470000/t_0ny0.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2531&q=6"
+            },
+            "address": "〒105-0004 東京都港区新橋2-12-2 HK新橋ビル1F",
+            "tel": "050-3373-6044",
+            "tel_sub": "03-3500-3801",
+            "fax": "03-3500-3802",
+            "opentime": " 11:30～翌5:00(12月31日、1月１日、1月２日は  閉店させて頂きます。)",
+            "holiday": "不定休日あり\n※12月31日、1月１日、1月２日は  閉店させて頂きます。",
+            "access": {
+                "line": "都営三田線",
+                "station": "内幸町駅",
+                "station_exit": "A1番出口",
+                "walk": "2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2107",
+                "areaname_s": "新橋",
+                "category_code_l": [
+                    "RSFST09000",
+                    "RSFST06000"
+                ],
+                "category_name_l": [
+                    "居酒屋",
+                    "焼き鳥・肉料理・串料理"
+                ],
+                "category_code_s": [
+                    "RSFST09004",
+                    "RSFST06004"
+                ],
+                "category_name_s": [
+                    "居酒屋",
+                    "鶏料理(鳥料理)"
+                ]
+            },
+            "budget": 2500,
+            "party": 3000,
+            "lunch": 790,
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 13
+            },
+            "id": "gd4u673",
+            "update_date": "2020-08-08T01:15:48+09:00",
+            "name": "鳥良商店 八王子駅前銀座通り店",
+            "name_kana": "トリヨシショウテン ハチオウジエキマエギンザドオリテン",
+            "latitude": "35.657955",
+            "longitude": "139.337826",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/e19c1sd70000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u673/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/e19c1sd70000/t_0ob3.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/e19c1sd70000/t_0ob4.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u673&q=6"
+            },
+            "address": "〒192-0082 東京都八王子市東町12-6 OS八王子プラザビル1F",
+            "tel": "050-3462-9423",
+            "tel_sub": "042-656-8161",
+            "fax": "042-656-8162",
+            "opentime": " 24時間営業",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ",
+                "station": "八王子駅",
+                "station_exit": "北口",
+                "walk": "5",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "－鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく－\n看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。\n◆ウーバーイーツでデリバリー始めました\n看板メニューの手羽先や唐揚げなど、人気の商品をご家庭でお楽しみいただけます。\nお弁当:チキンカツ弁当やミックス弁当など980円～\n手羽先:名物の手羽先唐揚げ(5歩入り) 680円\n唐揚げ:自慢のから揚げを3種類の味でご用意 680円～\n◆コロナウイルス対策\n弊社独自で「大切なお客様へ10の取組み」を策定して、\n① 従業員のマスク着用の推奨\n② アルコール消毒液の設置\n③ テーブルの間隔を空けてご案内\nなど10個の取り組みを実施しております。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2288",
+                "areaname_s": "八王子",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 14
+            },
+            "id": "gd4u691",
+            "update_date": "2020-08-08T00:49:10+09:00",
+            "name": "鳥良商店 浅草すしや通り店",
+            "name_kana": "トリヨシショウテン アサクサスシヤトオリテン",
+            "latitude": "35.712066",
+            "longitude": "139.792992",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/sdkkpfaf0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u691/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/sdkkpfaf0000/t_0obq.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/sdkkpfaf0000/t_0obr.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u691&q=6"
+            },
+            "address": "〒111-0032 東京都台東区浅草1-12-9 東京会館1F",
+            "tel": "050-3464-9376",
+            "tel_sub": "03-5830-0561",
+            "fax": "03-5830-0562",
+            "opentime": " 24時間営業",
+            "holiday": "年中無休",
+            "access": {
+                "line": "つくばエクスプレス",
+                "station": "浅草駅",
+                "station_exit": "A1番出口",
+                "walk": "2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2205",
+                "areaname_s": "浅草",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 15
+            },
+            "id": "gd4u667",
+            "update_date": "2020-08-08T01:05:28+09:00",
+            "name": "鳥良商店 有楽町日比谷店",
+            "name_kana": "トリヨシショウテン ユウラクチョウヒビヤテン",
+            "latitude": "35.673205",
+            "longitude": "139.760912",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/1m7y2f9w0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u667/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/1m7y2f9w0000/t_0obo.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/1m7y2f9w0000/t_0obp.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u667&q=6"
+            },
+            "address": "〒100-0006 東京都千代田区有楽町2-1-11",
+            "tel": "050-3467-1695",
+            "tel_sub": "03-5510-7701",
+            "fax": "03-5510-7702",
+            "opentime": " 24時間営業",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ",
+                "station": "有楽町駅",
+                "station_exit": "",
+                "walk": "5",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2106",
+                "areaname_s": "有楽町・日比谷",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 16
+            },
+            "id": "gd4u609",
+            "update_date": "2020-08-08T00:40:11+09:00",
+            "name": "鳥良商店 阿佐ヶ谷店",
+            "name_kana": "トリヨシショウテン アサガヤテン",
+            "latitude": "35.704162",
+            "longitude": "139.637149",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/jc1n8t4n0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u609/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/jc1n8t4n0000/t_0pjl.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/jc1n8t4n0000/t_0pjm.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u609&q=6"
+            },
+            "address": "〒166-0004 東京都杉並区阿佐ヶ谷南1-47-14",
+            "tel": "050-3466-1469",
+            "tel_sub": "03-5305-4781",
+            "fax": "",
+            "opentime": " 11:30～翌5:00",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ",
+                "station": "阿佐ケ谷駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2220",
+                "areaname_s": "高円寺",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3500,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 17
+            },
+            "id": "g111304",
+            "update_date": "2020-08-08T00:49:46+09:00",
+            "name": "鳥良商店 吉祥寺北口店",
+            "name_kana": "トリヨシショウテン キチジョウジキタグチテン",
+            "latitude": "35.704326",
+            "longitude": "139.580580",
+            "category": "大衆酒場鳥料理",
+            "url": "https://r.gnavi.co.jp/g111304/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111304/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/d2nz34mj0000/t_0oau.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/d2nz34mj0000/t_0oav.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111304&q=6"
+            },
+            "address": "〒180-0004 東京都武蔵野市吉祥寺本町1-14-8 ビレッジ102 B1",
+            "tel": "050-3464-5180",
+            "tel_sub": "0422-23-4567",
+            "fax": "0422-23-4578",
+            "opentime": " 24時間営業",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ",
+                "station": "吉祥寺駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "◆ウーバーイーツでデリバリー始めました\n看板メニューの手羽先や唐揚げなど、人気の商品をご家庭でお楽しみいただけます。\n『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2276",
+                "areaname_s": "吉祥寺",
+                "category_code_l": [
+                    "RSFST09000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "居酒屋",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST09004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "居酒屋",
+                    "和食 その他"
+                ]
+            },
+            "budget": 2800,
+            "party": "",
+            "lunch": 800,
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 18
+            },
+            "id": "gd4u690",
+            "update_date": "2020-09-01T13:23:46+09:00",
+            "name": "鳥良商店 東大和市駅前店",
+            "name_kana": "トリヨシショウテン ヒガシヤマトシエキマエテン",
+            "latitude": "35.734317",
+            "longitude": "139.435193",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/58c3meb90000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u690/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/58c3meb90000/t_0plf.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/58c3meb90000/t_0plg.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u690&q=6"
+            },
+            "address": "〒207-0013 東京都東大和市向原6-1408-33 1・2F",
+            "tel": "050-3463-1707",
+            "tel_sub": "042-590-1621",
+            "fax": "042-590-1622",
+            "opentime": " 11:30～翌5:00(L.O.4:00、ドリンクL.O.4:00)",
+            "holiday": "年中無休",
+            "access": {
+                "line": "西武拝島線",
+                "station": "東大和市駅",
+                "station_exit": "",
+                "walk": "3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。\n！！！！！翌朝5時まで営業中！！！！！喫煙ブースございます！！！！！\n2020年7/5 更新\n\n※当店はタイムリーに店舗状況をお届け致しております！"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2286",
+                "areaname_s": "立川",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 2500,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "楽天Edy,Suica,PASMO,ICOCA,iD,QUICPay,Kitaca,PayPay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 19
+            },
+            "id": "get2520",
+            "update_date": "2020-08-08T00:39:34+09:00",
+            "name": "鳥良商店 国際フォーラム横店",
+            "name_kana": "トリヨシショウテン コクサイフォーラムヨコテン",
+            "latitude": "35.677058",
+            "longitude": "139.765212",
+            "category": "鶏料理・串料理・鍋料理",
+            "url": "https://r.gnavi.co.jp/fz5yuf2k0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2520/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/fz5yuf2k0000/t_0o7j.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/fz5yuf2k0000/t_0o7k.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2520&q=6"
+            },
+            "address": "〒100-0005 東京都千代田区丸の内3-7-5 1F",
+            "tel": "050-3461-0684",
+            "tel_sub": "03-6212-3755",
+            "fax": "03-6212-3756",
+            "opentime": " ランチ・ディナー：11:30～23:00(L.O.22:00、ドリンクL.O.22:00)(東京都から都内飲食店への時短営業要請を受け、8/3より営業時間を短縮して営業しております！お客様と従業員を守る為の10の取り組み（席間隔の確保・１作業毎の消毒作業実施・従業員の検温と健康状態の確認等々）を行いながら、感染防止に細心の注意を払いながら営業しております！安心してご飲食を楽しんで頂ける様、従業員一同心よりお待ちしております！)",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ",
+                "station": "東京駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2106",
+                "areaname_s": "有楽町・日比谷",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3480,
+            "lunch": 890,
+            "credit_card": "VISA,MasterCard,アメリカン・エキスプレス,JCB",
+            "e_money": "楽天Edy,Suica,PASMO,iD,QUICPay,au WALLET,PayPay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 20
+            },
+            "id": "gd4u699",
+            "update_date": "2020-09-01T02:59:04+09:00",
+            "name": "鳥良商店 神田西口店",
+            "name_kana": "トリヨシショウテン カンダニシグチテン",
+            "latitude": "35.691123",
+            "longitude": "139.769619",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/f0yutvsn0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u699/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/f0yutvsn0000/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/gd4u699/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/f0yutvsn0000/t_0oat.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/f0yutvsn0000/t_0oau.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u699&q=6"
+            },
+            "address": "〒101-0047 東京都千代田区内神田3-11-2 1・2F",
+            "tel": "050-3462-6257",
+            "tel_sub": "03-5298-1881",
+            "fax": "03-5298-1882",
+            "opentime": " ランチ・ディナー：11:30～翌5:00(L.O.4:00、ドリンクL.O.4:00)(12月31日、1月1日は閉店させて頂きます。)",
+            "holiday": "不定休日あり\n※12月31日、1月1日は閉店させて頂きます。",
+            "access": {
+                "line": "ＪＲ",
+                "station": "神田駅",
+                "station_exit": "西口",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2142",
+                "areaname_s": "神田",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 21
+            },
+            "id": "get2530",
+            "update_date": "2020-09-01T01:42:10+09:00",
+            "name": "鳥良商店 神田小川町店",
+            "name_kana": "トリヨシショウテン カンダオガワマチテン",
+            "latitude": "35.695055",
+            "longitude": "139.766008",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/1m2435fr0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2530/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/1m2435fr0000/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/get2530/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/1m2435fr0000/t_0o1b.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/1m2435fr0000/t_0o1c.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2530&q=6"
+            },
+            "address": "〒101-0052 東京都千代田区神田小川町1-6-3 B.D.A神田小川町ビル 1・2F",
+            "tel": "050-3491-8560",
+            "tel_sub": "03-5209-8821",
+            "fax": "03-5209-8822",
+            "opentime": " 11:30～23:00(L.O.22:00、ドリンクL.O.22:00)(12月31日、1月1日、1月2日は閉店させて頂きます。)",
+            "holiday": "不定休日あり\n※12月31日、1月1日、1月2日は閉店させて頂きます。",
+            "access": {
+                "line": "都営新宿線",
+                "station": "小川町駅",
+                "station_exit": "A7番出口",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2184",
+                "areaname_s": "御茶ノ水",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3000,
+            "lunch": 730,
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 22
+            },
+            "id": "gd4u693",
+            "update_date": "2020-08-08T01:09:25+09:00",
+            "name": "鳥良商店 花小金井北口店",
+            "name_kana": "トリヨシショウテン ハナコガネイキタグチテン",
+            "latitude": "35.726937",
+            "longitude": "139.512945",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/mg6wbt1a0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/gd4u693/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/mg6wbt1a0000/t_0pqg.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/mg6wbt1a0000/t_0pqh.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=gd4u693&q=6"
+            },
+            "address": "〒187-0002 東京都小平市花小金井1-8-5 清川第三ビル1F",
+            "tel": "050-3464-0027",
+            "tel_sub": "042-451-8551",
+            "fax": "042-451-8552",
+            "opentime": " 11:30～22:00",
+            "holiday": "年中無休",
+            "access": {
+                "line": "西武新宿線",
+                "station": "花小金井駅",
+                "station_exit": "",
+                "walk": "2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2279",
+                "areaname_s": "小平",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 2500,
+            "party": 3000,
+            "lunch": 1000,
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 23
+            },
+            "id": "get2506",
+            "update_date": "2020-08-08T00:55:42+09:00",
+            "name": "鳥良商店 荻窪南口店",
+            "name_kana": "トリヨシショウテン オギクボミナミグチテン",
+            "latitude": "35.703886",
+            "longitude": "139.621190",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/5fnefhw80000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/get2506/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/5fnefhw80000/t_0pc2.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/5fnefhw80000/t_0pc3.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=get2506&q=6"
+            },
+            "address": "〒167-0051 東京都杉並区荻窪5-30-9 1・2F",
+            "tel": "050-3462-9435",
+            "tel_sub": "03-5347-9381",
+            "fax": "03-5347-9382",
+            "opentime": " 11:30～22:00(L.O.21:00)",
+            "holiday": "年中無休",
+            "access": {
+                "line": "ＪＲ中央線",
+                "station": "荻窪駅",
+                "station_exit": "南口",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2219",
+                "areaname_s": "荻窪",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": "",
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 24
+            },
+            "id": "g111301",
+            "update_date": "2020-09-01T00:26:00+09:00",
+            "name": "鳥良商店 原宿店",
+            "name_kana": "トリヨシショウテン ハラジュクテン",
+            "latitude": "35.669134",
+            "longitude": "139.706912",
+            "category": "鶏料理",
+            "url": "https://r.gnavi.co.jp/g111301/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111301/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "https://r.gnavi.co.jp/g111301/coupon/",
+                "mobile": "http://mobile.gnavi.co.jp/shop/g111301/coupon"
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/gzfwgjr50000/t_0nvn.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/gzfwgjr50000/t_0nvo.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111301&q=6"
+            },
+            "address": "〒150-0001 東京都渋谷区神宮前4-28-21 ハーモニー原宿ビル1F",
+            "tel": "050-3466-6873",
+            "tel_sub": "03-3470-3901",
+            "fax": "03-5414-7671",
+            "opentime": " ランチ：11:30～14:00、ディナー：14:00～24:00(L.O.23:00、ドリンクL.O.23:00)",
+            "holiday": "年中無休\n※（元旦除く）",
+            "access": {
+                "line": "ＪＲ",
+                "station": "原宿駅",
+                "station_exit": "",
+                "walk": "5",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2129",
+                "areaname_s": "原宿",
+                "category_code_l": [
+                    "RSFST09000",
+                    "RSFST06000"
+                ],
+                "category_name_l": [
+                    "居酒屋",
+                    "焼き鳥・肉料理・串料理"
+                ],
+                "category_code_s": [
+                    "RSFST09004",
+                    "RSFST06004"
+                ],
+                "category_name_s": [
+                    "居酒屋",
+                    "鶏料理(鳥料理)"
+                ]
+            },
+            "budget": 2500,
+            "party": 3000,
+            "lunch": "",
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 1,
+                "pc_coupon": 1
+            }
+        },
+        {
+            "@attributes": {
+                "order": 25
+            },
+            "id": "g111396",
+            "update_date": "2020-08-28T16:32:31+09:00",
+            "name": "鳥良商店 上野6丁目店",
+            "name_kana": "トリヨシショウテン ウエノロクチョウメテン",
+            "latitude": "35.710066",
+            "longitude": "139.775960",
+            "category": "手羽先唐揚げ専門店",
+            "url": "https://r.gnavi.co.jp/g111396/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/g111396/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/a2t8ub2d0000/t_0pgs.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/a2t8ub2d0000/t_0pgt.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=g111396&q=6"
+            },
+            "address": "〒110-0005 東京都台東区上野6-7-12 広瀬ビルB1～2F",
+            "tel": "050-3466-4815",
+            "tel_sub": "03-5812-2751",
+            "fax": "",
+            "opentime": " 11:30～翌5:00(L.O.4:00、ドリンクL.O.4:00)",
+            "holiday": "無",
+            "access": {
+                "line": "ＪＲ",
+                "station": "上野駅",
+                "station_exit": "",
+                "walk": "4",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "◆8月3日(月)以降の営業時間につきましては、当社ホームページよりご確認をお願い致します",
+                "pr_long": "『鶏料理屋ならではの商品を、美味しく気軽にお楽しみいただく』をコンセプトに、看板料理手羽先唐揚はもちろんのこと、鶏くわ焼き、鶏そばといった鶏料理の魅力を味わい尽くせるラインナップが自慢です。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2198",
+                "areaname_s": "上野",
+                "category_code_l": [
+                    "RSFST06000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "焼き鳥・肉料理・串料理",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST06004",
+                    "RSFST01015"
+                ],
+                "category_name_s": [
+                    "鶏料理(鳥料理)",
+                    "和食 その他"
+                ]
+            },
+            "budget": 3000,
+            "party": 3500,
+            "lunch": 1000,
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
+            "e_money": "楽天Edy,Suica,PASMO,iD,QUICPay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        }
+    ]
+}

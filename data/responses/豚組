@@ -1,0 +1,310 @@
+{
+    "@attributes": {
+        "api_version": "v3"
+    },
+    "total_hit_count": 4,
+    "hit_per_page": 100,
+    "page_offset": 1,
+    "rest": [
+        {
+            "@attributes": {
+                "order": 0
+            },
+            "id": "a585203",
+            "update_date": "2020-08-17T16:33:57+09:00",
+            "name": "とんかつ 豚組食堂",
+            "name_kana": "トンカツブタグミショクドウ",
+            "latitude": "35.661814",
+            "longitude": "139.730026",
+            "category": "こだわりの肉厚とんかつ",
+            "url": "https://r.gnavi.co.jp/a585203/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/a585203/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/5c5u6jk30000/t_000d.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/5c5u6jk30000/t_000e.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=a585203&q=6"
+            },
+            "address": "〒106-0032 東京都港区六本木6-2-31 六本木ヒルズノースタワーB1",
+            "tel": "03-3408-6751",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "月～日 11:00～23:00(L.O.22:30)",
+            "holiday": "無",
+            "access": {
+                "line": "地下鉄日比谷線",
+                "station": "六本木駅",
+                "station_exit": "1c出口",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "2700",
+            "pr": {
+                "pr_short": "≪★六本木ヒルズ内に豚組食堂が4/28OPEN≫ 西麻布のとんかつ人気店の豚組が親しみやすい食堂として 究極のとんかつをリーズナブルにご提供します！！",
+                "pr_long": "誰からも愛される食堂を目指して！\n豚組食堂が六本木ヒルズ内に新規出店します★\nB級グルメと思われがちなとんかつも、素材や調理に徹底してこだわれば、こんなに美味しい「ごちそう」に。\n西麻布豚組のとんかつが気軽に楽しめる食堂です。\n全国の銘柄豚をリーズナブルに。そして、シンプルにお楽しみ下さい。\n≪近隣姉妹店情報≫ \n西麻布 とんかつ西麻布豚組 西麻布交差点すぐの一軒家のとんかつ屋\n六本木 豚組しゃぶ庵 国立美術館からすぐの銘柄豚のしゃぶしゃぶ屋"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2132",
+                "areaname_s": "六本木（麻布方面）",
+                "category_code_l": [
+                    "RSFST01000",
+                    "RSFST01000"
+                ],
+                "category_name_l": [
+                    "和食",
+                    "和食"
+                ],
+                "category_code_s": [
+                    "RSFST01005",
+                    "RSFST01001"
+                ],
+                "category_name_s": [
+                    "とんかつ（トンカツ）",
+                    "定食・食事処"
+                ]
+            },
+            "budget": 2000,
+            "party": "",
+            "lunch": 1300,
+            "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,銀聯,MUFG",
+            "e_money": "楽天Edy,Suica,PASMO,ICOCA,iD,SUGOCA,Kitaca,TOICA,manaca,nimoca,はやかけん,QUICPay＋,Origami Pay",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 1
+            },
+            "id": "a585202",
+            "update_date": "2020-06-30T15:02:29+09:00",
+            "name": "豚組 しゃぶ庵",
+            "name_kana": "ブタグミ シャブアン",
+            "latitude": "35.664898",
+            "longitude": "139.727871",
+            "category": "究極の豚しゃぶ",
+            "url": "https://r.gnavi.co.jp/a585202/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/a585202/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/rukgdnr20000/t_004s.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=a585202&q=6"
+            },
+            "address": "〒106-0032 東京都港区六本木7-5-11 2F",
+            "tel": "03-5770-4821",
+            "tel_sub": "",
+            "fax": "03-5770-4821",
+            "opentime": "月～金 ディナー：18:00～23:30(L.O.22:30、ドリンクL.O.23:00)\n土・日・祝 ディナー：17:00～23:00(L.O.22:00)\n月～日 ランチ：11:30～14:30(L.O.14:00)(お席の混雑状況などにより、早く閉めさせていただく場合がございます。)",
+            "holiday": "無",
+            "access": {
+                "line": "地下鉄日比谷線",
+                "station": "六本木駅",
+                "station_exit": "4a出口",
+                "walk": "5",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "■個室は2名から12名、コース料理でごゆっくり！ ■広間は最大60名まで！忘年会・女子会にオススメ【ご宴会飲み放題付きプラン】も！",
+                "pr_long": "★★六本木ミッドタウンから100m。国立新美術館隣の豚しゃぶ専門店です★★\n◆接待やデートに最適な、\n『しゃぶ庵コース』\nお一人様 4,600円～\n小鉢＋松花堂＋豚しゃぶ（お肉＆お野菜）＋お料理＋トンコツしゃぶ麺＋デザート\n豚組ならではの徹底的なこだわり。\n2名様から12名様まで、バリエーション豊かで高級感溢れる個室。\n極上の幸せ感を、是非ご満喫下さい。\n（個室の空き状況は、お気軽にお問い合せ下さい）\n※平日個室はコース料理でのご案内。シンプルセット・食べ放題はご利用いただけません。\n※個室は別途、席料としてお一人さま500円を頂戴いたします。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2121",
+                "areaname_s": "六本木（乃木坂方面）",
+                "category_code_l": [
+                    "RSFST02000",
+                    "RSFST06000"
+                ],
+                "category_name_l": [
+                    "日本料理・郷土料理",
+                    "焼き鳥・肉料理・串料理"
+                ],
+                "category_code_s": [
+                    "RSFST06008",
+                    "RSFST06013"
+                ],
+                "category_name_s": [
+                    "しゃぶしゃぶ",
+                    "豚肉料理"
+                ]
+            },
+            "budget": 5000,
+            "party": 6000,
+            "lunch": 1000,
+            "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 2
+            },
+            "id": "a585201",
+            "update_date": "2020-08-07T15:20:37+09:00",
+            "name": "とんかつ 西麻布 豚組",
+            "name_kana": "トンカツニシアザブ ブタグミ",
+            "latitude": "35.660938",
+            "longitude": "139.722142",
+            "category": "とんかつ専門店",
+            "url": "https://r.gnavi.co.jp/a585201/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/a585201/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/rzm4jfvd0000/t_001h.jpg",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/rzm4jfvd0000/t_001i.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=a585201&q=6"
+            },
+            "address": "〒106-0031 東京都港区西麻布2-24-9",
+            "tel": "03-5466-6775",
+            "tel_sub": "",
+            "fax": "03-5466-6775",
+            "opentime": "火～日 ランチ：11:30～15:00(L.O.14:00)\n火～日 ディナー：18:00～22:00(L.O.21:00)(東京都からの要請に基づきまして、暫くの間営業時間を変更しております。  恐れ入りますが、ご理解のほどお願いしたします。)",
+            "holiday": "毎週月曜日\n※※月曜祝日の場合営業し翌火曜休み",
+            "access": {
+                "line": "地下鉄日比谷線",
+                "station": "六本木駅",
+                "station_exit": "2番出口",
+                "walk": "8",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "厚さ３cm！ 驚きのジューシーとんかつ！！",
+                "pr_long": "「究極のとんかつ」がここにある。豚肉はもちろん、油、パン粉、ご飯、キャベツそしておもてなしに至るまで、全てに徹底的にこだわっております。イベリコ豚、今帰仁アグー豚、ＴＯＫＹＯ Ｘ、梅山豚など毎日替わる特別仕入れの豚肉を食べ比べていただける『豚組膳』をご用意。昭和の木造一軒屋をアンティークインテリアで改装した大人の空間をお楽しみ下さい。"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2138",
+                "areaname_s": "西麻布",
+                "category_code_l": [
+                    "RSFST01000",
+                    ""
+                ],
+                "category_name_l": [
+                    "和食",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST01005",
+                    ""
+                ],
+                "category_name_s": [
+                    "とんかつ（トンカツ）",
+                    ""
+                ]
+            },
+            "budget": 3000,
+            "party": 4000,
+            "lunch": 1200,
+            "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン,MUFG",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 3
+            },
+            "id": "7463312",
+            "update_date": "2019-01-10T05:05:56+09:00",
+            "name": "豚組しゃぶ庵 名古屋店",
+            "name_kana": "ブタグミシャブアンナゴヤテン",
+            "latitude": "35.172111",
+            "longitude": "136.882720",
+            "category": "しゃぶしゃぶ",
+            "url": "https://r.gnavi.co.jp/ed9jmv100000/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/7463312/?ak=9b9qOa6Vs33uQ8KhMyrABLuHYAegxPxVl5x9wObFwQ0%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=7463312&q=6"
+            },
+            "address": "〒450-6613 愛知県名古屋市中村区名駅1-1-3 JRゲートタワー13F",
+            "tel": "052-756-2758",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "",
+            "holiday": "無",
+            "access": {
+                "line": "名古屋市営東山線",
+                "station": "名古屋駅",
+                "station_exit": "10番口",
+                "walk": "徒歩1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "",
+                "pr_long": ""
+            },
+            "code": {
+                "areacode": "AREA130",
+                "areaname": "中部",
+                "prefcode": "PREF23",
+                "prefname": "愛知県",
+                "areacode_s": "AREAS4105",
+                "areaname_s": "名駅1・2・3丁目",
+                "category_code_l": [
+                    "RSFST02000",
+                    ""
+                ],
+                "category_name_l": [
+                    "日本料理・郷土料理",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST06008",
+                    ""
+                ],
+                "category_name_s": [
+                    "しゃぶしゃぶ",
+                    ""
+                ]
+            },
+            "budget": "",
+            "party": "",
+            "lunch": "",
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        }
+    ]
+}
