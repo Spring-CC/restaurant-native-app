@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 import increment from './reducers/increment';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import Drawer from './components/Drawer'
 
 const fetchFonts = () => {
   return Font.loadAsync({
