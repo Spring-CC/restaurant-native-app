@@ -46,7 +46,6 @@ export default function Home() {
                     onPress={() => dispatch(increment())}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
-                        onPress={() => dispatch(increment())}
                     >No</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -54,7 +53,6 @@ export default function Home() {
                     onPress={() => console.log("yes pressed")}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
-                        onPress={() => console.log("yes pressed")}
                     >Yes</Text>
                 </TouchableOpacity>
             </View>
