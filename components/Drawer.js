@@ -50,7 +50,7 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
-        {/* <Drawer.Screen name="Select" component={Checkbox} /> */}
+        <Drawer.Screen name="Select" component={Checkbox} />
         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
