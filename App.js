@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import Home from "./components/Home";
 import About from "./components/About";
 import Details from "./components/Details";
+import Auth from "./components/Auth";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import increment from "./reducers/increment";
@@ -24,6 +25,7 @@ const fetchFonts = () => {
 };
 
 const store = createStore(increment);
+
 
 // const AppNavigator = createStackNavigator(
 //   {
