@@ -1,15 +1,46 @@
 import * as React from "react";
-import { Button, View } from "react-native";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import { Button, View , Text, StyleSheet} from "react-native";
 import { createAppContainer } from 'react-navigation';
-import { NavigationContainer } from "@react-navigation/native";
-import Icon from "react-native-vector-icons/FontAwesome";
+import { createDrawerNavigator } from "react-navigation-drawer";
+// import Icon from "react-native-vector-icons/FontAwesome";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Home from "./Home";
 import About from "./About";
 import Details from "./Details";
 import Userinfo from "./Userinfo";
+import Preferences from "./Preferences"
+
+
+
+const Drawer = createDrawerNavigator({
+  Home: {
+    screen: Home,
+  },
+
+  Login: {
+    screen: Login,
+  },
+
+  CreateAccount: {
+    screen: SignUp,
+  },
+  About: {
+    screen: About,
+  },
+  Details: {
+   screen: Details,
+  },
+  Profile: {
+    screen: Userinfo,
+   },
+   Preferences: {
+    screen: Preferences,
+  },
+});
+
+export default createAppContainer(Drawer);
+
 
 // function HomeScreen({ navigation }) {
 //   return (
@@ -50,29 +81,6 @@ import Userinfo from "./Userinfo";
 //   );
 // }
 
-const Drawer = createDrawerNavigator({
-  Home: {
-    screen: Home,
-  },
-
-  Login: {
-    screen: Login,
-  },
-
-  CreateAccount: {
-    screen: SignUp,
-  },
-  About: {
-    screen: About,
-  },
-  Details: {
-   screen: Details,
-  },
-  Profile: {
-    screen: Userinfo,
-   }
-});
-
 // export default function Sidebar() {
 //   return (
 //     <NavigationContainer>
@@ -85,4 +93,3 @@ const Drawer = createDrawerNavigator({
 //   );
 // }
 
-export default createAppContainer(Drawer);
