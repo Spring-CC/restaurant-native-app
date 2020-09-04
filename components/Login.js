@@ -1,16 +1,43 @@
-import React from 'react';
-import { Text, View, Button } from 'react-native';
+import React, {useState} from 'react';
+import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
 import login from '../api/dblogin';
-import EmailForm from "./EmailForm"
+
+
 
 export default function Login({ navigation }) {
 
+  const [email, onChangeEmail] = useState('');
+  const [password, onChangePassword] = useState('');
+
+  const callBackFunc = (err) => {
+    return err;
+  }
+
 return (
-  <EmailForm
-  buttonText="Log in"
-  onSubmit={login}
-  onAuthentication={() => navigation.navigate('Home')}
->
+  <ScrollView contentContainerStyle={styles.container}>
+  <TextInput
+    style={styles.input}
+    onChangeText={(text) => {
+      onChangeEmail(text);
+      console.log(email);
+    }}
+    value={email}
+    keyboardType="email-address"
+  />
+  <TextInput
+    style={styles.input}
+    onChangeText={(text) => {
+      onChangePassword(text);
+      console.log(password)
+    }}
+    value={password}
+    secureTextEntry
+  />
+  <Button title="Login" onPress={()=>{
+    login(email,password, callBackFunc);
+  }}  />
+
+
   <Button
     title="Create account"
     onPress={() => navigation.navigate('CreateAccount')}
@@ -19,6 +46,21 @@ return (
     title="Go Home"
     onPress={() => navigation.navigate('Home')}
   />
-</EmailForm>
+</ScrollView>
 );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  input: {
+    height: 40,
+    width: 300,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginTop: 20,
+  },
+});

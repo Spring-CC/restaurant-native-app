@@ -22,7 +22,7 @@ function createAccount(user, callback) {
             client.close();
             return callback(err);
           }
-  
+          console.log("Running")
           user.password = hash;
           user.email_verified = false;
           users.insert(user, function (err, inserted) {
