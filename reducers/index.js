@@ -1,8 +1,10 @@
-const reducer = (state = "", action) => {
-    switch (action.type) {
-        default:
-            return state;
-    }
-}
+import incrementReducer from './increment';
+import restaurantReducer from './restaurant';
+import { combineReducers } from "redux";
 
-export default reducer;
+const rootReducer = combineReducers({
+    incrementReducer,
+    restaurantReducer,
+})
+
+export default rootReducer;

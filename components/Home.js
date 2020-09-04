@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../actions";
+import { increment, restaurant } from "../actions";
 import data from '../data/restaurants.json';
 import Nav from './Nav';
 
@@ -28,7 +28,7 @@ export default function Home() {
         fontFamily: "verdana"
     };
 
-    const index = useSelector(state => state);
+    const index = useSelector(state => state.incrementReducer);
     const dispatch = useDispatch();
 
     const restaurants = data.filter((restaurant, idx) => idx === index);
