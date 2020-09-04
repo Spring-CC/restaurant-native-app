@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../actions";
+import { increment, restaurant } from "../actions";
 import data from '../data/restaurants.json';
 import Nav from './Nav';
 
@@ -18,25 +18,30 @@ import Nav from './Nav';
 // );
 // }
 
-export default function Home() {
-  // colours
-  var color1 = "#f94144"; // - Red Salsa
-  var color2 = "#f3722c"; // - Orange Red
+export default function Home({ navigation }) {
 
-  const linkStyle = {
-    fontFamily: "verdana",
-  };
+    var color1 = "#f94144" // - Red Salsa
+    var color2 = "#f3722c" // - Orange Red
 
   const index = useSelector((state) => state);
   const dispatch = useDispatch();
 
-  const restaurants = data.filter((restaurant, idx) => idx === index);
-  const images = [];
-  for (let key in restaurants[0].image_url) {
-    if (restaurants[0].image_url[key] !== "") {
-      images.push(restaurants[0].image_url[key]);
+    const index = useSelector(state => state.incrementReducer);
+    const dispatch = useDispatch();
+
+    const restaurants = data.filter((restaurant, idx) => idx === index);
+    const images = [];
+    for (let key in restaurants[0].image_url) {
+        if (restaurants[0].image_url[key] !== "") {
+            images.push(restaurants[0].image_url[key]);
+        }
     }
   }
+
+    function onPress() {
+        dispatch(restaurant(restaurants))
+        navigation.navigate('Details')
+    }
 
     return (
         <ScrollView style={styles.container}>
@@ -50,7 +55,7 @@ export default function Home() {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttons}
-                    onPress={() => console.log("yes pressed")}>
+                    onPress={() => onPress()}>
                     <Text
                         style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
                     >Yes</Text>
@@ -64,7 +69,6 @@ export default function Home() {
                         circleLoop
                         dotColor={color1}
                         inactiveDotColor={color2}
-                        // autoplay
                         paginationBoxStyle={{
                             position: "absolute",
                             bottom: 0,

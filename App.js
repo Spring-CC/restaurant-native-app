@@ -10,7 +10,7 @@ import Details from "./components/Details";
 import Auth from "./components/Auth";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import increment from "./reducers/increment";
+import rootReducer from './reducers';
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./components/Drawer";
@@ -24,7 +24,7 @@ const fetchFonts = () => {
   });
 };
 
-const store = createStore(increment);
+const store = createStore(rootReducer);
 
 
 // const AppNavigator = createStackNavigator(
