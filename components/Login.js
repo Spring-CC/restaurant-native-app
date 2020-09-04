@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
-import login from '../api/dblogin';
 
 
 
@@ -33,9 +32,7 @@ return (
     value={password}
     secureTextEntry
   />
-  <Button title="Login" onPress={()=>{
-    login(email,password, callBackFunc);
-  }}  />
+ 
 
 
   <Button

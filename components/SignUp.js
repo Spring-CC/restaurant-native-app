@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
-import createAccount from '../api/dbcreate';
 
 export default function SignUp({navigation}) {
 
@@ -36,10 +35,7 @@ return (
     value={password}
     secureTextEntry
   />
-  <Button title="Sign Up" onPress={()=>{
-    createAccount(user, callBackFunc);
-    console.log("done")
-  }}  />
+
 
   <Button
     title="Back to log in"
