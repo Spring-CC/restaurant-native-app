@@ -23,9 +23,6 @@ export default function Home({ navigation }) {
     var color1 = "#f94144" // - Red Salsa
     var color2 = "#f3722c" // - Orange Red
 
-  const index = useSelector((state) => state);
-  const dispatch = useDispatch();
-
     const index = useSelector(state => state.incrementReducer);
     const dispatch = useDispatch();
 
@@ -36,7 +33,6 @@ export default function Home({ navigation }) {
             images.push(restaurants[0].image_url[key]);
         }
     }
-  }
 
     function onPress() {
         dispatch(restaurant(restaurants))
