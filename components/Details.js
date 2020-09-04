@@ -8,7 +8,10 @@ export default function Details() {
 
     return (
         <ScrollView>
-            <Image />
+            <Image
+                source={require('../assets/profile.jpeg')}
+                style={styles.text}
+            />
             <View style={styles.basic_container}>
                 <Text style={styles.text_title}>Basic Details</Text>
                 <Text style={styles.text}>Name:</Text>
@@ -73,5 +76,9 @@ const styles = StyleSheet.create({
     },
     container: {
 
-    }
+    },
+    image: {
+        width: 50,
+        height: 50,
+    },
 });

@@ -1,5 +1,8 @@
 const initialState = [
     {
+        "image_url": {
+            "shop_image1": ""
+        },
         "name": "",
         "name_kana": "",
         "category": "",
