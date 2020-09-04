@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
+// import { StyleSheet, Text, View } from "react-native";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createDrawerNavigator } from "react-navigation-drawer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
@@ -41,7 +41,7 @@ const store = createStore(rootReducer);
 //   }
 // );
 
-// const Navigator = createAppContainer(AppNavigator);
+// const Navigation = createAppContainer(AppNavigator);
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -57,7 +57,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <Navigator />
+      <Navigator/>
     </Provider>
   );
 }
