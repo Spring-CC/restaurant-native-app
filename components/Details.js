@@ -9,7 +9,7 @@ var color1 = "#f94144" // - Red Salsa
 var color2 = "#f3722c" // - Orange Red
 var color3 = "#f8961e" // - Yellow Orange Color Wheel
 var color4 = "#f9c74f" // - Maize Crayola
-var color5 = "#90be6d" // - Pistachio 
+var color5 = "#90be6d" // - Pistachio
 
 export default function Details() {
     return (
