@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
+// import { StyleSheet, Text, View } from "react-native";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createDrawerNavigator } from "react-navigation-drawer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
@@ -10,9 +10,10 @@ import Details from "./components/Details";
 import Auth from "./components/Auth";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import increment from "./reducers/increment";
+import rootReducer from './reducers';
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+import Navigator from "./components/Drawer";
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -23,23 +24,24 @@ const fetchFonts = () => {
   });
 };
 
-const store = createStore(increment);
+const store = createStore(rootReducer);
 
-const AppNavigator = createStackNavigator(
-  {
-    Home: Home,
-    Login: Login,
-    CreateAccount: SignUp,
-    About: About,
-    Details: Details,
-    Auth: Auth,
-  },
-  {
-    initialRouteName: "Auth",
-  }
-);
 
-const Navigator = createAppContainer(AppNavigator);
+// const AppNavigator = createStackNavigator(
+//   {
+//     Home: Home,
+//     Sidebar: Sidebar,
+//     Login: Login,
+//     CreateAccount: SignUp,
+//     About: About,
+//     Details: Details,
+//   },
+//   {
+//     initialRouteName: "Home",
+//   }
+// );
+
+// const Navigation = createAppContainer(AppNavigator);
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
@@ -55,7 +57,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <Navigator />
+      <Navigator/>
     </Provider>
   );
 }
