@@ -14,30 +14,29 @@ import Nav from './Nav';
 //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 //     <Text>Home</Text>
 //     <Button title="Log out" onPress={() => navigation.navigate('Login')} />
-//   </View>  
+//   </View>
 // );
 // }
 
 export default function Home() {
+  // colours
+  var color1 = "#f94144"; // - Red Salsa
+  var color2 = "#f3722c"; // - Orange Red
 
-    // colours
-    var color1 = "#f94144" // - Red Salsa
-    var color2 = "#f3722c" // - Orange Red
+  const linkStyle = {
+    fontFamily: "verdana",
+  };
 
-    const linkStyle = {
-        fontFamily: "verdana"
-    };
+  const index = useSelector((state) => state);
+  const dispatch = useDispatch();
 
-    const index = useSelector(state => state);
-    const dispatch = useDispatch();
-
-    const restaurants = data.filter((restaurant, idx) => idx === index);
-    const images = [];
-    for (let key in restaurants[0].image_url) {
-        if (restaurants[0].image_url[key] !== "") {
-            images.push(restaurants[0].image_url[key]);
-        }
+  const restaurants = data.filter((restaurant, idx) => idx === index);
+  const images = [];
+  for (let key in restaurants[0].image_url) {
+    if (restaurants[0].image_url[key] !== "") {
+      images.push(restaurants[0].image_url[key]);
     }
+  }
 
     return (
         <ScrollView style={styles.container}>
