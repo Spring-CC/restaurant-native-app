@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
-import login from '../api/dblogin';
 
 
 
@@ -13,41 +12,37 @@ export default function Login({ navigation }) {
     return err;
   }
 
-return (
-  <ScrollView contentContainerStyle={styles.container}>
-  <TextInput
-    style={styles.input}
-    onChangeText={(text) => {
-      onChangeEmail(text);
-      console.log(email);
-    }}
-    value={email}
-    keyboardType="email-address"
-  />
-  <TextInput
-    style={styles.input}
-    onChangeText={(text) => {
-      onChangePassword(text);
-      console.log(password)
-    }}
-    value={password}
-    secureTextEntry
-  />
-  <Button title="Login" onPress={()=>{
-    login(email,password, callBackFunc);
-  }}  />
+  return (
+    <ScrollView contentContainerStyle={styles.container}>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => {
+          onChangeEmail(text);
+          console.log(email);
+        }}
+        value={email}
+        keyboardType="email-address"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => {
+          onChangePassword(text);
+          console.log(password)
+        }}
+        value={password}
+        secureTextEntry
+      />
 
-
-  <Button
-    title="Create account"
-    onPress={() => navigation.navigate('CreateAccount')}
-  />
-    <Button
-    title="Go Home"
-    onPress={() => navigation.navigate('Home')}
-  />
-</ScrollView>
-);
+      <Button
+        title="Create account"
+        onPress={() => navigation.navigate('CreateAccount')}
+      />
+      <Button
+        title="Go Home"
+        onPress={() => navigation.navigate('Home')}
+      />
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
