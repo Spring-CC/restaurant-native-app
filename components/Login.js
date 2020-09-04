@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet, TextInput, Button, Text } from 'react-native';
+import React, {useState} from 'react';
+import { ScrollView, StyleSheet, TextInput, Button, Text, Separator } from 'react-native';
+
+
 
 export default function Login({ navigation }) {
 
@@ -10,37 +12,43 @@ export default function Login({ navigation }) {
     return err;
   }
 
-  return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <TextInput
-        style={styles.input}
-        onChangeText={(text) => {
-          onChangeEmail(text);
-          console.log(email);
-        }}
-        value={email}
-        keyboardType="email-address"
-      />
-      <TextInput
-        style={styles.input}
-        onChangeText={(text) => {
-          onChangePassword(text);
-          console.log(password)
-        }}
-        value={password}
-        secureTextEntry
-      />
+return (
+  <ScrollView contentContainerStyle={styles.container}>
+  <TextInput
+    style={styles.input}
+    onChangeText={(text) => {
+      onChangeEmail(text);
+      console.log(email);
+    }}
+    value={email}
+    keyboardType="email-address"
+  />
+  <TextInput
+    style={styles.input}
+    onChangeText={(text) => {
+      onChangePassword(text);
+      console.log(password)
+    }}
+    value={password}
+    secureTextEntry
+  />
+ 
+  <Button title="Login" />
 
-      <Button
-        title="Create account"
-        onPress={() => navigation.navigate('CreateAccount')}
-      />
-      <Button
-        title="Go Home"
-        onPress={() => navigation.navigate('Home')}
-      />
-    </ScrollView>
-  );
+
+  <Button
+  style={styles.button}
+    title="Create account"
+    onPress={() => navigation.navigate('CreateAccount')}
+  />
+  
+    <Button
+    style={styles.button}
+    title="Go Home"
+    onPress={() => navigation.navigate('Home')}
+  />
+</ScrollView>
+);
 }
 
 const styles = StyleSheet.create({
@@ -48,6 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: '10',
   },
   input: {
     height: 40,
@@ -55,5 +64,9 @@ const styles = StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     marginTop: 20,
+  },
+  button: {
+    padding: '10',
+    color: "#841584"
   },
 });

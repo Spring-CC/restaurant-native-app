@@ -14,7 +14,7 @@ import Nav from './Nav';
 //     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 //     <Text>Home</Text>
 //     <Button title="Log out" onPress={() => navigation.navigate('Login')} />
-//   </View>  
+//   </View>
 // );
 // }
 
@@ -23,9 +23,8 @@ export default function Home({ navigation }) {
     var color1 = "#f94144" // - Red Salsa
     var color2 = "#f3722c" // - Orange Red
 
-    const linkStyle = {
-        fontFamily: "verdana"
-    };
+  const index = useSelector((state) => state);
+  const dispatch = useDispatch();
 
     const index = useSelector(state => state.incrementReducer);
     const dispatch = useDispatch();
@@ -37,6 +36,7 @@ export default function Home({ navigation }) {
             images.push(restaurants[0].image_url[key]);
         }
     }
+  }
 
     function onPress() {
         dispatch(restaurant(restaurants))

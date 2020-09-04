@@ -1,0 +1,310 @@
+{
+    "@attributes": {
+        "api_version": "v3"
+    },
+    "total_hit_count": 4,
+    "hit_per_page": 100,
+    "page_offset": 1,
+    "rest": [
+        {
+            "@attributes": {
+                "order": 0
+            },
+            "id": "a858205",
+            "update_date": "2020-01-07T05:35:42+09:00",
+            "name": "TACO BELL アクアシティお台場店",
+            "name_kana": "タコベル アクアシティオダイバテン",
+            "latitude": "35.627819",
+            "longitude": "139.773568",
+            "category": "メキシコ料理",
+            "url": "https://r.gnavi.co.jp/874djgm60000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/a858205/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "https://rimage.gnst.jp/rest/img/874djgm60000/t_0n5c.png",
+                "shop_image2": "https://rimage.gnst.jp/rest/img/874djgm60000/t_0n5d.jpg",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=a858205&q=6"
+            },
+            "address": "〒135-0091 東京都港区台場1-7-1 アクアシティお台場3F",
+            "tel": "050-3491-9061",
+            "tel_sub": "03-6457-1722",
+            "fax": "",
+            "opentime": "月～日 11:00～23:00(L.O.22:30)",
+            "holiday": "無",
+            "access": {
+                "line": "ゆりかもめ",
+                "station": "台場駅",
+                "station_exit": "",
+                "walk": "1",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "タコベル、アクアシティお台場に登場！！",
+                "pr_long": "全世界で約7,000店舗を展開する「TACO BELL（タコベル）」がお台場アクアシティに登場！\nアメリカ・カリフォルニア発、全世界で約7,000店舗を展開するメキシカン・ファーストフード「TACO BELL（タコベル）」がお台場・アクアシティに登場！\n目の前に東京湾を臨み、その開放感あふれるロケーションでフレッシュなタコスやブリトーをお楽しみください！\nご来店心よりお待ちしております！"
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2113",
+                "areaname_s": "お台場",
+                "category_code_l": [
+                    "RSFST15000",
+                    ""
+                ],
+                "category_name_l": [
+                    "アジア・エスニック料理",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST15009",
+                    ""
+                ],
+                "category_name_s": [
+                    "メキシコ料理",
+                    ""
+                ]
+            },
+            "budget": 1000,
+            "party": "",
+            "lunch": 1000,
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 1
+            },
+            "id": "5638344",
+            "update_date": "2018-11-04T05:02:31+09:00",
+            "name": "POCA TACO’S 中野店",
+            "name_kana": "ポカタコスナカノテン",
+            "latitude": "35.705313",
+            "longitude": "139.668129",
+            "category": "メキシコ料理",
+            "url": "https://r.gnavi.co.jp/16m4v6t20000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/5638344/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=5638344&q=6"
+            },
+            "address": "〒164-0001 東京都中野区中野2-12-11 飯尾ビル1F",
+            "tel": "03-5340-1490",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "",
+            "holiday": "年中無休",
+            "access": {
+                "line": "東京メトロ東西線",
+                "station": "中野（東京都）駅",
+                "station_exit": "南口",
+                "walk": "徒歩3",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "",
+                "pr_long": ""
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2217",
+                "areaname_s": "中野",
+                "category_code_l": [
+                    "RSFST15000",
+                    ""
+                ],
+                "category_name_l": [
+                    "アジア・エスニック料理",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST15009",
+                    ""
+                ],
+                "category_name_s": [
+                    "メキシコ料理",
+                    ""
+                ]
+            },
+            "budget": "",
+            "party": "",
+            "lunch": "",
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 2
+            },
+            "id": "7659971",
+            "update_date": "2018-12-20T05:15:03+09:00",
+            "name": "TACO R！CO 愛宕グリーンヒルズ店",
+            "name_kana": "タコリッコアタゴグリーンヒルズテン",
+            "latitude": "35.662087",
+            "longitude": "139.748882",
+            "category": "メキシコ料理",
+            "url": "https://r.gnavi.co.jp/p3dp01h20000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/7659971/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=7659971&q=6"
+            },
+            "address": "〒105-0002 東京都港区愛宕2-5-1 愛宕グリーンヒルズ MORIタワー 1F",
+            "tel": "03-6452-9335",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "月～金 11:00～20:00\n土 10:00～15:00",
+            "holiday": "毎週日曜日 祝日",
+            "access": {
+                "line": "",
+                "station": "",
+                "station_exit": "",
+                "walk": "",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "",
+                "pr_long": ""
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2174",
+                "areaname_s": "芝公園・東京タワー周辺",
+                "category_code_l": [
+                    "RSFST15000",
+                    ""
+                ],
+                "category_name_l": [
+                    "アジア・エスニック料理",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST15009",
+                    ""
+                ],
+                "category_name_s": [
+                    "メキシコ料理",
+                    ""
+                ]
+            },
+            "budget": "",
+            "party": "",
+            "lunch": "",
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        },
+        {
+            "@attributes": {
+                "order": 3
+            },
+            "id": "7542954",
+            "update_date": "2019-01-17T05:05:33+09:00",
+            "name": "Taco‐nomi 町田店",
+            "name_kana": "タコノミマチダテン",
+            "latitude": "35.541389",
+            "longitude": "139.447157",
+            "category": "ダイニングバー",
+            "url": "https://r.gnavi.co.jp/kur79w3m0000/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "url_mobile": "http://mobile.gnavi.co.jp/shop/7542954/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D",
+            "coupon_url": {
+                "pc": "",
+                "mobile": ""
+            },
+            "image_url": {
+                "shop_image1": "",
+                "shop_image2": "",
+                "qrcode": "https://c-r.gnst.jp/tool/qr/?id=7542954&q=6"
+            },
+            "address": "〒194-0013 東京都町田市原町田4-1-3 ",
+            "tel": "042-851-8936",
+            "tel_sub": "",
+            "fax": "",
+            "opentime": "",
+            "holiday": "",
+            "access": {
+                "line": "JR横浜線",
+                "station": "町田駅",
+                "station_exit": "ターミナル口",
+                "walk": "徒歩2",
+                "note": ""
+            },
+            "parking_lots": "",
+            "pr": {
+                "pr_short": "",
+                "pr_long": ""
+            },
+            "code": {
+                "areacode": "AREA110",
+                "areaname": "関東",
+                "prefcode": "PREF13",
+                "prefname": "東京都",
+                "areacode_s": "AREAS2929",
+                "areaname_s": "町田",
+                "category_code_l": [
+                    "RSFST10000",
+                    ""
+                ],
+                "category_name_l": [
+                    "ダイニングバー・バー・ビアホール",
+                    ""
+                ],
+                "category_code_s": [
+                    "RSFST10001",
+                    ""
+                ],
+                "category_name_s": [
+                    "ダイニングバー",
+                    ""
+                ]
+            },
+            "budget": "",
+            "party": "",
+            "lunch": "",
+            "credit_card": "",
+            "e_money": "",
+            "flags": {
+                "mobile_site": 1,
+                "mobile_coupon": 0,
+                "pc_coupon": 0
+            }
+        }
+    ]
+}
