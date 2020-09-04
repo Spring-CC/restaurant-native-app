@@ -48,19 +48,41 @@ export default function Auth() {
         setName(name);
       }
     }
+    console.log(result);
+    console.log(name);
   }, [result]);
 
   return (
     <View style={styles.container}>
-      {name ? (
-        <Text style={styles.title}>You are logged in, {name}!</Text>
-      ) : (
+      <View>
+        {name ? (
+          <Text style={styles.title}>You are logged in, {name}!</Text>
+        ) : (
+          <Button
+            disabled={!request}
+            title="Log in with Auth0"
+            onPress={() => promptAsync({ useProxy })}
+          />
+        )}
+      </View>
+      <View>
         <Button
-          disabled={!request}
-          title="Log in with Auth0"
-          onPress={() => promptAsync({ useProxy })}
+          title="Log out with Auth0"
+          onPress={async () => {
+            // Adapted from this example for Linking
+            // https://github.com/expo/examples/blob/master/with-webbrowser-redirect/app/App.js
+            // TODO: Test Android. May run into https://github.com/expo/expo/issues/5555
+            Linking.addEventListener("url", handleRedirect);
+            const redirectUrl = Linking.makeUrl("/");
+            // Adapted from this example for logging out
+            // https://github.com/expo/auth0-example/issues/25#issuecomment-468533295
+            await WebBrowser.openBrowserAsync(
+              `https://${process.env.AUTH0_DOMAIN}/v2/logout?client_id=${process.env.AUTH0_CLIENT_ID}&returnTo=${redirectUrl}`
+            );
+            Linking.removeEventListener("url", handleRedirect);
+          }}
         />
-      )}
+      </View>
     </View>
   );
 }
