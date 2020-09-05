@@ -1,13 +1,20 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image, Button } from 'react-native';
 
-export default function Details() {
+export default function Details({ navigation }) {
 
     const restData = useSelector(state => state.restaurantReducer);
 
     return (
         <ScrollView style={styles.container}>
+            <View><Button
+            title="Go Back"
+            onPress={() => {
+              // Navigate using the `navigation` prop that you received
+              navigation.navigate('Home');
+            }}
+          /></View>
             <Image
                 source={{
                     uri: restData[0].image_url["shop_image1"],
