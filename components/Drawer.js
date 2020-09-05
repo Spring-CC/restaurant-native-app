@@ -3,7 +3,7 @@ import { Button, View , Text, StyleSheet} from "react-native";
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from "react-navigation-drawer";
 // import Icon from "react-native-vector-icons/FontAwesome";
-import Login from "./Login";
+import Login from "./Auth";
 import SignUp from "./SignUp";
 import Home from "./Home";
 import About from "./About";
