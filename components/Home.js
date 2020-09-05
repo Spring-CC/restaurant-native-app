@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity, SafeAreaView, Button } from 'react-native';
 import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, restaurant } from "../actions";
@@ -41,13 +41,15 @@ export default function Home({ navigation }) {
 
     return (
         <ScrollView style={styles.container}>
-            <View><Button
-            title="Go To Login"
-            onPress={() => {
-              // Navigate using the `navigation` prop that you received
-              navigation.navigate('Login');
-            }}
-          /></View>
+            <Nav />
+            <View>
+                <Button
+                    title="Go To Login"
+                    onPress={() => {
+                    // Navigate using the `navigation` prop that you received
+                    navigation.navigate('Login');
+                    }}/>
+            </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                     style={styles.buttons}

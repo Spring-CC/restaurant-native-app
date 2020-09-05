@@ -1,13 +1,13 @@
 const initialState = [
     {
         "image_url": {
-            "shop_image1": "https://reactnative.dev/img/tiny_logo.png"
+            "shop_image1": "https://i.imgur.com/dI1YSiV.jpg"
         },
         "name": "",
         "name_kana": "",
         "category": "",
         "tel": "",
-        "url": "",
+        "url": "https://www.google.com/",
         "address": "",
         "latitude": "",
         "longitude": "",
