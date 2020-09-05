@@ -1,19 +1,24 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, SafeAreaView, Text } from "react-native";
 
-export default function Nav({ user }) {
+export default function Nav() {
 
   return (
-    <View style={styles.container}>
-      <Text>Munchify</Text>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.text}>Munchify</Text>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: 50,
-    backgroundColor: ''
+    backgroundColor: '#90BE6D',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+  text: {
+    fontFamily: 'MPLUS1p-Black',
+    fontSize: 25,
+  }
 });

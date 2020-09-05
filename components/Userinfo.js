@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import Icon from "react-native-vector-icons/Foundation";
+import Nav from './Nav';
+
 export default function UserProfile() {
   const profileImage = require("../assets/profile.jpeg");
 
   return (
     <View style={styles.container}>
+      <Nav />
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <Image style={styles.avatar} source={profileImage} />
