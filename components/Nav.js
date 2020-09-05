@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#90BE6D',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 5,
   },
   text: {
     fontFamily: 'MPLUS1p-Black',
