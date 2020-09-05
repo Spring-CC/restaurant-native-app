@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { StyleSheet, Text, ScrollView, View, Image } from 'react-native';
+import { StyleSheet, Text, ScrollView, View, Image, Linking } from 'react-native';
 import Nav from './Nav';
 
 export default function Details() {
@@ -28,7 +28,11 @@ export default function Details() {
                     <Text style={styles.text_sub}>Telephone No:</Text>
                     <Text style={styles.text}>{restData[0].tel}</Text>
                     <Text style={styles.text_sub}>Website:</Text>
-                    <Text style={styles.text}>{restData[0].url}</Text>
+                    <Text
+                        style={styles.text}
+                        style={{ color: 'dodgerblue' }}
+                        onPress={() => Linking.openURL(`${restData[0].url}`)}
+                    >Click Here! to go to website</Text>
                 </View>
                 <View style={styles.location_container}>
                     <Text style={styles.text_title}>Location Details</Text>
