@@ -37,7 +37,31 @@ const Drawer = createDrawerNavigator({
    Preferences: {
     screen: Preferences,
   },
-});
+},
+{
+  intialRouteName: 'Home',
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      color: 'white',
+    },
+  },
+  contentOptions: {
+    // add your styling here 
+    activeTintColor: '#e91e63',
+    itemsContainerStyle: {
+      marginVertical: 0,
+    },
+    iconContainerStyle: {
+      opacity: 1,
+    },
+  },
+  drawerBackgroundColor: '#FF5B38', // sets background color of drawer
+}
+);
 
 export default createAppContainer(Drawer);
 
