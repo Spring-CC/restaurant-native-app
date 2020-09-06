@@ -8,6 +8,7 @@ const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 WebBrowser.maybeCompleteAuthSession();
+
 export default function Auth() {
   const [name, setName] = useState(null);
 
@@ -49,8 +50,6 @@ export default function Auth() {
         setName(name);
       }
     }
-    console.log(result);
-    console.log(name);
   }, [result]);
 
   async function logOut() {

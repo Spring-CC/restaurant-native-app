@@ -1,43 +1,25 @@
 import React from "react";
-import { View, FlatList, Text } from "react-native";
-import { Link } from "react-router-dom";
-import Drawer from "./Drawer";
+import { StyleSheet, SafeAreaView, Text } from "react-native";
 
-export default function Nav({ user }) {
-  const navStyle = {
-    color: "white",
-    textDecoration: "none",
-    fontSize: "3vh",
-    fontFamily: "verdana",
-  };
-  const titleStyle = {
-    fontSize: "4vh",
-    fontFamily: "verdana",
-  };
+export default function Nav() {
+
   return (
-    <View>
-      <Text style={titleStyle}>Restaurant App</Text>
-      <View className="nav-links">
-        <Link style={navStyle} to="/">
-        <Drawer />
-     
-          {/* <Text>Home</Text> */}
-        </Link>
-        <Link style={navStyle} to="/about">
-          <Text>About</Text>
-        </Link>
-        {!user && (
-          <Link
-            style={navStyle}
-            onClick={() => {
-              window.location.reload();
-            }}
-            to="/login"
-          >
-            <Text>Log In</Text>
-          </Link>
-        )}
-      </View>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.text}>Munchify</Text>
+    </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#90BE6D',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  text: {
+    fontFamily: 'MPLUS1p-Black',
+    fontSize: 25,
+  }
+});
