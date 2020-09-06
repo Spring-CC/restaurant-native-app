@@ -9,13 +9,18 @@ import Home from "./Home";
 import About from "./About";
 import Details from "./Details";
 import Userinfo from "./Userinfo";
-import Preferences from "./Preferences"
+import Preferences from "./Preferences";
+import Auth from "./Auth";
 
 
 
 const Drawer = createDrawerNavigator({
   Home: {
     screen: Home,
+  },
+
+  Auth: {
+    screen: Auth,
   },
 
   Login: {
