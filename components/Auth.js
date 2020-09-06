@@ -79,6 +79,15 @@ export default function Auth({ navigation }) {
           }}
         />
       </View>
+
+      <View>
+        <Button
+          title="change password"
+          onPress={() => {
+            navigation.navigate("ChangePassword");
+          }}
+        />
+      </View>
       <View>
         <Button
           style={styles.button}

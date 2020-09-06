@@ -11,6 +11,7 @@ import Details from "./Details";
 import Userinfo from "./Userinfo";
 import Preferences from "./Preferences";
 import Auth from "./Auth";
+import ChangePassword from "./ChangePassword";
 
 const Drawer = createDrawerNavigator({
   Home: {
@@ -23,6 +24,9 @@ const Drawer = createDrawerNavigator({
 
   Auth: {
     screen: Auth,
+  },
+  ChangePassword: {
+    screen: ChangePassword,
   },
 
   CreateAccount: {
