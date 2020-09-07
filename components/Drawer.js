@@ -22,17 +22,13 @@ const Drawer = createDrawerNavigator({
     screen: Auth,
   },
 
-  ChangePassword: {
-    screen: ChangePassword,
-  },
-
   CreateAccount: {
     screen: SignUp,
   },
   About: {
     screen: About,
   },
-
+                                     
   Profile: {
     screen: Userinfo,
   },

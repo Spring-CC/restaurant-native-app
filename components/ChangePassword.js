@@ -11,58 +11,39 @@ import {
   View,
   TextInput,
 } from "react-native";
+import request from "request";
 
-const useProxy = Platform.select({ web: false, default: true });
-const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 WebBrowser.maybeCompleteAuthSession();
 
 export default function changePassword({ navigation }) {
   const [email, onChangeEmail] = useState("");
   const [password, onChangePassword] = useState("");
-  function change(email, newPassword) {
-    const bcrypt = require("bcryptjs");
-    const MongoClient = require("mongodb").MongoClient;
-    const client = new MongoClient(
-      "mongodb+srv://" +
-        configuration.ATLAS_USER +
-        ":" +
-        configuration.ATLAS_PSWD +
-        "@cc13.temn3.mongodb.net/" +
-        configuration.ATLAS_DB +
-        "?retryWrites=true&w=majority"
-    );
 
-    client.connect(function (err) {
-      if (err) return console.log(err);
+  const options = {
+    method: "POST",
+    url: `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/dbconnections/change_password`,
+    headers: { "content-type": "application/json" },
+    body: {
+      client_id: process.env.REACT_APP_APP_AUTHID,
+      email: email,
+      connection: "atlas-db-connection",
+    },
+    json: true,
+  };
 
-      const db = client.db("" + configuration.ATLAS_DB + "");
-      const users = db.collection("Users");
+  function change() {
+    request(options, function (error, response, body) {
+      if (error) throw new Error(error);
 
-      bcrypt.hash(newPassword, 10, function (err, hash) {
-        if (err) {
-          client.close();
-          return console.log(err);
-        }
-
-        users.update({ email: email }, { $set: { password: hash } }, function (
-          err,
-          count
-        ) {
-          client.close();
-          if (err) return console.log(err);
-          console.log(null, count > 0);
-        });
-      });
+      console.log(body);
     });
   }
-
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
         onChangeText={(text) => {
           onChangeEmail(text);
-          console.log(email);
         }}
         value={email}
         keyboardType="email-address"
@@ -71,18 +52,12 @@ export default function changePassword({ navigation }) {
         style={styles.input}
         onChangeText={(text) => {
           onChangePassword(text);
-          console.log(password);
         }}
         value={password}
         secureTextEntry
       />
       <View>
-        <Button
-          title="change password"
-          onPress={() => {
-            change(email, password);
-          }}
-        />
+        <Button title="change password" onPress={() => change(email)} />
       </View>
       <View>
         <Button

@@ -30,6 +30,9 @@ import axios from "axios";
 export default function Home({ navigation }) {
   var color1 = "#f94144"; // - Red Salsa
   var color2 = "#f3722c"; // - Orange Red
+  var color3 = '#f8961e'; // - Yellow Orange Color Wheel
+  var color4 = '#f9c74f'; // - Maize Crayola
+  var color5 = '#90be6d'; // - Pistachio
 
   const [resData, setResData] = useState(data);
 
@@ -158,6 +161,7 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   buttonContainer: {
     flexDirection: "row",
