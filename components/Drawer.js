@@ -32,9 +32,7 @@ const Drawer = createDrawerNavigator({
   About: {
     screen: About,
   },
-  Details: {
-    screen: Details,
-  },
+
   Profile: {
     screen: Userinfo,
   },
