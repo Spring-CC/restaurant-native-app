@@ -12,6 +12,7 @@ import Nav from "./Nav";
 import { useSelector, useDispatch } from "react-redux";
 import { category, priceRange, setLocations, setRestaurantsList } from "../actions";
 import axios from "axios"
+import categoryFilter from "../actions/cateforyFilter"
 //import Slider from './Slider'
 
 export default function Preferences({navigation}) {
@@ -22,8 +23,8 @@ export default function Preferences({navigation}) {
     const results = await axios.get("http://localhost:8080/restAtlas");
     const restaurants = results.data;
     const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    //const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
-    dispatch(setRestaurantsList(filtBudget))
+    const filtCat = categoryFilter(filtBudget,categories);
+    dispatch(setRestaurantsList(filtCat))
     console.log(restaurantList);
   }catch(err){
     console.log(err);

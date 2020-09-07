@@ -49,7 +49,6 @@ export default function Home({ navigation }) {
     const results = await axios.get("http://localhost:8080/restAtlas");
     const restaurants = results.data;
     const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    //const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
     dispatch(setRestaurantsList(filtBudget))
     console.log(filtBudget);
   }catch(err){
@@ -86,7 +85,7 @@ export default function Home({ navigation }) {
           title="Go To Login"
           onPress={() => {
             // Navigate using the `navigation` prop that you received
-            navigation.navigate("Auth");
+            navigation.navigate("Login");
           }}
         />
       </View>
