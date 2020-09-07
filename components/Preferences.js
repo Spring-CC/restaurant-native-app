@@ -1,13 +1,18 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, CheckBox, ScrollView, Picker } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  CheckBox,
+  ScrollView,
+  Picker,
+} from "react-native";
 import Nav from "./Nav";
 import { useSelector, useDispatch } from "react-redux";
 import { category, priceRange, setLocations } from "../actions";
 //import Slider from './Slider'
 
 export default function Preferences() {
-
-
   let mockdata = [
     {
       name: "Shibuya",
@@ -66,7 +71,7 @@ export default function Preferences() {
 
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
-  const location = useSelector((state) => state.locationReducer)
+  const location = useSelector((state) => state.locationReducer);
   const dispatch = useDispatch();
 
   return (
@@ -82,58 +87,60 @@ export default function Preferences() {
 
         <View style={styles.checkboxContainer}>
           <CheckBox
-            value={categories["Izakaya"]}
+            value={categories["居酒屋"]}
             onValueChange={() => {
-              dispatch(category((categories.Izakaya = !categories.Izakaya)));
+              dispatch(
+                category((categories["居酒屋"] = !categories["居酒屋"]))
+              );
             }}
             style={styles.checkbox}
           />
           <Text style={styles.label}>Izakaya 🍺</Text>
           <CheckBox
-            value={categories["Tradional Japanase"]}
+            value={categories["日本料理"]}
+            onValueChange={() => {
+              dispatch(
+                category((categories["日本料理"] = !categories["日本料理"]))
+              );
+            }}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Japanese 🍙</Text>
+          <CheckBox
+            value={categories["寿司"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Tradional Japanase"] = !categories[
-                    "Tradional Japanase"
+                  (categories["寿司"] = !categories[
+                    "寿司"
                   ])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Traditional Japanese 🍙</Text>
-          <CheckBox
-            value={categories["Sushi"]}
-            onValueChange={() => {
-              dispatch(category((categories["Sushi"] = !categories["Sushi"])));
-            }}
-            style={styles.checkbox}
-          />
           <Text style={styles.label}>Sushi / Seafood 🍣</Text>
           <CheckBox
-            value={categories["Nabe"]}
+            value={categories["鍋"]}
             onValueChange={() => {
-              dispatch(category((categories["Nabe"] = !categories["Nabe"])));
+              dispatch(category((categories["鍋"] = !categories["鍋"])));
             }}
             style={styles.checkbox}
           />
           <Text style={styles.label}>Nabe 🍲</Text>
           <CheckBox
-            value={categories["Yakiniku"]}
+            value={categories["焼肉"]}
             onValueChange={() => {
-              dispatch(
-                category((categories["Yakiniku"] = !categories["Yakiniku"]))
-              );
+              dispatch(category((categories["焼肉"] = !categories["焼肉"])));
             }}
             style={styles.checkbox}
           />
           <Text style={styles.label}>Yakiniku 🥓</Text>
           <CheckBox
-            value={categories["Yakitori"]}
+            value={categories["焼き鳥"]}
             onValueChange={() => {
               dispatch(
-                category((categories["Yakitori"] = !categories["Yakitori"]))
+                category((categories["焼き鳥"] = !categories["焼き鳥"]))
               );
             }}
             style={styles.checkbox}
@@ -145,67 +152,63 @@ export default function Preferences() {
       <View style={styles.container}>
         <View style={styles.checkboxContainer}>
           <CheckBox
-            value={categories["Modern Japanese"]}
+            value={categories["焼肉・ホルモン"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Modern Japanese"] = !categories[
-                    "Modern Japanese"
-                  ])
+                  (categories["焼肉・ホルモン"] = !categories["焼肉・ホルモン"])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Modern Japanese 🍛</Text>
+          <Text style={styles.label}>Yakiniku (Offal) 🍛</Text>
           <CheckBox
-            value={categories["Okonomiyaki"]}
+            value={categories["お好み焼き"]}
             onValueChange={() => {
               dispatch(
-                category(
-                  (categories["Okonomiyaki"] = !categories["Okonomiyaki"])
-                )
+                category((categories["お好み焼き"] = !categories["お好み焼き"]))
               );
             }}
             style={styles.checkbox}
           />
           <Text style={styles.label}>Okonomiyaki 🍘</Text>
           <CheckBox
-            value={categories["Takoyaki"]}
+            value={categories["郷土料理"]}
             onValueChange={() => {
               dispatch(
-                category((categories["Takoyaki"] = !categories["Takoyaki"]))
+                category((categories["郷土料理"] = !categories["郷土料理"]))
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Takoyaki 🍘</Text>
+          <Text style={styles.label}>Local Cuisine 🍘</Text>
           <CheckBox
-            value={categories["Noodles"]}
+            value={categories["うどん"]}
             onValueChange={() => {
               dispatch(
-                category((categories["Noodles"] = !categories["Noodles"]))
+                category((categories["うどん"] = !categories["うどん"]))
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Noodles 🍜</Text>
+          <Text style={styles.label}>Udon 🍜</Text>
           <CheckBox
-            value={categories["Chinese"]}
+            value={categories["中華"]}
             onValueChange={() => {
-              dispatch(
-                category((categories["Chinese"] = !categories["Chinese"]))
-              );
+              dispatch(category((categories["中華"] = !categories["中華"])));
             }}
             style={styles.checkbox}
           />
           <Text style={styles.label}>Chinese 🍖</Text>
           <CheckBox
-            value={categories["Italian/French"]}
+            value={categories["イタリアン・フレンチ"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Italian/French"] = !categories["Italian/French"])
+                  (categories["イタリアン・フレンチ"] = !categories[
+                    "イタリアン・フレンチ"
+                  ])
                 )
               );
             }}
@@ -218,137 +221,171 @@ export default function Preferences() {
       <View style={styles.container}>
         <View style={styles.checkboxContainer}>
           <CheckBox
-            value={categories["Western/European"]}
+            value={categories["フレンチ"]}
+            onValueChange={() => {
+              dispatch(
+                category((categories["フレンチ"] = !categories["フレンチ"]))
+              );
+            }}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>French 🏳🥩</Text>
+          <CheckBox
+            value={categories["ラーメン"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Western/European"] = !categories[
-                    "Western/European"
+                  (categories["ラーメン"] = !categories[
+                    "ラーメン"
                   ])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Western/European 🥩</Text>
+          <Text style={styles.label}>Ramen 🌭</Text>
           <CheckBox
-            value={categories["Western/Various"]}
+            value={categories["カレー"]}
             onValueChange={() => {
               dispatch(
-                category(
-                  (categories["Western/Various"] = !categories[
-                    "Western/Various"
-                  ])
-                )
+                category((categories["カレー"] = !categories["カレー"]))
               );
-            }}
-            style={styles.checkbox}
-          />
-          <Text style={styles.label}>Western/Various 🌭</Text>
-          <CheckBox
-            value={categories["Curry"]}
-            onValueChange={() => {
-              dispatch(category((categories["Curry"] = !categories["Curry"])));
             }}
             style={styles.checkbox}
           />
           <Text style={styles.label}>Curry 🍛</Text>
           <CheckBox
-            value={categories["Southeast Asian"]}
+            value={categories["カフェ"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Southeast Asian"] = !categories[
-                    "Southeast Asian"
+                  (categories["カフェ"] = !categories[
+                    "カフェ"
                   ])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>SouthEast Asian 🍥</Text>
+          <Text style={styles.label}>Cafe 🍥</Text>
           <CheckBox
-            value={categories["Organic/Fusion"]}
+            value={categories["メキシコ料理"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Organic/Fusion"] = !categories["Organic/Fusion"])
+                  (categories["メキシコ料理"] = !categories["メキシコ料理"])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Organic/Fusion 🥗</Text>
+          <Text style={styles.label}>Mexican 🥗</Text>
           <CheckBox
-            value={categories["DiningBars"]}
+            value={categories["とんかつ（トンカツ）"]}
             onValueChange={() => {
               dispatch(
-                category((categories["DiningBars"] = !categories["DiningBars"]))
+                category((categories["とんかつ（トンカツ）"] = !categories["とんかつ（トンカツ）"]))
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Dining Bars 🍻</Text>
+          <Text style={styles.label}>Tonkatsu (Pork cutlet) 🍻</Text>
         </View>
       </View>
 
       <View style={styles.container}>
         <View style={styles.checkboxContainer}>
           <CheckBox
-            value={categories["Bread/Desserts"]}
+            value={categories["定食・食事処"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["Bread/Desserts"] = !categories["Bread/Desserts"])
+                  (categories["定食・食事処"] = !categories["定食・食事処"])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Bread/Desserts/Pastries 🍰</Text>
+          <Text style={styles.label}>Set menu 🍰</Text>
           <CheckBox
-            value={categories["PartyHalls/Karaoke"]}
+            value={categories["ワイン"]}
             onValueChange={() => {
               dispatch(
                 category(
-                  (categories["PartyHalls/Karaoke"] = !categories[
-                    "PartyHalls/Karaoke"
+                  (categories["ワイン"] = !categories[
+                    "ワイン"
                   ])
                 )
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Party Halls/Karaoke/Entertainment 🥂</Text>
+          <Text style={styles.label}>Wine 🥂</Text>
           <CheckBox
-            value={categories["FastFood"]}
+            value={categories["しゃぶしゃぶ"]}
             onValueChange={() => {
               dispatch(
-                category((categories["FastFood"] = !categories["FastFood"]))
+                category((categories["しゃぶしゃぶ"] = !categories["しゃぶしゃぶ"]))
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Casual Dining / Fast Food 🌯</Text>
+          <Text style={styles.label}>Shabushabu 🌯</Text>
           <CheckBox
-            value={categories["Alcohol"]}
+            value={categories["ステーキ"]}
             onValueChange={() => {
               dispatch(
-                category((categories["Alcohol"] = !categories["Alcohol"]))
+                category((categories["ステーキ"] = !categories["ステーキ"]))
               );
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Alcohol 🍾</Text>
+          <Text style={styles.label}>Steak 🍾</Text>
           <CheckBox
-            value={categories["other"]}
+            value={categories["ハンバーグ"]}
             onValueChange={() => {
-              dispatch(category((categories["other"] = !categories["other"])));
-              console.log(categories)
+              dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
+              console.log(categories);
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}>Other Cuisine 🥙</Text>
+          <Text style={styles.label}>Hamburger Patty 🥙</Text>
+          <CheckBox
+            value={categories["洋食屋"]}
+            onValueChange={() => {
+              dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
+              console.log(categories);
+            }}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Western restaurant 🥙</Text>
+          <CheckBox
+            value={categories["火鍋"]}
+            onValueChange={() => {
+              dispatch(category((categories["火鍋"] = !categories["火鍋"])));
+              console.log(categories);
+            }}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Hot pot 🥙</Text>
+          <CheckBox
+            value={categories["バー"]}
+            onValueChange={() => {
+              dispatch(category((categories["バー"] = !categories["バー"])));
+              console.log(categories);
+            }}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Bar 🥙</Text>
+          <CheckBox
+            value={categories["そば"]}
+            onValueChange={() => {
+              dispatch(category((categories["そば"] = !categories["そば"])));
+              console.log(categories);
+            }}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Soba (Noodles) 🥙</Text>
         </View>
       </View>
 
@@ -412,7 +449,7 @@ export default function Preferences() {
             onValueChange={() => {
               dispatch(priceRange((price.min = 10000)));
               dispatch(priceRange((price.max = 15000)));
-              console.log(price)
+              console.log(price);
               checkBoxSelected(6);
             }}
             style={styles.checkbox}
@@ -423,20 +460,20 @@ export default function Preferences() {
 
       <View style={styles.container}>
         <Text style={styles.title}>Location</Text>
-          <Picker
+        <Picker
           selectedValue={location.name}
-          style={styles.onePicker} 
+          style={styles.onePicker}
           itemStyle={styles.pickerItem}
           onValueChange={(itemValue) => {
-            console.log(location.name)
-            dispatch(setLocations(location.name=itemValue))
-            console.log(location.name)
+            console.log(location.name);
+            dispatch(setLocations((location.name = itemValue)));
+            console.log(location.name);
           }}
-          >
-          {mockdata.map(elem=> (
+        >
+          {mockdata.map((elem) => (
             <Picker.Item label={elem.name} value={elem.name} />
           ))}
-          </Picker>
+        </Picker>
       </View>
     </ScrollView>
   );
@@ -469,13 +506,13 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   pickerItem: {
-    color: 'red'
+    color: "red",
   },
   onePicker: {
     width: 200,
     height: 44,
-    backgroundColor: '#FFF0E0',
-    borderColor: 'black',
+    backgroundColor: "#FFF0E0",
+    borderColor: "black",
     borderWidth: 1,
   },
 });
