@@ -9,7 +9,7 @@ const useProxy = Platform.select({ web: false, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 WebBrowser.maybeCompleteAuthSession();
 
-export default function Auth() {
+export default function Auth({ navigation }) {
   const [name, setName] = useState(null);
 
   const [request, result, promptAsync] = AuthSession.useAuthRequest(
@@ -45,9 +45,9 @@ export default function Auth() {
         // Retrieve the JWT token and decode it
         const jwtToken = result.params.id_token;
         const decoded = jwtDecode(jwtToken);
-
-        const { name } = decoded;
-        setName(name);
+        console.log(decoded);
+        const { nickname } = decoded;
+        setName(nickname);
       }
     }
   }, [result]);
@@ -77,6 +77,22 @@ export default function Auth() {
           onPress={() => {
             logOut();
           }}
+        />
+      </View>
+
+      <View>
+        <Button
+          title="change password"
+          onPress={() => {
+            navigation.navigate("ChangePassword");
+          }}
+        />
+      </View>
+      <View>
+        <Button
+          style={styles.button}
+          title="Go Home"
+          onPress={() => navigation.navigate("Home")}
         />
       </View>
     </View>

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Button, View , Text, StyleSheet} from "react-native";
-import { createAppContainer } from 'react-navigation';
+import { Button, View, Text, StyleSheet } from "react-native";
+import { createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
 // import Icon from "react-native-vector-icons/FontAwesome";
 import Login from "./Auth";
@@ -9,9 +9,9 @@ import Home from "./Home";
 import About from "./About";
 import Details from "./Details";
 import Userinfo from "./Userinfo";
-import Preferences from "./Preferences"
-
-
+import Preferences from "./Preferences";
+import Auth from "./Auth";
+import ChangePassword from "./ChangePassword";
 
 const Drawer = createDrawerNavigator({
   Home: {
@@ -22,6 +22,13 @@ const Drawer = createDrawerNavigator({
     screen: Login,
   },
 
+  Auth: {
+    screen: Auth,
+  },
+  ChangePassword: {
+    screen: ChangePassword,
+  },
+
   CreateAccount: {
     screen: SignUp,
   },
@@ -29,12 +36,12 @@ const Drawer = createDrawerNavigator({
     screen: About,
   },
   Details: {
-   screen: Details,
+    screen: Details,
   },
   Profile: {
     screen: Userinfo,
-   },
-   Preferences: {
+  },
+  Preferences: {
     screen: Preferences,
   },
 },
@@ -64,7 +71,6 @@ const Drawer = createDrawerNavigator({
 );
 
 export default createAppContainer(Drawer);
-
 
 // function HomeScreen({ navigation }) {
 //   return (
@@ -116,4 +122,3 @@ export default createAppContainer(Drawer);
 //     </NavigationContainer>
 //   );
 // }
-
