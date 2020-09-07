@@ -27,22 +27,6 @@ const fetchFonts = () => {
 const store = createStore(rootReducer);
 
 
-// const AppNavigator = createStackNavigator(
-//   {
-//     Home: Home,
-//     Sidebar: Sidebar,
-//     Login: Login,
-//     CreateAccount: SignUp,
-//     About: About,
-//     Details: Details,
-//   },
-//   {
-//     initialRouteName: "Home",
-//   }
-// );
-
-// const Navigation = createAppContainer(AppNavigator);
-
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
 
