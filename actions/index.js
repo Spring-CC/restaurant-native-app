@@ -31,3 +31,10 @@ export const setLocations = (obj) => {
         payload: obj,
      }
 }
+
+export const setRestaurantsList = (obj) => {
+    return {
+        type: "RESTAURANT_LIST",
+        payload: obj,
+     }
+}

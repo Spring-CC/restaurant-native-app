@@ -3,6 +3,7 @@ import restaurantReducer from './restaurant';
 import categoryReducer from './categories'
 import priceReducer from './priceRange'
 import locationReducer from './locations'
+import restaurantsListReducer from './restaurantsList'
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
     restaurantReducer,
     categoryReducer,
     priceReducer,
-    locationReducer
+    locationReducer,
+    restaurantsListReducer
 })
 
 export default rootReducer;

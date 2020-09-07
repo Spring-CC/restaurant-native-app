@@ -6,13 +6,30 @@ import {
   CheckBox,
   ScrollView,
   Picker,
+  Button
 } from "react-native";
 import Nav from "./Nav";
 import { useSelector, useDispatch } from "react-redux";
-import { category, priceRange, setLocations } from "../actions";
+import { category, priceRange, setLocations, setRestaurantsList } from "../actions";
+import axios from "axios"
 //import Slider from './Slider'
 
-export default function Preferences() {
+export default function Preferences({navigation}) {
+
+
+  async function getRestaurants(){
+    try{  
+    const results = await axios.get("http://localhost:8080/restAtlas");
+    const restaurants = results.data;
+    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+    //const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
+    dispatch(setRestaurantsList(filtBudget))
+    console.log(restaurantList);
+  }catch(err){
+    console.log(err);
+  }
+  }
+
   let mockdata = [
     {
       name: "Shibuya",
@@ -72,6 +89,7 @@ export default function Preferences() {
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
   const location = useSelector((state) => state.locationReducer);
+  const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
   return (
@@ -474,6 +492,16 @@ export default function Preferences() {
             <Picker.Item label={elem.name} value={elem.name} />
           ))}
         </Picker>
+      </View>
+
+      <View style={styles.container}>
+      <Button title="Set Preferences" 
+      onPress={() => {
+        getRestaurants();
+        //navigation.navigate('Home');
+      }
+    }
+  />
       </View>
     </ScrollView>
   );

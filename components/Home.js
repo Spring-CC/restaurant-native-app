@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, restaurant } from "../actions";
+import { increment, restaurant, setRestaurantsList } from "../actions";
 import data from "../data/restaurants.json";
 import Nav from "./Nav";
 import axios from "axios";
@@ -39,6 +39,7 @@ export default function Home({ navigation }) {
   const index = useSelector((state) => state.incrementReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
+  const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
 
@@ -48,9 +49,9 @@ export default function Home({ navigation }) {
     const results = await axios.get("http://localhost:8080/restAtlas");
     const restaurants = results.data;
     const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
-    setResData(filtCat);
-    console.log(filtCat);
+    //const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
+    dispatch(setRestaurantsList(filtBudget))
+    console.log(filtBudget);
   }catch(err){
     console.log(err);
   }
@@ -60,7 +61,7 @@ export default function Home({ navigation }) {
     getRestaurants();
   }, [])
 
-  const restaurants = resData.filter((restaurant, idx) => idx === index);
+  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
