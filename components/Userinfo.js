@@ -9,7 +9,13 @@ export default function UserInfo({ navigation }) {
   const name = useSelector((state) => state.profileReducer);
   console.log(name);
   /** if no name then show guest */
-
+  if (name[0].name === "") {
+    return (
+<View>
+  <Text>GTFO</Text>
+</View>
+    );
+  } else {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -53,6 +59,7 @@ export default function UserInfo({ navigation }) {
       </View>
     </View>
   );
+  }
 }
 
 const styles = StyleSheet.create({
