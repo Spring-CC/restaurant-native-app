@@ -3,6 +3,8 @@ import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
 import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
+import { useDispatch } from "react-redux";
+import { setProfile } from "../actions";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, default: true });
@@ -11,6 +13,7 @@ WebBrowser.maybeCompleteAuthSession();
 
 export default function Auth({ navigation }) {
   const [name, setName] = useState(null);
+  const dispatch = useDispatch();
 
   const [request, result, promptAsync] = AuthSession.useAuthRequest(
     {
@@ -48,6 +51,7 @@ export default function Auth({ navigation }) {
         console.log(decoded);
         const { nickname } = decoded;
         setName(nickname);
+        dispatch(setProfile(nickname));
       }
     }
   }, [result]);
@@ -93,6 +97,13 @@ export default function Auth({ navigation }) {
           style={styles.button}
           title="Go Home"
           onPress={() => navigation.navigate("Home")}
+        />
+      </View>
+      <View>
+        <Button
+          style={styles.button}
+          title="Go profile"
+          onPress={() => navigation.navigate("Profile")}
         />
       </View>
     </View>
