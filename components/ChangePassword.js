@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from "react";
-import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
-import jwtDecode from "jwt-decode";
-import {
-  Alert,
-  Button,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-} from "react-native";
+import { Button, StyleSheet, Text, View, TextInput } from "react-native";
 import request from "request";
 
 WebBrowser.maybeCompleteAuthSession();
 
 export default function changePassword({ navigation }) {
   const [email, onChangeEmail] = useState("");
-  const [password, onChangePassword] = useState("");
 
   const options = {
     method: "POST",
@@ -48,15 +37,9 @@ export default function changePassword({ navigation }) {
         value={email}
         keyboardType="email-address"
       />
-      <TextInput
-        style={styles.input}
-        onChangeText={(text) => {
-          onChangePassword(text);
-        }}
-        value={password}
-        secureTextEntry
-      />
+
       <View>
+        <Text>Email:</Text>
         <Button title="change password" onPress={() => change(email)} />
       </View>
       <View>
