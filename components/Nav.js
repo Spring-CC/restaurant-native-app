@@ -14,7 +14,7 @@ export default function Nav() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: '#DCDCDC',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 5,
@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   logo: {
+    marginTop: 3,
     width: 100,
     height: 100,
   }
