@@ -85,7 +85,7 @@ export default function Home({ navigation }) {
           title="Go To Login"
           onPress={() => {
             // Navigate using the `navigation` prop that you received
-            navigation.navigate("Auth");
+            navigation.navigate("Login");
           }}
         />
       </View>
