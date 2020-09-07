@@ -19,39 +19,17 @@ const Drawer = createDrawerNavigator(
       screen: Home,
     },
 
-  Login: {
-    screen: Auth,
-  },
+    Login: {
+      screen: Auth,
+    },
 
-  CreateAccount: {
-    screen: SignUp,
-  },
-  About: {
-    screen: About,
-  },
-                                     
-  Profile: {
-    screen: Userinfo,
-  },
-  Preferences: {
-    screen: Preferences,
-  },
-  Details: {
-    screen: Details,
-  },
-},
-{
-  intialRouteName: 'Home',
-  navigationOptions: {
-    headerStyle: {
-      backgroundColor: '#f4511e',
+    CreateAccount: {
+      screen: SignUp,
     },
     About: {
       screen: About,
     },
-    Details: {
-      screen: Details,
-    },
+
     Profile: {
       screen: UserInfo,
     },
