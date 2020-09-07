@@ -35,9 +35,6 @@ const Drawer = createDrawerNavigator({
   Preferences: {
     screen: Preferences,
   },
-  Details: {
-    screen: Details,
-  },
 },
 {
   intialRouteName: 'Home',
