@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Image, Text } from "react-native";
 import Icon from "react-native-vector-icons/Foundation";
-import Nav from './Nav';
+import Nav from "./Nav";
 
 export default function UserProfile() {
   const profileImage = require("../assets/profile.jpeg");
+
+  function changePassword() {
+    // call from Auth0 endpoint in order to change password
+  }
+  //also pass the name from Auth.js into the profile name
+  //console.log the picture param and see if user is able to change profile pic
+  //
 
   return (
     <View style={styles.container}>
