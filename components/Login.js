@@ -33,7 +33,9 @@ return (
     secureTextEntry
   />
  
-  <Button title="Login" />
+  <Button title="Login" 
+  onPress={() => navigation.navigate('Home')}
+  />
 
 
   <Button
