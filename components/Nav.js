@@ -5,7 +5,7 @@ export default function Nav() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Munchify</Text>
+      {/* <Text style={styles.text}>Munchify</Text> */}
       <Image source={require('./../assets/logo_bowl.png')} style={styles.logo} />
     </SafeAreaView>
   );
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   logo: {
-    width: 20,
-    height: 20,
+    width: 100,
+    height: 100,
   }
 });
