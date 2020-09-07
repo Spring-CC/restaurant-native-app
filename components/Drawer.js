@@ -8,15 +8,16 @@ import SignUp from "./SignUp";
 import Home from "./Home";
 import About from "./About";
 import Details from "./Details";
-import Userinfo from "./Userinfo";
+import UserInfo from "./UserInfo";
 import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
 
-const Drawer = createDrawerNavigator({
-  Home: {
-    screen: Home,
-  },
+const Drawer = createDrawerNavigator(
+  {
+    Home: {
+      screen: Home,
+    },
 
   Login: {
     screen: Auth,
@@ -45,23 +46,42 @@ const Drawer = createDrawerNavigator({
     headerStyle: {
       backgroundColor: '#f4511e',
     },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      color: 'white',
+    About: {
+      screen: About,
+    },
+    Details: {
+      screen: Details,
+    },
+    Profile: {
+      screen: UserInfo,
+    },
+    Preferences: {
+      screen: Preferences,
     },
   },
-  contentOptions: {
-    // add your styling here 
-    activeTintColor: '#e91e63',
-    itemsContainerStyle: {
-      marginVertical: 0,
+  {
+    intialRouteName: "Home",
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: "#f4511e",
+      },
+      headerTintColor: "#fff",
+      headerTitleStyle: {
+        color: "white",
+      },
     },
-    iconContainerStyle: {
-      opacity: 1,
+    contentOptions: {
+      // add your styling here
+      activeTintColor: "#e91e63",
+      itemsContainerStyle: {
+        marginVertical: 0,
+      },
+      iconContainerStyle: {
+        opacity: 1,
+      },
     },
-  },
-  drawerBackgroundColor: '#FF5B38', // sets background color of drawer
-}
+    drawerBackgroundColor: "#FF5B38", // sets background color of drawer
+  }
 );
 
 export default createAppContainer(Drawer);

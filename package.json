@@ -37,7 +37,6 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "request": "^2.88.2",
     "styled-components": "^5.2.0",
     "styled-components-native": "^1.0.2"
   },
