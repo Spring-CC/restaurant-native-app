@@ -26,11 +26,18 @@ export const priceRange = (obj) => {
 };
 
 export const setLocations = (obj) => {
-  return {
-    type: "LOCATIONS",
-    payload: obj,
-  };
-};
+    return {
+        type: "LOCATIONS",
+        payload: obj,
+     }
+}
+
+export const setRestaurantsList = (obj) => {
+    return {
+        type: "RESTAURANT_LIST",
+        payload: obj,
+     }
+}
 
 export const setProfile = (obj) => {
   return {
