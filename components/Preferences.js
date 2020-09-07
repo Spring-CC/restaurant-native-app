@@ -104,9 +104,10 @@ export default function Preferences() {
           />
           <Text style={styles.label}>Traditional Japanese 🍙</Text>
           <CheckBox
-            value={categories["Sushi"]}
+            value={categories["すし"]}
             onValueChange={() => {
-              dispatch(category((categories["Sushi"] = !categories["Sushi"])));
+              dispatch(category((categories["すし"] = !categories["すし"])));
+              console.log(categories)
             }}
             style={styles.checkbox}
           />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -13,6 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { increment, restaurant } from "../actions";
 import data from "../data/restaurants.json";
 import Nav from "./Nav";
+import axios from "axios";
 
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
@@ -30,16 +31,43 @@ export default function Home({ navigation }) {
   var color1 = "#f94144"; // - Red Salsa
   var color2 = "#f3722c"; // - Orange Red
 
+  const [resData, setResData] = useState(data);
+
   const index = useSelector((state) => state.incrementReducer);
+  const categories = useSelector((state) => state.categoryReducer);
+  const price = useSelector((state) => state.priceReducer);
   const dispatch = useDispatch();
 
-  const restaurants = data.filter((restaurant, idx) => idx === index);
+
+  
+  async function getRestaurants(){
+    try{  
+    const results = await axios.get("http://localhost:8080/restAtlas");
+    const restaurants = results.data;
+    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+    const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
+    setResData(filtCat);
+    console.log(filtCat);
+  }catch(err){
+    console.log(err);
+  }
+  }
+
+  useEffect(()=>{
+    getRestaurants();
+  }, [])
+
+  const restaurants = resData.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
       images.push(restaurants[0].image_url[key]);
     }
   }
+
+
+
+
 
   function onPress() {
     dispatch(restaurant(restaurants));
@@ -61,7 +89,9 @@ export default function Home({ navigation }) {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.buttons}
-          onPress={() => dispatch(increment())}
+          onPress={() => {
+            dispatch(increment())
+          }}
         >
           <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
             No

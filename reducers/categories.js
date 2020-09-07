@@ -1,7 +1,7 @@
 const categories = {
 "Izakaya": false,
 "Tradional Japanase": false,
-"Sushi": false,
+"すし": false,
 "Nabe": false,
 "Yakiniku":false,
 "Yakitori":false,
