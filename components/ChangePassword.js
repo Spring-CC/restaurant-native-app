@@ -1,32 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import * as WebBrowser from "expo-web-browser";
 import { Button, StyleSheet, Text, View, TextInput } from "react-native";
-import request from "request";
 
 WebBrowser.maybeCompleteAuthSession();
 
 export default function changePassword({ navigation }) {
   const [email, onChangeEmail] = useState("");
 
+  const url = `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/dbconnections/change_password`;
   const options = {
     method: "POST",
-    url: `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/dbconnections/change_password`,
     headers: { "content-type": "application/json" },
-    body: {
+    body: JSON.stringify({
       client_id: process.env.REACT_APP_APP_AUTHID,
       email: email,
       connection: "atlas-db-connection",
-    },
-    json: true,
+    }),
   };
 
-  function change() {
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-
-      console.log(body);
-    });
+  async function change() {
+    const response = await fetch(url, options)
+      .then((response) => response.text())
+      .then(() => {
+        console.log("Success");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -63,7 +65,7 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     width: 300,
-    borderColor: "#gray",
+    borderColor: "#F9C74F",
     borderWidth: 1,
     marginTop: 20,
   },
