@@ -6,7 +6,7 @@ import locationReducer from "./locations";
 import profileReducer from "./profile";
 import picReducer from "./profilepic";
 import restaurantsListReducer from './restaurantsList'
-// import addFavoritesReducer from './favorites' // alberto there is no favorites.js in this folder.
+import addFavoritesReducer from './favorites' // alberto there is no favorites.js in this folder.
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -18,6 +18,7 @@ const rootReducer = combineReducers({
   locationReducer,
   profileReducer,
   restaurantsListReducer,
+  addFavoritesReducer,
 });
 
 export default rootReducer;

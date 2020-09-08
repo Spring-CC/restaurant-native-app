@@ -1,7 +1,8 @@
-import React from 'react';
-import { useSelector } from "react-redux";
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import { StyleSheet, Text, ScrollView, View, Image, Linking, Button } from 'react-native';
 import Nav from './Nav';
+import axios from 'axios';
 import { postFavorites } from "../actions";
 
 export default function Details({ navigation }) {
@@ -10,6 +11,19 @@ export default function Details({ navigation }) {
     const dispatch = useDispatch();
 
     const restData = useSelector(state => state.restaurantReducer);
+
+    const [selection, setSelection] = useState(true);
+
+    const userEmail = "testest@example.com";
+
+    async function updateToDatabase(email, restId){
+        const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
+            userEmail : email,
+            restaurant_Id : restId
+        })
+        console.log(favorite)
+    }
+
 
     return (
 
@@ -23,6 +37,28 @@ export default function Details({ navigation }) {
                         // Navigate using the `navigation` prop that you received
                          navigation.navigate('Home');
                         }}/>
+                </View>
+                <View style={styles.text_title}>
+                    {selection ? ( 
+                        <Button
+                        title="Add to Favorites ❤️"
+                        color="#ff3300"
+                        onPress={() => {
+                        // Navigate using the `navigation` prop that you received
+                         setSelection(!selection);
+                         //dispatch(postFavorites(restData.id));
+                         updateToDatabase(userEmail, restData[0].id);
+                        }}/>):( 
+                        <Button            
+                        title="Delete from favorites 💔"
+                        color="#ff3300"
+                        onPress={() => {
+                        // Navigate using the `navigation` prop that you received
+                         setSelection(!selection);
+                        }}/>
+                        )}
+                   
+                        
                 </View>
                 <Image
                     source={{

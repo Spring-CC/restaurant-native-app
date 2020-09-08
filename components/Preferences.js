@@ -502,9 +502,9 @@ export default function Preferences({navigation}) {
       <Button title="Set Preferences" 
       onPress={() => {
         getRestaurants();
-        setTimeout(()=>{
-          navigation.navigate('Home');
-        }, 2000);
+        // setTimeout(()=>{
+        //   navigation.navigate('Home');
+        // }, 2000);
         
       }
     }

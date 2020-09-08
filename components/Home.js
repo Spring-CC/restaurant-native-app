@@ -35,8 +35,6 @@ export default function Home({ navigation }) {
   var color4 = '#f9c74f'; // - Maize Crayola
   var color5 = '#90be6d'; // - Pistachio
 
-  const [resData, setResData] = useState(data);
-
   const index = useSelector((state) => state.incrementReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
@@ -59,7 +57,7 @@ export default function Home({ navigation }) {
     getRestaurants();
   }, [])
 
-  const restaurants = data.filter((restaurant, idx) => idx === index);
+  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
