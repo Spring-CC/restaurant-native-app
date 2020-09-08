@@ -16,7 +16,8 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 //import Slider from './Slider'
 
-export default function Preferences({ navigation }) {
+// needs comments 
+export default function Preferences({navigation}) {
 
 
   async function getRestaurants() {
