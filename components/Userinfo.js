@@ -49,9 +49,11 @@ export default function UserInfo({ navigation }) {
           <View style={styles.iconContent}>
             <Icon style={styles.icon} name="key" size={30} />
           </View>
-          <View style={styles.infoContent}>
-            <Text style={styles.info}>Change password</Text>
-          </View>
+          <Button
+              style={styles.button}
+              title="Change Password"
+              onPress={() => navigation.navigate("ChangePassword")}
+            />
         </View>
 
         <View style={styles.item}>
