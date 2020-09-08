@@ -45,3 +45,10 @@ export const setProfile = (obj) => {
     payload: obj,
   };
 };
+
+export const setPic = (obj) => {
+  return {
+    type: "IMG",
+    payload: obj,
+  };
+};
