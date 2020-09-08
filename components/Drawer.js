@@ -13,6 +13,12 @@ import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
 
+class Hidden extends React.Component {
+  render() {
+    return null;
+  }
+}
+
 const Drawer = createDrawerNavigator(
   {
     Home: {
@@ -42,6 +48,9 @@ const Drawer = createDrawerNavigator(
     },
     Details : {
       screen: Details,
+      navigationOptions: {
+        drawerLabel: <Hidden/>,
+      }
     }
   },
   {

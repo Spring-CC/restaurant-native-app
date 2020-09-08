@@ -6,6 +6,7 @@ import locationReducer from "./locations";
 import profileReducer from "./profile";
 import picReducer from "./profilepic";
 import restaurantsListReducer from './restaurantsList'
+import addFavoritesReducer from './favorites'
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   priceReducer,
   locationReducer,
   profileReducer,
-  restaurantsListReducer
+  restaurantsListReducer,
+  addFavoritesReducer
 });
 
 export default rootReducer;
