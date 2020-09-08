@@ -26,18 +26,18 @@ export const priceRange = (obj) => {
 };
 
 export const setLocations = (obj) => {
-    return {
-        type: "LOCATIONS",
-        payload: obj,
-     }
-}
+  return {
+    type: "LOCATIONS",
+    payload: obj,
+  };
+};
 
 export const setRestaurantsList = (obj) => {
-    return {
-        type: "RESTAURANT_LIST",
-        payload: obj,
-     }
-}
+  return {
+    type: "RESTAURANT_LIST",
+    payload: obj,
+  };
+};
 
 export const setProfile = (obj) => {
   return {
@@ -50,19 +50,26 @@ export const addFavorites = (restId) => {
   return {
     type: "ADD_FAVORITES",
     payload: restId,
-  }
-}
+  };
+};
 
 export const postFavorites = (restId) => {
   return {
     type: "POST_FAVORITES",
-    payload: restID,
-  }
-}
+    payload: restId,
+  };
+};
 
 export const setPic = (obj) => {
   return {
     type: "IMG",
     payload: obj,
+  };
+};
+
+export const setUserId = (user) => {
+  return {
+    type: "USERID",
+    payload: user,
   };
 };

@@ -1717,11 +1717,6 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-bcryptjs@^2.4.3:
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/bcryptjs/-/bcryptjs-2.4.3.tgz#9ab5627b93e60621ff7cdac5da9733027df1d0cb"
-  integrity sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
-
 big-integer@^1.6.44:
   version "1.6.48"
   resolved "https://registry.yarnpkg.com/big-integer/-/big-integer-1.6.48.tgz#8fd88bd1632cba4a1c8c3e3d7159f08bb95b4b9e"
@@ -4710,6 +4705,16 @@ react-native-appearance@~0.3.3:
     fbemitter "^2.1.1"
     invariant "^2.2.4"
     use-subscription "^1.0.0"
+
+react-native-bouncy-checkbox@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-bouncy-checkbox/-/react-native-bouncy-checkbox-0.2.2.tgz#b9e966006513a668997efa0fcb8053b668bab539"
+  integrity sha512-rRCkDydh6W3o8+8LSllcQgfU9wiYk4Us8h2sI9AwAQe3zmLIXm6zLURpS5nf1LTkELRvSPL7JBJr8kNT0lHRwg==
+
+react-native-dynamic-vector-icons@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-dynamic-vector-icons/-/react-native-dynamic-vector-icons-1.0.0.tgz#a7a5fe4c77f3fe4452b6e68e22a739f955238409"
+  integrity sha512-XbQjbKmutTLX1t0WvFFkZFi5V2HPCZZLD3B6b5GgwIJdsq3oXvWMeUB+are/h5UtKJumkJFPm+hylOHB7bS02w==
 
 react-native-gesture-handler@~1.6.0:
   version "1.6.1"
