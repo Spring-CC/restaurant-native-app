@@ -2,8 +2,12 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { StyleSheet, Text, ScrollView, View, Image, Linking, Button } from 'react-native';
 import Nav from './Nav';
+import { postFavorites } from "../actions";
 
 export default function Details({ navigation }) {
+
+    const favorites = useSelector((state) => state.addFavoritesReducer);
+    const dispatch = useDispatch();
 
     const restData = useSelector(state => state.restaurantReducer);
 

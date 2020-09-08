@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
     getRestaurants();
   }, [])
 
-  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
+  const restaurants = data.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
@@ -140,10 +140,15 @@ export default function Home({ navigation }) {
         {restaurants.map((restaurant) => {
           return (
             <View key={restaurant.id}>
+              <Text style={styles.textTitle}>Restaurant Name</Text>
               <Text style={styles.textName}>{restaurant.name}</Text>
+              <Text style={styles.textTitle}>Restaurant Name (Katakana)</Text>
               <Text style={styles.textKana}>{`(${restaurant.name_kana})`}</Text>
+              <Text style={styles.textTitle}>Restaurant Category</Text>
               <Text style={styles.textBody}>{restaurant.category}</Text>
+              <Text style={styles.textTitle}>Restaurant Address</Text>
               <Text style={styles.textBody}>{restaurant.address}</Text>
+              <Text style={styles.textTitle}>Restaurant Open</Text>
               <Text style={styles.textBody}>{restaurant.opentime}</Text>
             </View>
           );
@@ -190,6 +195,12 @@ const styles = StyleSheet.create({
   },
   textBody: {
     fontSize: 20,
+    fontFamily: "MPLUS1p-Bold",
+    textAlign: "center",
+  },
+  textTitle: {
+    fontSize: 20,
+    textDecorationLine: "underline",
     fontFamily: "MPLUS1p-Bold",
     textAlign: "center",
   },

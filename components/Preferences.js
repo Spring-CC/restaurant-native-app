@@ -33,12 +33,15 @@ export default function Preferences({ navigation }) {
 
   let mockdata = [
     {
+      id: 1,
       name: "Shibuya",
     },
     {
+      id: 2,
       name: "Shinjuku",
     },
     {
+      id: 3,
       name: "Tokyo",
     },
   ];
@@ -490,7 +493,7 @@ export default function Preferences({ navigation }) {
           }}
         >
           {mockdata.map((elem) => (
-            <Picker.Item label={elem.name} value={elem.name} />
+            <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
           ))}
         </Picker>
       </View>
@@ -499,7 +502,10 @@ export default function Preferences({ navigation }) {
         <Button title="Set Preferences"
           onPress={() => {
             getRestaurants();
-            //navigation.navigate('Home');
+            setTimeout(() => {
+              navigation.navigate('Home');
+            }, 2000);
+
           }
           }
         />

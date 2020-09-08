@@ -45,3 +45,24 @@ export const setProfile = (obj) => {
     payload: obj,
   };
 };
+
+export const addFavorites = (restId) => {
+  return {
+    type: "ADD_FAVORITES",
+    payload: restId,
+  }
+}
+
+export const postFavorites = (restId) => {
+  return {
+    type: "POST_FAVORITES",
+    payload: restID,
+  }
+}
+
+export const setPic = (obj) => {
+  return {
+    type: "IMG",
+    payload: obj,
+  };
+};
