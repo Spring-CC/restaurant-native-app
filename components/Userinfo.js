@@ -11,8 +11,9 @@ export default function UserInfo({ navigation }) {
   /** if no name then show guest */
   if (name[0].name === "") {
     return (
-<View>
-  <Text>GTFO</Text>
+<View style={styles.background}>
+  <Image source={require('./../assets/logo_bowl.png')} style={styles.logo} />
+  <Text>You are not logged in, please log in before trying to view your profile.</Text>
 </View>
     );
   } else {
@@ -66,6 +67,9 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#DCDCDC",
   },
+  background: {
+    alignItems: "center",
+  },
   headerContent: {
     padding: 30,
     alignItems: "center",
@@ -92,6 +96,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#778899",
     height: 500,
     alignItems: "center",
+  },
+  logo: {
+    marginTop: 3,
+    width: 100,
+    height: 100,
   },
   item: {
     flexDirection: "row",
