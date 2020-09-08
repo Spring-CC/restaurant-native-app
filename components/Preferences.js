@@ -11,24 +11,24 @@ import {
 import Nav from "./Nav";
 import { useSelector, useDispatch } from "react-redux";
 import { category, priceRange, setLocations, setRestaurantsList } from "../actions";
-import axios from "axios"
-import categoryFilter from "../actions/cateforyFilter"
+import axios from "axios";
+import categoryFilter from "../actions/cateforyFilter";
 //import Slider from './Slider'
 
-export default function Preferences({navigation}) {
+export default function Preferences({ navigation }) {
 
 
-  async function getRestaurants(){
-    try{  
-    const results = await axios.get("http://localhost:8080/restAtlas");
-    const restaurants = results.data;
-    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    const filtCat = categoryFilter(filtBudget,categories);
-    dispatch(setRestaurantsList(filtCat))
-    console.log(restaurantList);
-  }catch(err){
-    console.log(err);
-  }
+  async function getRestaurants() {
+    try {
+      const results = await axios.get("http://localhost:8080/restAtlas");
+      const restaurants = results.data;
+      const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+      const filtCat = categoryFilter(filtBudget, categories);
+      dispatch(setRestaurantsList(filtCat))
+      console.log(restaurantList);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   let mockdata = [
@@ -496,13 +496,13 @@ export default function Preferences({navigation}) {
       </View>
 
       <View style={styles.container}>
-      <Button title="Set Preferences" 
-      onPress={() => {
-        getRestaurants();
-        //navigation.navigate('Home');
-      }
-    }
-  />
+        <Button title="Set Preferences"
+          onPress={() => {
+            getRestaurants();
+            //navigation.navigate('Home');
+          }
+          }
+        />
       </View>
     </ScrollView>
   );
