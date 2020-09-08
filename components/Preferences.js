@@ -3,10 +3,10 @@ import {
   StyleSheet,
   Text,
   View,
-  CheckBox,
   ScrollView,
   Picker,
-  Button
+  Button,
+  TouchableOpacity
 } from "react-native";
 import Nav from "./Nav";
 import { useSelector, useDispatch } from "react-redux";
@@ -98,17 +98,17 @@ export default function Preferences({ navigation }) {
   const dispatch = useDispatch();
 
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <View>
         <Nav />
       </View>
 
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.title}>Preferences</Text>
-        </View>
+      <View>
+
+        <Text style={styles.title}>Preferences</Text>
 
         <View style={styles.checkboxContainer}>
+
           <BouncyCheckbox
             isChecked={categories["居酒屋"]}
             text="Izakaya 🍺"
@@ -169,11 +169,6 @@ export default function Preferences({ navigation }) {
               );
             }}
           />
-        </View>
-      </View>
-
-      <View style={styles.container}>
-        <View style={styles.checkboxContainer}>
           <BouncyCheckbox
             isChecked={categories["焼肉・ホルモン"]}
             text="Yakiniku (Offal) 🍛"
@@ -238,11 +233,6 @@ export default function Preferences({ navigation }) {
               );
             }}
           />
-        </View>
-      </View>
-
-      <View style={styles.container}>
-        <View style={styles.checkboxContainer}>
           <BouncyCheckbox
             isChecked={categories["フレンチ"]}
             text="French 🏳🥩"
@@ -254,7 +244,6 @@ export default function Preferences({ navigation }) {
             }}
             style={styles.checkbox}
           />
-          <Text style={styles.label}></Text>
           <BouncyCheckbox
             isChecked={categories["ラーメン"]}
             text="Ramen 🌭"
@@ -315,11 +304,6 @@ export default function Preferences({ navigation }) {
               );
             }}
           />
-        </View>
-      </View>
-
-      <View style={styles.container}>
-        <View style={styles.checkboxContainer}>
           <BouncyCheckbox
             isChecked={categories["定食・食事処"]}
             text="Set menu 🍰"
@@ -415,10 +399,11 @@ export default function Preferences({ navigation }) {
       </View>
 
       <View style={styles.container}>
-        <View>
-          <Text style={styles.title}>Price Range</Text>
-        </View>
+
+        <Text style={styles.title}>Price Range</Text>
+
         <View style={styles.checkboxContainer}>
+
           <BouncyCheckbox
             isChecked={priceSelected[0].checked}
             text="¥500 - ¥1000"
@@ -484,34 +469,42 @@ export default function Preferences({ navigation }) {
       </View>
 
       <View style={styles.container}>
-        <Text style={styles.title}>Location</Text>
-        <Picker
-          selectedValue={location.name}
-          style={styles.onePicker}
-          itemStyle={styles.pickerItem}
-          onValueChange={(itemValue) => {
-            console.log(location.name);
-            dispatch(setLocations((location.name = itemValue)));
-            console.log(location.name);
-          }}
-        >
-          {mockdata.map((elem) => (
-            <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
-          ))}
-        </Picker>
-      </View>
 
-      <View style={styles.container}>
-        <Button title="Set Preferences"
+        <Text style={styles.title}>Location</Text>
+
+        <View style={styles.pickerContainer}>
+          <Picker
+            selectedValue={location.name}
+            itemStyle={styles.pickerItem}
+            onValueChange={(itemValue) => {
+              console.log(location.name);
+              dispatch(setLocations((location.name = itemValue)));
+              console.log(location.name);
+            }}
+          >
+            {mockdata.map((elem) => (
+              <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
+            ))}
+          </Picker>
+        </View>
+
+      </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.buttons}
           onPress={() => {
             getRestaurants();
             setTimeout(() => {
               navigation.navigate('Home');
             }, 2000);
-          }
-          }
-        />
+          }}
+        >
+          <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+            Set Preferences
+        </Text>
+        </TouchableOpacity>
       </View>
+
     </ScrollView>
   );
 }
@@ -519,37 +512,37 @@ export default function Preferences({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#F9C74F',
   },
   checkboxContainer: {
-    width: "70%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
+    backgroundColor: 'white',
+    margin: 10,
+    borderRadius: 12,
+    padding: 10,
   },
-  checkbox: {
-    alignSelf: "center",
-  },
-  label: {
-    margin: 8,
+  pickerContainer: {
+    backgroundColor: 'white',
+    margin: 10,
+    borderRadius: 12,
   },
   title: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    fontFamily: "Cochin",
+    textAlign: 'center',
+    fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
-    fontWeight: "bold",
   },
   pickerItem: {
     color: "red",
   },
-  onePicker: {
+  buttonContainer: {
+    alignItems: 'center',
+    margin: 20,
+  },
+  buttons: {
+    height: 50,
     width: 200,
-    height: 44,
-    backgroundColor: "#FFF0E0",
-    borderColor: "black",
-    borderWidth: 1,
+    backgroundColor: "#90BE6D",
+    borderRadius: 12,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
