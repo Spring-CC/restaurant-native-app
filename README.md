@@ -1,5 +1,5 @@
 # Spring APP
-![logo](src/img/tabe.png)
+![logo](assets/logo_bowl.png)
 
 This was created during our time as students at Code Chrysalis.
 
@@ -15,11 +15,11 @@ This was created during our time as students at Code Chrysalis.
 This app allows users to like or dislike jokes made specifically for them!
 Users can also see the most liked and disliked jokes of all time!
 
-<img width="957" alt="shaun" src="src/img/app.png">
+<img width="957" alt="shaun" src="assets/logo_bowl.png">
 
 
 ## Link
-[JOKER](https://cc13-rakutenapi-staging.herokuapp.com/)
+[Munchify](https://www.google.com/)
 
 
 ## Project setup

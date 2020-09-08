@@ -59,3 +59,10 @@ export const postFavorites = (restId) => {
     payload: restID,
   }
 }
+
+export const setPic = (obj) => {
+  return {
+    type: "IMG",
+    payload: obj,
+  };
+};

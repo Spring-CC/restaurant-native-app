@@ -25,6 +25,10 @@ const Drawer = createDrawerNavigator(
       screen: Home,
     },
 
+    ChangePassword: {
+      screen: ChangePassword,
+    },
+
     Login: {
       screen: Auth,
     },

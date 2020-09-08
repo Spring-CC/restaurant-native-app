@@ -28,6 +28,7 @@ import axios from "axios";
 // }
 
 export default function Home({ navigation }) {
+
   var color1 = "#f94144"; // - Red Salsa
   var color2 = "#f3722c"; // - Orange Red
   var color3 = '#f8961e'; // - Yellow Orange Color Wheel
@@ -42,35 +43,29 @@ export default function Home({ navigation }) {
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
-
-  
-  async function getRestaurants(){
-    try{  
-    const results = await axios.get("http://localhost:8080/restAtlas");
-    const restaurants = results.data;
-    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    dispatch(setRestaurantsList(filtBudget))
-    console.log(filtBudget);
-  }catch(err){
-    console.log(err);
-  }
+  async function getRestaurants() {
+    try {
+      const results = await axios.get("http://localhost:8080/restAtlas");
+      const restaurants = results.data;
+      const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+      dispatch(setRestaurantsList(filtBudget))
+      console.log(filtBudget);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getRestaurants();
   }, [])
 
-  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
+  const restaurants = data.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
       images.push(restaurants[0].image_url[key]);
     }
   }
-
-
-
-
 
   function onPress() {
     dispatch(restaurant(restaurants));
@@ -145,10 +140,15 @@ export default function Home({ navigation }) {
         {restaurants.map((restaurant) => {
           return (
             <View key={restaurant.id}>
+              <Text style={styles.textTitle}>Restaurant Name</Text>
               <Text style={styles.textName}>{restaurant.name}</Text>
+              <Text style={styles.textTitle}>Restaurant Name (Katakana)</Text>
               <Text style={styles.textKana}>{`(${restaurant.name_kana})`}</Text>
+              <Text style={styles.textTitle}>Restaurant Category</Text>
               <Text style={styles.textBody}>{restaurant.category}</Text>
+              <Text style={styles.textTitle}>Restaurant Address</Text>
               <Text style={styles.textBody}>{restaurant.address}</Text>
+              <Text style={styles.textTitle}>Restaurant Open</Text>
               <Text style={styles.textBody}>{restaurant.opentime}</Text>
             </View>
           );
@@ -195,6 +195,12 @@ const styles = StyleSheet.create({
   },
   textBody: {
     fontSize: 20,
+    fontFamily: "MPLUS1p-Bold",
+    textAlign: "center",
+  },
+  textTitle: {
+    fontSize: 20,
+    textDecorationLine: "underline",
     fontFamily: "MPLUS1p-Bold",
     textAlign: "center",
   },
