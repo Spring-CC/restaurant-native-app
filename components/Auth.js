@@ -4,7 +4,8 @@ import * as WebBrowser from "expo-web-browser";
 import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
-import { setProfile, setPic } from "../actions";
+import { setProfile, setPic, setUserId } from "../actions";
+import { set } from "react-native-reanimated";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, default: true });
@@ -14,6 +15,7 @@ WebBrowser.maybeCompleteAuthSession();
 export default function Auth({ navigation }) {
   const [name, setName] = useState(null);
   const [snap, setSnap] = useState(null);
+  const [userId, setId] = useState(null);
   const dispatch = useDispatch();
 
   const [request, result, promptAsync] = AuthSession.useAuthRequest(
@@ -52,10 +54,14 @@ export default function Auth({ navigation }) {
         console.log(decoded);
         const { nickname } = decoded;
         const { picture } = decoded;
+        const { sub } = decoded;
+        const userId = sub.substr(6);
+        setId(userId);
         setSnap(picture);
         setName(nickname);
         dispatch(setProfile(nickname));
         dispatch(setPic(picture));
+        dispatch(setUserId(userId));
       }
     }
   }, [result]);

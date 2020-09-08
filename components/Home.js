@@ -41,6 +41,7 @@ export default function Home({ navigation }) {
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
+  const userId = useSelector((state) => state.userIdReducer);
   const dispatch = useDispatch();
 
   async function getRestaurants() {
@@ -73,7 +74,9 @@ export default function Home({ navigation }) {
   async function liked() {
     try {
       const likedResId = restaurants[0].id;
-      await axios.post(`http://localhost:8080/dummyusers/${likedResId}`);
+      await axios.post(`http://localhost:8080/dummyusers/${userId}`, {
+        restId: likedResId,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -82,6 +85,7 @@ export default function Home({ navigation }) {
   function onPress() {
     dispatch(restaurant(restaurants));
     liked();
+    console.log(userId);
     navigation.navigate("Details");
   }
 
