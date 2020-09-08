@@ -4,10 +4,12 @@ import categoryReducer from "./categories";
 import priceReducer from "./priceRange";
 import locationReducer from "./locations";
 import profileReducer from "./profile";
+import picReducer from "./profilepic";
 import restaurantsListReducer from './restaurantsList'
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
+  picReducer,
   incrementReducer,
   restaurantReducer,
   categoryReducer,

@@ -5,9 +5,10 @@ import Icon from "react-native-vector-icons/Foundation";
 import { useSelector } from "react-redux";
 
 export default function UserInfo({ navigation }) {
-  const profileImage = require("../assets/profile.jpeg");
+  // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
-  console.log(name);
+  const profileImage = useSelector((state) => state.picReducer);
+  console.log(profileImage);
   /** if no name then show guest */
   if (name[0].name === "") {
     return (
@@ -40,8 +41,6 @@ export default function UserInfo({ navigation }) {
           ) : (
             <Text>Hello, guest!</Text>
           )}
-          <Text style={styles.userInfo}>shaunshaunshaun@mail.com </Text>
-          <Text style={styles.userInfo}>UK </Text>
         </View>
       </View>
 
