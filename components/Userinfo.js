@@ -14,6 +14,19 @@ export default function UserInfo({ navigation }) {
 <View style={styles.background}>
   <Image source={require('./../assets/logo_bowl.png')} style={styles.logo} />
   <Text>You are not logged in, please log in before trying to view your profile.</Text>
+  <Button
+                        title="Go To Home"
+                        onPress={() => {
+                        // Navigate using the `navigation` prop that you received
+                         navigation.navigate('Home');
+                        }}/>
+
+<Button
+                        title="Go To Login"
+                        onPress={() => {
+                        // Navigate using the `navigation` prop that you received
+                         navigation.navigate('Login');
+                        }}/>
 </View>
     );
   } else {
