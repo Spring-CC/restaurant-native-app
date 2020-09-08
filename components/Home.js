@@ -92,42 +92,10 @@ export default function Home({ navigation }) {
   }
 
   function rightActions() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#F9C74F",
-          justifyContent: "center",
-        }}
-      >
-        <Button
-          title="Yes"
-          onPress={() => {
-            onPress();
-          }}
-        />
-      </View>
-    );
+
   }
   function leftActions() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: "#F9C74F",
-          justifyContent: "center",
-        }}
-      >
-        <Button
-          style={{
-            color: "white",
-            paddingHorizontal: 10,
-            fontWeight: "600",
-          }}
-          title="NO"
-        />
-      </View>
-    );
+    
   }
 
   return (
