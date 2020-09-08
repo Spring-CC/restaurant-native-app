@@ -9,6 +9,7 @@ import {
   Button,
 } from "react-native";
 import { SliderBox } from "react-native-image-slider-box";
+import Swipeable from "react-native-gesture-handler/Swipeable";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, restaurant } from "../actions";
 import data from "../data/restaurants.json";
@@ -30,9 +31,9 @@ import axios from "axios";
 export default function Home({ navigation }) {
   var color1 = "#f94144"; // - Red Salsa
   var color2 = "#f3722c"; // - Orange Red
-  var color3 = '#f8961e'; // - Yellow Orange Color Wheel
-  var color4 = '#f9c74f'; // - Maize Crayola
-  var color5 = '#90be6d'; // - Pistachio
+  var color3 = "#f8961e"; // - Yellow Orange Color Wheel
+  var color4 = "#f9c74f"; // - Maize Crayola
+  var color5 = "#90be6d"; // - Pistachio
 
   const [resData, setResData] = useState(data);
 
@@ -41,24 +42,26 @@ export default function Home({ navigation }) {
   const price = useSelector((state) => state.priceReducer);
   const dispatch = useDispatch();
 
-
-  
-  async function getRestaurants(){
-    try{  
-    const results = await axios.get("http://localhost:8080/restAtlas");
-    const restaurants = results.data;
-    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    const filtCat = filtBudget.filter(res => res.category === "エスニック料理を堪能");
-    setResData(filtCat);
-    console.log(filtCat);
-  }catch(err){
-    console.log(err);
+  async function getRestaurants() {
+    try {
+      const results = await axios.get("http://localhost:8080/restAtlas");
+      const restaurants = results.data;
+      const filtBudget = restaurants.filter(
+        (res) => res.budget >= price.min && res.budget <= price.max
+      );
+      const filtCat = filtBudget.filter(
+        (res) => res.category === "エスニック料理を堪能"
+      );
+      setResData(filtCat);
+      console.log(filtCat);
+    } catch (err) {
+      console.log(err);
+    }
   }
-  }
 
-  useEffect(()=>{
+  useEffect(() => {
     getRestaurants();
-  }, [])
+  }, []);
 
   const restaurants = resData.filter((restaurant, idx) => idx === index);
   const images = [];
@@ -68,13 +71,27 @@ export default function Home({ navigation }) {
     }
   }
 
-
-
-
-
   function onPress() {
     dispatch(restaurant(restaurants));
     navigation.navigate("Details");
+  }
+
+  function leftActions() {
+    return (
+      <View
+        style={{ flex: 1, backgroundColor: "blue", justifyContent: "center" }}
+      >
+        <Text
+          style={{
+            color: "white",
+            paddingHorizontal: 10,
+            fontWeight: "600",
+          }}
+        >
+          Left Action
+        </Text>
+      </View>
+    );
   }
 
   return (
@@ -85,7 +102,7 @@ export default function Home({ navigation }) {
           title="Go To Login"
           onPress={() => {
             // Navigate using the `navigation` prop that you received
-            navigation.navigate("Auth");
+            navigation.navigate("Login");
           }}
         />
       </View>
@@ -93,7 +110,7 @@ export default function Home({ navigation }) {
         <TouchableOpacity
           style={styles.buttons}
           onPress={() => {
-            dispatch(increment())
+            dispatch(increment());
           }}
         >
           <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
@@ -141,19 +158,25 @@ export default function Home({ navigation }) {
           />
         </ScrollView>
       </View>
-      <View style={styles.restaurant}>
-        {restaurants.map((restaurant) => {
-          return (
-            <View key={restaurant.id}>
-              <Text style={styles.textName}>{restaurant.name}</Text>
-              <Text style={styles.textKana}>{`(${restaurant.name_kana})`}</Text>
-              <Text style={styles.textBody}>{restaurant.category}</Text>
-              <Text style={styles.textBody}>{restaurant.address}</Text>
-              <Text style={styles.textBody}>{restaurant.opentime}</Text>
-            </View>
-          );
-        })}
-      </View>
+      <Swipeable renderRightActions={navigation.navigate("Detail")}>
+        <Swipeable renderLeftActions={() => leftActions()}>
+          <View style={styles.restaurant}>
+            {restaurants.map((restaurant) => {
+              return (
+                <View key={restaurant.id}>
+                  <Text style={styles.textName}>{restaurant.name}</Text>
+                  <Text
+                    style={styles.textKana}
+                  >{`(${restaurant.name_kana})`}</Text>
+                  <Text style={styles.textBody}>{restaurant.category}</Text>
+                  <Text style={styles.textBody}>{restaurant.address}</Text>
+                  <Text style={styles.textBody}>{restaurant.opentime}</Text>
+                </View>
+              );
+            })}
+          </View>
+        </Swipeable>
+      </Swipeable>
     </ScrollView>
   );
 }
@@ -161,7 +184,7 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
   buttonContainer: {
     flexDirection: "row",
