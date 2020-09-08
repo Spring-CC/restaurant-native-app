@@ -8,6 +8,7 @@ export default function Login({ navigation }) {
   const [email, onChangeEmail] = useState('');
   const [password, onChangePassword] = useState('');
 
+  // the hell is this function doing? 
   const callBackFunc = (err) => {
     return err;
   }

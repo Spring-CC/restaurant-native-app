@@ -11,6 +11,7 @@ export default function SignUp({ navigation }) {
     password
   };
 
+  // ???? 
   const callBackFunc = (err) => {
     return err;
   }

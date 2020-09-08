@@ -27,6 +27,9 @@ const Drawer = createDrawerNavigator(
 
     ChangePassword: {
       screen: ChangePassword,
+      navigationOptions: {
+        drawerLabel: <Hidden/>,
+      }
     },
 
     Login: {
