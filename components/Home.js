@@ -28,6 +28,7 @@ import axios from "axios";
 // }
 
 export default function Home({ navigation }) {
+
   var color1 = "#f94144"; // - Red Salsa
   var color2 = "#f3722c"; // - Orange Red
   var color3 = '#f8961e'; // - Yellow Orange Color Wheel
@@ -42,21 +43,19 @@ export default function Home({ navigation }) {
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
-
-  
-  async function getRestaurants(){
-    try{  
-    const results = await axios.get("http://localhost:8080/restAtlas");
-    const restaurants = results.data;
-    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
-    dispatch(setRestaurantsList(filtBudget))
-    console.log(filtBudget);
-  }catch(err){
-    console.log(err);
-  }
+  async function getRestaurants() {
+    try {
+      const results = await axios.get("http://localhost:8080/restAtlas");
+      const restaurants = results.data;
+      const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+      dispatch(setRestaurantsList(filtBudget))
+      console.log(filtBudget);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getRestaurants();
   }, [])
 
@@ -67,10 +66,6 @@ export default function Home({ navigation }) {
       images.push(restaurants[0].image_url[key]);
     }
   }
-
-
-
-
 
   function onPress() {
     dispatch(restaurant(restaurants));
