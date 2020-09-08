@@ -11,7 +11,7 @@ import {
 import { SliderBox } from "react-native-image-slider-box";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, restaurant } from "../actions";
+import { increment, restaurant, setRestaurantsList } from "../actions";
 import data from "../data/restaurants.json";
 import Nav from "./Nav";
 import axios from "axios";
@@ -40,6 +40,7 @@ export default function Home({ navigation }) {
   const index = useSelector((state) => state.incrementReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
+  const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
   async function getRestaurants() {
@@ -49,11 +50,8 @@ export default function Home({ navigation }) {
       const filtBudget = restaurants.filter(
         (res) => res.budget >= price.min && res.budget <= price.max
       );
-      const filtCat = filtBudget.filter(
-        (res) => res.category === "エスニック料理を堪能"
-      );
-      setResData(filtCat);
-      console.log(filtCat);
+      dispatch(setRestaurantsList(filtBudget));
+      console.log(filtBudget);
     } catch (err) {
       console.log(err);
     }
@@ -61,9 +59,10 @@ export default function Home({ navigation }) {
 
   useEffect(() => {
     getRestaurants();
+    console.log(restaurants);
   }, []);
 
-  const restaurants = resData.filter((restaurant, idx) => idx === index);
+  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
@@ -71,8 +70,18 @@ export default function Home({ navigation }) {
     }
   }
 
+  async function liked() {
+    try {
+      const likedResId = restaurants[0].id;
+      await axios.post(`http://localhost:8080/dummyusers/${likedResId}`);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   function onPress() {
     dispatch(restaurant(restaurants));
+    liked();
     navigation.navigate("Details");
   }
 
@@ -88,7 +97,7 @@ export default function Home({ navigation }) {
             fontWeight: "600",
           }}
         >
-          Left Action
+          Go to next
         </Text>
       </View>
     );
@@ -158,24 +167,25 @@ export default function Home({ navigation }) {
           />
         </ScrollView>
       </View>
-      <Swipeable renderRightActions={navigation.navigate("Detail")}>
-        <Swipeable renderLeftActions={() => leftActions()}>
-          <View style={styles.restaurant}>
-            {restaurants.map((restaurant) => {
-              return (
-                <View key={restaurant.id}>
-                  <Text style={styles.textName}>{restaurant.name}</Text>
-                  <Text
-                    style={styles.textKana}
-                  >{`(${restaurant.name_kana})`}</Text>
-                  <Text style={styles.textBody}>{restaurant.category}</Text>
-                  <Text style={styles.textBody}>{restaurant.address}</Text>
-                  <Text style={styles.textBody}>{restaurant.opentime}</Text>
-                </View>
-              );
-            })}
-          </View>
-        </Swipeable>
+      <Swipeable
+        renderRightActions={navigation.navigate("Detail")}
+        renderLeftActions={() => leftActions()}
+      >
+        <View style={styles.restaurant}>
+          {restaurants.map((restaurant) => {
+            return (
+              <View key={restaurant.id}>
+                <Text style={styles.textName}>{restaurant.name}</Text>
+                <Text
+                  style={styles.textKana}
+                >{`(${restaurant.name_kana})`}</Text>
+                <Text style={styles.textBody}>{restaurant.category}</Text>
+                <Text style={styles.textBody}>{restaurant.address}</Text>
+                <Text style={styles.textBody}>{restaurant.opentime}</Text>
+              </View>
+            );
+          })}
+        </View>
       </Swipeable>
     </ScrollView>
   );

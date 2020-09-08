@@ -4,6 +4,7 @@ import categoryReducer from "./categories";
 import priceReducer from "./priceRange";
 import locationReducer from "./locations";
 import profileReducer from "./profile";
+import restaurantsListReducer from './restaurantsList'
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   priceReducer,
   locationReducer,
   profileReducer,
+  restaurantsListReducer
 });
 
 export default rootReducer;
