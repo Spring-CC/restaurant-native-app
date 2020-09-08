@@ -5,14 +5,29 @@ import Icon from "react-native-vector-icons/Foundation";
 import { useSelector } from "react-redux";
 
 export default function UserInfo({ navigation }) {
-  const profileImage = require("../assets/profile.jpeg");
+  // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
-  console.log(name);
+  const profileImage = useSelector((state) => state.picReducer);
+  console.log(profileImage);
   /** if no name then show guest */
   if (name[0].name === "") {
     return (
-<View>
-  <Text>GTFO</Text>
+<View style={styles.background}>
+  <Image source={require('./../assets/logo_bowl.png')} style={styles.logo} />
+  <Text>You are not logged in, please log in before trying to view your profile.</Text>
+  <Button
+                        title="Go To Home"
+                        onPress={() => {
+                        // Navigate using the `navigation` prop that you received
+                         navigation.navigate('Home');
+                        }}/>
+
+<Button
+                        title="Go To Login"
+                        onPress={() => {
+                        // Navigate using the `navigation` prop that you received
+                         navigation.navigate('Login');
+                        }}/>
 </View>
     );
   } else {
@@ -26,8 +41,6 @@ export default function UserInfo({ navigation }) {
           ) : (
             <Text>Hello, guest!</Text>
           )}
-          <Text style={styles.userInfo}>shaunshaunshaun@mail.com </Text>
-          <Text style={styles.userInfo}>UK </Text>
         </View>
       </View>
 
@@ -36,9 +49,11 @@ export default function UserInfo({ navigation }) {
           <View style={styles.iconContent}>
             <Icon style={styles.icon} name="key" size={30} />
           </View>
-          <View style={styles.infoContent}>
-            <Text style={styles.info}>Change password</Text>
-          </View>
+          <Button
+              style={styles.button}
+              title="Change Password"
+              onPress={() => navigation.navigate("ChangePassword")}
+            />
         </View>
 
         <View style={styles.item}>
@@ -66,6 +81,9 @@ const styles = StyleSheet.create({
   header: {
     backgroundColor: "#DCDCDC",
   },
+  background: {
+    alignItems: "center",
+  },
   headerContent: {
     padding: 30,
     alignItems: "center",
@@ -92,6 +110,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#778899",
     height: 500,
     alignItems: "center",
+  },
+  logo: {
+    marginTop: 3,
+    width: 100,
+    height: 100,
   },
   item: {
     flexDirection: "row",

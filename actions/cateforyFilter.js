@@ -12,6 +12,8 @@ export default function categoryFilter(array, catObj){
 
     const filterKeys = Object.keys(trueObj);
 
+    if(filterKeys.length===0) return array;
+
     return array.filter(item=>{
         if(filterKeys.includes(item.code.category_name_s[0]) || filterKeys.includes(item.code.category_name_s[0])) {
             return item;
