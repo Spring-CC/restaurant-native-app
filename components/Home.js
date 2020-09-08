@@ -35,8 +35,6 @@ export default function Home({ navigation }) {
   var color4 = "#f9c74f"; // - Maize Crayola
   var color5 = "#90be6d"; // - Pistachio
 
-  const [resData, setResData] = useState(data);
-
   const index = useSelector((state) => state.incrementReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
