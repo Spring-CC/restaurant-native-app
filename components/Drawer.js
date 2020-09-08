@@ -28,8 +28,8 @@ const Drawer = createDrawerNavigator(
     ChangePassword: {
       screen: ChangePassword,
       navigationOptions: {
-        drawerLabel: <Hidden/>,
-      }
+        drawerLabel: <Hidden />,
+      },
     },
 
     Login: {
@@ -53,8 +53,8 @@ const Drawer = createDrawerNavigator(
       screen: Details,
       navigationOptions: {
         drawerLabel: <Hidden />,
-      }
-    }
+      },
+    },
   },
   {
     intialRouteName: "Home",
