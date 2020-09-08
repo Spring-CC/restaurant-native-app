@@ -1,26 +1,31 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text } from "react-native";
+import { StyleSheet, View, Image, Text, Button } from "react-native";
 import Icon from "react-native-vector-icons/Foundation";
-import Nav from "./Nav";
 
-export default function UserProfile() {
+import { useSelector } from "react-redux";
+
+export default function UserInfo({ navigation }) {
   const profileImage = require("../assets/profile.jpeg");
-
-  function changePassword() {
-    // call from Auth0 endpoint in order to change password
-  }
-  //also pass the name from Auth.js into the profile name
-  //console.log the picture param and see if user is able to change profile pic
-  //
-
+  const name = useSelector((state) => state.profileReducer);
+  console.log(name);
+  /** if no name then show guest */
+  if (name[0].name === "") {
+    return (
+<View>
+  <Text>GTFO</Text>
+</View>
+    );
+  } else {
   return (
     <View style={styles.container}>
-      <Nav />
       <View style={styles.header}>
         <View style={styles.headerContent}>
           <Image style={styles.avatar} source={profileImage} />
-
-          <Text style={styles.name}>Uncle Shaun </Text>
+          {name ? (
+            <Text style={styles.name}>Your name is, {name}!</Text>
+          ) : (
+            <Text>Hello, guest!</Text>
+          )}
           <Text style={styles.userInfo}>shaunshaunshaun@mail.com </Text>
           <Text style={styles.userInfo}>UK </Text>
         </View>
@@ -43,10 +48,18 @@ export default function UserProfile() {
           <View style={styles.infoContent}>
             <Text style={styles.info}>Favorites</Text>
           </View>
+          <View>
+            <Button
+              style={styles.button}
+              title="Go Home"
+              onPress={() => navigation.navigate("Home")}
+            />
+          </View>
         </View>
       </View>
     </View>
   );
+  }
 }
 
 const styles = StyleSheet.create({

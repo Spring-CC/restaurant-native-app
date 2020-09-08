@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -10,9 +10,10 @@ import {
 } from "react-native";
 import { SliderBox } from "react-native-image-slider-box";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, restaurant } from "../actions";
+import { increment, restaurant, setRestaurantsList } from "../actions";
 import data from "../data/restaurants.json";
 import Nav from "./Nav";
+import axios from "axios";
 
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
@@ -29,17 +30,47 @@ import Nav from "./Nav";
 export default function Home({ navigation }) {
   var color1 = "#f94144"; // - Red Salsa
   var color2 = "#f3722c"; // - Orange Red
+  var color3 = '#f8961e'; // - Yellow Orange Color Wheel
+  var color4 = '#f9c74f'; // - Maize Crayola
+  var color5 = '#90be6d'; // - Pistachio
+
+  const [resData, setResData] = useState(data);
 
   const index = useSelector((state) => state.incrementReducer);
+  const categories = useSelector((state) => state.categoryReducer);
+  const price = useSelector((state) => state.priceReducer);
+  const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
-  const restaurants = data.filter((restaurant, idx) => idx === index);
+
+  
+  async function getRestaurants(){
+    try{  
+    const results = await axios.get("http://localhost:8080/restAtlas");
+    const restaurants = results.data;
+    const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+    dispatch(setRestaurantsList(filtBudget))
+    console.log(filtBudget);
+  }catch(err){
+    console.log(err);
+  }
+  }
+
+  useEffect(()=>{
+    getRestaurants();
+  }, [])
+
+  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
       images.push(restaurants[0].image_url[key]);
     }
   }
+
+
+
+
 
   function onPress() {
     dispatch(restaurant(restaurants));
@@ -54,14 +85,16 @@ export default function Home({ navigation }) {
           title="Go To Login"
           onPress={() => {
             // Navigate using the `navigation` prop that you received
-            navigation.navigate("Auth");
+            navigation.navigate("Login");
           }}
         />
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.buttons}
-          onPress={() => dispatch(increment())}
+          onPress={() => {
+            dispatch(increment())
+          }}
         >
           <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
             No
@@ -128,6 +161,7 @@ export default function Home({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white'
   },
   buttonContainer: {
     flexDirection: "row",

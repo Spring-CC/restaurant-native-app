@@ -23,7 +23,7 @@ export default function About() {
                 <Text style={styles.text}>Shaun Darragh</Text>
                 <Image
                     source={{
-                        uri: 'https://ca.slack-edge.com/T0139VDCF27-U013WT7EC86-6f3ce91e3443-512',
+                        uri: 'https://ottotsuma.github.io/tsuma2.jpg',
                     }}
                     style={styles.image}
                 />
@@ -49,7 +49,7 @@ export default function About() {
                 <Text style={styles.text}>Yuri Amami</Text>
                 <Image
                     source={{
-                        uri: 'https://ca.slack-edge.com/T0139VDCF27-U013ZK9AX97-6067ec7e3310-512',
+                        uri: 'https://avatars0.githubusercontent.com/u/59043522?s=460&u=c51394ea0198c52f18a767eb68861fc300a7f8bd&v=4',
                     }}
                     style={styles.image}
                 />
