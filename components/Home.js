@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
   View,
@@ -15,6 +15,7 @@ import { increment, restaurant, setRestaurantsList } from "../actions";
 import data from "../data/restaurants.json";
 import Nav from "./Nav";
 import axios from "axios";
+import Details from "./Details";
 
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
@@ -34,6 +35,7 @@ export default function Home({ navigation }) {
   var color3 = "#f8961e"; // - Yellow Orange Color Wheel
   var color4 = "#f9c74f"; // - Maize Crayola
   var color5 = "#90be6d"; // - Pistachio
+  const swipeableRef = useRef(null);
 
   const [resData, setResData] = useState(data);
 
@@ -42,6 +44,7 @@ export default function Home({ navigation }) {
   const price = useSelector((state) => state.priceReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
+
   const dispatch = useDispatch();
 
   async function getRestaurants() {
@@ -87,94 +90,118 @@ export default function Home({ navigation }) {
     liked();
     console.log(userId);
     navigation.navigate("Details");
+    swipeableRef.current.close();
   }
 
+  function rightActions() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: "#F9C74F",
+          justifyContent: "center",
+        }}
+      >
+        <Button
+          title="Yes"
+          onPress={() => {
+            onPress();
+          }}
+        />
+      </View>
+    );
+  }
   function leftActions() {
     return (
       <View
-        style={{ flex: 1, backgroundColor: "blue", justifyContent: "center" }}
+        style={{
+          flex: 1,
+          backgroundColor: "#F9C74F",
+          justifyContent: "center",
+        }}
       >
-        <Text
+        <Button
           style={{
             color: "white",
             paddingHorizontal: 10,
             fontWeight: "600",
           }}
-        >
-          Go to next
-        </Text>
+          title="NO"
+        />
       </View>
     );
   }
 
   return (
     <ScrollView style={styles.container}>
-      <Nav />
-      <View>
-        <Button
-          title="Go To Login"
-          onPress={() => {
-            // Navigate using the `navigation` prop that you received
-            navigation.navigate("Login");
-          }}
-        />
-      </View>
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.buttons}
-          onPress={() => {
-            dispatch(increment());
-          }}
-        >
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-            No
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttons} onPress={() => onPress()}>
-          <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-            Yes
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View>
-        <ScrollView>
-          <SliderBox
-            images={images}
-            sliderBoxHeight={400}
-            circleLoop
-            dotColor={color1}
-            inactiveDotColor={color2}
-            paginationBoxStyle={{
-              position: "absolute",
-              bottom: 0,
-              padding: 0,
-              alignItems: "center",
-              alignSelf: "center",
-              justifyContent: "center",
-              paddingVertical: 10,
-            }}
-            dotStyle={{
-              width: 25,
-              height: 25,
-              borderRadius: 25,
-              marginHorizontal: 0,
-              padding: 0,
-              margin: 0,
-              backgroundColor: "rgba(128, 128, 128, 0.92)",
-            }}
-            ImageComponentStyle={{
-              borderRadius: 15,
-              width: "97%",
-              marginTop: 5,
-            }}
-            imageLoadingColor="#2196F3"
-          />
-        </ScrollView>
-      </View>
       <Swipeable
-        renderRightActions={navigation.navigate("Detail")}
+        ref={swipeableRef}
+        renderRightActions={() => rightActions()}
         renderLeftActions={() => leftActions()}
       >
+        <Nav />
+        <View>
+          <Button
+            title="Go To Login"
+            onPress={() => {
+              // Navigate using the `navigation` prop that you received
+              navigation.navigate("Login");
+            }}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.buttons}
+            onPress={() => {
+              dispatch(increment());
+            }}
+          >
+            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+              No
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttons} onPress={() => onPress()}>
+            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+              Yes
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <ScrollView>
+            <SliderBox
+              images={images}
+              sliderBoxHeight={400}
+              circleLoop
+              dotColor={color1}
+              inactiveDotColor={color2}
+              paginationBoxStyle={{
+                position: "absolute",
+                bottom: 0,
+                padding: 0,
+                alignItems: "center",
+                alignSelf: "center",
+                justifyContent: "center",
+                paddingVertical: 10,
+              }}
+              dotStyle={{
+                width: 25,
+                height: 25,
+                borderRadius: 25,
+                marginHorizontal: 0,
+                padding: 0,
+                margin: 0,
+                backgroundColor: "rgba(128, 128, 128, 0.92)",
+              }}
+              ImageComponentStyle={{
+                borderRadius: 15,
+                width: "97%",
+                marginTop: 5,
+              }}
+              imageLoadingColor="#2196F3"
+            />
+          </ScrollView>
+        </View>
+
         <View style={styles.restaurant}>
           {restaurants.map((restaurant) => {
             return (

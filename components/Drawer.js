@@ -46,12 +46,13 @@ const Drawer = createDrawerNavigator(
     Preferences: {
       screen: Preferences,
     },
-    Details : {
+
+    Details: {
       screen: Details,
       navigationOptions: {
-        drawerLabel: <Hidden/>,
-      }
-    }
+        drawerLabel: <Hidden />,
+      },
+    },
   },
   {
     intialRouteName: "Home",
