@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, Text, Button } from "react-native";
+import { StyleSheet, View, Image, Text, Button, SafeAreaView } from "react-native";
 import Icon from "react-native-vector-icons/Foundation";
 
 import { useSelector } from "react-redux";
@@ -12,7 +12,7 @@ export default function UserInfo({ navigation }) {
   /** if no name then show guest */
   if (name[0].name === "") {
     return (
-      <View style={styles.background}>
+      <SafeAreaView style={styles.background}>
         <Image
           source={require("./../assets/logo_bowl.png")}
           style={styles.logo}
@@ -36,7 +36,7 @@ export default function UserInfo({ navigation }) {
             navigation.navigate("Login");
           }}
         />
-      </View>
+      </SafeAreaView>
     );
   } else {
     return (
@@ -47,8 +47,8 @@ export default function UserInfo({ navigation }) {
             {name ? (
               <Text style={styles.name}>Your name is, {name}!</Text>
             ) : (
-              <Text>Hello, guest!</Text>
-            )}
+                <Text>Hello, guest!</Text>
+              )}
           </View>
         </View>
 
