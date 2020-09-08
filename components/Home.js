@@ -63,7 +63,7 @@ export default function Home({ navigation }) {
     console.log(restaurants);
   }, []);
 
-  const restaurants = data.filter((restaurant, idx) => idx === index);
+  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {
