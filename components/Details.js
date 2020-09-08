@@ -11,19 +11,22 @@ import {
 } from "react-native";
 import Nav from "./Nav";
 import axios from 'axios';
-import { postFavorites } from "../actions";
 
 export default function Details({ navigation }) {
-  const favorites = useSelector((state) => state.addFavoritesReducer);
-  const dispatch = useDispatch();
+
 
   const restData = useSelector((state) => state.restaurantReducer);
-
+  const userId = useSelector((state) => state.userIdReducer);
     const [selection, setSelection] = useState(true);
 
     const userEmail = "testest@example.com";
 
     async function updateToDatabase(email, restId){
+        console.log(userId)
+        if(email==='') {
+            alert("No user login")
+            return console.log("no user id")
+        } 
         const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
             userEmail : email,
             restaurant_Id : restId
@@ -54,7 +57,7 @@ export default function Details({ navigation }) {
                         // Navigate using the `navigation` prop that you received
                          setSelection(!selection);
                          //dispatch(postFavorites(restData.id));
-                         updateToDatabase(userEmail, restData[0].id);
+                         updateToDatabase(userId[0].userId, restData[0].id);
                         }}/>):( 
                         <Button            
                         title="Delete from favorites 💔"
