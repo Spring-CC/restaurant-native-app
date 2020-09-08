@@ -102,9 +102,7 @@ export default function Home({ navigation }) {
       >
         <Button
           title="Yes"
-          onPress={() => {
-            onPress();
-          }}
+          onPress={() => onPress()}
         />
       </View>
     );
@@ -204,17 +202,17 @@ export default function Home({ navigation }) {
           {restaurants.map((restaurant) => {
             return (
               <View key={restaurant.id}>
-                <Text style={styles.textTitle}>Restaurant Name</Text>
+                <Text style={styles.textTitle}>Name</Text>
                 <Text style={styles.textName}>{restaurant.name}</Text>
-                <Text style={styles.textTitle}>Restaurant Name (Katakana)</Text>
+                <Text style={styles.textTitle}>Name (Katakana)</Text>
                 <Text
                   style={styles.textKana}
                 >{`(${restaurant.name_kana})`}</Text>
-                <Text style={styles.textTitle}>Restaurant Category</Text>
+                <Text style={styles.textTitle}>Category</Text>
                 <Text style={styles.textBody}>{restaurant.category}</Text>
-                <Text style={styles.textTitle}>Restaurant Address</Text>
+                <Text style={styles.textTitle}>Address</Text>
                 <Text style={styles.textBody}>{restaurant.address}</Text>
-                <Text style={styles.textTitle}>Restaurant Open</Text>
+                <Text style={styles.textTitle}>Open Times</Text>
                 <Text style={styles.textBody}>{restaurant.opentime}</Text>
               </View>
             );
