@@ -12,68 +12,76 @@ export default function UserInfo({ navigation }) {
   /** if no name then show guest */
   if (name[0].name === "") {
     return (
-<View style={styles.background}>
-  <Image source={require('./../assets/logo_bowl.png')} style={styles.logo} />
-  <Text>You are not logged in, please log in before trying to view your profile.</Text>
-  <Button
-                        title="Go To Home"
-                        onPress={() => {
-                        // Navigate using the `navigation` prop that you received
-                         navigation.navigate('Home');
-                        }}/>
+      <View style={styles.background}>
+        <Image
+          source={require("./../assets/logo_bowl.png")}
+          style={styles.logo}
+        />
+        <Text>
+          You are not logged in, please log in before trying to view your
+          profile.
+        </Text>
+        <Button
+          title="Go To Home"
+          onPress={() => {
+            // Navigate using the `navigation` prop that you received
+            navigation.navigate("Home");
+          }}
+        />
 
-<Button
-                        title="Go To Login"
-                        onPress={() => {
-                        // Navigate using the `navigation` prop that you received
-                         navigation.navigate('Login');
-                        }}/>
-</View>
+        <Button
+          title="Go To Login"
+          onPress={() => {
+            // Navigate using the `navigation` prop that you received
+            navigation.navigate("Login");
+          }}
+        />
+      </View>
     );
   } else {
-  return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.headerContent}>
-          <Image style={styles.avatar} source={profileImage} />
-          {name ? (
-            <Text style={styles.name}>Your name is, {name}!</Text>
-          ) : (
-            <Text>Hello, guest!</Text>
-          )}
-        </View>
-      </View>
-
-      <View style={styles.body}>
-        <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <Icon style={styles.icon} name="key" size={30} />
+    return (
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            <Image style={styles.avatar} source={profileImage} />
+            {name ? (
+              <Text style={styles.name}>Your name is, {name}!</Text>
+            ) : (
+              <Text>Hello, guest!</Text>
+            )}
           </View>
-          <Button
+        </View>
+
+        <View style={styles.body}>
+          <View style={styles.item}>
+            <View style={styles.iconContent}>
+              <Icon style={styles.icon} name="key" size={30} />
+            </View>
+            <Button
               style={styles.button}
               title="Change Password"
               onPress={() => navigation.navigate("ChangePassword")}
             />
-        </View>
+          </View>
 
-        <View style={styles.item}>
-          <View style={styles.iconContent}>
-            <Icon style={styles.icon} name="heart" size={30} />
-          </View>
-          <View style={styles.infoContent}>
-            <Text style={styles.info}>Favorites</Text>
-          </View>
-          <View>
-            <Button
-              style={styles.button}
-              title="Go Home"
-              onPress={() => navigation.navigate("Home")}
-            />
+          <View style={styles.item}>
+            <View style={styles.iconContent}>
+              <Icon style={styles.icon} name="heart" size={30} />
+            </View>
+            <View style={styles.infoContent}>
+              <Text style={styles.info}>Favorites</Text>
+            </View>
+            <View>
+              <Button
+                style={styles.button}
+                title="Go Home"
+                onPress={() => navigation.navigate("Home")}
+              />
+            </View>
           </View>
         </View>
       </View>
-    </View>
-  );
+    );
   }
 }
 

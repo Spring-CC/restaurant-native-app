@@ -5,8 +5,9 @@ import priceReducer from "./priceRange";
 import locationReducer from "./locations";
 import profileReducer from "./profile";
 import picReducer from "./profilepic";
-import restaurantsListReducer from './restaurantsList'
-import addFavoritesReducer from './favorites' // alberto there is no favorites.js in this folder.
+import restaurantsListReducer from "./restaurantsList";
+import userIdReducer from "./userId";
+import addFavoritesReducer from './favorites' 
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   profileReducer,
   restaurantsListReducer,
   addFavoritesReducer,
+  userIdReducer,
 });
 
 export default rootReducer;

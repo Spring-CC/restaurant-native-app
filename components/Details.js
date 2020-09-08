@@ -1,16 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState }  from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { StyleSheet, Text, ScrollView, View, Image, Linking, Button } from 'react-native';
-import Nav from './Nav';
+import {
+  StyleSheet,
+  Text,
+  ScrollView,
+  View,
+  Image,
+  Linking,
+  Button,
+} from "react-native";
+import Nav from "./Nav";
 import axios from 'axios';
 import { postFavorites } from "../actions";
 
 export default function Details({ navigation }) {
+  const favorites = useSelector((state) => state.addFavoritesReducer);
+  const dispatch = useDispatch();
 
-    const favorites = useSelector((state) => state.addFavoritesReducer);
-    const dispatch = useDispatch();
-
-    const restData = useSelector(state => state.restaurantReducer);
+  const restData = useSelector((state) => state.restaurantReducer);
 
     const [selection, setSelection] = useState(true);
 
@@ -115,41 +122,41 @@ export default function Details({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    basic_container: {
-        backgroundColor: "#F8961E",
-        padding: 5,
-        marginBottom: 7,
-    },
-    location_container: {
-        backgroundColor: "#F9C74F",
-        padding: 5,
-        marginBottom: 7,
-    },
-    payment_container: {
-        backgroundColor: "#90BE6D",
-        padding: 5,
-    },
-    text_title: {
-        fontSize: 20,
-        fontFamily: 'MPLUS1p-Black',
-        textAlign: 'center',
-    },
-    text: {
-        fontSize: 15,
-        fontFamily: 'MPLUS1p-Medium',
-    },
-    text_sub: {
-        fontSize: 15,
-        fontFamily: 'MPLUS1p-Black',
-    },
-    container: {
-        flex: 1,
-        margin: 5,
-        borderRadius: 12,
-    },
-    image: {
-        width: '100%',
-        height: 300,
-        marginBottom: 7,
-    },
+  basic_container: {
+    backgroundColor: "#F8961E",
+    padding: 5,
+    marginBottom: 7,
+  },
+  location_container: {
+    backgroundColor: "#F9C74F",
+    padding: 5,
+    marginBottom: 7,
+  },
+  payment_container: {
+    backgroundColor: "#90BE6D",
+    padding: 5,
+  },
+  text_title: {
+    fontSize: 20,
+    fontFamily: "MPLUS1p-Black",
+    textAlign: "center",
+  },
+  text: {
+    fontSize: 15,
+    fontFamily: "MPLUS1p-Medium",
+  },
+  text_sub: {
+    fontSize: 15,
+    fontFamily: "MPLUS1p-Black",
+  },
+  container: {
+    flex: 1,
+    margin: 5,
+    borderRadius: 12,
+  },
+  image: {
+    width: "100%",
+    height: 300,
+    marginBottom: 7,
+  },
 });
