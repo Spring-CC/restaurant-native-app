@@ -1,7 +1,6 @@
 const profile = [
   {
     name: "",
-    img: "",
   },
 ];
 

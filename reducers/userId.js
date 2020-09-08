@@ -1,16 +1,16 @@
 const profile = [
   {
-    name: "",
+    userId: "",
   },
 ];
 
-const picReducer = (state = profile, action) => {
+const userIdReducer = (state = profile, action) => {
   switch (action.type) {
-    case "IMG":
+    case "USERID":
       return action.payload;
     default:
       return state;
   }
 };
 
-export default picReducer;
+export default userIdReducer;
