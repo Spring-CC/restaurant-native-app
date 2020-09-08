@@ -27,6 +27,9 @@ const Drawer = createDrawerNavigator(
 
     ChangePassword: {
       screen: ChangePassword,
+      navigationOptions: {
+        drawerLabel: <Hidden />,
+      },
     },
 
     Login: {
@@ -46,7 +49,6 @@ const Drawer = createDrawerNavigator(
     Preferences: {
       screen: Preferences,
     },
-
     Details: {
       screen: Details,
       navigationOptions: {
@@ -67,7 +69,7 @@ const Drawer = createDrawerNavigator(
     },
     contentOptions: {
       // add your styling here
-      activeTintColor: "#e91e63",
+      activeTintColor: "white",
       itemsContainerStyle: {
         marginVertical: 0,
       },

@@ -37,8 +37,6 @@ export default function Home({ navigation }) {
   var color5 = "#90be6d"; // - Pistachio
   const swipeableRef = useRef(null);
 
-  const [resData, setResData] = useState(data);
-
   const index = useSelector((state) => state.incrementReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
@@ -66,7 +64,7 @@ export default function Home({ navigation }) {
     console.log(restaurants);
   }, []);
 
-  const restaurants = data.filter((restaurant, idx) => idx === index);
+  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
   const images = [];
   for (let key in restaurants[0].image_url) {
     if (restaurants[0].image_url[key] !== "") {

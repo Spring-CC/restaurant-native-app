@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import * as WebBrowser from "expo-web-browser";
 import { Button, StyleSheet, Text, View, TextInput } from "react-native";
 
+// problems on this page are if I sign up with a random email, then go to my profile to click change password. Then I type in something random, it returns success, even though my password has not changed.
+
 WebBrowser.maybeCompleteAuthSession();
 
 export default function changePassword({ navigation }) {
@@ -18,6 +20,7 @@ export default function changePassword({ navigation }) {
     }),
   };
 
+  // this needs changing to async await, currently is a mixture of both. 
   async function change() {
     const response = await fetch(url, options)
       .then((response) => response.text())
@@ -31,6 +34,7 @@ export default function changePassword({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text>Email:</Text>
       <TextInput
         style={styles.input}
         onChangeText={(text) => {
@@ -41,7 +45,6 @@ export default function changePassword({ navigation }) {
       />
 
       <View>
-        <Text>Email:</Text>
         <Button title="change password" onPress={() => change(email)} />
       </View>
       <View>
