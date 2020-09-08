@@ -46,10 +46,10 @@ const Drawer = createDrawerNavigator(
     Preferences: {
       screen: Preferences,
     },
-    Details : {
+    Details: {
       screen: Details,
       navigationOptions: {
-        drawerLabel: <Hidden/>,
+        drawerLabel: <Hidden />,
       }
     }
   },
@@ -66,7 +66,7 @@ const Drawer = createDrawerNavigator(
     },
     contentOptions: {
       // add your styling here
-      activeTintColor: "#e91e63",
+      activeTintColor: "white",
       itemsContainerStyle: {
         marginVertical: 0,
       },
