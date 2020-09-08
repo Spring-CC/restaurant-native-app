@@ -15,6 +15,7 @@ import axios from "axios"
 import categoryFilter from "../actions/cateforyFilter"
 //import Slider from './Slider'
 
+// needs comments 
 export default function Preferences({navigation}) {
 
 
