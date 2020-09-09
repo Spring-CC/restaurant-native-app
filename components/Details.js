@@ -17,21 +17,43 @@ export default function Details({ navigation }) {
 
   const restData = useSelector((state) => state.restaurantReducer);
   const userId = useSelector((state) => state.userIdReducer);
-    const [selection, setSelection] = useState(true);
+  
 
-    const userEmail = "testest@example.com";
-
-    async function updateToDatabase(email, restId){
-        console.log(userId)
-        if(email==='') {
+    async function updateToDatabase(id, restId){
+      
+        if(id==='') {
             alert("No user login")
             return console.log("no user id")
         } 
-        const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
-            userEmail : email,
-            restaurant_Id : restId
-        })
-        console.log(favorite)
+        const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
+        
+
+        let newInfo = true;
+
+        const usersData = favoritesUsers.data;
+        console.log(usersData);
+
+        for(let i=0; i<usersData.length; i++){
+          if(id===usersData[i].user_Id){
+            newInfo=false;
+          }
+        } 
+
+          if(newInfo){
+            console.log("posting new info")
+            const favorite = await axios.post("http://localhost:8080/Favorites", {
+              user_Id : id,
+              restaurant_Id : restId
+            })
+            return;
+          }
+
+            const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
+              user_Id : id,
+              restaurant_Id : restId
+                })
+
+        console.log("updating info")
     }
 
 
@@ -49,25 +71,13 @@ export default function Details({ navigation }) {
                         }}/>
                 </View>
                 <View style={styles.text_title}>
-                    {selection ? ( 
+                   
                         <Button
                         title="Add to Favorites ❤️"
                         color="#ff3300"
                         onPress={() => {
-                        // Navigate using the `navigation` prop that you received
-                         setSelection(!selection);
-                         //dispatch(postFavorites(restData.id));
-                         updateToDatabase(userId[0].userId, restData[0].id);
-                        }}/>):( 
-                        <Button            
-                        title="Delete from favorites 💔"
-                        color="#ff3300"
-                        onPress={() => {
-                        // Navigate using the `navigation` prop that you received
-                         setSelection(!selection);
-                        }}/>
-                        )}
-                   
+                         updateToDatabase(userId, restData[0].id);
+                        }}/>                   
                         
                 </View>
                 <Image

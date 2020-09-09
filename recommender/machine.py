@@ -17,9 +17,9 @@ from ast import literal_eval
 ###### connect to data
 swipeddata_df = pd.read_csv('data/dummydata.csv')
 # show the dataframe first 5
-#print(swipeddata_df.head())
+print(swipeddata_df.head())
 
-## clean up the data
+# ## clean up the data
 # piv = swipeddata_df.pivot_table(index = ["userid"],columns=["name"],values="swipeddata")
 # piv.head() 
 # piv.shape
@@ -38,8 +38,8 @@ swipeddata_df.swiped_right = swipeddata_df.swiped_right.apply(literal_eval)
 new_df = swipeddata_df.explode("swiped_right")
 print(new_df)
 
-# user_pivot =  swipeddata_df.pivot(index='name', columns='userid', values='swiped_right').fillna(0)
-# print(user_pivot)
+user_pivot =  new_df.pivot(columns='userid', values='swiped_right').fillna(0)
+print(user_pivot)
 
 
 #Min-Max Scaling

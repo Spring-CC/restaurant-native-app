@@ -12,6 +12,7 @@ import UserInfo from "./UserInfo";
 import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
+import Yes from "./Yes"
 
 class Hidden extends React.Component {
   render() {
@@ -25,11 +26,18 @@ const Drawer = createDrawerNavigator(
       screen: Home,
     },
 
+    Yes: {
+      screen: Yes,
+      navigationOptions: {
+        drawerLabel: <Hidden />,
+      },
+    },
+
     ChangePassword: {
       screen: ChangePassword,
       navigationOptions: {
-        drawerLabel: <Hidden/>,
-      }
+        drawerLabel: <Hidden />,
+      },
     },
 
     Login: {
@@ -53,8 +61,8 @@ const Drawer = createDrawerNavigator(
       screen: Details,
       navigationOptions: {
         drawerLabel: <Hidden />,
-      }
-    }
+      },
+    },
   },
   {
     intialRouteName: "Home",
