@@ -4,7 +4,7 @@ const profile = [
   },
 ];
 
-const userIdReducer = (state = profile, action) => {
+const userIdReducer = (state = "", action) => {
   switch (action.type) {
     case "USERID":
       return action.payload;
