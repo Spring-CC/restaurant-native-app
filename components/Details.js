@@ -25,20 +25,24 @@ export default function Details({ navigation }) {
             alert("No user login")
             return console.log("no user id")
         } 
+        //Gets all the users info on favorites collection
         const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
         
 
         let newInfo = true;
+        let userIndex;
 
         const usersData = favoritesUsers.data;
         console.log(usersData);
-
+        //Check if user exist, if not will change newInfo variable to false and set the userIndex
         for(let i=0; i<usersData.length; i++){
           if(id===usersData[i].user_Id){
             newInfo=false;
+            userIndex = i;
           }
         } 
 
+        //if the user dont exist it will post a new user with the restaurant Id
           if(newInfo){
             console.log("posting new info")
             const favorite = await axios.post("http://localhost:8080/Favorites", {
@@ -47,7 +51,14 @@ export default function Details({ navigation }) {
             })
             return;
           }
-
+          //if the user exist it will check if the restaurant it is already on its favorites list
+          for(let i=0; i<usersData[userIndex].restaurant_Id.length; i++){
+              if(restId===usersData[userIndex].restaurant_Id[i] ){
+                console.log("already in list of favorites")
+                return;
+              }
+          }
+            // if the user exists and the restID is not in the list it will post
             const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
               user_Id : id,
               restaurant_Id : restId
