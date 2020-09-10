@@ -4,10 +4,9 @@ import { Button, StyleSheet, Text, View, TextInput } from "react-native";
 
 // problems on this page are if I sign up with a random email, then go to my profile to click change password. Then I type in something random, it returns success, even though my password has not changed.
 
-WebBrowser.maybeCompleteAuthSession();
-
 export default function changePassword({ navigation }) {
   const [email, onChangeEmail] = useState("");
+  const [isSent, setSent] = useState(false);
 
   const url = `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/dbconnections/change_password`;
   const options = {
@@ -20,12 +19,13 @@ export default function changePassword({ navigation }) {
     }),
   };
 
-  // this needs changing to async await, currently is a mixture of both. 
+  // this needs changing to async await, currently is a mixture of both.
   async function change() {
     const response = await fetch(url, options)
       .then((response) => response.text())
       .then(() => {
         console.log("Success");
+        setSent(true);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -34,18 +34,27 @@ export default function changePassword({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text>Email:</Text>
-      <TextInput
-        style={styles.input}
-        onChangeText={(text) => {
-          onChangeEmail(text);
-        }}
-        value={email}
-        keyboardType="email-address"
-      />
-
       <View>
-        <Button title="change password" onPress={() => change(email)} />
+        {isSent ? (
+          <Text>Email has been sent!</Text>
+        ) : (
+          <View>
+            <View>
+              <TextInput
+                placeholder="Type your email address"
+                style={styles.input}
+                onChangeText={(text) => {
+                  onChangeEmail(text);
+                }}
+                value={email}
+                keyboardType="email-address"
+              />
+            </View>
+            <View>
+              <Button title="change password" onPress={() => change(email)} />
+            </View>
+          </View>
+        )}
       </View>
       <View>
         <Button

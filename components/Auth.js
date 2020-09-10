@@ -5,10 +5,9 @@ import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { setProfile, setPic, setUserId } from "../actions";
-import { set } from "react-native-reanimated";
+import axios from "axios";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
-
 const useProxy = Platform.select({ web: false, native: true, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 WebBrowser.maybeCompleteAuthSession();
@@ -68,9 +67,15 @@ export default function Auth({ navigation }) {
   }, [result]);
 
   async function logOut() {
-    await WebBrowser.openBrowserAsync(
-      `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?federated&client_id=${process.env.REACT_APP_APP_AUTHID}`
-    );
+    try {
+      await WebBrowser.openBrowserAsync(
+        `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?federated`
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    setName(null);
+    navigation.navigate("Home");
   }
 
   return (
