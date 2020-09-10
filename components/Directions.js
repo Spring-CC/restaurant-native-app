@@ -9,21 +9,19 @@ import {
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import data from "../data/restaurants.json";
-import * as Linking from 'expo-linking';
+import * as Linking from "expo-linking";
 
 export default function Directions({ navigation }) {
-    const [long, setLong] = useState("latitude");
-    const [lat, setLat] = useState("longitude");  
+  const [long, setLong] = useState("latitude");
+  const [lat, setLat] = useState("longitude");
   const restData = useSelector((state) => state.restaurantReducer);
 
   useEffect(() => {
-    console.log(restData[0].latitude)
-    console.log(restData[0].longitude)
-    setLat(restData[0].latitude)
-    setLong(restData[0].longitude)
+    console.log(restData[0].latitude);
+    console.log(restData[0].longitude);
+    setLat(restData[0].latitude);
+    setLong(restData[0].longitude);
   }, []);
-
-
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -35,7 +33,11 @@ export default function Directions({ navigation }) {
       <Button
         style={styles.button}
         title="Go To Maps"
-        onPress={() => Linking.openURL(`https://www.google.com/maps/place/35%C2%B030'34.5%22N+139%C2%B028'13.6%22E/@${lat},${long},17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d35.509583!4d139.470451`)}
+        onPress={() =>
+          Linking.openURL(
+            `https://www.google.com/maps/place/${lat},${long}`
+          )
+        }
       />
     </ScrollView>
   );
