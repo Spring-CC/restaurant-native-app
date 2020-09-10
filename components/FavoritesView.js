@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { AppState } from 'react-native';
 import Nav from "./Nav";
 import {
   StyleSheet,
@@ -16,25 +17,26 @@ import { addFavorites } from "../actions";
 
 
 
-export default function FavoritesView(){
+export default function FavoritesView({navigation}){
 
-//   const favoritesMock = [
-//     {
-//         name:"",
-//         opentime:"",
-//         tel:"",
-//         url:"",
-//   }
-//   ];
-
-// const [ userFavorites, setUserFavorites] = useState(favoritesMock);
+  // rerender***************************************
+  const [updateVal, setUpdateVal] = useState(false);
+  const forceUpdate = newState => {
+    if (newState === 'active')
+      setUpdateVal(!updateVal); // forces a rerender
+  }
+  useEffect(() => {
+    AppState.addEventListener('change', forceUpdate);
+    return () => AppState.removeEventListener('change', forceUpdate);
+  }, []);
+  //************************************************** */
 const userId = useSelector((state) => state.userIdReducer);
 const restaurantList = useSelector((state) => state.restaurantsListReducer);
 const favoritesList = useSelector((state) => state.addFavoritesReducer);
 const dispatch = useDispatch()
 
 
-
+async function getUserFavorites(id) {
     console.log(id)
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
