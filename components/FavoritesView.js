@@ -16,7 +16,6 @@ import { addFavorites } from "../actions";
 
 
 
-
 export default function FavoritesView({navigation}){
 
   // rerender***************************************
@@ -37,6 +36,7 @@ const dispatch = useDispatch()
 
 
 async function getUserFavorites(id) {
+
     console.log(id)
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
@@ -55,84 +55,80 @@ async function getUserFavorites(id) {
 
     //setUserFavorites(results);
     dispatch(addFavorites(results))
-   
-}
 
-async function deleteFavorite(userId , restId){
-
-  await axios.patch("https://restaurantserverspring.herokuapp.com/deleteFavorite",{
-    user_Id: userId,
-    restaurant_Id: restId,
-  })
-  console.log("restaurant remove from favorites")
-}
-
-
-useEffect(() => {
-  if(userId!==''){
-    getUserFavorites(userId);
   }
+
+  async function deleteFavorite(userId, restId) {
+
+    await axios.patch("https://restaurantserverspring.herokuapp.com/deleteFavorite", {
+      user_Id: userId,
+      restaurant_Id: restId,
+    })
+    console.log("restaurant remove from favorites")
+  }
+
+  useEffect(() => {
+    if (userId !== '') {
+      getUserFavorites(userId);
+    }
   }, []);
 
-
-
-
-    return (
-      <Container>
-        <ScrollView style={styles.container}>
-          <View>
-            <Nav />
-          </View>
-          <View>
-            <Text style={styles.title}>Favorites</Text>
-          </View>
-          <View>
-            {userId==='' ? 
+  return (
+    <Container>
+      <ScrollView style={styles.container}>
+        <View>
+          <Nav />
+        </View>
+        <View>
+          <Text style={styles.title}>Favorites</Text>
+        </View>
+        <View>
+          {userId === '' ?
             (
               <View>
-                  <Text style={styles.title}>You must be Logged In to use this option</Text>
-                </View>
+                <Text style={styles.title}>You must be Logged In to use this option</Text>
+              </View>
             )
-            : 
-            (             
+            :
+            (
               <View>
-              {favoritesList.map(favorite=>(
-              <View style={styles.checkboxContainer}>
-                      <Text style={styles.textTitle}>Name</Text>
-                      <Text style={styles.textBody}>{favorite.name}</Text>
-                      <Text style={styles.textTitle}>Open time</Text>
-                      <Text style={styles.textBody}>{favorite.opentime}</Text>
-                      <Text style={styles.textTitle}>Telephone</Text>
-                      <Text style={styles.textBody}>{favorite.tel}</Text>
-                      <Text style={styles.textTitle}>Link to Restaurant</Text>
-                      <Text style={styles.linkText}
+                {favoritesList.map(favorite => (
+                  <View style={styles.checkboxContainer}>
+                    <Text style={styles.textTitle}>Name</Text>
+                    <Text style={styles.textBody}>{favorite.name}</Text>
+                    <Text style={styles.textTitle}>Open time</Text>
+                    <Text style={styles.textBody}>{favorite.opentime}</Text>
+                    <Text style={styles.textTitle}>Telephone</Text>
+                    <Text style={styles.textBody}>{favorite.tel}</Text>
+                    <Text style={styles.textTitle}>Link to Restaurant</Text>
+                    <Text style={styles.linkText}
                       onPress={() => Linking.openURL(favorite.url)}>
                       Press To Go to Restaurant Page</Text>
-              <TouchableOpacity
-                style={styles.buttons}
-                onPress={() => {
-                  deleteFavorite(userId, favorite.id);
-                  setTimeout(() => {
-                    getUserFavorites(userId);
-                  }, 2000);
-                }}
-                >
-                  <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-                   X
+                    <TouchableOpacity
+                      style={styles.buttons}
+                      onPress={() => {
+                        deleteFavorite(userId, favorite.id);
+                        setTimeout(() => {
+                          getUserFavorites(userId);
+                        }, 2000);
+                      }}
+                    >
+                      <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+                        X
                   </Text>
-                </TouchableOpacity>
-              </View>  
-              )
-              )}
+                    </TouchableOpacity>
+                  </View>
+                )
+                )}
               </View>
-              )}
+            )}
 
-          </View>
-          </ScrollView>
- <Footer>
+        </View>
+      </ScrollView>
+      <Footer>
         <FooterTab>
           <Button vertical onPress={() => navigation.navigate("Landing")}>
-            <Icon name="apps" />
+            <Icon name="home" />
             <Text>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Home")}>
@@ -149,8 +145,8 @@ useEffect(() => {
           </Button>
         </FooterTab>
       </Footer>
-</Container>
-    )
+    </Container>
+  )
 }
 
 const styles = StyleSheet.create({
