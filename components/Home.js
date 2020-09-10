@@ -191,11 +191,11 @@ export default function Home({ navigation }) {
       </ScrollView>
       <Footer>
         <FooterTab>
-          <Button vertical active onPress={() => navigation.navigate("Landing")}>
+          <Button vertical onPress={() => navigation.navigate("Landing")}>
             <Icon name="apps" />
             <Text>Home</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Home")}>
+          <Button active vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="eye" />
             <Text>Search</Text>
           </Button>

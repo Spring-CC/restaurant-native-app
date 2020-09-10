@@ -510,7 +510,7 @@ export default function Preferences({ navigation }) {
 
       <Footer>
         <FooterTab>
-          <Button vertical active onPress={() => navigation.navigate("Landing")}>
+          <Button vertical onPress={() => navigation.navigate("Landing")}>
             <Icon name="apps" />
             <Text>Home</Text>
           </Button>
@@ -518,7 +518,7 @@ export default function Preferences({ navigation }) {
             <Icon name="eye" />
             <Text>Search</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Preferences")}>
+          <Button active vertical onPress={() => navigation.navigate("Preferences")}>
             <Icon active name="pizza" />
             <Text>Preference</Text>
           </Button>

@@ -12,7 +12,7 @@ export default function Landing({ navigation }) {
             </Content>
             <Footer>
                 <FooterTab>
-                    <Button vertical active onPress={() => navigation.navigate("Landing")}>
+                    <Button active vertical onPress={() => navigation.navigate("Landing")}>
                         <Icon name="apps" />
                         <Text>Home</Text>
                     </Button>
