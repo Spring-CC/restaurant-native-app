@@ -122,7 +122,7 @@ export default function FavoritesView({ navigation }) {
       <Footer>
         <FooterTab>
           <Button vertical onPress={() => navigation.navigate("Landing")}>
-            <Icon name="apps" />
+            <Icon name="home" />
             <Text>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Home")}>

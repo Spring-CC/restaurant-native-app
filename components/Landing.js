@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View } from "react-native";
-import { Container, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Container, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 import Nav from "./Nav";
 
 export default function Landing({ navigation }) {
@@ -21,7 +21,7 @@ export default function Landing({ navigation }) {
             <Footer>
                 <FooterTab>
                     <Button active vertical onPress={() => navigation.navigate("Landing")}>
-                        <Icon name="apps" />
+                        <Icon name="home" />
                         <Text>Home</Text>
                     </Button>
                     <Button vertical onPress={() => navigation.navigate("Home")}>

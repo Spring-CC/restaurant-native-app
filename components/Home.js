@@ -192,7 +192,7 @@ export default function Home({ navigation }) {
       <Footer>
         <FooterTab>
           <Button vertical onPress={() => navigation.navigate("Landing")}>
-            <Icon name="apps" />
+            <Icon name="home" />
             <Text>Home</Text>
           </Button>
           <Button active vertical onPress={() => navigation.navigate("Home")}>
