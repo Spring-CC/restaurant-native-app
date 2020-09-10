@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { StyleSheet, Text, View } from "react-native";
 // import { NavigationContainer } from "@react-navigation/native";
 // import { createDrawerNavigator } from "react-navigation-drawer";
@@ -10,7 +10,7 @@ import Details from "./components/Details";
 import Auth from "./components/Auth";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import rootReducer from './reducers';
+import rootReducer from "./reducers";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./components/Drawer";
@@ -26,7 +26,6 @@ const fetchFonts = () => {
 };
 
 const store = createStore(rootReducer);
-
 
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);

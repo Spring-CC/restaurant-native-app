@@ -10,83 +10,113 @@ import {
   Button,
 } from "react-native";
 import Nav from "./Nav";
-import axios from 'axios';
+import axios from "axios";
 
 export default function Details({ navigation }) {
-
-
   const restData = useSelector((state) => state.restaurantReducer);
   const userId = useSelector((state) => state.userIdReducer);
 
-  async function updateToDatabase(id, restId){
-      
-        if(id==='') {
-            alert("No user login")
-            return console.log("no user id")
-        } 
-        //Gets all the users info on favorites collection
-        //const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
-        const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
-        
+  async function updateToDatabase(id, restId) {
 
-        let newInfo = true;
-        let userIndex;
+    if (id === '') {
+      alert("No user login")
+      return console.log("no user id")
+    }
+    //Gets all the users info on favorites collection
+    //const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
+    const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
-        const usersData = favoritesUsers.data;
-        console.log(usersData);
-        //Check if user exist, if not will change newInfo variable to false and set the userIndex
-        for(let i=0; i<usersData.length; i++){
-          if(id===usersData[i].user_Id){
-            newInfo=false;
-            userIndex = i;
-          }
-        } 
 
-        //if the user dont exist it will post a new user with the restaurant Id
-          // if(newInfo){
-          //   console.log("posting new info")
-          //   const favorite = await axios.post("http://localhost:8080/Favorites", {
-          //     user_Id : id,
-          //     restaurant_Id : restId
-          //   })
-          //   alert("Added to Favorites, Deletion is manage in Favorites Option")
-          //   return;
-          // }
-          if(newInfo){
-            console.log("posting new info")
-            const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
-              user_Id : id,
-              restaurant_Id : restId
-            })
-            alert("Added to Favorites, Deletion is manage in Favorites Option")
-            return;
-          }
-          //if the user exist it will check if the restaurant it is already on its favorites list
-          for(let i=0; i<usersData[userIndex].restaurant_Id.length; i++){
-              if(restId===usersData[userIndex].restaurant_Id[i] ){
-                console.log("already in list of favorites")
-                alert("Already in your Favorites List")
-                return;
-              }
-          }
-            // if the user exists and the restID is not in the list it will post
-            // const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
-            //   user_Id : id,
-            //   restaurant_Id : restId
-            //     })
-                const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
-                  user_Id : id,
-                  restaurant_Id : restId
-                    })
-                alert("Added to Favorites, Deletion is manage in Favorites Option")
+    let newInfo = true;
+    let userIndex;
 
-        console.log("updating info")
+    const usersData = favoritesUsers.data;
+    console.log(usersData);
+    //Check if user exist, if not will change newInfo variable to false and set the userIndex
+    for (let i = 0; i < usersData.length; i++) {
+      if (id === usersData[i].user_Id) {
+        newInfo = false;
+        userIndex = i;
+      }
     }
 
+    //if the user dont exist it will post a new user with the restaurant Id
+    // if(newInfo){
+    //   console.log("posting new info")
+    //   const favorite = await axios.post("http://localhost:8080/Favorites", {
+    //     user_Id : id,
+    //     restaurant_Id : restId
+    //   })
+    //   alert("Added to Favorites, Deletion is manage in Favorites Option")
+    //   return;
+    // }
+    if (newInfo) {
+      console.log("posting new info")
+      const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
+        user_Id: id,
+        restaurant_Id: restId
+      })
+      alert("Added to Favorites, Deletion is manage in Favorites Option")
+      return;
+    }
+    //if the user exist it will check if the restaurant it is already on its favorites list
+    for (let i = 0; i < usersData[userIndex].restaurant_Id.length; i++) {
+      if (restId === usersData[userIndex].restaurant_Id[i]) {
+        console.log("already in list of favorites")
+        alert("Already in your Favorites List")
+        return;
+      }
+    }
+    // if the user exists and the restID is not in the list it will post
+    // const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
+    //   user_Id : id,
+    //   restaurant_Id : restId
+    //     })
+    const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
+      user_Id: id,
+      restaurant_Id: restId
+    })
+    alert("Added to Favorites, Deletion is manage in Favorites Option")
 
+    const usersData = favoritesUsers.data;
+    console.log(usersData);
+    //Check if user exist, if not will change newInfo variable to false and set the userIndex
+    for (let i = 0; i < usersData.length; i++) {
+      if (id === usersData[i].user_Id) {
+        newInfo = false;
+        userIndex = i;
+      }
+    }
+
+    //if the user dont exist it will post a new user with the restaurant Id
+    if (newInfo) {
+      console.log("posting new info");
+      const favorite = await axios.post("http://localhost:8080/Favorites", {
+        user_Id: id,
+        restaurant_Id: restId,
+      });
+      alert("Added to Favorites, Deletion is manage in Favorites Option");
+      return;
+    }
+    //if the user exist it will check if the restaurant it is already on its favorites list
+    for (let i = 0; i < usersData[userIndex].restaurant_Id.length; i++) {
+      if (restId === usersData[userIndex].restaurant_Id[i]) {
+        console.log("already in list of favorites");
+        alert("Already in your Favorites List");
+        return;
+      }
+    }
+    // if the user exists and the restID is not in the list it will post
+    const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
+      user_Id: id,
+      restaurant_Id: restId,
+    });
+    alert("Added to Favorites, Deletion is manage in Favorites Option");
+
+    console.log("updating info");
+  }
 
   return (
-
     <ScrollView>
       <Nav />
       <ScrollView style={styles.container}>
@@ -95,18 +125,18 @@ export default function Details({ navigation }) {
             title="Go Back"
             onPress={() => {
               // Navigate using the `navigation` prop that you received
-              navigation.navigate('Home');
-            }} />
+              navigation.navigate("Home");
+            }}
+          />
         </View>
         <View style={styles.text_title}>
-
           <Button
             title="Add to Favorites ❤️"
             color="#ff3300"
             onPress={() => {
               updateToDatabase(userId, restData[0].id);
-            }} />
-
+            }}
+          />
         </View>
         <Image
           source={{
@@ -127,9 +157,11 @@ export default function Details({ navigation }) {
           <Text style={styles.text_sub}>Website:</Text>
           <Text
             style={styles.text}
-            style={{ color: 'dodgerblue' }}
+            style={{ color: "dodgerblue" }}
             onPress={() => Linking.openURL(`${restData[0].url}`)}
-          >Click Here! to go to website</Text>
+          >
+            Click Here! to go to website
+          </Text>
         </View>
         <View style={styles.location_container}>
           <Text style={styles.text_title}>Location Details</Text>
