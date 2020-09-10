@@ -22,10 +22,9 @@ export default function Details({ navigation }) {
       
         if(id==='') {
             alert("No user login")
-            return console.log("no user id")
+            return 
         } 
-        //Gets all the users info on favorites collection
-
+    
         const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
         
 
@@ -33,7 +32,6 @@ export default function Details({ navigation }) {
         let userIndex;
 
         const usersData = favoritesUsers.data;
-        console.log(usersData);
         //Check if user exist, if not will change newInfo variable to false and set the userIndex
         for(let i=0; i<usersData.length; i++){
           if(id===usersData[i].user_Id){
@@ -42,8 +40,17 @@ export default function Details({ navigation }) {
           }
         } 
 
+        //if the user dont exist it will post a new user with the restaurant Id
+          // if(newInfo){
+          //   const favorite = await axios.post("http://localhost:8080/Favorites", {
+          //     user_Id : id,
+          //     restaurant_Id : restId
+          //   })
+          //   alert("Added to Favorites, Deletion is manage in Favorites Option")
+          //   return;
+          // }
           if(newInfo){
-            console.log("posting new info")
+
             const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
               user_Id : id,
               restaurant_Id : restId
@@ -54,20 +61,17 @@ export default function Details({ navigation }) {
           //if the user exist it will check if the restaurant it is already on its favorites list
           for(let i=0; i<usersData[userIndex].restaurant_Id.length; i++){
               if(restId===usersData[userIndex].restaurant_Id[i] ){
-                console.log("already in list of favorites")
                 alert("Already in your Favorites List")
                 return;
               }
           }
-            // if the user exists and the restID is not in the list it will post
-    
+  
                 const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
                   user_Id : id,
                   restaurant_Id : restId
                     })
                 alert("Added to Favorites, Deletion is manage in Favorites Option")
 
-        console.log("updating info")
     }
 
 
