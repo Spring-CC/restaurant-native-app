@@ -236,7 +236,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["フレンチ"]}
-            text="French 🏳🥩"
+            text="French 🏳🍮"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -247,7 +247,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["ラーメン"]}
-            text="Ramen 🌭"
+            text="Ramen 🍜"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -271,7 +271,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["カフェ"]}
-            text="Cafe 🍥"
+            text="Cafe ☕"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -285,7 +285,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["メキシコ料理"]}
-            text="Mexican 🥗"
+            text="Mexican 🌮"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -297,7 +297,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["とんかつ（トンカツ）"]}
-            text="Tonkatsu (Pork cutlet) 🍻"
+            text="Tonkatsu (Pork cutlet) 🥓"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -307,7 +307,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["定食・食事処"]}
-            text="Set menu 🍰"
+            text="Set menu 🍽"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -319,7 +319,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["ワイン"]}
-            text="Wine 🥂"
+            text="Wine 🍾"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -333,7 +333,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["しゃぶしゃぶ"]}
-            text="Shabushabu 🌯"
+            text="Shabushabu 🍱"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -343,7 +343,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["ステーキ"]}
-            text="Steak 🍾"
+            text="Steak 🥩"
             textDecoration={true}
             onPress={() => {
               dispatch(
@@ -353,7 +353,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["ハンバーグ"]}
-            text="Hamburger Patty 🥙"
+            text="Hamburger Patty 🍔"
             textDecoration={true}
             onPress={() => {
               dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
@@ -362,7 +362,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["洋食屋"]}
-            text="Western restaurant 🥙"
+            text="Western restaurant 🌯"
             textDecoration={true}
             onPress={() => {
               dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
@@ -371,7 +371,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["火鍋"]}
-            text="Hot pot 🥙"
+            text="Hot pot 🥘"
             textDecoration={true}
             onPress={() => {
               dispatch(category((categories["火鍋"] = !categories["火鍋"])));
@@ -380,7 +380,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["バー"]}
-            text="Bar 🥙"
+            text="Bar 🍸"
             textDecoration={true}
             onPress={() => {
               dispatch(category((categories["バー"] = !categories["バー"])));
@@ -389,7 +389,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={categories["そば"]}
-            text="Soba (Noodles) 🥙"
+            text="Soba (Noodles) 🍜"
             textDecoration={true}
             onPress={() => {
               dispatch(category((categories["そば"] = !categories["そば"])));
@@ -407,7 +407,7 @@ export default function Preferences({navigation}) {
 
           <BouncyCheckbox
             isChecked={priceSelected[0].checked}
-            text="¥500 - ¥1000"
+            text="¥500 - ¥1000 💴"
             textDecoration={true}
             onPress={() => {
               dispatch(priceRange((price.min = 500)));
@@ -417,7 +417,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={priceSelected[1].checked}
-            text="¥1000 - ¥2000"
+            text="¥1000 - ¥2000 💴"
             textDecoration={true}
             onPress={() => {
               dispatch(priceRange((price.min = 1000)));
@@ -427,7 +427,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={priceSelected[2].checked}
-            text="¥2000 - ¥5000"
+            text="¥2000 - ¥5000 💴"
             textDecoration={true}
             onPress={() => {
               dispatch(priceRange((price.min = 1000)));
@@ -437,7 +437,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             value={priceSelected[3].checked}
-            text="¥5000 - ¥10000"
+            text="¥5000 - ¥10000 💴"
             textDecoration={true}
             onPress={() => {
               dispatch(priceRange((price.min = 5000)));
@@ -447,7 +447,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             value={priceSelected[4].checked}
-            text="¥10000 - ¥15000"
+            text="¥10000 - ¥15000 💴"
             textDecoration={true}
             onPress={() => {
               dispatch(priceRange((price.min = 10000)));
@@ -457,7 +457,7 @@ export default function Preferences({navigation}) {
           />
           <BouncyCheckbox
             isChecked={priceSelected[5].checked}
-            text="¥15000 - ¥20000"
+            text="¥15000 - ¥20000 💴"
             textDecoration={true}
             onPress={() => {
               dispatch(priceRange((price.min = 10000)));
