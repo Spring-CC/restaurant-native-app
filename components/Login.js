@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { ScrollView, StyleSheet, TextInput, Button, Text, Separator } from 'react-native';
 
-
+"https://www.google.com/maps/search/entertainment/@35.5116084,139.4681215,16z/data=!3m1!4b1!4m11!2m10!3m6!1sentertainment!2z44CSMTk0LTAwMDQgVG9reW8sIE1hY2hpZGEsIFRzdXJ1bWEsIDMgQ2hvbWXiiJIxMOKIkjEg44G_44Ga44G76YqA6KGMIOOCsOODqeODs-ODmeODquODvOODkeODvOOCr-WHuuW8teaJgA!3s0x6018f965cf9082c1:0xc543bc1d81de60cf!4m2!1d139.4709994!2d35.5112337!5m1!4e3!6e1" // this just returns a list of near by adult clubs :< 
 
 export default function Login({ navigation }) {
 
