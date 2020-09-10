@@ -21,6 +21,7 @@ const fetchFonts = () => {
     "MPLUS1p-Bold": require("./assets/fonts/MPLUS1p-Bold.ttf"),
     "MPLUS1p-ExtraBold": require("./assets/fonts/MPLUS1p-ExtraBold.ttf"),
     "MPLUS1p-Medium": require("./assets/fonts/MPLUS1p-Medium.ttf"),
+    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
   });
 };
 
