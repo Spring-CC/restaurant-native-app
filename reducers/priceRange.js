@@ -1,6 +1,6 @@
 const priceRange = {
     min: 500,
-    max: 20000,
+    max: 50000,
     }
     
     const priceReducer = (state = priceRange, action) => {

@@ -9,6 +9,7 @@ import Home from "./Home";
 import About from "./About";
 import Details from "./Details";
 import UserInfo from "./UserInfo";
+import FavoritesView from "./FavoritesView";
 import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
@@ -59,6 +60,9 @@ const Drawer = createDrawerNavigator(
     },
     Preferences: {
       screen: Preferences,
+    },
+    Favorites: {
+      screen: FavoritesView,
     },
     Details: {
       screen: Details,

@@ -1,8 +1,6 @@
 # Spring APP
 <!-- ![logo](assets/logo_bowl.png) -->
-<div align="center">
-    <img src="./assets/logo_bowl.png" width="400">
-</div>
+<img src="./assets/logo_bowl.png" width="400">
 
 This was created during our time as students at Code Chrysalis.
 
@@ -18,9 +16,7 @@ This was created during our time as students at Code Chrysalis.
 This app allows users to like or dislike jokes made specifically for them!
 Users can also see the most liked and disliked jokes of all time!
 
-<div align="center">
-    <img src="assets/logo_bowl.png" width="400" alt="shaun">
-</div>
+<img src="assets/logo_bowl.png" width="400" alt="shaun">
 
 ## Link
 [Munchify](https://www.google.com/)
