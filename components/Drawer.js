@@ -14,6 +14,7 @@ import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
 import Yes from "./Yes"
+import Directions from "./Directions"
 
 class Hidden extends React.Component {
   render() {
@@ -25,6 +26,10 @@ const Drawer = createDrawerNavigator(
   {
     Home: {
       screen: Home,
+    },
+
+    Directions: {
+      screen: Directions
     },
 
     Yes: {
