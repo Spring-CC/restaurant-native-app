@@ -25,7 +25,8 @@ export default function Details({ navigation }) {
             return console.log("no user id")
         } 
         //Gets all the users info on favorites collection
-        const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
+        //const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
+        const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
         
 
         let newInfo = true;
@@ -42,9 +43,18 @@ export default function Details({ navigation }) {
         } 
 
         //if the user dont exist it will post a new user with the restaurant Id
+          // if(newInfo){
+          //   console.log("posting new info")
+          //   const favorite = await axios.post("http://localhost:8080/Favorites", {
+          //     user_Id : id,
+          //     restaurant_Id : restId
+          //   })
+          //   alert("Added to Favorites, Deletion is manage in Favorites Option")
+          //   return;
+          // }
           if(newInfo){
             console.log("posting new info")
-            const favorite = await axios.post("http://localhost:8080/Favorites", {
+            const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
               user_Id : id,
               restaurant_Id : restId
             })
@@ -60,10 +70,14 @@ export default function Details({ navigation }) {
               }
           }
             // if the user exists and the restID is not in the list it will post
-            const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
-              user_Id : id,
-              restaurant_Id : restId
-                })
+            // const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
+            //   user_Id : id,
+            //   restaurant_Id : restId
+            //     })
+                const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
+                  user_Id : id,
+                  restaurant_Id : restId
+                    })
                 alert("Added to Favorites, Deletion is manage in Favorites Option")
 
         console.log("updating info")
