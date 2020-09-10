@@ -496,7 +496,7 @@ export default function Preferences({ navigation }) {
             onPress={() => {
               getRestaurants();
               setTimeout(() => {
-                navigation.navigate('Home');
+                navigation.navigate('Search');
               }, 2000);
             }}
           >
@@ -510,11 +510,11 @@ export default function Preferences({ navigation }) {
 
       <Footer>
         <FooterTab>
-          <Button vertical onPress={() => navigation.navigate("Landing")}>
+          <Button vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="home" />
             <Text>Home</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Home")}>
+          <Button vertical onPress={() => navigation.navigate("Search")}>
             <Icon name="eye" />
             <Text>Search</Text>
           </Button>
