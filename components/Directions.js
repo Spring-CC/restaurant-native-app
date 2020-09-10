@@ -8,7 +8,7 @@ import {
   Separator,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import data from "../data/restaurants.json";
+// import data from "../data/restaurants.json";
 import * as Linking from "expo-linking";
 
 export default function Directions({ navigation }) {
