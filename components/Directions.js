@@ -10,7 +10,6 @@ import {
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import data from "../data/restaurants.json";
-import train from "../data/train.json";
 
 export default function Directions({ navigation }) {
     const [Kara, setKara] = useState("南町田");
@@ -21,21 +20,10 @@ export default function Directions({ navigation }) {
 
   useEffect(() => {
     console.log(data[0].access.station)
-    console.log(train[0].name.ja)
     stationFinder()
   }, []);
 
-function stationFinder () {
-    console.log('Starting')
-for (let index = 0; index < train.length; index++) {
-    const station = train[index].name.ja;
-    console.log(station)
-    if (station === Kara) {
-        setMade("Found!")
-        console.log(Made)
-    }
-}
-}
+  // https://www.google.com/maps/place/35%C2%B030'34.5%22N+139%C2%B028'13.6%22E/@35.509583,139.4682623,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d35.509583!4d139.470451
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
