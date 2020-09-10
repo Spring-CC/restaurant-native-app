@@ -8,7 +8,8 @@ import { setProfile, setPic, setUserId } from "../actions";
 import { set } from "react-native-reanimated";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
-const useProxy = Platform.select({ web: false, default: true });
+
+const useProxy = Platform.select({ web: false, native: true, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
 WebBrowser.maybeCompleteAuthSession();
 
@@ -68,9 +69,11 @@ export default function Auth({ navigation }) {
 
   async function logOut() {
     await WebBrowser.openBrowserAsync(
-      `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUri}`
+      `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?federated&client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUri}`
     );
   }
+
+  //http://dev-xbrgi1r2.us.auth0.com/v2/logout?federated&client_id=Wx8Op4j604wqucXxY39dlLL4Qqy2auNo&returnTo=https://auth.expo.io/@yuriamm/restaurant-native-app`
 
   return (
     <View style={styles.container}>
