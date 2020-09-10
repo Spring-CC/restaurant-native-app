@@ -1,52 +1,78 @@
 import numpy as np
 import pandas as pd
 from pathlib import Path
-####
-import re
-import seaborn as sns
-import matplotlib.pyplot as plt
-from sklearn.neighbors import NearestNeighbors
+from ast import literal_eval
 from scipy.sparse import csr_matrix
+from sklearn.neighbors import NearestNeighbors
+import scipy
 
-print("!!!!!!!")
-# collaborative filtering 
-## user-based
+####
+# import re
+# import seaborn as sns
+# import matplotlib.pyplot as plt
 
 
-#  swiped data -- merge -- userdata ----> csv file
-###### connect to data
+# collaborative filtering
+# user-based
+
+
+# connect to data
 swipeddata_df = pd.read_csv('data/dummydata.csv')
 # show the dataframe first 5
-print(swipeddata_df.head())
+# print(swipeddata_df.head())
+
+# ## clean up the data
+# piv = swipeddata_df.pivot_table(index = ["userid"],columns=["name"],values="swipeddata")
+# piv.head()
+# piv.shape
 
 
-## check the top list
-# fig, ax = plt.subplots  #(figsize=[5,10])
-# sns.countplot(data=swipeddata_df[swiped_df['swiped_right'].isin(
-#     categories['swiped_right'].value_counts().head(25).index)],
-#                               y='swiped_right', ax=ax)
-# plt.show()
+# sparse matrix
+
+swipeddata_df = pd.read_csv(
+    'data/dummydata.csv', usecols=[0, 1, 2], index_col=1)
+swipeddata_df.swiped_right = swipeddata_df.swiped_right.apply(literal_eval)
+new_df = swipeddata_df.explode("swiped_right")
+
+# create sparse matrix
+user_pivot = new_df.pivot(
+    index="_id", columns='swiped_right', values='swiped_right').notna()
+matrix = scipy.sparse.csr_matrix(user_pivot.values)
 
 
-## clean up the data
-piv = swipeddata_df.pivot_table(index = ["userid"],columns=["name"],values="swipeddata")
-piv.head() 
-piv.shape
-#Min-Max Scaling
-# change NaN to 0
-piv_norm = piv.apply(lambda x:(x-np.mean(x))/(np.max(x)-np.min(x)),axis=1)
-piv_norm.fillna(0,inplace=True) 
+# KNN algorithm
+knn_recomm = NearestNeighbors(
+    n_neighbors=9, algorithm="brute", metric="cosine")
+knn_recomm.fit(matrix)
+
+knn_recomm_df = pd.DataFrame(
+    knn_recomm, index=new_df.columns, columns=new_df.columns)
+#print("!!!!", knn_recomm_df)
+
+
+
+# find a recommended user who have 
+random_user = np.random.choice(user_pivot.shape[0])
+distances, indices = knn_recomm.kneighbors(
+    user_pivot.iloc[random_user].values.reshape(1, -1), n_neighbors=9)
+
+print('##', user_pivot.shape[0])
+print('###', random_user)
+
+for i in range(0, len(distances.flatten())):
+    if i == 0:
+        print('Recommendations for user:', random_user)
+    else:
+        print('{0}: {1}'.format(i, user_pivot.index[indices.flatten()[i]]))
+
+
+
+
+
 
 # create cross tabulation userid × restaurantid
-swiped_list = swipeddata_df.sort_values('userid').userid.unique()
-
-
+#swiped_list = swipeddata_df.sort_values('userid').userid.unique()
 
 
 # swipeddata_df.sort_values('userid', ascending=False)[:10]
 #p = Path(__file__,'dummydata.csv')
-
-
-
-
-
