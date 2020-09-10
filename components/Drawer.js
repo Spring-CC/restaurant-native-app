@@ -100,7 +100,7 @@ const Drawer = createDrawerNavigator(
         opacity: 1,
       },
     },
-    drawerBackgroundColor: "#F8961E", // sets background color of drawer
+    drawerBackgroundColor: "#FF5B38", // sets background color of drawer
   }
 );
 
