@@ -1,6 +1,6 @@
 const favorites = [
     {
-        name:"",
+        name:"No favorites yet, please add",
         opentime:"",
         tel:"",
         url:"",
