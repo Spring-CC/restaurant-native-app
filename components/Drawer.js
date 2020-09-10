@@ -6,6 +6,7 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 import Login from "./Auth";
 import SignUp from "./SignUp";
 import Home from "./Home";
+import Landing from "./Landing";
 import About from "./About";
 import Details from "./Details";
 import UserInfo from "./UserInfo";
@@ -23,6 +24,13 @@ class Hidden extends React.Component {
 
 const Drawer = createDrawerNavigator(
   {
+    Landing: {
+      screen: Landing,
+      navigationOptions: {
+        drawerLabel: <Hidden />,
+      },
+    },
+
     Home: {
       screen: Home,
     },
@@ -72,7 +80,7 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
-    intialRouteName: "Home",
+    intialRouteName: "Landing",
     navigationOptions: {
       headerStyle: {
         backgroundColor: "#f4511e",

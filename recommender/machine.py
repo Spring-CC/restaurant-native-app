@@ -17,7 +17,7 @@ import scipy
 
 
 # connect to data
-swipeddata_df = pd.read_csv('data/dummydata.csv')
+
 # show the dataframe first 5
 # print(swipeddata_df.head())
 
@@ -30,7 +30,7 @@ swipeddata_df = pd.read_csv('data/dummydata.csv')
 # sparse matrix
 
 swipeddata_df = pd.read_csv(
-    'data/dummydata.csv', usecols=[0, 1, 2], index_col=1)
+    'data/testuser.csv', usecols=[0, 1, 2], index_col=1)
 swipeddata_df.swiped_right = swipeddata_df.swiped_right.apply(literal_eval)
 new_df = swipeddata_df.explode("swiped_right")
 
@@ -64,8 +64,6 @@ for i in range(0, len(distances.flatten())):
         print('Recommendations for user:', random_user)
     else:
         print('{0}: {1}'.format(i, user_pivot.index[indices.flatten()[i]]))
-
-
 
 
 
