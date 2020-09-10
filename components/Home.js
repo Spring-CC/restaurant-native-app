@@ -2,20 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
   View,
-  Text,
   ScrollView,
   TouchableOpacity,
-  SafeAreaView,
-  Button,
 } from "react-native";
+import { Container, Footer, FooterTab, Button, Icon, Text } from 'native-base';
 import { SliderBox } from "react-native-image-slider-box";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, restaurant, setRestaurantsList } from "../actions";
-import data from "../data/restaurants.json";
+// import data from "../data/restaurants.json";
 import Nav from "./Nav";
 import axios from "axios";
-import Details from "./Details";
+// import Details from "./Details";
 
 // <Button title="Login" onPress={() => navigation.navigate('Login')} />
 
@@ -95,101 +93,123 @@ export default function Home({ navigation }) {
 
   }
   function leftActions() {
-    
+
   }
 
   return (
-    <ScrollView style={styles.container}>
-      <Swipeable
-        ref={swipeableRef}
-        renderRightActions={() => rightActions()}
-        renderLeftActions={() => leftActions()}
-      >
-        <Nav />
-        <View>
-          <Button
-            title="Go To Login"
-            onPress={() => {
-              // Navigate using the `navigation` prop that you received
-              navigation.navigate("Login");
-            }}
-          />
-        </View>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.buttons}
-            onPress={() => {
-              dispatch(increment());
-            }}
-          >
-            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              No
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.buttons} onPress={() => onPress()}>
-            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              Yes
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <ScrollView>
-            <SliderBox
-              images={images}
-              sliderBoxHeight={400}
-              circleLoop
-              dotColor={color1}
-              inactiveDotColor={color2}
-              paginationBoxStyle={{
-                position: "absolute",
-                bottom: 0,
-                padding: 0,
-                alignItems: "center",
-                alignSelf: "center",
-                justifyContent: "center",
-                paddingVertical: 10,
+    <Container>
+      <ScrollView style={styles.container}>
+        <Swipeable
+          ref={swipeableRef}
+          renderRightActions={() => rightActions()}
+          renderLeftActions={() => leftActions()}
+        >
+          <Nav />
+          <View>
+            <Button
+              title="Go To Login"
+              onPress={() => {
+                // Navigate using the `navigation` prop that you received
+                navigation.navigate("Login");
               }}
-              dotStyle={{
-                width: 25,
-                height: 25,
-                borderRadius: 25,
-                marginHorizontal: 0,
-                padding: 0,
-                margin: 0,
-                backgroundColor: "rgba(128, 128, 128, 0.92)",
-              }}
-              ImageComponentStyle={{
-                borderRadius: 15,
-                width: "97%",
-                marginTop: 5,
-              }}
-              imageLoadingColor="#2196F3"
             />
-          </ScrollView>
-        </View>
+          </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              style={styles.buttons}
+              onPress={() => {
+                dispatch(increment());
+              }}
+            >
+              <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+                No
+            </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttons} onPress={() => onPress()}>
+              <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+                Yes
+            </Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            <ScrollView>
+              <SliderBox
+                images={images}
+                sliderBoxHeight={400}
+                circleLoop
+                dotColor={color1}
+                inactiveDotColor={color2}
+                paginationBoxStyle={{
+                  position: "absolute",
+                  bottom: 0,
+                  padding: 0,
+                  alignItems: "center",
+                  alignSelf: "center",
+                  justifyContent: "center",
+                  paddingVertical: 10,
+                }}
+                dotStyle={{
+                  width: 25,
+                  height: 25,
+                  borderRadius: 25,
+                  marginHorizontal: 0,
+                  padding: 0,
+                  margin: 0,
+                  backgroundColor: "rgba(128, 128, 128, 0.92)",
+                }}
+                ImageComponentStyle={{
+                  borderRadius: 15,
+                  width: "97%",
+                  marginTop: 5,
+                }}
+                imageLoadingColor="#2196F3"
+              />
+            </ScrollView>
+          </View>
 
-        <View style={styles.restaurant}>
-          {restaurants.map((restaurant) => {
-            return (
-              <View key={restaurant.id}>
-                <Text style={styles.textTitle}>Name</Text>
-                <Text style={styles.textName}>{restaurant.name}</Text>
-                <Text style={styles.textTitle}>Name (Katakana)</Text>
-                <Text
-                  style={styles.textKana}
-                >{`(${restaurant.name_kana})`}</Text>
-                <Text style={styles.textTitle}>Category</Text>
-                <Text style={styles.textBody}>{restaurant.category}</Text>
-                <Text style={styles.textTitle}>Address</Text>
-                <Text style={styles.textBody}>{restaurant.address}</Text>
-                <Text style={styles.textTitle}>Open Times</Text>
-                <Text style={styles.textBody}>{restaurant.opentime}</Text>
-              </View>
-            );
-          })}
-        </View>
-      </Swipeable>
-    </ScrollView>
+          <View style={styles.restaurant}>
+            {restaurants.map((restaurant) => {
+              return (
+                <View key={restaurant.id}>
+                  <Text style={styles.textTitle}>Name</Text>
+                  <Text style={styles.textName}>{restaurant.name}</Text>
+                  <Text style={styles.textTitle}>Name (Katakana)</Text>
+                  <Text
+                    style={styles.textKana}
+                  >{`(${restaurant.name_kana})`}</Text>
+                  <Text style={styles.textTitle}>Category</Text>
+                  <Text style={styles.textBody}>{restaurant.category}</Text>
+                  <Text style={styles.textTitle}>Address</Text>
+                  <Text style={styles.textBody}>{restaurant.address}</Text>
+                  <Text style={styles.textTitle}>Open Times</Text>
+                  <Text style={styles.textBody}>{restaurant.opentime}</Text>
+                </View>
+              );
+            })}
+          </View>
+        </Swipeable>
+      </ScrollView>
+      <Footer>
+        <FooterTab>
+          <Button vertical onPress={() => navigation.navigate("Landing")}>
+            <Icon name="apps" />
+            <Text>Home</Text>
+          </Button>
+          <Button active vertical onPress={() => navigation.navigate("Home")}>
+            <Icon name="eye" />
+            <Text>Search</Text>
+          </Button>
+          <Button vertical onPress={() => navigation.navigate("Preferences")}>
+            <Icon active name="pizza" />
+            <Text>Preference</Text>
+          </Button>
+          <Button vertical onPress={() => navigation.navigate("Favorites")}>
+            <Icon name="heart" />
+            <Text>Favorites</Text>
+          </Button>
+        </FooterTab>
+      </Footer>
+    </Container>
   );
 }
 
