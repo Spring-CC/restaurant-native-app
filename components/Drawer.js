@@ -24,15 +24,15 @@ class Hidden extends React.Component {
 
 const Drawer = createDrawerNavigator(
   {
-    Home: {
-      screen: Home,
-    },
-
     Landing: {
       screen: Landing,
       navigationOptions: {
         drawerLabel: <Hidden />,
       },
+    },
+
+    Home: {
+      screen: Home,
     },
 
     Yes: {
@@ -80,7 +80,7 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
-    intialRouteName: "Home",
+    intialRouteName: "Landing",
     navigationOptions: {
       headerStyle: {
         backgroundColor: "#f4511e",
