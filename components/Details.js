@@ -49,12 +49,14 @@ export default function Details({ navigation }) {
               user_Id : id,
               restaurant_Id : restId
             })
+            alert("Added to Favorites, Deletion is manage in Favorites Option")
             return;
           }
           //if the user exist it will check if the restaurant it is already on its favorites list
           for(let i=0; i<usersData[userIndex].restaurant_Id.length; i++){
               if(restId===usersData[userIndex].restaurant_Id[i] ){
                 console.log("already in list of favorites")
+                alert("Already in your Favorites List")
                 return;
               }
           }
@@ -63,6 +65,7 @@ export default function Details({ navigation }) {
               user_Id : id,
               restaurant_Id : restId
                 })
+                alert("Added to Favorites, Deletion is manage in Favorites Option")
 
         console.log("updating info")
     }
