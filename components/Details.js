@@ -69,30 +69,6 @@ export default function Details({ navigation }) {
         console.log("updating info")
     }
 
-    //if the user dont exist it will post a new user with the restaurant Id
-    if (newInfo) {
-      console.log("posting new info")
-      const favorite = await axios.post("http://localhost:8080/Favorites", {
-        user_Id: id,
-        restaurant_Id: restId
-      })
-      return;
-    }
-    //if the user exist it will check if the restaurant it is already on its favorites list
-    for (let i = 0; i < usersData[userIndex].restaurant_Id.length; i++) {
-      if (restId === usersData[userIndex].restaurant_Id[i]) {
-        console.log("already in list of favorites")
-        return;
-      }
-    }
-    // if the user exists and the restID is not in the list it will post
-    const favorite = await axios.post("http://localhost:8080/favoritesUpdate", {
-      user_Id: id,
-      restaurant_Id: restId
-    })
-
-    console.log("updating info")
-  }
 
 
   return (
