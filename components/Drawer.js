@@ -46,6 +46,9 @@ const Drawer = createDrawerNavigator(
 
     CreateAccount: {
       screen: SignUp,
+      navigationOptions: {
+        drawerLabel: <Hidden />,
+      },
     },
     About: {
       screen: About,
