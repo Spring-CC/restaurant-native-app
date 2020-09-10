@@ -17,6 +17,7 @@ export default function Directions({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
 
   useEffect(() => {
+    console.log(restData[0])
     console.log(restData[0].latitude);
     console.log(restData[0].longitude);
     setLat(restData[0].latitude);

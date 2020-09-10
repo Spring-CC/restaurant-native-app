@@ -78,8 +78,8 @@ export default function Details({ navigation }) {
     })
     alert("Added to Favorites, Deletion is manage in Favorites Option")
 
-    const usersData = favoritesUsers.data;
-    console.log(usersData);
+    // const usersData = favoritesUsers.data;
+    // console.log(usersData);
     //Check if user exist, if not will change newInfo variable to false and set the userIndex
     for (let i = 0; i < usersData.length; i++) {
       if (id === usersData[i].user_Id) {
