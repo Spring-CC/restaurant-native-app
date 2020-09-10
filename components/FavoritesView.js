@@ -12,36 +12,31 @@ import {
   Button,
 } from "react-native";
 import axios from 'axios';
+import { addFavorites } from "../actions";
+
 
 
 export default function FavoritesView(){
-    
-    const mockData = [
-    {
-        name: "エルトリート 西葛西店",
-        opentime: " 11:00～24:00(L.O.23:00)",
-        tel: "050-3469-5266",
-        image_url: "https://rimage.gnst.jp/rest/img/4323u30n0000/t_005y.jpg",
-        url: "https://r.gnavi.co.jp/g047005/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D"
-    },
-    {
-        name: "エルトリート 西葛西店",
-        opentime: " 11:00～24:00(L.O.23:00)",
-        tel: "050-3469-5266",
-        image_url: "https://rimage.gnst.jp/rest/img/4323u30n0000/t_005y.jpg",
-        url: "https://r.gnavi.co.jp/g047005/?ak=weHzA%2F9AqDO3TNzkDdjl7C6E%2FDWGLiZ0HTVI4tW5qHQ%3D"
-    },
 
-]
+//   const favoritesMock = [
+//     {
+//         name:"",
+//         opentime:"",
+//         tel:"",
+//         url:"",
+//   }
+//   ];
 
-const [userFavorites, setFavorites] = useState(mockData);
+// const [ userFavorites, setUserFavorites] = useState(favoritesMock);
 const userId = useSelector((state) => state.userIdReducer);
 const restaurantList = useSelector((state) => state.restaurantsListReducer);
+const favoritesList = useSelector((state) => state.addFavoritesReducer);
+const dispatch = useDispatch()
 
 async function getUserFavorites(id){
 
-    
-    const favoritesUsers = await axios.get("http://localhost:8080/favoritesInfo");
+    console.log(id)
+    const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
     const usersData = favoritesUsers.data;
     
@@ -55,15 +50,27 @@ async function getUserFavorites(id){
         } 
         })
     console.log(results)
-    setFavorites(results);
-    console.log(userFavorites)
-
+    //setUserFavorites(results);
+    dispatch(addFavorites(results))
+   
 }
 
+async function deleteFavorite(userId , restId){
+
+  await axios.patch("https://restaurantserverspring.herokuapp.com/deleteFavorite",{
+    user_Id: userId,
+    restaurant_Id: restId,
+  })
+  console.log("restaurant remove from favorites")
+}
 
 useEffect(() => {
+  if(userId!==''){
     getUserFavorites(userId);
+  }
   }, []);
+
+
 
 
     return (
@@ -75,28 +82,46 @@ useEffect(() => {
             <Text style={styles.title}>Favorites</Text>
           </View>
           <View>
-              {userFavorites.map(favorite=>(
-        <View style={styles.checkboxContainer}>
-                <Text style={styles.textTitle}>Name</Text>
-                <Text style={styles.textBody}>{favorite.name}</Text>
-                <Text style={styles.textTitle}>Open time</Text>
-                <Text style={styles.textBody}>{favorite.opentime}</Text>
-                <Text style={styles.textTitle}>Telephone</Text>
-                <Text style={styles.textBody}>{favorite.tel}</Text>
-                <Text style={styles.textTitle}>Link to Restaurant</Text>
-                <Text style={styles.linkText}
-                onPress={() => Linking.openURL(favorite.url)}>
-                Press To Go to Restaurant Page</Text>
-        <TouchableOpacity
-          style={styles.buttons}
-        //   onPress={() => {}}
-          >
-            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-             X
-            </Text>
-          </TouchableOpacity>
-        </View>  
-              ))}
+            {userId==='' ? 
+            (
+              <View>
+                  <Text style={styles.title}>You must be Logged In to use this option</Text>
+                </View>
+            )
+            : 
+            (             
+              <View>
+              {favoritesList.map(favorite=>(
+              <View style={styles.checkboxContainer}>
+                      <Text style={styles.textTitle}>Name</Text>
+                      <Text style={styles.textBody}>{favorite.name}</Text>
+                      <Text style={styles.textTitle}>Open time</Text>
+                      <Text style={styles.textBody}>{favorite.opentime}</Text>
+                      <Text style={styles.textTitle}>Telephone</Text>
+                      <Text style={styles.textBody}>{favorite.tel}</Text>
+                      <Text style={styles.textTitle}>Link to Restaurant</Text>
+                      <Text style={styles.linkText}
+                      onPress={() => Linking.openURL(favorite.url)}>
+                      Press To Go to Restaurant Page</Text>
+              <TouchableOpacity
+                style={styles.buttons}
+                onPress={() => {
+                  deleteFavorite(userId, favorite.id);
+                  setTimeout(() => {
+                    getUserFavorites(userId);
+                  }, 2000);
+                }}
+                >
+                  <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+                   X
+                  </Text>
+                </TouchableOpacity>
+              </View>  
+              )
+              )}
+              </View>
+              )}
+
           </View>
           </ScrollView>
     )

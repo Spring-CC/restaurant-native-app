@@ -46,17 +46,10 @@ export const setProfile = (obj) => {
   };
 };
 
-export const addFavorites = (restId) => {
+export const addFavorites = (obj) => {
   return {
     type: "ADD_FAVORITES",
-    payload: restId,
-  };
-};
-
-export const postFavorites = (restId) => {
-  return {
-    type: "POST_FAVORITES",
-    payload: restId,
+    payload: obj,
   };
 };
 
