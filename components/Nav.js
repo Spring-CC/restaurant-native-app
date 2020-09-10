@@ -1,11 +1,10 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text, Image } from "react-native";
+import { StyleSheet, SafeAreaView, Image } from "react-native";
 
 export default function Nav() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Text style={styles.text}>Munchify</Text> */}
       <Image source={require('./../assets/logo_bowl.png')} style={styles.logo} />
     </SafeAreaView>
   );
@@ -13,11 +12,9 @@ export default function Nav() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#DCDCDC',
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 5,
   },
   text: {
     fontFamily: 'MPLUS1p-Black',

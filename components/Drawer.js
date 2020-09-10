@@ -6,6 +6,7 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 import Login from "./Auth";
 import SignUp from "./SignUp";
 import Home from "./Home";
+import Landing from "./Landing";
 import About from "./About";
 import Details from "./Details";
 import UserInfo from "./UserInfo";
@@ -25,6 +26,13 @@ const Drawer = createDrawerNavigator(
   {
     Home: {
       screen: Home,
+    },
+
+    Landing: {
+      screen: Landing,
+      navigationOptions: {
+        drawerLabel: <Hidden />,
+      },
     },
 
     Yes: {
