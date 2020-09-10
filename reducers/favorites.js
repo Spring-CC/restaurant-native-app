@@ -1,13 +1,16 @@
+const favorites = [
+    {
+        name:"",
+        opentime:"",
+        tel:"",
+        url:"",
+}
+];
 
-
-const addFavoritesReducer = (state = [], action)=> {
+const addFavoritesReducer = (state=favorites, action)=> {
     switch(action.type) {
         case "ADD_FAVORITES":
-            if(state.some(el => el === action.payload)){
-                return state
-            } else {
-            return {...state, stations: action.payload};
-            }
+            return action.payload
         default:
              return state;
     }

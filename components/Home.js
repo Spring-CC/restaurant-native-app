@@ -45,7 +45,7 @@ export default function Home({ navigation }) {
 
   async function getRestaurants() {
     try {
-      const results = await axios.get("http://localhost:8080/restAtlas");
+      const results = await axios.get("https://restaurantserverspring.herokuapp.com/restAtlas");
       const restaurants = results.data;
       const filtBudget = restaurants.filter(
         (res) => res.budget >= price.min && res.budget <= price.max
