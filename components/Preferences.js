@@ -21,7 +21,7 @@ export default function Preferences({ navigation }) {
 
   async function getRestaurants() {
     try {
-      const results = await axios.get("http://localhost:8080/restAtlas");
+      const results = await axios.get("https://restaurantserverspring.herokuapp.com/restAtlas");
       const restaurants = results.data;
       const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
       const filtCat = categoryFilter(filtBudget, categories);
@@ -88,7 +88,7 @@ export default function Preferences({ navigation }) {
         };
       }
     });
-    return setSelected(selection);
+    setSelected(selection);
   };
 
   const categories = useSelector((state) => state.categoryReducer);
@@ -430,8 +430,8 @@ export default function Preferences({ navigation }) {
               text="¥2000 - ¥5000 💴"
               textDecoration={true}
               onPress={() => {
-                dispatch(priceRange((price.min = 1000)));
-                dispatch(priceRange((price.max = 2000)));
+                dispatch(priceRange((price.min = 2000)));
+                dispatch(priceRange((price.max = 5000)));
                 checkBoxSelected(3);
               }}
             />
@@ -496,7 +496,7 @@ export default function Preferences({ navigation }) {
             onPress={() => {
               getRestaurants();
               setTimeout(() => {
-                navigation.navigate('Home');
+                navigation.navigate('Search');
               }, 2000);
             }}
           >
@@ -510,11 +510,11 @@ export default function Preferences({ navigation }) {
 
       <Footer>
         <FooterTab>
-          <Button vertical onPress={() => navigation.navigate("Landing")}>
-            <Icon name="apps" />
+          <Button vertical onPress={() => navigation.navigate("Home")}>
+            <Icon name="home" />
             <Text>Home</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Home")}>
+          <Button vertical onPress={() => navigation.navigate("Search")}>
             <Icon name="eye" />
             <Text>Search</Text>
           </Button>

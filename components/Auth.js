@@ -5,7 +5,7 @@ import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { setProfile, setPic, setUserId } from "../actions";
-import { set } from "react-native-reanimated";
+import axios from "axios";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
@@ -67,9 +67,15 @@ export default function Auth({ navigation }) {
   }, [result]);
 
   async function logOut() {
-    await WebBrowser.openBrowserAsync(
-      `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUri}`
-    );
+    try {
+      await WebBrowser.openBrowserAsync(
+        `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?federated`
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    setName(null);
+    navigation.navigate("Home");
   }
 
   return (
@@ -78,12 +84,12 @@ export default function Auth({ navigation }) {
         {name ? (
           <Text style={styles.title}>You are logged in, {name}!</Text>
         ) : (
-          <Button
-            disabled={!request}
-            title="Log in with Auth0"
-            onPress={() => promptAsync({ useProxy })}
-          />
-        )}
+            <Button
+              disabled={!request}
+              title="Log in with Auth0"
+              onPress={() => promptAsync({ useProxy })}
+            />
+          )}
       </View>
       <View>
         <Button

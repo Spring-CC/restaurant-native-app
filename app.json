@@ -23,6 +23,10 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "android": {
+      "package": "com.ccspring.munchify",
+      "versionCode": 1
+    },
     "description": "cc13 Senior Project"
   }
 }
