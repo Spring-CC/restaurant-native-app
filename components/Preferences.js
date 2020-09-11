@@ -115,12 +115,14 @@ export default function Preferences({ navigation }) {
   if (loading === true) {
     return (
       <Container>
-        <ScrollView>
+        <ScrollView style={styles.container}>
           <View>
             <Spinner
           visible={true}
           textContent={'Loading...'}
           textStyle={styles.spinnerTextStyle}
+          size="large" 
+          color="#90be6d" // green too light ?
         />
           </View>
         </ScrollView>
