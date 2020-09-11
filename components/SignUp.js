@@ -22,7 +22,7 @@ export default function SignUp({ navigation }) {
         style={styles.input}
         onChangeText={(text) => {
           onChangeEmail(text);
-          console.log(email);
+          // console.log(email);
         }}
         value={email}
         keyboardType="email-address"
@@ -31,7 +31,7 @@ export default function SignUp({ navigation }) {
         style={styles.input}
         onChangeText={(text) => {
           onChangePassword(text);
-          console.log(password)
+          // console.log(password)
         }}
         value={password}
         secureTextEntry

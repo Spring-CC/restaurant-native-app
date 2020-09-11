@@ -8,7 +8,7 @@ export default function UserInfo({ navigation }) {
   // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
   const profileImage = useSelector((state) => state.picReducer);
-  console.log(profileImage);
+  // console.log(profileImage);
   /** if no name then show guest */
   if (name[0].name === "") {
     return (
