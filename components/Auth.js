@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
+import * as Linking from "expo-linking";
 import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
@@ -66,15 +67,8 @@ export default function Auth({ navigation }) {
     }
   }, [result]);
 
-  async function logOut() {
-    try {
-      await WebBrowser.openBrowserAsync(
-        `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?federated`
-      );
-    } catch (err) {
-      console.log(err);
-    }
-    setName(null);
+  function handleRedirect() {
+    WebBrowser.dismissBrowser();
     navigation.navigate("Home");
   }
 
@@ -84,18 +78,24 @@ export default function Auth({ navigation }) {
         {name ? (
           <Text style={styles.title}>You are logged in, {name}!</Text>
         ) : (
-            <Button
-              disabled={!request}
-              title="Log in with Auth0"
-              onPress={() => promptAsync({ useProxy })}
-            />
-          )}
+          <Button
+            disabled={!request}
+            title="Log in with Auth0"
+            onPress={() => promptAsync({ useProxy })}
+          />
+        )}
       </View>
       <View>
         <Button
-          title="Log out with Auth0"
-          onPress={() => {
-            logOut();
+          title="LOGOUT"
+          onPress={async () => {
+            Linking.addEventListener("url", handleRedirect);
+            const redirectUrl = Linking.makeUrl("/");
+            await WebBrowser.openBrowserAsync(
+              `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
+            );
+            Linking.removeEventListener("url", handleRedirect);
+            setName(null);
           }}
         />
       </View>
