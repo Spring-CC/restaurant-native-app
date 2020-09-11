@@ -147,6 +147,17 @@ export default function Details({ navigation }) {
           <Text style={styles.text_sub}>E-Money:</Text>
           <Text style={styles.text}>{restData[0].e_money}</Text>
         </View>
+        <View>
+        <Button
+        style={styles.button}
+        title="Go To Maps"
+        onPress={() =>
+          Linking.openURL(
+            `https://www.google.com/maps/place/${restData[0].latitude},${restData[0].longitude}`
+          )
+        }
+      />
+        </View>
       </ScrollView>
     </ScrollView>
   );
@@ -157,6 +168,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#F8961E",
     padding: 5,
     marginBottom: 7,
+  },
+  button: {
+    padding: "10",
+    color: "#841584",
   },
   location_container: {
     backgroundColor: "#F9C74F",
