@@ -1,11 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
-import { Container, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { StyleSheet, View, ScrollView, TouchableOpacity } from "react-native";
+import { Container, Footer, FooterTab, Button, Icon, Text } from "native-base";
 import { SliderBox } from "react-native-image-slider-box";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 import { useSelector, useDispatch } from "react-redux";
@@ -45,7 +40,9 @@ export default function Home({ navigation }) {
 
   async function getRestaurants() {
     try {
-      const results = await axios.get("https://restaurantserverspring.herokuapp.com/restAtlas");
+      const results = await axios.get(
+        "https://restaurantserverspring.herokuapp.com/restAtlas"
+      );
       const restaurants = results.data;
       const filtBudget = restaurants.filter(
         (res) => res.budget >= price.min && res.budget <= price.max
@@ -72,9 +69,12 @@ export default function Home({ navigation }) {
   async function liked() {
     try {
       const likedResId = restaurants[0].id;
-      await axios.post(`http://localhost:8080/dummyusers/${userId}`, {
-        restId: likedResId,
-      });
+      await axios.post(
+        `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
+        {
+          restId: likedResId,
+        }
+      );
     } catch (err) {
       console.log(err);
     }
@@ -88,12 +88,18 @@ export default function Home({ navigation }) {
     swipeableRef.current.close();
   }
 
-  function rightActions() {
-
+  async function unlicked() {
+    try {
+      await axios.post(
+        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`
+      );
+    } catch (err) {
+      console.log(err);
+    }
   }
-  function leftActions() {
 
-  }
+  function rightActions() {}
+  function leftActions() {}
 
   return (
     <Container>
@@ -118,16 +124,21 @@ export default function Home({ navigation }) {
               style={styles.buttons}
               onPress={() => {
                 dispatch(increment());
+                unlicked();
               }}
             >
-              <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+              <Text
+                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+              >
                 No
-            </Text>
+              </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttons} onPress={() => onPress()}>
-              <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+              <Text
+                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+              >
                 Yes
-            </Text>
+              </Text>
             </TouchableOpacity>
           </View>
           <View>
