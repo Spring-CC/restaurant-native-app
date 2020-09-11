@@ -51,7 +51,7 @@ export default function Home({ navigation }) {
         (res) => res.budget >= price.min && res.budget <= price.max
       );
       dispatch(setRestaurantsList(filtBudget));
-      console.log(filtBudget);
+      // console.log(filtBudget);
     } catch (err) {
       console.log(err);
     }
@@ -59,7 +59,7 @@ export default function Home({ navigation }) {
 
   useEffect(() => {
     getRestaurants();
-    console.log(restaurants);
+    // console.log(restaurants);
   }, []);
 
   const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
@@ -84,7 +84,7 @@ export default function Home({ navigation }) {
   function onPress() {
     dispatch(restaurant(restaurants));
     liked();
-    console.log(userId);
+    // console.log(userId);
     navigation.navigate("Details");
     swipeableRef.current.close();
   }
