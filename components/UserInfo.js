@@ -25,7 +25,7 @@ export default function UserInfo({ navigation }) {
           title="Go To Home"
           onPress={() => {
             // Navigate using the `navigation` prop that you received
-            navigation.navigate("Search");
+            navigation.navigate("Home");
           }}
         />
 

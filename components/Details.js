@@ -118,7 +118,6 @@ export default function Details({ navigation }) {
           <Text style={styles.text_sub}>Website:</Text>
           <Text
             style={styles.text}
-            style={{ color: 'dodgerblue' }}
             onPress={() => Linking.openURL(`${restData[0].url}`)}
           >Click Here! to go to website</Text>
         </View>
