@@ -51,7 +51,6 @@ export default function Home({ navigation }) {
         (res) => res.budget >= price.min && res.budget <= price.max
       );
       dispatch(setRestaurantsList(filtBudget));
-      console.log(filtBudget);
     } catch (err) {
       console.log(err);
     }
