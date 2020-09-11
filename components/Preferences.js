@@ -14,12 +14,15 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
 //import Slider from './Slider'
+import Spinner from 'react-native-loading-spinner-overlay';
 
 // needs comments 
 export default function Preferences({ navigation }) {
 
+  const [loading, setLoading] = useState(false);
 
   async function getRestaurants() {
+    setLoading(true)
     try {
       const results = await axios.get("https://restaurantserverspring.herokuapp.com/restAtlas");
       const restaurants = results.data;
@@ -27,17 +30,18 @@ export default function Preferences({ navigation }) {
       const filtCat = categoryFilter(filtBudget, categories);
       console.log(filtCat)
       if(filtCat.length === 0){
+        setLoading(false)
         alert("No restaurants found with those preferences, please change the prefrences");
         return;
       }
       dispatch(setRestaurantsList(filtCat));
-
-
       setTimeout(()=>{
+            setLoading(false)
             navigation.navigate('Search');
        }, 2000);
        
     } catch (err) {
+      setLoading(false)
       return
     }
   }
@@ -108,6 +112,21 @@ export default function Preferences({ navigation }) {
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
+  if (loading === true) {
+    return (
+      <Container>
+        <ScrollView>
+          <View>
+            <Spinner
+          visible={true}
+          textContent={'Loading...'}
+          textStyle={styles.spinnerTextStyle}
+        />
+          </View>
+        </ScrollView>
+      </Container>
+    )
+  }
   return (
     <Container>
       <ScrollView style={styles.container}>
@@ -575,4 +594,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  spinnerTextStyle: {
+    color: '#FFF'
+  },
 });
+
+
