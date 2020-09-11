@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as AuthSession from "expo-auth-session";
 import * as WebBrowser from "expo-web-browser";
+import * as Linking from "expo-linking";
 import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
@@ -78,18 +79,23 @@ export default function Auth({ navigation }) {
     navigation.navigate("Home");
   }
 
+  function handleRedirect() {
+    WebBrowser.dismissBrowser();
+    navigation.navigate("Home");
+  }
+
   return (
     <View style={styles.container}>
       <View>
         {name ? (
           <Text style={styles.title}>You are logged in, {name}!</Text>
         ) : (
-            <Button
-              disabled={!request}
-              title="Log in with Auth0"
-              onPress={() => promptAsync({ useProxy })}
-            />
-          )}
+          <Button
+            disabled={!request}
+            title="Log in with Auth0"
+            onPress={() => promptAsync({ useProxy })}
+          />
+        )}
       </View>
       <View>
         <Button
@@ -120,6 +126,24 @@ export default function Auth({ navigation }) {
           style={styles.button}
           title="Go profile"
           onPress={() => navigation.navigate("Profile")}
+        />
+      </View>
+      <View>
+        <Button
+          title="loooooooogout"
+          onPress={async () => {
+            // Adapted from this example for Linking
+            // https://github.com/expo/examples/blob/master/with-webbrowser-redirect/app/App.js
+            // TODO: Test Android. May run into https://github.com/expo/expo/issues/5555
+            Linking.addEventListener("url", handleRedirect);
+            const redirectUrl = Linking.makeUrl("/");
+            // Adapted from this example for logging out
+            // https://github.com/expo/auth0-example/issues/25#issuecomment-468533295
+            await WebBrowser.openBrowserAsync(
+              `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
+            );
+            Linking.removeEventListener("url", handleRedirect);
+          }}
         />
       </View>
     </View>
