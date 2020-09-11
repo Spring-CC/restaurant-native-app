@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
     StyleSheet,
     ScrollView,
@@ -20,7 +20,7 @@ import {
     Text,
 } from 'native-base';
 import { useSelector, useDispatch } from "react-redux";
-import { setRestaurantsList } from "../actions";
+import { setRestaurantsList, restaurant } from "../actions";
 import Nav from "./Nav";
 
 export default function Home({ navigation }) {
@@ -47,8 +47,9 @@ export default function Home({ navigation }) {
         getRestaurants();
     }, []);
 
-    function onSwipeRight() {
-        // navigation.navigate("Details");
+    function onSwipeRight(card) {
+        dispatch(restaurant(card))
+        navigation.navigate("Details");
     }
 
     return (
@@ -57,7 +58,7 @@ export default function Home({ navigation }) {
             <View style={styles.container}>
                 <DeckSwiper
                     dataSource={restaurantList}
-                    onSwipeRight={() => onSwipeRight()}
+                    onSwipeRight={(card) => onSwipeRight(card)}
                     onSwipeLeft={() => console.log("No")}
                     renderItem={item =>
                         <Card style={{ elevation: 3 }} >
@@ -139,13 +140,3 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
     },
 });
-
-// Add this to App.js
-// 
-// This is to hide a Warning caused by NativeBase after upgrading to RN 0.62
-// import { YellowBox } from 'react-native'
-
-// YellowBox.ignoreWarnings([
-//   'Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`',
-// ])
-// ------- END OF WARNING SUPPRESSION
