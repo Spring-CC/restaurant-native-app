@@ -84,12 +84,12 @@ export default function Auth({ navigation }) {
         {name ? (
           <Text style={styles.title}>You are logged in, {name}!</Text>
         ) : (
-          <Button
-            disabled={!request}
-            title="Log in with Auth0"
-            onPress={() => promptAsync({ useProxy })}
-          />
-        )}
+            <Button
+              disabled={!request}
+              title="Log in with Auth0"
+              onPress={() => promptAsync({ useProxy })}
+            />
+          )}
       </View>
       <View>
         <Button

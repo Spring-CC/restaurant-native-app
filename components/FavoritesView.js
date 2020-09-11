@@ -16,7 +16,7 @@ import { addFavorites } from "../actions";
 
 
 
-export default function FavoritesView({navigation}){
+export default function FavoritesView({ navigation }) {
 
   // rerender***************************************
   const [updateVal, setUpdateVal] = useState(false);
@@ -29,13 +29,13 @@ export default function FavoritesView({navigation}){
     return () => AppState.removeEventListener('change', forceUpdate);
   }, []);
   //************************************************** */
-const userId = useSelector((state) => state.userIdReducer);
-const restaurantList = useSelector((state) => state.restaurantsListReducer);
-const favoritesList = useSelector((state) => state.addFavoritesReducer);
-const dispatch = useDispatch()
+  const userId = useSelector((state) => state.userIdReducer);
+  const restaurantList = useSelector((state) => state.restaurantsListReducer);
+  const favoritesList = useSelector((state) => state.addFavoritesReducer);
+  const dispatch = useDispatch()
 
 
-async function getUserFavorites(id) {
+  async function getUserFavorites(id) {
 
     console.log(id)
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
@@ -127,11 +127,11 @@ async function getUserFavorites(id) {
       </ScrollView>
       <Footer>
         <FooterTab>
-          <Button vertical onPress={() => navigation.navigate("Landing")}>
+          <Button vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="home" />
             <Text>Home</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Home")}>
+          <Button vertical onPress={() => navigation.navigate("Search")}>
             <Icon name="eye" />
             <Text>Search</Text>
           </Button>

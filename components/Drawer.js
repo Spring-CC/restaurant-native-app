@@ -5,8 +5,8 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 // import Icon from "react-native-vector-icons/FontAwesome";
 import Login from "./Auth";
 import SignUp from "./SignUp";
-import Home from "./Home";
-import Landing from "./Landing";
+import Search from "./Home";
+import Home from "./Landing";
 import About from "./About";
 import Details from "./Details";
 import UserInfo from "./UserInfo";
@@ -25,19 +25,16 @@ class Hidden extends React.Component {
 
 const Drawer = createDrawerNavigator(
   {
-    Landing: {
-      screen: Landing,
-      navigationOptions: {
-        drawerLabel: <Hidden />,
-      },
-    },
-
     Home: {
       screen: Home,
     },
 
     Directions: {
-      screen: Directions
+      screen: Directions,
+    },
+
+    Search: {
+      screen: Search,
     },
 
     Yes: {
@@ -85,7 +82,7 @@ const Drawer = createDrawerNavigator(
     },
   },
   {
-    intialRouteName: "Landing",
+    intialRouteName: "Home",
     navigationOptions: {
       headerStyle: {
         backgroundColor: "#f4511e",
@@ -105,59 +102,8 @@ const Drawer = createDrawerNavigator(
         opacity: 1,
       },
     },
-    drawerBackgroundColor: "#FF5B38", // sets background color of drawer
+    drawerBackgroundColor: "#F8961E", // sets background color of drawer
   }
 );
 
 export default createAppContainer(Drawer);
-
-// function HomeScreen({ navigation }) {
-//   return (
-//     <View
-//       style={{
-//         flex: 1,
-//         alignItems: "center",
-//         justifyContent: "center",
-//         position: "absolute",
-//         top: 30,
-//         left: 30,
-//       }}
-//     >
-//       <Icon
-//         name="bars"
-//         size={30}
-//         style={{ paddingLeft: 20 }}
-//         onPress={() => {
-//           navigation.navigate("Notifications");
-//           navigation.openDrawer();
-//         }}
-//         title="Go to notifications"
-//       />
-//     </View>
-//   );
-// }
-
-// function NotificationsScreen({ navigation }) {
-//   return (
-//     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//       <Icon
-//         onPress={() => navigation.goBack()}
-//         name="bars"
-//         size={30}
-//         style={{ paddingLeft: 20, position: "absolute", top: 30, left: 10 }}
-//       />
-//     </View>
-//   );
-// }
-
-// export default function Sidebar() {
-//   return (
-//     <NavigationContainer>
-//       <Drawer.Navigator initialRouteName="Home">
-//         <Drawer.Screen name="Home" component={HomeScreen} />
-//         <Drawer.Screen name="Select" component={Checkbox} />
-//         <Drawer.Screen name="Notifications" component={NotificationsScreen} />
-//       </Drawer.Navigator>
-//     </NavigationContainer>
-//   );
-// }
