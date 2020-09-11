@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -14,30 +15,34 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
 //import Slider from './Slider'
+import Spinner from 'react-native-loading-spinner-overlay';
 
 // needs comments 
 export default function Preferences({ navigation }) {
 
+  const [loading, setLoading] = useState(false);
 
   async function getRestaurants() {
+    setLoading(true)
     try {
       const results = await axios.get("https://restaurantserverspring.herokuapp.com/restAtlas");
       const restaurants = results.data;
       const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
       const filtCat = categoryFilter(filtBudget, categories);
-      console.log(filtCat)
+      // console.log(filtCat)
       if(filtCat.length === 0){
+        setLoading(false)
         alert("No restaurants found with those preferences, please change the prefrences");
         return;
       }
       dispatch(setRestaurantsList(filtCat));
-
-
       setTimeout(()=>{
+            setLoading(false)
             navigation.navigate('Search');
        }, 2000);
        
     } catch (err) {
+      setLoading(false)
       return
     }
   }
@@ -54,8 +59,9 @@ export default function Preferences({ navigation }) {
     {
       id: 3,
       name: "Tokyo",
-    },
+    },    
   ];
+
 
   const [priceSelected, setSelected] = useState([
     {
@@ -98,7 +104,7 @@ export default function Preferences({ navigation }) {
         };
       }
     });
-    console.log(selection);
+    // console.log(selection);
     setSelected(selection);
   };
 
@@ -108,6 +114,23 @@ export default function Preferences({ navigation }) {
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
+  if (loading === true) {
+    return (
+      <Container>
+        <ScrollView style={styles.container}>
+          <View>
+            <Spinner
+          visible={true}
+          textContent={'Loading...'}
+          textStyle={styles.spinnerTextStyle}
+          size="large" 
+          color="#90be6d" // green too light ?
+        />
+          </View>
+        </ScrollView>
+      </Container>
+    )
+  }
   return (
     <Container>
       <ScrollView style={styles.container}>
@@ -368,7 +391,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -377,7 +400,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -386,7 +409,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["火鍋"] = !categories["火鍋"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -395,7 +418,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["バー"] = !categories["バー"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -404,7 +427,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["そば"] = !categories["そば"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
           </View>
@@ -424,7 +447,7 @@ export default function Preferences({ navigation }) {
                 dispatch(priceRange((price.min = 500)));
                 dispatch(priceRange((price.max = 1000)));
                 checkBoxSelected(0);
-                console.log(priceSelected[0])
+                // console.log(priceSelected[0])
               }}
             />
             <BouncyCheckbox
@@ -474,7 +497,7 @@ export default function Preferences({ navigation }) {
               onPress={() => {
                 dispatch(priceRange((price.min = 10000)));
                 dispatch(priceRange((price.max = 15000)));
-                console.log(price);
+                // console.log(price);
                 checkBoxSelected(5);
               }}
             />
@@ -485,7 +508,7 @@ export default function Preferences({ navigation }) {
 
           <Text style={styles.title}>Location</Text>
 
-          <View style={styles.pickerContainer}>
+          {/* <View style={styles.pickerContainer}>
             <Picker
               selectedValue={location.name}
               itemStyle={styles.pickerItem}
@@ -497,9 +520,15 @@ export default function Preferences({ navigation }) {
                 <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
               ))}
             </Picker>
+        </View> */}
+        <InputAutoSuggest
+        style={styles.pickerContainer}
+        staticData={mockdata}
+        onDataSelectedChange={data => dispatch(setLocations((location.name = data)))}
+        />
           </View>
 
-        </View>
+      
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttons}
@@ -544,6 +573,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F9C74F',
   },
+  descriptionContainer: {
+    // `backgroundColor` needs to be set otherwise the
+    // autocomplete input will disappear on text input.
+    backgroundColor: '#F5FCFF',
+    marginTop: 8
+  },
+  infoText: {
+    textAlign: 'center'
+  },
   checkboxContainer: {
     backgroundColor: 'white',
     margin: 10,
@@ -575,4 +613,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  spinnerTextStyle: {
+    color: '#FFF'
+  },
 });
+
+

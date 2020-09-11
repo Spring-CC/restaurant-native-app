@@ -37,7 +37,7 @@ export default function FavoritesView({ navigation }) {
 
   async function getUserFavorites(id) {
 
-    console.log(id)
+    // console.log(id)
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
     const usersData = favoritesUsers.data;
@@ -45,13 +45,13 @@ export default function FavoritesView({ navigation }) {
     const userFavorite = usersData.filter(user => user.user_Id === id);
 
     const restIds = userFavorite[0].restaurant_Id
-    console.log(restIds)
+    // console.log(restIds)
     const results = restaurantList.filter(item => {
       if (restIds.includes(item.id)) {
         return item;
       }
     })
-    console.log(results)
+    // console.log(results)
 
     //setUserFavorites(results);
     dispatch(addFavorites(results))
