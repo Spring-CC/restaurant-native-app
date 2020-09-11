@@ -1,36 +1,31 @@
-import React, { useState, useEffect, useRef } from "react";
-import { StyleSheet, View, ScrollView, TouchableOpacity } from "react-native";
-import { Container, Footer, FooterTab, Button, Icon, Text } from "native-base";
-import { SliderBox } from "react-native-image-slider-box";
-import Swipeable from "react-native-gesture-handler/Swipeable";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, restaurant, setRestaurantsList } from "../actions";
-// import data from "../data/restaurants.json";
-import Nav from "./Nav";
 import axios from "axios";
-// import Details from "./Details";
-
-// <Button title="Login" onPress={() => navigation.navigate('Login')} />
-
-// export default function Home({ navigation }) {
-
-// return (
-//     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//     <Text>Home</Text>
-//     <Button title="Log out" onPress={() => navigation.navigate('Login')} />
-//   </View>
-// );
-// }
+import React, { useEffect } from "react";
+import {
+  StyleSheet,
+  ScrollView,
+  Image,
+} from "react-native";
+import {
+  Container,
+  View,
+  DeckSwiper,
+  Card,
+  CardItem,
+  Left,
+  Body,
+  Footer,
+  FooterTab,
+  Button,
+  Icon,
+  Text,
+} from 'native-base';
+import { useSelector, useDispatch } from "react-redux";
+import { restaurant, setRestaurantsList } from "../actions";
+import Nav from "./Nav";
 
 export default function Home({ navigation }) {
-  var color1 = "#f94144"; // - Red Salsa
-  var color2 = "#f3722c"; // - Orange Red
-  var color3 = "#f8961e"; // - Yellow Orange Color Wheel
-  var color4 = "#f9c74f"; // - Maize Crayola
-  var color5 = "#90be6d"; // - Pistachio
-  const swipeableRef = useRef(null);
 
-  const index = useSelector((state) => state.incrementReducer);
+  const restData = useSelector((state) => state.restaurantReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
@@ -55,20 +50,11 @@ export default function Home({ navigation }) {
 
   useEffect(() => {
     getRestaurants();
-    // console.log(restaurants);
   }, []);
-
-  const restaurants = restaurantList.filter((restaurant, idx) => idx === index);
-  const images = [];
-  for (let key in restaurants[0].image_url) {
-    if (restaurants[0].image_url[key] !== "") {
-      images.push(restaurants[0].image_url[key]);
-    }
-  }
 
   async function liked() {
     try {
-      const likedResId = restaurants[0].id;
+      const likedResId = restData.id;
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
         {
@@ -80,12 +66,10 @@ export default function Home({ navigation }) {
     }
   }
 
-  function onPress() {
-    dispatch(restaurant(restaurants));
+  function onSwipeRight(card) {
+    dispatch(restaurant(card))
     liked();
-    // console.log(userId);
     navigation.navigate("Details");
-    swipeableRef.current.close();
   }
 
   async function unlicked() {
@@ -98,107 +82,56 @@ export default function Home({ navigation }) {
     }
   }
 
-  function rightActions() {}
-  function leftActions() {}
-
   return (
     <Container>
-      <ScrollView style={styles.container}>
-        <Swipeable
-          ref={swipeableRef}
-          renderRightActions={() => rightActions()}
-          renderLeftActions={() => leftActions()}
-        >
-          <Nav />
-          <View>
-            <Button
-              title="Go To Login"
-              onPress={() => {
-                // Navigate using the `navigation` prop that you received
-                navigation.navigate("Login");
-              }}
-            />
-          </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              style={styles.buttons}
-              onPress={() => {
-                dispatch(increment());
-                unlicked();
-              }}
-            >
-              <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
-              >
-                No
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttons} onPress={() => onPress()}>
-              <Text
-                style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
-              >
-                Yes
-              </Text>
-            </TouchableOpacity>
-          </View>
-          <View>
-            <ScrollView>
-              <SliderBox
-                images={images}
-                sliderBoxHeight={400}
-                circleLoop
-                dotColor={color1}
-                inactiveDotColor={color2}
-                paginationBoxStyle={{
-                  position: "absolute",
-                  bottom: 0,
-                  padding: 0,
-                  alignItems: "center",
-                  alignSelf: "center",
-                  justifyContent: "center",
-                  paddingVertical: 10,
-                }}
-                dotStyle={{
-                  width: 25,
-                  height: 25,
-                  borderRadius: 25,
-                  marginHorizontal: 0,
-                  padding: 0,
-                  margin: 0,
-                  backgroundColor: "rgba(128, 128, 128, 0.92)",
-                }}
-                ImageComponentStyle={{
-                  borderRadius: 15,
-                  width: "97%",
-                  marginTop: 5,
-                }}
-                imageLoadingColor="#2196F3"
-              />
-            </ScrollView>
-          </View>
-
-          <View style={styles.restaurant}>
-            {restaurants.map((restaurant) => {
-              return (
-                <View key={restaurant.id}>
-                  <Text style={styles.textTitle}>Name</Text>
-                  <Text style={styles.textName}>{restaurant.name}</Text>
-                  <Text style={styles.textTitle}>Name (Katakana)</Text>
-                  <Text
-                    style={styles.textKana}
-                  >{`(${restaurant.name_kana})`}</Text>
-                  <Text style={styles.textTitle}>Category</Text>
-                  <Text style={styles.textBody}>{restaurant.category}</Text>
-                  <Text style={styles.textTitle}>Address</Text>
-                  <Text style={styles.textBody}>{restaurant.address}</Text>
-                  <Text style={styles.textTitle}>Open Times</Text>
-                  <Text style={styles.textBody}>{restaurant.opentime}</Text>
-                </View>
-              );
-            })}
-          </View>
-        </Swipeable>
-      </ScrollView>
+      <Nav />
+      <View style={styles.container}>
+        <DeckSwiper
+          dataSource={restaurantList}
+          onSwipeRight={(card) => onSwipeRight(card)}
+          onSwipeLeft={() => console.log("No")}
+          renderItem={item =>
+            <Card style={{ elevation: 3 }} >
+              <CardItem>
+                <Left>
+                  <Body>
+                    <Text style={styles.text}>Restaurant</Text>
+                    <Text note style={styles.text}>Swipe left for 'No' and right for 'Yes'</Text>
+                  </Body>
+                </Left>
+              </CardItem>
+              <CardItem cardBody>
+                <Image
+                  style={{ height: 300, flex: 1 }}
+                  source={{
+                    uri: item.image_url["shop_image1"],
+                  }} />
+              </CardItem>
+              <CardItem>
+                <ScrollView>
+                  <Body >
+                    <Text style={styles.text}>Name: </Text>
+                    <Text style={styles.text}>{item.name}</Text>
+                    <Text style={styles.text}>Type of Restaurant: </Text>
+                    <Text style={styles.text}>{item.category}</Text>
+                    <Text style={styles.text}>Station:</Text>
+                    <Text style={styles.text}>{item.access["station"]}</Text>
+                    <Text style={styles.text}>Open Hours: </Text>
+                    <Text style={styles.text}>{item.opentime}</Text>
+                  </Body>
+                </ScrollView>
+              </CardItem>
+            </Card>
+          }
+          renderEmpty={() =>
+            <Card style={{ elevation: 3 }}>
+              <CardItem>
+                <Text>No restaurants match your selected preference.</Text>
+              </CardItem>
+            </Card>
+          }
+        />
+      </View>
       <Footer>
         <FooterTab>
           <Button vertical onPress={() => navigation.navigate("Home")}>
@@ -219,54 +152,21 @@ export default function Home({ navigation }) {
           </Button>
         </FooterTab>
       </Footer>
-    </Container>
+    </Container >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
-  },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    margin: 20,
-  },
-  buttons: {
-    height: 50,
-    width: 100,
-    backgroundColor: "#F8961E",
-    borderRadius: 12,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  restaurant: {
     backgroundColor: "#F9C74F",
-    borderRadius: 12,
     padding: 5,
-    margin: 7,
-    marginTop: 10,
   },
-  textName: {
-    fontSize: 30,
+  text: {
     fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
   },
-  textKana: {
-    fontSize: 25,
+  text_sub: {
     fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
-  },
-  textBody: {
-    fontSize: 20,
-    fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
-  },
-  textTitle: {
-    fontSize: 20,
     textDecorationLine: "underline",
-    fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
   },
 });

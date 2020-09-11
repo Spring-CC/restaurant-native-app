@@ -95,68 +95,68 @@ export default function Details({ navigation }) {
             title="Add to Favorites ❤️"
             color="#ff3300"
             onPress={() => {
-              updateToDatabase(userId, restData[0].id);
+              updateToDatabase(userId, restData.id);
             }} />
 
         </View>
         <Image
           source={{
-            uri: restData[0].image_url["shop_image1"],
+            uri: restData.image_url["shop_image1"],
           }}
           style={styles.image}
         />
         <View style={styles.basic_container}>
           <Text style={styles.text_title}>Basic Details</Text>
           <Text style={styles.text_sub}>Name:</Text>
-          <Text style={styles.text}>{restData[0].name}</Text>
+          <Text style={styles.text}>{restData.name}</Text>
           <Text style={styles.text_sub}>Name (kana):</Text>
-          <Text style={styles.text}>{restData[0].name_kana}</Text>
+          <Text style={styles.text}>{restData.name_kana}</Text>
           <Text style={styles.text_sub}>Type:</Text>
-          <Text style={styles.text}>{restData[0].category}</Text>
+          <Text style={styles.text}>{restData.category}</Text>
           <Text style={styles.text_sub}>Telephone No:</Text>
-          <Text style={styles.text}>{restData[0].tel}</Text>
+          <Text style={styles.text}>{restData.tel}</Text>
           <Text style={styles.text_sub}>Website:</Text>
           <Text
             style={styles.text}
-            onPress={() => Linking.openURL(`${restData[0].url}`)}
+            onPress={() => Linking.openURL(`${restData.url}`)}
           >Click Here! to go to website</Text>
         </View>
         <View style={styles.location_container}>
           <Text style={styles.text_title}>Location Details</Text>
           <Text style={styles.text_sub}>Address:</Text>
-          <Text style={styles.text}>{restData[0].address}</Text>
+          <Text style={styles.text}>{restData.address}</Text>
           <Text style={styles.text_sub}>Latitude:</Text>
-          <Text style={styles.text}>{restData[0].latitude}</Text>
+          <Text style={styles.text}>{restData.latitude}</Text>
           <Text style={styles.text_sub}>Longitude:</Text>
-          <Text style={styles.text}>{restData[0].longitude}</Text>
+          <Text style={styles.text}>{restData.longitude}</Text>
           <Text style={styles.text_sub}>Station:</Text>
-          <Text style={styles.text}>{restData[0].access["station"]}</Text>
+          <Text style={styles.text}>{restData.access["station"]}</Text>
           <Text style={styles.text_sub}>Open Time:</Text>
-          <Text style={styles.text}>{restData[0].opentime}</Text>
+          <Text style={styles.text}>{restData.opentime}</Text>
         </View>
         <View style={styles.payment_container}>
           <Text style={styles.text_title}>Payment Details</Text>
           <Text style={styles.text_sub}>Budget:</Text>
-          <Text style={styles.text}>{restData[0].budget}</Text>
+          <Text style={styles.text}>{restData.budget}</Text>
           <Text style={styles.text_sub}>Party:</Text>
-          <Text style={styles.text}>{restData[0].party}</Text>
+          <Text style={styles.text}>{restData.party}</Text>
           <Text style={styles.text_sub}>Lunch:</Text>
-          <Text style={styles.text}>{restData[0].lunch}</Text>
+          <Text style={styles.text}>{restData.lunch}</Text>
           <Text style={styles.text_sub}>Credit Card:</Text>
-          <Text style={styles.text}>{restData[0].credit_card}</Text>
+          <Text style={styles.text}>{restData.credit_card}</Text>
           <Text style={styles.text_sub}>E-Money:</Text>
-          <Text style={styles.text}>{restData[0].e_money}</Text>
+          <Text style={styles.text}>{restData.e_money}</Text>
         </View>
         <View>
-        <Button
-        style={styles.button}
-        title="Go To Maps"
-        onPress={() =>
-          Linking.openURL(
-            `https://www.google.com/maps/place/${restData[0].latitude},${restData[0].longitude}`
-          )
-        }
-      />
+          <Button
+            style={styles.button}
+            title="Go To Maps"
+            onPress={() =>
+              Linking.openURL(
+                `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`
+              )
+            }
+          />
         </View>
       </ScrollView>
     </ScrollView>
