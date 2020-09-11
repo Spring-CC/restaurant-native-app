@@ -91,7 +91,7 @@ export default function FavoritesView({ navigation }) {
             )
             :
             (
-              <View>
+              <View style={styles.buttonContainer}>
                 <TouchableOpacity
                       style={styles.buttonRefresh}
                       onPress={() => {
@@ -171,6 +171,11 @@ const styles = StyleSheet.create({
     fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
   },
+  buttonContainer: {
+    justifyContent: "center",
+    alignItems: 'center',
+    margin: 20,
+  },
   checkboxContainer: {
     backgroundColor: 'white',
     margin: 10,
@@ -209,5 +214,6 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: "center",
     alignItems: "center",
+    textAlign: "center",
   },
 })
