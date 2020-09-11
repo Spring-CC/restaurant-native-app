@@ -25,6 +25,7 @@
     "react": "~16.11.0",
     "react-dom": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native-autocomplete-search": "^1.0.8",
     "react-native-bouncy-checkbox": "^0.2.2",
     "react-native-dynamic-vector-icons": "^1.0.0",
     "react-native-gesture-handler": "~1.6.0",

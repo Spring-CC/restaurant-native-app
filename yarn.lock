@@ -669,7 +669,7 @@
     "@babel/helper-builder-binary-assignment-operator-visitor" "^7.10.4"
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-transform-flow-strip-types@^7.0.0":
+"@babel/plugin-transform-flow-strip-types@^7.0.0", "@babel/plugin-transform-flow-strip-types@^7.10.4":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-strip-types/-/plugin-transform-flow-strip-types-7.10.4.tgz#c497957f09e86e3df7296271e9eb642876bf7788"
   integrity sha512-XTadyuqNst88UWBTdLjM+wEY7BFnY2sYtPyAidfC7M/QaZnSuIZpMvLxqGT7phAcnGyWh/XQFLKcGf04CnvxSQ==
@@ -971,6 +971,14 @@
     invariant "^2.2.2"
     levenary "^1.1.1"
     semver "^5.5.0"
+
+"@babel/preset-flow@^7.0.0":
+  version "7.10.4"
+  resolved "https://registry.yarnpkg.com/@babel/preset-flow/-/preset-flow-7.10.4.tgz#e0d9c72f8cb02d1633f6a5b7b16763aa2edf659f"
+  integrity sha512-XI6l1CptQCOBv+ZKYwynyswhtOKwpZZp5n0LG1QKCo8erRhqjoQV6nvx61Eg30JHpysWQSBwA2AWRU3pBbSY5g==
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.10.4"
+    "@babel/plugin-transform-flow-strip-types" "^7.10.4"
 
 "@babel/preset-modules@^0.1.3":
   version "0.1.4"
@@ -8564,6 +8572,14 @@ react-native-appearance@~0.3.3:
     fbemitter "^2.1.1"
     invariant "^2.2.4"
     use-subscription "^1.0.0"
+
+react-native-autocomplete-search@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-autocomplete-search/-/react-native-autocomplete-search-1.0.8.tgz#72a3e0ca295850d6c8df7f05b8567162b29c7ff2"
+  integrity sha512-nuPcKE5sqNhVTPbgxB/hsL3qh/ZFc/t0NQ1kgK503K7pAe2Uk3pvs3npQcT4QgMbpHcXbp1L3PQXenVnmrQc3g==
+  dependencies:
+    "@babel/preset-flow" "^7.0.0"
+    lodash "^4.17.11"
 
 react-native-bouncy-checkbox@^0.2.2:
   version "0.2.2"
