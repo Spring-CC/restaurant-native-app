@@ -91,7 +91,19 @@ export default function FavoritesView({ navigation }) {
             )
             :
             (
-              <View>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                      style={styles.buttonRefresh}
+                      onPress={() => {
+                        
+                          getUserFavorites(userId);
+                        
+                      }}
+                    >
+                      <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
+                        Refresh Favorites
+                  </Text>
+                </TouchableOpacity>
                 {favoritesList.map(favorite => (
                   <View style={styles.checkboxContainer}>
                     <Text style={styles.textTitle}>Name</Text>
@@ -114,7 +126,7 @@ export default function FavoritesView({ navigation }) {
                       }}
                     >
                       <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-                        X
+                        Delete
                   </Text>
                     </TouchableOpacity>
                   </View>
@@ -159,6 +171,11 @@ const styles = StyleSheet.create({
     fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
   },
+  buttonContainer: {
+    justifyContent: "center",
+    alignItems: 'center',
+    margin: 20,
+  },
   checkboxContainer: {
     backgroundColor: 'white',
     margin: 10,
@@ -189,5 +206,14 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: "center",
     alignItems: "center",
+  },
+  buttonRefresh: {
+    height: 50,
+    width: 200,
+    backgroundColor: "#90BE6D",
+    borderRadius: 12,
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
   },
 })

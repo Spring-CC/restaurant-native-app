@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { ScrollView, StyleSheet, TextInput, Button, Text, Separator } from 'react-native';
 
-
-
 export default function Login({ navigation }) {
 
   const [email, onChangeEmail] = useState('');
