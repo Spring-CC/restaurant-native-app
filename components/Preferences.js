@@ -49,6 +49,10 @@ export default function Preferences({ navigation }) {
 
   const [priceSelected, setSelected] = useState([
     {
+      id: 0,
+      checked: false,
+    },
+    {
       id: 1,
       checked: false,
     },
@@ -68,26 +72,23 @@ export default function Preferences({ navigation }) {
       id: 5,
       checked: false,
     },
-    {
-      id: 6,
-      checked: false,
-    },
   ]);
 
   const checkBoxSelected = (id) => {
     const selection = priceSelected.map((value, i) => {
       if (value.id === id) {
         return {
-          id: i + 1,
+          id: i,
           checked: true,
         };
       } else {
         return {
-          id: i + 1,
+          id: i,
           checked: false,
         };
       }
     });
+    console.log(selection);
     setSelected(selection);
   };
 
@@ -412,7 +413,8 @@ export default function Preferences({ navigation }) {
               onPress={() => {
                 dispatch(priceRange((price.min = 500)));
                 dispatch(priceRange((price.max = 1000)));
-                checkBoxSelected(1);
+                checkBoxSelected(0);
+                console.log(priceSelected[0])
               }}
             />
             <BouncyCheckbox
@@ -422,7 +424,7 @@ export default function Preferences({ navigation }) {
               onPress={() => {
                 dispatch(priceRange((price.min = 1000)));
                 dispatch(priceRange((price.max = 2000)));
-                checkBoxSelected(2);
+                checkBoxSelected(1);
               }}
             />
             <BouncyCheckbox
@@ -432,27 +434,27 @@ export default function Preferences({ navigation }) {
               onPress={() => {
                 dispatch(priceRange((price.min = 2000)));
                 dispatch(priceRange((price.max = 5000)));
-                checkBoxSelected(3);
+                checkBoxSelected(2);
               }}
             />
             <BouncyCheckbox
-              value={priceSelected[3].checked}
+              isChecked={priceSelected[3].checked}
               text="¥5000 - ¥10000 💴"
               textDecoration={true}
               onPress={() => {
                 dispatch(priceRange((price.min = 5000)));
                 dispatch(priceRange((price.max = 10000)));
-                checkBoxSelected(4);
+                checkBoxSelected(3);
               }}
             />
             <BouncyCheckbox
-              value={priceSelected[4].checked}
+              isChecked={priceSelected[4].checked}
               text="¥10000 - ¥15000 💴"
               textDecoration={true}
               onPress={() => {
                 dispatch(priceRange((price.min = 10000)));
                 dispatch(priceRange((price.max = 15000)));
-                checkBoxSelected(5);
+                checkBoxSelected(4);
               }}
             />
             <BouncyCheckbox
@@ -463,7 +465,7 @@ export default function Preferences({ navigation }) {
                 dispatch(priceRange((price.min = 10000)));
                 dispatch(priceRange((price.max = 15000)));
                 console.log(price);
-                checkBoxSelected(6);
+                checkBoxSelected(5);
               }}
             />
           </View>
@@ -478,9 +480,7 @@ export default function Preferences({ navigation }) {
               selectedValue={location.name}
               itemStyle={styles.pickerItem}
               onValueChange={(itemValue) => {
-                console.log(location.name);
                 dispatch(setLocations((location.name = itemValue)));
-                console.log(location.name);
               }}
             >
               {mockdata.map((elem) => (
