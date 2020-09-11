@@ -25,10 +25,20 @@ export default function Preferences({ navigation }) {
       const restaurants = results.data;
       const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
       const filtCat = categoryFilter(filtBudget, categories);
-      dispatch(setRestaurantsList(filtCat))
-      console.log(restaurantList);
+      console.log(filtCat)
+      if(filtCat.length === 0){
+        alert("No restaurants found with those preferences, please change the prefrences");
+        return;
+      }
+      dispatch(setRestaurantsList(filtCat));
+
+
+      setTimeout(()=>{
+            navigation.navigate('Search');
+       }, 2000);
+       
     } catch (err) {
-      console.log(err);
+      return
     }
   }
 
@@ -495,9 +505,6 @@ export default function Preferences({ navigation }) {
             style={styles.buttons}
             onPress={() => {
               getRestaurants();
-              setTimeout(() => {
-                navigation.navigate('Search');
-              }, 2000);
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>

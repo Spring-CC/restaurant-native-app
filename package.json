@@ -8,11 +8,8 @@
     "eject": "expo eject"
   },
   "dependencies": {
-
     "@expo/webpack-config": "^0.12.29",
-
     "@fast-csv/format": "^4.3.1",
-
     "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.9.0",
