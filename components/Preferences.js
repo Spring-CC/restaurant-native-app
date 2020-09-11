@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -54,8 +55,9 @@ export default function Preferences({ navigation }) {
     {
       id: 3,
       name: "Tokyo",
-    },
+    },    
   ];
+
 
   const [priceSelected, setSelected] = useState([
     {
@@ -485,7 +487,7 @@ export default function Preferences({ navigation }) {
 
           <Text style={styles.title}>Location</Text>
 
-          <View style={styles.pickerContainer}>
+          {/* <View style={styles.pickerContainer}>
             <Picker
               selectedValue={location.name}
               itemStyle={styles.pickerItem}
@@ -497,9 +499,15 @@ export default function Preferences({ navigation }) {
                 <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
               ))}
             </Picker>
+        </View> */}
+        <InputAutoSuggest
+        style={styles.pickerContainer}
+        staticData={mockdata}
+        onDataSelectedChange={data => dispatch(setLocations((location.name = data)))}
+        />
           </View>
 
-        </View>
+      
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttons}
@@ -543,6 +551,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F9C74F',
+  },
+  descriptionContainer: {
+    // `backgroundColor` needs to be set otherwise the
+    // autocomplete input will disappear on text input.
+    backgroundColor: '#F5FCFF',
+    marginTop: 8
+  },
+  infoText: {
+    textAlign: 'center'
   },
   checkboxContainer: {
     backgroundColor: 'white',
