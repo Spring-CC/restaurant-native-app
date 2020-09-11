@@ -28,7 +28,7 @@ export default function Preferences({ navigation }) {
       const restaurants = results.data;
       const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
       const filtCat = categoryFilter(filtBudget, categories);
-      console.log(filtCat)
+      // console.log(filtCat)
       if(filtCat.length === 0){
         setLoading(false)
         alert("No restaurants found with those preferences, please change the prefrences");
@@ -102,7 +102,7 @@ export default function Preferences({ navigation }) {
         };
       }
     });
-    console.log(selection);
+    // console.log(selection);
     setSelected(selection);
   };
 
@@ -389,7 +389,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -398,7 +398,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -407,7 +407,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["火鍋"] = !categories["火鍋"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -416,7 +416,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["バー"] = !categories["バー"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
             <BouncyCheckbox
@@ -425,7 +425,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(category((categories["そば"] = !categories["そば"])));
-                console.log(categories);
+                // console.log(categories);
               }}
             />
           </View>
@@ -445,7 +445,7 @@ export default function Preferences({ navigation }) {
                 dispatch(priceRange((price.min = 500)));
                 dispatch(priceRange((price.max = 1000)));
                 checkBoxSelected(0);
-                console.log(priceSelected[0])
+                // console.log(priceSelected[0])
               }}
             />
             <BouncyCheckbox
@@ -495,7 +495,7 @@ export default function Preferences({ navigation }) {
               onPress={() => {
                 dispatch(priceRange((price.min = 10000)));
                 dispatch(priceRange((price.max = 15000)));
-                console.log(price);
+                // console.log(price);
                 checkBoxSelected(5);
               }}
             />
