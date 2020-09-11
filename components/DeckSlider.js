@@ -139,3 +139,13 @@ const styles = StyleSheet.create({
         textDecorationLine: "underline",
     },
 });
+
+// Add this to App.js
+// 
+// This is to hide a Warning caused by NativeBase after upgrading to RN 0.62
+// import { YellowBox } from 'react-native'
+
+// YellowBox.ignoreWarnings([
+//   'Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`',
+// ])
+// ------- END OF WARNING SUPPRESSION
