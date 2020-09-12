@@ -15,6 +15,14 @@ import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./components/Drawer";
 
+// This is to hide a Warning caused by NativeBase after upgrading to RN 0.62
+import { YellowBox } from 'react-native'
+
+YellowBox.ignoreWarnings([
+  'Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`',
+])
+// ------- END OF WARNING SUPPRESSION
+
 const fetchFonts = () => {
   return Font.loadAsync({
     "MPLUS1p-Black": require("./assets/fonts/MPLUS1p-Black.ttf"),
