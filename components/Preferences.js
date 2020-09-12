@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputAutoSuggest } from 'react-native-autocomplete-search';
+// import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -521,11 +521,11 @@ export default function Preferences({ navigation }) {
               ))}
             </Picker>
         </View> */}
-        <InputAutoSuggest
+        {/* <InputAutoSuggest
         style={styles.pickerContainer}
         staticData={mockdata}
         onDataSelectedChange={data => dispatch(setLocations((location.name = data)))}
-        />
+        /> */}
           </View>
 
       
