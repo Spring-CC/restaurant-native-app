@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputAutoSuggest } from 'react-native-autocomplete-search';
+// import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -509,6 +509,7 @@ export default function Preferences({ navigation }) {
               ))}
             </Picker>
         </View> */}
+
         <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
@@ -517,6 +518,7 @@ export default function Preferences({ navigation }) {
           
         }}
         />
+
           </View>
 
       
