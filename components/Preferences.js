@@ -7,7 +7,7 @@ import {
   Picker,
   TouchableOpacity
 } from "react-native";
-import { Container, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Container, Footer, FooterTab, Button, Icon, Text, Card, CardItem, Body } from 'native-base';
 import { useSelector, useDispatch } from "react-redux";
 import { category, priceRange, setLocations, setRestaurantsList } from "../actions";
 import axios from "axios";
@@ -48,18 +48,18 @@ export default function Preferences({ navigation }) {
       }
       
       // console.log(filtCat)
-      if(filtCat.length === 0){
+      if (filtCat.length === 0) {
         setLoading(false)
         alert("No restaurants found with those preferences, please change the prefrences");
         return;
       }
       
       dispatch(setRestaurantsList(filtCat));
-      setTimeout(()=>{
-            setLoading(false)
-            navigation.navigate('Search');
-       }, 2000);
-       
+      setTimeout(() => {
+        setLoading(false)
+        navigation.navigate('Search');
+      }, 2000);
+
     } catch (err) {
       setLoading(false)
       return
@@ -124,12 +124,12 @@ export default function Preferences({ navigation }) {
         <ScrollView style={styles.container}>
           <View>
             <Spinner
-          visible={true}
-          textContent={'Loading...'}
-          textStyle={styles.spinnerTextStyle}
-          size="large" 
-          color="#90be6d" // green too light ?
-        />
+              visible={true}
+              textContent={'Loading...'}
+              textStyle={styles.spinnerTextStyle}
+              size="large"
+              color="#90be6d" // green too light ?
+            />
           </View>
         </ScrollView>
       </Container>
@@ -137,378 +137,376 @@ export default function Preferences({ navigation }) {
   }
   return (
     <Container>
+      <Nav />
       <ScrollView style={styles.container}>
-        <View>
-          <Nav />
-        </View>
 
-        <View>
-
+        <Card style={styles.card}>
           <Text style={styles.title}>Preferences</Text>
+          <CardItem>
+            <Body style={styles.checkboxContainer}>
 
-          <View style={styles.checkboxContainer}>
+              <BouncyCheckbox
+                isChecked={categories["居酒屋"]}
+                text="Izakaya 🍺"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["居酒屋"] = !categories["居酒屋"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["日本料理"]}
+                text="Japanese 🍙"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["日本料理"] = !categories["日本料理"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["寿司"]}
+                text="Sushi / Seafood 🍣"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["寿司"] = !categories[
+                        "寿司"
+                      ])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["鍋"]}
+                text="Nabe 🍲"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["鍋"] = !categories["鍋"])));
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["焼肉"]}
+                text="Yakiniku 🥓"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["焼肉"] = !categories["焼肉"])));
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["焼き鳥"]}
+                text="Yakitori 🍢"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["焼き鳥"] = !categories["焼き鳥"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["焼肉・ホルモン"]}
+                text="Yakiniku (Offal) 🍛"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["焼肉・ホルモン"] = !categories["焼肉・ホルモン"])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["お好み焼き"]}
+                text="Okonomiyaki 🍘"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["お好み焼き"] = !categories["お好み焼き"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["郷土料理"]}
+                text="Local Cuisine 🍘"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["郷土料理"] = !categories["郷土料理"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["うどん"]}
+                text="Udon 🍜"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["うどん"] = !categories["うどん"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["中華"]}
+                text="Chinese 🍖"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["中華"] = !categories["中華"])));
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["イタリアン・フレンチ"]}
+                text="Italian/French 🍝"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["イタリアン・フレンチ"] = !categories[
+                        "イタリアン・フレンチ"
+                      ])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["フレンチ"]}
+                text="French 🏳🍮"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["フレンチ"] = !categories["フレンチ"]))
+                  );
+                }}
+                style={styles.checkbox}
+              />
+              <BouncyCheckbox
+                isChecked={categories["ラーメン"]}
+                text="Ramen 🍜"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["ラーメン"] = !categories[
+                        "ラーメン"
+                      ])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["カレー"]}
+                text="Curry 🍛"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["カレー"] = !categories["カレー"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["カフェ"]}
+                text="Cafe ☕"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["カフェ"] = !categories[
+                        "カフェ"
+                      ])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["メキシコ料理"]}
+                text="Mexican 🌮"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["メキシコ料理"] = !categories["メキシコ料理"])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["とんかつ（トンカツ）"]}
+                text="Tonkatsu (Pork cutlet) 🥓"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["とんかつ（トンカツ）"] = !categories["とんかつ（トンカツ）"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["定食・食事処"]}
+                text="Set menu 🍽"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["定食・食事処"] = !categories["定食・食事処"])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["ワイン"]}
+                text="Wine 🍾"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category(
+                      (categories["ワイン"] = !categories[
+                        "ワイン"
+                      ])
+                    )
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["しゃぶしゃぶ"]}
+                text="Shabushabu 🍱"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["しゃぶしゃぶ"] = !categories["しゃぶしゃぶ"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["ステーキ"]}
+                text="Steak 🥩"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(
+                    category((categories["ステーキ"] = !categories["ステーキ"]))
+                  );
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["ハンバーグ"]}
+                text="Hamburger Patty 🍔"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
+                  // console.log(categories);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["洋食屋"]}
+                text="Western restaurant 🌯"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
+                  // console.log(categories);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["火鍋"]}
+                text="Hot pot 🥘"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["火鍋"] = !categories["火鍋"])));
+                  // console.log(categories);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["バー"]}
+                text="Bar 🍸"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["バー"] = !categories["バー"])));
+                  // console.log(categories);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={categories["そば"]}
+                text="Soba (Noodles) 🍜"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(category((categories["そば"] = !categories["そば"])));
+                  // console.log(categories);
+                }}
+              />
+            </Body>
+          </CardItem>
+        </Card>
 
-            <BouncyCheckbox
-              isChecked={categories["居酒屋"]}
-              text="Izakaya 🍺"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["居酒屋"] = !categories["居酒屋"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["日本料理"]}
-              text="Japanese 🍙"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["日本料理"] = !categories["日本料理"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["寿司"]}
-              text="Sushi / Seafood 🍣"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["寿司"] = !categories[
-                      "寿司"
-                    ])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["鍋"]}
-              text="Nabe 🍲"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["鍋"] = !categories["鍋"])));
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["焼肉"]}
-              text="Yakiniku 🥓"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["焼肉"] = !categories["焼肉"])));
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["焼き鳥"]}
-              text="Yakitori 🍢"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["焼き鳥"] = !categories["焼き鳥"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["焼肉・ホルモン"]}
-              text="Yakiniku (Offal) 🍛"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["焼肉・ホルモン"] = !categories["焼肉・ホルモン"])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["お好み焼き"]}
-              text="Okonomiyaki 🍘"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["お好み焼き"] = !categories["お好み焼き"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["郷土料理"]}
-              text="Local Cuisine 🍘"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["郷土料理"] = !categories["郷土料理"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["うどん"]}
-              text="Udon 🍜"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["うどん"] = !categories["うどん"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["中華"]}
-              text="Chinese 🍖"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["中華"] = !categories["中華"])));
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["イタリアン・フレンチ"]}
-              text="Italian/French 🍝"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["イタリアン・フレンチ"] = !categories[
-                      "イタリアン・フレンチ"
-                    ])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["フレンチ"]}
-              text="French 🏳🍮"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["フレンチ"] = !categories["フレンチ"]))
-                );
-              }}
-              style={styles.checkbox}
-            />
-            <BouncyCheckbox
-              isChecked={categories["ラーメン"]}
-              text="Ramen 🍜"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["ラーメン"] = !categories[
-                      "ラーメン"
-                    ])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["カレー"]}
-              text="Curry 🍛"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["カレー"] = !categories["カレー"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["カフェ"]}
-              text="Cafe ☕"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["カフェ"] = !categories[
-                      "カフェ"
-                    ])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["メキシコ料理"]}
-              text="Mexican 🌮"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["メキシコ料理"] = !categories["メキシコ料理"])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["とんかつ（トンカツ）"]}
-              text="Tonkatsu (Pork cutlet) 🥓"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["とんかつ（トンカツ）"] = !categories["とんかつ（トンカツ）"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["定食・食事処"]}
-              text="Set menu 🍽"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["定食・食事処"] = !categories["定食・食事処"])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["ワイン"]}
-              text="Wine 🍾"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category(
-                    (categories["ワイン"] = !categories[
-                      "ワイン"
-                    ])
-                  )
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["しゃぶしゃぶ"]}
-              text="Shabushabu 🍱"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["しゃぶしゃぶ"] = !categories["しゃぶしゃぶ"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["ステーキ"]}
-              text="Steak 🥩"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(
-                  category((categories["ステーキ"] = !categories["ステーキ"]))
-                );
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["ハンバーグ"]}
-              text="Hamburger Patty 🍔"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
-                // console.log(categories);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["洋食屋"]}
-              text="Western restaurant 🌯"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
-                // console.log(categories);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["火鍋"]}
-              text="Hot pot 🥘"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["火鍋"] = !categories["火鍋"])));
-                // console.log(categories);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["バー"]}
-              text="Bar 🍸"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["バー"] = !categories["バー"])));
-                // console.log(categories);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={categories["そば"]}
-              text="Soba (Noodles) 🍜"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(category((categories["そば"] = !categories["そば"])));
-                // console.log(categories);
-              }}
-            />
-          </View>
-        </View>
-
-        <View style={styles.container}>
-
+        <Card style={styles.card}>
           <Text style={styles.title}>Price Range</Text>
+          <CardItem>
+            <Body style={styles.checkboxContainer}>
 
-          <View style={styles.checkboxContainer}>
+              <BouncyCheckbox
+                isChecked={priceSelected[0].checked}
+                text="¥500 - ¥1000 💴"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(priceRange((price.min = 500)));
+                  dispatch(priceRange((price.max = 1000)));
+                  checkBoxSelected(0);
+                  // console.log(priceSelected[0])
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={priceSelected[1].checked}
+                text="¥1000 - ¥2000 💴"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(priceRange((price.min = 1000)));
+                  dispatch(priceRange((price.max = 2000)));
+                  checkBoxSelected(1);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={priceSelected[2].checked}
+                text="¥2000 - ¥5000 💴"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(priceRange((price.min = 2000)));
+                  dispatch(priceRange((price.max = 5000)));
+                  checkBoxSelected(2);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={priceSelected[3].checked}
+                text="¥5000 - ¥10000 💴"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(priceRange((price.min = 5000)));
+                  dispatch(priceRange((price.max = 10000)));
+                  checkBoxSelected(3);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={priceSelected[4].checked}
+                text="¥10000 - ¥15000 💴"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(priceRange((price.min = 10000)));
+                  dispatch(priceRange((price.max = 15000)));
+                  checkBoxSelected(4);
+                }}
+              />
+              <BouncyCheckbox
+                isChecked={priceSelected[5].checked}
+                text="¥15000 - ¥20000 💴"
+                textDecoration={true}
+                onPress={() => {
+                  dispatch(priceRange((price.min = 10000)));
+                  dispatch(priceRange((price.max = 15000)));
+                  // console.log(price);
+                  checkBoxSelected(5);
+                }}
+              />
+            </Body>
+          </CardItem>
+        </Card>
 
-            <BouncyCheckbox
-              isChecked={priceSelected[0].checked}
-              text="¥500 - ¥1000 💴"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(priceRange((price.min = 500)));
-                dispatch(priceRange((price.max = 1000)));
-                checkBoxSelected(0);
-                // console.log(priceSelected[0])
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={priceSelected[1].checked}
-              text="¥1000 - ¥2000 💴"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(priceRange((price.min = 1000)));
-                dispatch(priceRange((price.max = 2000)));
-                checkBoxSelected(1);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={priceSelected[2].checked}
-              text="¥2000 - ¥5000 💴"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(priceRange((price.min = 2000)));
-                dispatch(priceRange((price.max = 5000)));
-                checkBoxSelected(2);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={priceSelected[3].checked}
-              text="¥5000 - ¥10000 💴"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(priceRange((price.min = 5000)));
-                dispatch(priceRange((price.max = 10000)));
-                checkBoxSelected(3);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={priceSelected[4].checked}
-              text="¥10000 - ¥15000 💴"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(priceRange((price.min = 10000)));
-                dispatch(priceRange((price.max = 15000)));
-                checkBoxSelected(4);
-              }}
-            />
-            <BouncyCheckbox
-              isChecked={priceSelected[5].checked}
-              text="¥15000 - ¥20000 💴"
-              textDecoration={true}
-              onPress={() => {
-                dispatch(priceRange((price.min = 10000)));
-                dispatch(priceRange((price.max = 15000)));
-                // console.log(price);
-                checkBoxSelected(5);
-              }}
-            />
-          </View>
-        </View>
-
-        <View style={styles.container}>
+        <Card style={styles.card}>
 
           <Text style={styles.title}>Location</Text>
 
@@ -526,30 +524,26 @@ export default function Preferences({ navigation }) {
             </Picker>
         </View> */}
 
-        <InputAutoSuggest
+        {/* <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
         onDataSelectedChange={loc => {
           dispatch(setLocations((loc)))
-          
         }}
-        />
+        /> */}
 
-          </View>
+        </Card>
 
-      
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            style={styles.buttons}
-            onPress={() => {
-              getRestaurants();
-            }}
-          >
-            <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-              Set Preferences
-        </Text>
-          </TouchableOpacity>
-        </View>
+        <Button
+          success
+          block
+          onPress={() => getRestaurants()}
+          style={styles.button}
+        >
+          <Text
+            style={{ fontSize: 25 }}
+          >Set Preferences</Text>
+        </Button>
 
       </ScrollView>
 
@@ -610,7 +604,7 @@ const styles = StyleSheet.create({
   pickerItem: {
     color: "red",
   },
-  buttonContainer: {
+  button: {
     alignItems: 'center',
     margin: 20,
   },
@@ -625,6 +619,11 @@ const styles = StyleSheet.create({
   spinnerTextStyle: {
     color: '#FFF'
   },
+  card: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+  }
 });
 
 
