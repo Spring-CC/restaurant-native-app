@@ -1,12 +1,18 @@
 import * as React from "react";
 import { Button, View, Text, StyleSheet } from "react-native";
 import { createAppContainer } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+} from "@react-navigation/drawer";
+import { createStackNavigator } from "@react-navigation/stack";
+import { useSelector } from "react-redux";
 // import Icon from "react-native-vector-icons/FontAwesome";
 import Login from "./Auth";
 import SignUp from "./SignUp";
 import Search from "./Home";
-import Home from "./Landing";
+import Landing from "./Landing";
 import About from "./About";
 import Details from "./Details";
 import UserInfo from "./UserInfo";
@@ -14,91 +20,89 @@ import FavoritesView from "./FavoritesView";
 import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
-import Yes from "./Yes"
 
-class Hidden extends React.Component {
-  render() {
-    return null;
+export default function DrawerNavigator() {
+  const MainDrawerNavigator = createDrawerNavigator();
+  const name = useSelector((state) => state.profileReducer);
+
+  function SearchStack() {
+    const Stack = createStackNavigator();
+    return (
+      <Stack.Navigator
+        headerShown={false}
+        options={{ headerMode: "none", headerShown: false }}
+      >
+        <Stack.Screen
+          name="Search"
+          component={Search}
+          options={{
+            headerMode: "none",
+            header: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{
+            headerMode: "none",
+            header: null,
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    );
   }
+
+  return (
+    <MainDrawerNavigator.Navigator
+      initialRouteName="Landing"
+      // drawerContent={(props) => <CustomDrawerContent {...props} />}
+      drawerStyle={{
+        headerStyle: { backgroundColor: "#f4511e" },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          color: "white",
+        },
+        contentOptions: {
+          // add your styling here
+          activeTintColor: "white",
+          itemsContainerStyle: {
+            marginVertical: 0,
+          },
+          iconContainerStyle: {
+            opacity: 1,
+          },
+        },
+        drawerBackgroundColor: "#F8961E", // sets background color of drawer
+      }}
+    >
+      {!name ? (
+        <>
+          <MainDrawerNavigator.Screen name="Landing" component={Landing} />
+        </>
+      ) : (
+        <>
+          <MainDrawerNavigator.Screen name="Landing" component={Landing} />
+          <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
+        </>
+      )}
+      <MainDrawerNavigator.Screen name="Login" component={Auth} />
+      <MainDrawerNavigator.Screen name="Preferences" component={Preferences} />
+      <MainDrawerNavigator.Screen name="About" component={About} />
+      <MainDrawerNavigator.Screen name="Favorites" component={FavoritesView} />
+      <MainDrawerNavigator.Screen name="Profile" component={UserInfo} />
+
+      {/* <MainDrawerNavigator.Screen
+      //   name="Details"
+      //   component={Details}
+      //   options={{
+      //     // drawerLabel: <Hidden />,
+      //     headerMode: "none",
+      //     header: null,
+      //     headerShown: false,
+      //   }}
+      // /> */}
+    </MainDrawerNavigator.Navigator>
+  );
 }
-
-const Drawer = createDrawerNavigator(
-  {
-    Home: {
-      screen: Home,
-    },
-
-    Search: {
-      screen: Search,
-    },
-
-    Yes: {
-      screen: Yes,
-      navigationOptions: {
-        drawerLabel: <Hidden />,
-      },
-    },
-
-    ChangePassword: {
-      screen: ChangePassword,
-      navigationOptions: {
-        drawerLabel: <Hidden />,
-      },
-    },
-
-    Login: {
-      screen: Auth,
-    },
-
-    CreateAccount: {
-      screen: SignUp,
-      navigationOptions: {
-        drawerLabel: <Hidden />,
-      },
-    },
-    About: {
-      screen: About,
-    },
-
-    Profile: {
-      screen: UserInfo,
-    },
-    Preferences: {
-      screen: Preferences,
-    },
-    Favorites: {
-      screen: FavoritesView,
-    },
-    Details: {
-      screen: Details,
-      navigationOptions: {
-        drawerLabel: <Hidden />,
-      },
-    },
-  },
-  {
-    intialRouteName: "Home",
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: "#f4511e",
-      },
-      headerTintColor: "#fff",
-      headerTitleStyle: {
-        color: "white",
-      },
-    },
-    contentOptions: {
-      // add your styling here
-      activeTintColor: "white",
-      itemsContainerStyle: {
-        marginVertical: 0,
-      },
-      iconContainerStyle: {
-        opacity: 1,
-      },
-    },
-    drawerBackgroundColor: "#F8961E", // sets background color of drawer
-  }
-);
-
-export default createAppContainer(Drawer);
