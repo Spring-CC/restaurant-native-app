@@ -23,10 +23,10 @@ import ChangePassword from "./ChangePassword";
 
 export default function DrawerNavigator() {
   const MainDrawerNavigator = createDrawerNavigator();
-  const name = useSelector((state) => state.profileReducer);
+  const name = useSelector((state) => state.profileReducer)[0].name;
 
+  const Stack = createStackNavigator();
   function SearchStack() {
-    const Stack = createStackNavigator();
     return (
       <Stack.Navigator
         headerShown={false}
@@ -58,7 +58,7 @@ export default function DrawerNavigator() {
     <MainDrawerNavigator.Navigator
       initialRouteName="Landing"
       // drawerContent={(props) => <CustomDrawerContent {...props} />}
-      drawerStyle={{
+      options={{
         headerStyle: { backgroundColor: "#f4511e" },
         headerTintColor: "#fff",
         headerTitleStyle: {
@@ -77,32 +77,26 @@ export default function DrawerNavigator() {
         drawerBackgroundColor: "#F8961E", // sets background color of drawer
       }}
     >
-      {!name ? (
+      <MainDrawerNavigator.Screen name="Home" component={Landing} />
+      <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
+      {name ? (
         <>
-          <MainDrawerNavigator.Screen name="Home" component={Landing} />
+          <MainDrawerNavigator.Screen
+            name="Profile"
+            component={UserInfoStack}
+          />
         </>
       ) : (
         <>
-          <MainDrawerNavigator.Screen name="Home" component={Landing} />
-          <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
+          <MainDrawerNavigator.Screen name="Login" component={Auth} />
         </>
       )}
-      <MainDrawerNavigator.Screen name="Login" component={Auth} />
+
       <MainDrawerNavigator.Screen name="Preferences" component={Preferences} />
       <MainDrawerNavigator.Screen name="About" component={About} />
       <MainDrawerNavigator.Screen name="Favorites" component={FavoritesView} />
-      <MainDrawerNavigator.Screen name="Profile" component={UserInfo} />
-
-      {/* <MainDrawerNavigator.Screen
-      //   name="Details"
-      //   component={Details}
-      //   options={{
-      //     // drawerLabel: <Hidden />,
-      //     headerMode: "none",
-      //     header: null,
-      //     headerShown: false,
-      //   }}
-      // /> */}
     </MainDrawerNavigator.Navigator>
   );
 }
+
+const styles = StyleSheet.create({});
