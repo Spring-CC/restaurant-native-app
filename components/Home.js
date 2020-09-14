@@ -44,7 +44,7 @@ export default function Home({ navigation }) {
     console.log("In recommended");
     const results = await axios.post(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
-      {userId: user}
+      { userId: user }
     );
     const data = results.data;
     console.log(userId);
@@ -111,10 +111,10 @@ export default function Home({ navigation }) {
               <CardItem>
                 <Left>
                   <Body>
-
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text note style={styles.text}>Swipe left for 'No' and right for 'Yes'</Text>
-
+                    <Text note style={styles.text}>
+                      Swipe left for 'No' and right for 'Yes'
+                    </Text>
                   </Body>
                 </Left>
               </CardItem>
@@ -128,7 +128,7 @@ export default function Home({ navigation }) {
               </CardItem>
               <CardItem>
                 <ScrollView>
-                  <Body >
+                  <Body>
                     <Text style={styles.text}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
                     <Text style={styles.text}>Type of Restaurant:</Text>

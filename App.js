@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 // import { StyleSheet, Text, View } from "react-native";
-// import { NavigationContainer } from "@react-navigation/native";
+
 // import { createDrawerNavigator } from "react-navigation-drawer";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -14,13 +14,14 @@ import rootReducer from "./reducers";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 import Navigator from "./components/Drawer";
+import { NavigationContainer } from "@react-navigation/native";
 
 // This is to hide a Warning caused by NativeBase after upgrading to RN 0.62
-import { YellowBox } from 'react-native'
+import { YellowBox } from "react-native";
 
 YellowBox.ignoreWarnings([
-  'Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`',
-])
+  "Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`",
+]);
 // ------- END OF WARNING SUPPRESSION
 
 const fetchFonts = () => {
@@ -49,7 +50,9 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <Navigator />
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
     </Provider>
   );
 }
