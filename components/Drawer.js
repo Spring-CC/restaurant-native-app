@@ -14,8 +14,8 @@ import FavoritesView from "./FavoritesView";
 import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
-import Yes from "./Yes"
-import Directions from "./Directions"
+import Yes from "./Yes";
+import Directions from "./Directions";
 
 class Hidden extends React.Component {
   render() {
@@ -26,7 +26,7 @@ class Hidden extends React.Component {
 const Drawer = createDrawerNavigator(
   {
     Home: {
-      screen: Home,
+      screen: Search,
     },
 
     Directions: {
@@ -74,6 +74,7 @@ const Drawer = createDrawerNavigator(
     Favorites: {
       screen: FavoritesView,
     },
+
     Details: {
       screen: Details,
       navigationOptions: {

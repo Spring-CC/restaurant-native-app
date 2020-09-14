@@ -6,7 +6,6 @@ import jwtDecode from "jwt-decode";
 import { Alert, Button, Platform, StyleSheet, Text, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { setProfile, setPic, setUserId } from "../actions";
-import axios from "axios";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
