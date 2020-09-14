@@ -54,6 +54,34 @@ export default function DrawerNavigator() {
     );
   }
 
+  function UserInfoStack() {
+    return (
+      <Stack.Navigator
+        headerShown={false}
+        options={{ headerMode: "none", headerShown: false }}
+      >
+        <Stack.Screen
+          name="UserInfo"
+          component={UserInfo}
+          options={{
+            headerMode: "none",
+            header: null,
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="ChangePassword"
+          component={ChangePassword}
+          options={{
+            headerMode: "none",
+            header: null,
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    );
+  }
+
   return (
     <MainDrawerNavigator.Navigator
       initialRouteName="Landing"
@@ -80,7 +108,7 @@ export default function DrawerNavigator() {
       <MainDrawerNavigator.Screen name="Home" component={Landing} />
       <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
 
-      <MainDrawerNavigator.Screen name="Profile" component={UserInfo} />
+      <MainDrawerNavigator.Screen name="Profile" component={UserInfoStack} />
 
       <MainDrawerNavigator.Screen name="Login" component={Auth} />
       {/* TODO: switch to signout when logged in */}

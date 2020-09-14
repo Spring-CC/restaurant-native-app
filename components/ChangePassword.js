@@ -71,7 +71,7 @@ export default function changePassword({ navigation }) {
       <View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Profile")}
+          onPress={() => navigation.navigate("Profile", { screen: "UserInfo" })}
         >
           <Text> Go back to profile </Text>
         </TouchableOpacity>
