@@ -50,6 +50,7 @@ export default function Home({ navigation }) {
 
   useEffect(() => {
     getRestaurants();
+    console.log(restaurantList)
   }, []);
 
   async function liked() {
