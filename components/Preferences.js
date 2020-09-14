@@ -257,12 +257,12 @@ export default function Preferences({ navigation }) {
               }}
             />
             <BouncyCheckbox
-              isChecked={categories["フレンチ"]}
+              isChecked={categories["フレンチ(フランス料理)"]}
               text="French 🏳🍮"
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category((categories["フレンチ"] = !categories["フレンチ"]))
+                  category((categories["フレンチ(フランス料理)"] = !categories["フレンチ(フランス料理)"]))
                 );
               }}
               style={styles.checkbox}
