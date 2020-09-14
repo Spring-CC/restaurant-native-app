@@ -5,51 +5,59 @@ import {
   View,
   ScrollView,
   Picker,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
-import { Container, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Container, Footer, FooterTab, Button, Icon, Text } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
-import { category, priceRange, setLocations, setRestaurantsList } from "../actions";
+import {
+  category,
+  priceRange,
+  setLocations,
+  setRestaurantsList,
+} from "../actions";
 import axios from "axios";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
 //import Slider from './Slider'
-import Spinner from 'react-native-loading-spinner-overlay';
-import data from "../data/autoinfo.json"
-import locationFilter from "../actions/locationFilter"
+// import Spinner from 'react-native-loading-spinner-overlay';
+import data from "../data/autoinfo.json";
+import locationFilter from "../actions/locationFilter";
 
-// needs comments 
+// needs comments
 export default function Preferences({ navigation }) {
-
   const [loading, setLoading] = useState(false);
 
   async function getRestaurants() {
-    setLoading(true)
+    setLoading(true);
     try {
-      const results = await axios.get("https://restaurantserverspring.herokuapp.com/restAtlas");
+      const results = await axios.get(
+        "https://restaurantserverspring.herokuapp.com/restAtlas"
+      );
       const restaurants = results.data;
-      const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
+      const filtBudget = restaurants.filter(
+        (res) => res.budget >= price.min && res.budget <= price.max
+      );
       const filtCat = categoryFilter(filtBudget, categories);
       // console.log(filtCat)
-      if(filtCat.length === 0){
-        setLoading(false)
-        alert("No restaurants found with those preferences, please change the prefrences");
+      if (filtCat.length === 0) {
+        setLoading(false);
+        alert(
+          "No restaurants found with those preferences, please change the prefrences"
+        );
         return;
       }
-      const finalFil = locationFilter(filtCat, location)
+      const finalFil = locationFilter(filtCat, location);
       dispatch(setRestaurantsList(filtCat));
-      setTimeout(()=>{
-            setLoading(false)
-            navigation.navigate('Search');
-       }, 2000);
-       
+      setTimeout(() => {
+        setLoading(false);
+        navigation.navigate("Search");
+      }, 2000);
     } catch (err) {
-      setLoading(false)
-      return
+      setLoading(false);
+      return;
     }
   }
-
 
   const [priceSelected, setSelected] = useState([
     {
@@ -108,16 +116,16 @@ export default function Preferences({ navigation }) {
         <ScrollView style={styles.container}>
           <View>
             <Spinner
-          visible={true}
-          textContent={'Loading...'}
-          textStyle={styles.spinnerTextStyle}
-          size="large" 
-          color="#90be6d" // green too light ?
-        />
+              visible={true}
+              textContent={"Loading..."}
+              textStyle={styles.spinnerTextStyle}
+              size="large"
+              color="#90be6d" // green too light ?
+            />
           </View>
         </ScrollView>
       </Container>
-    )
+    );
   }
   return (
     <Container>
@@ -127,11 +135,9 @@ export default function Preferences({ navigation }) {
         </View>
 
         <View>
-
           <Text style={styles.title}>Preferences</Text>
 
           <View style={styles.checkboxContainer}>
-
             <BouncyCheckbox
               isChecked={categories["居酒屋"]}
               text="Izakaya 🍺"
@@ -157,13 +163,7 @@ export default function Preferences({ navigation }) {
               text="Sushi / Seafood 🍣"
               textDecoration={true}
               onPress={() => {
-                dispatch(
-                  category(
-                    (categories["寿司"] = !categories[
-                      "寿司"
-                    ])
-                  )
-                );
+                dispatch(category((categories["寿司"] = !categories["寿司"])));
               }}
             />
             <BouncyCheckbox
@@ -199,7 +199,9 @@ export default function Preferences({ navigation }) {
               onPress={() => {
                 dispatch(
                   category(
-                    (categories["焼肉・ホルモン"] = !categories["焼肉・ホルモン"])
+                    (categories["焼肉・ホルモン"] = !categories[
+                      "焼肉・ホルモン"
+                    ])
                   )
                 );
               }}
@@ -210,7 +212,9 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category((categories["お好み焼き"] = !categories["お好み焼き"]))
+                  category(
+                    (categories["お好み焼き"] = !categories["お好み焼き"])
+                  )
                 );
               }}
             />
@@ -273,11 +277,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category(
-                    (categories["ラーメン"] = !categories[
-                      "ラーメン"
-                    ])
-                  )
+                  category((categories["ラーメン"] = !categories["ラーメン"]))
                 );
               }}
             />
@@ -297,11 +297,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category(
-                    (categories["カフェ"] = !categories[
-                      "カフェ"
-                    ])
-                  )
+                  category((categories["カフェ"] = !categories["カフェ"]))
                 );
               }}
             />
@@ -323,7 +319,11 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category((categories["とんかつ（トンカツ）"] = !categories["とんかつ（トンカツ）"]))
+                  category(
+                    (categories["とんかつ（トンカツ）"] = !categories[
+                      "とんかつ（トンカツ）"
+                    ])
+                  )
                 );
               }}
             />
@@ -345,11 +345,7 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category(
-                    (categories["ワイン"] = !categories[
-                      "ワイン"
-                    ])
-                  )
+                  category((categories["ワイン"] = !categories["ワイン"]))
                 );
               }}
             />
@@ -359,7 +355,9 @@ export default function Preferences({ navigation }) {
               textDecoration={true}
               onPress={() => {
                 dispatch(
-                  category((categories["しゃぶしゃぶ"] = !categories["しゃぶしゃぶ"]))
+                  category(
+                    (categories["しゃぶしゃぶ"] = !categories["しゃぶしゃぶ"])
+                  )
                 );
               }}
             />
@@ -378,7 +376,11 @@ export default function Preferences({ navigation }) {
               text="Hamburger Patty 🍔"
               textDecoration={true}
               onPress={() => {
-                dispatch(category((categories["ハンバーグ"] = !categories["ハンバーグ"])));
+                dispatch(
+                  category(
+                    (categories["ハンバーグ"] = !categories["ハンバーグ"])
+                  )
+                );
                 // console.log(categories);
               }}
             />
@@ -387,7 +389,9 @@ export default function Preferences({ navigation }) {
               text="Western restaurant 🌯"
               textDecoration={true}
               onPress={() => {
-                dispatch(category((categories["洋食屋"] = !categories["洋食屋"])));
+                dispatch(
+                  category((categories["洋食屋"] = !categories["洋食屋"]))
+                );
                 // console.log(categories);
               }}
             />
@@ -422,11 +426,9 @@ export default function Preferences({ navigation }) {
         </View>
 
         <View style={styles.container}>
-
           <Text style={styles.title}>Price Range</Text>
 
           <View style={styles.checkboxContainer}>
-
             <BouncyCheckbox
               isChecked={priceSelected[0].checked}
               text="¥500 - ¥1000 💴"
@@ -493,7 +495,6 @@ export default function Preferences({ navigation }) {
         </View>
 
         <View style={styles.container}>
-
           <Text style={styles.title}>Location</Text>
 
           {/* <View style={styles.pickerContainer}>
@@ -510,18 +511,16 @@ export default function Preferences({ navigation }) {
             </Picker>
         </View> */}
 
-        <InputAutoSuggest
+          {/* <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
         onDataSelectedChange={loc => {
           dispatch(setLocations((loc)))
           
         }}
-        />
+        /> */}
+        </View>
 
-          </View>
-
-      
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttons}
@@ -531,10 +530,9 @@ export default function Preferences({ navigation }) {
           >
             <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
               Set Preferences
-        </Text>
+            </Text>
           </TouchableOpacity>
         </View>
-
       </ScrollView>
 
       <Footer>
@@ -547,7 +545,11 @@ export default function Preferences({ navigation }) {
             <Icon name="eye" />
             <Text>Search</Text>
           </Button>
-          <Button active vertical onPress={() => navigation.navigate("Preferences")}>
+          <Button
+            active
+            vertical
+            onPress={() => navigation.navigate("Preferences")}
+          >
             <Icon active name="pizza" />
             <Text>Preference</Text>
           </Button>
@@ -564,30 +566,30 @@ export default function Preferences({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9C74F',
+    backgroundColor: "#F9C74F",
   },
   descriptionContainer: {
     // `backgroundColor` needs to be set otherwise the
     // autocomplete input will disappear on text input.
-    backgroundColor: '#F5FCFF',
-    marginTop: 8
+    backgroundColor: "#F5FCFF",
+    marginTop: 8,
   },
   infoText: {
-    textAlign: 'center'
+    textAlign: "center",
   },
   checkboxContainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     margin: 10,
     borderRadius: 12,
     padding: 10,
   },
   pickerContainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     margin: 10,
     borderRadius: 12,
   },
   title: {
-    textAlign: 'center',
+    textAlign: "center",
     fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
   },
@@ -595,7 +597,7 @@ const styles = StyleSheet.create({
     color: "red",
   },
   buttonContainer: {
-    alignItems: 'center',
+    alignItems: "center",
     margin: 20,
   },
   buttons: {
@@ -607,8 +609,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   spinnerTextStyle: {
-    color: '#FFF'
+    color: "#FFF",
   },
 });
-
-
