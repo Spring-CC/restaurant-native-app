@@ -79,11 +79,11 @@ export default function DrawerNavigator() {
     >
       {!name ? (
         <>
-          <MainDrawerNavigator.Screen name="Landing" component={Landing} />
+          <MainDrawerNavigator.Screen name="Home" component={Landing} />
         </>
       ) : (
         <>
-          <MainDrawerNavigator.Screen name="Landing" component={Landing} />
+          <MainDrawerNavigator.Screen name="Home" component={Landing} />
           <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
         </>
       )}
