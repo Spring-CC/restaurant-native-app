@@ -10,7 +10,7 @@ import {
   Image,
   Linking,
 } from "react-native";
-import { Container, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Container, Footer, FooterTab, Button, Icon, Text, Card, CardItem, Body } from 'native-base';
 import axios from 'axios';
 import { addFavorites } from "../actions";
 
@@ -75,64 +75,70 @@ export default function FavoritesView({ navigation }) {
 
   return (
     <Container>
+      <Nav />
       <ScrollView style={styles.container}>
-        <View>
-          <Nav />
-        </View>
-        <View>
+        <Card style={styles.card}>
           <Text style={styles.title}>Favorites</Text>
-        </View>
+        </Card>
         <View>
           {userId === '' ?
             (
-              <View>
+              <Card style={styles.card}>
                 <Text style={styles.title}>You must be Logged In to use this option</Text>
-              </View>
+              </Card>
             )
             :
             (
-              <View style={styles.buttonContainer}>
-                <TouchableOpacity
-                      style={styles.buttonRefresh}
-                      onPress={() => {
-                        
-                          getUserFavorites(userId);
-                        
-                      }}
-                    >
-                      <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-                        Refresh Favorites
-                  </Text>
-                </TouchableOpacity>
-                {favoritesList.map(favorite => (
-                  <View style={styles.checkboxContainer}>
-                    <Text style={styles.textTitle}>Name</Text>
-                    <Text style={styles.textBody}>{favorite.name}</Text>
-                    <Text style={styles.textTitle}>Open time</Text>
-                    <Text style={styles.textBody}>{favorite.opentime}</Text>
-                    <Text style={styles.textTitle}>Telephone</Text>
-                    <Text style={styles.textBody}>{favorite.tel}</Text>
-                    <Text style={styles.textTitle}>Link to Restaurant</Text>
-                    <Text style={styles.linkText}
-                      onPress={() => Linking.openURL(favorite.url)}>
-                      Press To Go to Restaurant Page</Text>
-                    <TouchableOpacity
-                      style={styles.buttons}
-                      onPress={() => {
-                        deleteFavorite(userId, favorite.id);
-                        setTimeout(() => {
-                          getUserFavorites(userId);
-                        }, 2000);
-                      }}
-                    >
-                      <Text style={{ fontSize: 20, fontWeight: "bold", color: "white" }}>
-                        Delete
-                  </Text>
-                    </TouchableOpacity>
-                  </View>
-                )
-                )}
-              </View>
+              <>
+                <Button
+                  success
+                  block
+                  onPress={() => getUserFavorites(userId)}
+                  style={styles.button}
+                >
+                  <Text
+                    style={{ fontSize: 25 }}
+                  >Refresh Favorites</Text>
+                </Button>
+
+                <View>
+                  {favoritesList.map(favorite => (
+                    <Card style={styles.card}>
+                      <CardItem>
+                        <Body>
+                          <Text style={styles.textTitle}>Name</Text>
+                          <Text style={styles.textBody}>{favorite.name}</Text>
+                          <Text style={styles.textTitle}>Open time</Text>
+                          <Text style={styles.textBody}>{favorite.opentime}</Text>
+                          <Text style={styles.textTitle}>Telephone</Text>
+                          <Text style={styles.textBody}>{favorite.tel}</Text>
+                          <Text style={styles.textTitle}>Link to Restaurant</Text>
+                          <Text style={styles.linkText}
+                            onPress={() => Linking.openURL(favorite.url)}>
+                            Press To Go to Restaurant Page</Text>
+                          <Button
+                            style={{ alignItems: 'center', justifyContent: 'center' }}
+                            iconLeft
+                            danger
+                            onPress={() => {
+                              deleteFavorite(userId, favorite.id);
+                              setTimeout(() => {
+                                getUserFavorites(userId);
+                              }, 2000);
+                            }}
+                          >
+                            <Icon name='trash' />
+                            <Text
+                              style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
+                            >Delete</Text>
+                          </Button>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                  )
+                  )}
+                </View>
+              </>
             )}
 
         </View>
@@ -185,19 +191,19 @@ const styles = StyleSheet.create({
   textBody: {
     fontSize: 20,
     fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
+    // textAlign: "center",
   },
   linkText: {
     fontSize: 20,
     fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
+    // textAlign: "center",
     color: "#3780E8",
   },
   textTitle: {
     fontSize: 20,
     textDecorationLine: "underline",
     fontFamily: "MPLUS1p-Bold",
-    textAlign: "center",
+    // textAlign: "center",
   },
   buttons: {
     height: 50,
@@ -214,6 +220,15 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: "center",
     alignItems: "center",
-    textAlign: "center",
+    // textAlign: "center",
+  },
+  card: {
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+  },
+  button: {
+    alignItems: 'center',
+    margin: 20,
   },
 })
