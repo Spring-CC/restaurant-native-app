@@ -1,10 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import {
-  StyleSheet,
-  ScrollView,
-  Image,
-} from "react-native";
+import { StyleSheet, ScrollView, Image } from "react-native";
 import {
   Container,
   View,
@@ -18,13 +14,12 @@ import {
   Button,
   Icon,
   Text,
-} from 'native-base';
+} from "native-base";
 import { useSelector, useDispatch } from "react-redux";
 import { restaurant, setRestaurantsList } from "../actions";
 import Nav from "./Nav";
 
 export default function Home({ navigation }) {
-
   const restData = useSelector((state) => state.restaurantReducer);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
@@ -39,25 +34,38 @@ export default function Home({ navigation }) {
         "https://restaurantserverspring.herokuapp.com/restAtlas"
       );
       const restaurants = results.data;
-      const filtBudget = restaurants.filter(
-        (res) => res.budget >= price.min && res.budget <= price.max
-      );
-      dispatch(setRestaurantsList(filtBudget));
+      dispatch(setRestaurantsList(restaurants));
     } catch (err) {
       console.log(err);
     }
   }
 
+  async function getUserRecommendation(user) {
+    console.log("In recommended");
+    const results = await axios.post(
+      `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
+      {userId: user}
+    );
+    const data = results.data;
+    console.log(userId);
+    console.log(data);
+    dispatch(setRestaurantsList(data));
+  }
+
   useEffect(() => {
-    getRestaurants();
-    console.log(restaurantList)
+
+    if (userId === "") {
+      getRestaurants();
+    } else {
+      getUserRecommendation(userId);
+    }
+
   }, []);
 
   async function liked() {
     try {
-
       const likedResId = restaurants[0].id;
-      const likedRes = restaurant[0]
+      const likedRes = restaurant[0];
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
@@ -66,16 +74,19 @@ export default function Home({ navigation }) {
         }
       );
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`, {
-        rest: likedRes,
-      });
+        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`,
+        {
+          rest: likedRes,
+        }
+      );
+
     } catch (err) {
       console.log(err);
     }
   }
 
   function onSwipeRight(card) {
-    dispatch(restaurant(card))
+    dispatch(restaurant(card));
     liked();
     navigation.navigate("Details");
   }
@@ -98,13 +109,15 @@ export default function Home({ navigation }) {
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
           onSwipeLeft={() => console.log("No")}
-          renderItem={item =>
-            <Card style={{ elevation: 3 }} >
+          renderItem={(item) => (
+            <Card style={{ elevation: 3 }}>
               <CardItem>
                 <Left>
                   <Body>
+
                     <Text style={styles.text}>{item.name}</Text>
                     <Text note style={styles.text}>Swipe left for 'No' and right for 'Yes'</Text>
+
                   </Body>
                 </Left>
               </CardItem>
@@ -113,10 +126,12 @@ export default function Home({ navigation }) {
                   style={{ height: 300, flex: 1 }}
                   source={{
                     uri: item.image_url["shop_image1"],
-                  }} />
+                  }}
+                />
               </CardItem>
               <CardItem>
                 <ScrollView>
+
                   <Body >
                     <Text style={styles.text}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
@@ -130,14 +145,14 @@ export default function Home({ navigation }) {
                 </ScrollView>
               </CardItem>
             </Card>
-          }
-          renderEmpty={() =>
+          )}
+          renderEmpty={() => (
             <Card style={{ elevation: 3 }}>
               <CardItem>
                 <Text>No restaurants match your selected preference.</Text>
               </CardItem>
             </Card>
-          }
+          )}
         />
       </View>
       <Footer>
@@ -160,7 +175,7 @@ export default function Home({ navigation }) {
           </Button>
         </FooterTab>
       </Footer>
-    </Container >
+    </Container>
   );
 }
 

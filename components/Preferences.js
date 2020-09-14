@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { InputAutoSuggest } from 'react-native-autocomplete-search';
+import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -31,13 +31,29 @@ export default function Preferences({ navigation }) {
       const restaurants = results.data;
       const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
       const filtCat = categoryFilter(filtBudget, categories);
+
+      if(location==="" || location===null) {
+        const finalFil = locationFilter(filtCat, location)
+        if(finalFil.length === 0){
+          setLoading(false)
+          alert("No restaurants found with those preferences, please change the prefrences");
+          return;
+        }
+        dispatch(setRestaurantsList(finalFil));
+      setTimeout(()=>{
+            setLoading(false)
+            navigation.navigate('Search');
+       }, 2000);
+       return;
+      }
+      
       // console.log(filtCat)
       if (filtCat.length === 0) {
         setLoading(false)
         alert("No restaurants found with those preferences, please change the prefrences");
         return;
       }
-      const finalFil = locationFilter(filtCat, location)
+      
       dispatch(setRestaurantsList(filtCat));
       setTimeout(() => {
         setLoading(false)
