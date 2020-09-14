@@ -111,8 +111,10 @@ export default function Home({ navigation }) {
               <CardItem>
                 <Left>
                   <Body>
+
                     <Text style={styles.text}>{item.name}</Text>
                     <Text note style={styles.text}>Swipe left for 'No' and right for 'Yes'</Text>
+
                   </Body>
                 </Left>
               </CardItem>

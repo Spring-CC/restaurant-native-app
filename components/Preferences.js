@@ -524,13 +524,13 @@ export default function Preferences({ navigation }) {
             </Picker>
         </View> */}
 
-        {/* <InputAutoSuggest
+        <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
         onDataSelectedChange={loc => {
           dispatch(setLocations((loc)))
         }}
-        /> */}
+        />
 
         </Card>
 
