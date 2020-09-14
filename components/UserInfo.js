@@ -11,14 +11,13 @@ import Icon from "react-native-vector-icons/Foundation";
 
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
-
 import { useSelector, useDispatch } from "react-redux";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function UserInfo({ navigation }) {
   // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
   const profileImage = useSelector((state) => state.picReducer);
+
   const dispatch = useDispatch();
 
   function handleRedirect() {
@@ -26,7 +25,8 @@ export default function UserInfo({ navigation }) {
     WebBrowser.dismissBrowser();
     navigation.navigate("Home");
   }
-  if (name[0].name === "" || null) {
+
+  if (name === "" || null) {
     return (
       <SafeAreaView style={styles.background}>
         <Image
@@ -55,13 +55,12 @@ export default function UserInfo({ navigation }) {
       </SafeAreaView>
     );
   } else {
-    console.log(name);
     return (
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerContent}>
-            <Image style={styles.avatar} source={profileImage} />
-            <Text style={styles.name}>Your name is, {name[0].name}!</Text>
+            <Image style={styles.avatar} source={{ uri: profileImage }} />
+            <Text style={styles.name}>Your name is, {name} !</Text>
           </View>
         </View>
 
@@ -92,8 +91,14 @@ export default function UserInfo({ navigation }) {
                 Favorites
               </Text>
             </View>
-            <View>
-              <TouchableOpacity
+          </View>
+          <View style={styles.item}>
+            <View style={styles.iconContent}>
+              <Icon style={styles.icon} name="x" size={30} />
+            </View>
+            <View style={styles.infoContent}>
+              <Text
+                style={styles.info}
                 onPress={async () => {
                   Linking.addEventListener("url", handleRedirect);
                   const redirectUrl = Linking.makeUrl("/");
@@ -106,8 +111,8 @@ export default function UserInfo({ navigation }) {
                   dispatch(setUserId(null));
                 }}
               >
-                Log out
-              </TouchableOpacity>
+                Log Out
+              </Text>
             </View>
           </View>
         </View>
@@ -124,6 +129,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerContent: {
+    marginTop: 30,
     padding: 30,
     alignItems: "center",
   },
@@ -146,7 +152,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   body: {
-    backgroundColor: "#DCDCDC",
+    // backgroundColor: "#DCDCDC",
     height: 500,
     alignItems: "center",
   },
@@ -169,14 +175,13 @@ const styles = StyleSheet.create({
     paddingRight: 5,
   },
   icon: {
-    width: 30,
     height: 30,
     marginTop: 20,
   },
   info: {
     fontSize: 18,
     marginTop: 20,
-    color: "#FFFFFF",
+    // color: "#FFFFFF",
   },
   button: {
     marginTop: 10,

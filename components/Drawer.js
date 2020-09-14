@@ -79,18 +79,11 @@ export default function DrawerNavigator() {
     >
       <MainDrawerNavigator.Screen name="Home" component={Landing} />
       <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
-      {name ? (
-        <>
-          <MainDrawerNavigator.Screen
-            name="Profile"
-            component={UserInfoStack}
-          />
-        </>
-      ) : (
-        <>
-          <MainDrawerNavigator.Screen name="Login" component={Auth} />
-        </>
-      )}
+
+      <MainDrawerNavigator.Screen name="Profile" component={UserInfo} />
+
+      <MainDrawerNavigator.Screen name="Login" component={Auth} />
+      {/* TODO: switch to signout when logged in */}
 
       <MainDrawerNavigator.Screen name="Preferences" component={Preferences} />
       <MainDrawerNavigator.Screen name="About" component={About} />
