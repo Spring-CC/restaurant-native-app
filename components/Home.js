@@ -66,8 +66,8 @@ export default function Home({ navigation }) {
       );
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`, {
-          rest: likedRes,
-        });
+        rest: likedRes,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -102,7 +102,7 @@ export default function Home({ navigation }) {
               <CardItem>
                 <Left>
                   <Body>
-                    <Text style={styles.text}>Restaurant</Text>
+                    <Text style={styles.text}>{item.name}</Text>
                     <Text note style={styles.text}>Swipe left for 'No' and right for 'Yes'</Text>
                   </Body>
                 </Left>
@@ -117,13 +117,13 @@ export default function Home({ navigation }) {
               <CardItem>
                 <ScrollView>
                   <Body >
-                    <Text style={styles.text}>Name: </Text>
+                    <Text style={styles.text}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text}>Type of Restaurant: </Text>
+                    <Text style={styles.text}>Type of Restaurant:</Text>
                     <Text style={styles.text}>{item.category}</Text>
                     <Text style={styles.text}>Station:</Text>
                     <Text style={styles.text}>{item.access["station"]}</Text>
-                    <Text style={styles.text}>Open Hours: </Text>
+                    <Text style={styles.text}>Open Hours:</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
                   </Body>
                 </ScrollView>
