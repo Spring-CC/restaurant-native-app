@@ -84,7 +84,11 @@ export default function FavoritesView({ navigation }) {
           {userId === '' ?
             (
               <Card style={styles.card}>
-                <Text style={styles.title}>You must be Logged In to use this option</Text>
+                <Body>
+                  <Text style={styles.textLogin}>
+                    You must be Logged In to use this option
+                  </Text>
+                </Body>
               </Card>
             )
             :
@@ -117,7 +121,7 @@ export default function FavoritesView({ navigation }) {
                             onPress={() => Linking.openURL(favorite.url)}>
                             Press To Go to Restaurant Page</Text>
                           <Button
-                            style={{ alignItems: 'center', justifyContent: 'center' }}
+                            style={{ alignSelf: 'center' }}
                             iconLeft
                             danger
                             onPress={() => {
@@ -193,6 +197,11 @@ const styles = StyleSheet.create({
     fontFamily: "MPLUS1p-Bold",
     // textAlign: "center",
   },
+  textLogin: {
+    fontSize: 20,
+    fontFamily: "MPLUS1p-Bold",
+    textAlign: "center",
+  },
   linkText: {
     fontSize: 20,
     fontFamily: "MPLUS1p-Bold",
@@ -220,7 +229,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     justifyContent: "center",
     alignItems: "center",
-    // textAlign: "center",
+    textAlign: "center",
   },
   card: {
     marginLeft: 10,
