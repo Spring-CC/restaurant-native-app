@@ -1,11 +1,9 @@
-const stations = {
-    name:"Tokyo"
-    }
+   
     
-    const locationReducer = (state = stations, action) => {
+    const locationReducer = (state = '', action) => {
         switch (action.type) {
             case "LOCATIONS":
-                return {...state, stations: action.payload}
+                return action.payload;
             default:
                 return state;
         }

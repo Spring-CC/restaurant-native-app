@@ -8,11 +8,8 @@
     "eject": "expo eject"
   },
   "dependencies": {
-
     "@expo/webpack-config": "^0.12.29",
-
     "@fast-csv/format": "^4.3.1",
-
     "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/drawer": "^5.9.0",
@@ -28,10 +25,12 @@
     "react": "~16.11.0",
     "react-dom": "^16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+    "react-native-autocomplete-search": "^1.0.8",
     "react-native-bouncy-checkbox": "^0.2.2",
     "react-native-dynamic-vector-icons": "^1.0.0",
     "react-native-gesture-handler": "~1.6.0",
     "react-native-image-slider-box": "^1.0.12",
+    "react-native-loading-spinner-overlay": "^1.1.0",
     "react-native-paper": "^4.1.0",
     "react-native-reanimated": "~1.9.0",
     "react-native-safe-area-context": "~3.0.7",
