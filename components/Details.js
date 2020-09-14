@@ -105,6 +105,17 @@ export default function Details({ navigation }) {
           }}
           style={styles.image}
         />
+        <View>
+          <Button
+            style={styles.button}
+            title="Go To Maps"
+            onPress={() =>
+              Linking.openURL(
+                `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`
+              )
+            }
+          />
+        </View>
         <View style={styles.basic_container}>
           <Text style={styles.text_title}>Basic Details</Text>
           <Text style={styles.text_sub}>Name:</Text>
@@ -119,7 +130,7 @@ export default function Details({ navigation }) {
           <Text
             style={styles.text}
             onPress={() => Linking.openURL(`${restData.url}`)}
-          >Click Here! to go to website</Text>
+          >Press Here! to go to website</Text>
         </View>
         <View style={styles.location_container}>
           <Text style={styles.text_title}>Location Details</Text>
@@ -146,17 +157,6 @@ export default function Details({ navigation }) {
           <Text style={styles.text}>{restData.credit_card}</Text>
           <Text style={styles.text_sub}>E-Money:</Text>
           <Text style={styles.text}>{restData.e_money}</Text>
-        </View>
-        <View>
-          <Button
-            style={styles.button}
-            title="Go To Maps"
-            onPress={() =>
-              Linking.openURL(
-                `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`
-              )
-            }
-          />
         </View>
       </ScrollView>
     </ScrollView>
