@@ -54,13 +54,20 @@ export default function Home({ navigation }) {
 
   async function liked() {
     try {
-      const likedResId = restData.id;
+
+      const likedResId = restaurants[0].id;
+      const likedRes = restaurant[0]
+
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
         {
           restId: likedResId,
         }
       );
+      await axios.post(
+        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`, {
+          rest: likedRes,
+        });
     } catch (err) {
       console.log(err);
     }
