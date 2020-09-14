@@ -39,10 +39,7 @@ export default function Home({ navigation }) {
         "https://restaurantserverspring.herokuapp.com/restAtlas"
       );
       const restaurants = results.data;
-      const filtBudget = restaurants.filter(
-        (res) => res.budget >= price.min && res.budget <= price.max
-      );
-      dispatch(setRestaurantsList(filtBudget));
+      dispatch(setRestaurantsList(restaurants));
     } catch (err) {
       console.log(err);
     }
