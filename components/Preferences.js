@@ -16,6 +16,8 @@ import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
 //import Slider from './Slider'
 import Spinner from 'react-native-loading-spinner-overlay';
+import data from "../data/autoinfo.json"
+import locationFilter from "../actions/locationFilter"
 
 // needs comments 
 export default function Preferences({ navigation }) {
@@ -35,6 +37,7 @@ export default function Preferences({ navigation }) {
         alert("No restaurants found with those preferences, please change the prefrences");
         return;
       }
+      const finalFil = locationFilter(filtCat, location)
       dispatch(setRestaurantsList(filtCat));
       setTimeout(()=>{
             setLoading(false)
@@ -46,21 +49,6 @@ export default function Preferences({ navigation }) {
       return
     }
   }
-
-  let mockdata = [
-    {
-      id: 1,
-      name: "Shibuya",
-    },
-    {
-      id: 2,
-      name: "Shinjuku",
-    },
-    {
-      id: 3,
-      name: "Tokyo",
-    },    
-  ];
 
 
   const [priceSelected, setSelected] = useState([
@@ -521,11 +509,16 @@ export default function Preferences({ navigation }) {
               ))}
             </Picker>
         </View> */}
-        {/* <InputAutoSuggest
-        style={styles.pickerContainer}
-        staticData={mockdata}
-        onDataSelectedChange={data => dispatch(setLocations((location.name = data)))}
-        /> */}
+
+        <InputAutoSuggest
+        style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
+        staticData={data}
+        onDataSelectedChange={loc => {
+          dispatch(setLocations((loc)))
+          
+        }}
+        />
+
           </View>
 
       
