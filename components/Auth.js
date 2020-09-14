@@ -51,7 +51,7 @@ export default function Auth({ navigation }) {
         // Retrieve the JWT token and decode it
         const jwtToken = result.params.id_token;
         const decoded = jwtDecode(jwtToken);
-        console.log(decoded);
+        // console.log(decoded);
         const { nickname } = decoded;
         const { picture } = decoded;
         const { sub } = decoded;

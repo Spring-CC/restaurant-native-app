@@ -17,7 +17,7 @@ return (
     style={styles.input}
     onChangeText={(text) => {
       onChangeEmail(text);
-      console.log(email);
+      // console.log(email);
     }}
     value={email}
     keyboardType="email-address"
@@ -26,7 +26,7 @@ return (
     style={styles.input}
     onChangeText={(text) => {
       onChangePassword(text);
-      console.log(password)
+      // console.log(password)
     }}
     value={password}
     secureTextEntry

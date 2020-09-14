@@ -2,6 +2,7 @@ import * as React from "react";
 import { Button, View, Text, StyleSheet } from "react-native";
 import { createAppContainer } from "react-navigation";
 import { createDrawerNavigator } from "react-navigation-drawer";
+import { useSelector } from "react-redux";
 // import Icon from "react-native-vector-icons/FontAwesome";
 import Login from "./Auth";
 import SignUp from "./SignUp";
@@ -15,7 +16,8 @@ import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
 import Yes from "./Yes";
-import Directions from "./Directions";
+
+const name = useSelector((state) => state.profileReducer);
 
 class Hidden extends React.Component {
   render() {
@@ -27,10 +29,6 @@ const Drawer = createDrawerNavigator(
   {
     Home: {
       screen: Search,
-    },
-
-    Directions: {
-      screen: Directions,
     },
 
     Search: {
