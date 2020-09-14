@@ -1,77 +1,113 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, Image, Linking } from 'react-native';
+import { StyleSheet, ScrollView, Image, Linking } from 'react-native';
+import {
+    Container,
+    View,
+    DeckSwiper,
+    Card,
+    CardItem,
+    Left,
+    Body,
+    Footer,
+    FooterTab,
+    Button,
+    Icon,
+    Text,
+} from 'native-base';
 import Nav from './Nav';
 
-export default function About() {
+export default function About({ navigation }) {
     return (
-        <ScrollView style={styles.container}>
-            <Nav />
-            <View style={styles.box1}>
-                <Text style={styles.text}>Eri Shimada</Text>
-                <Image
-                    source={{
-                        uri: 'https://ca.slack-edge.com/T0139VDCF27-U013CHJSHRT-ac0cf8bdb88e-512',
-                    }}
-                    style={styles.image}
-                />
-                <Text
-                    style={styles.text_sub}
-                    onPress={() => Linking.openURL('https://github.com/Erismd')}
-                >GitHub</Text>
-            </View>
-            <View style={styles.box2}>
-                <Text style={styles.text}>Shaun Darragh</Text>
-                <Image
-                    source={{
-                        uri: 'https://ottotsuma.github.io/tsuma2.jpg',
-                    }}
-                    style={styles.image}
-                />
-                <Text
-                    style={styles.text_sub}
-                    onPress={() => Linking.openURL('https://github.com/ottotsuma')}
-                >GitHub</Text>
-            </View>
-            <View style={styles.box3}>
-                <Text style={styles.text}>Alberto Medellin</Text>
-                <Image
-                    source={{
-                        uri: 'https://ca.slack-edge.com/T0139VDCF27-U013T9A9NF3-768002e495e2-512',
-                    }}
-                    style={styles.image}
-                />
-                <Text
-                    style={styles.text_sub}
-                    onPress={() => Linking.openURL('https://github.com/MEGAALBERT')}
-                >GitHub</Text>
-            </View>
-            <View style={styles.box4}>
-                <Text style={styles.text}>Yuri Amami</Text>
-                <Image
-                    source={{
-                        uri: 'https://avatars0.githubusercontent.com/u/59043522?s=460&u=c51394ea0198c52f18a767eb68861fc300a7f8bd&v=4',
-                    }}
-                    style={styles.image}
-                />
-                <Text
-                    style={styles.text_sub}
-                    onPress={() => Linking.openURL('https://github.com/yuriamm')}
-                >GitHub</Text>
-            </View>
-            <View style={styles.box5}>
-                <Text style={styles.text}>Dylan Cooper</Text>
-                <Image
-                    source={{
-                        uri: 'https://ca.slack-edge.com/T0139VDCF27-U013K8SSE6Q-fb608ad7d078-512',
-                    }}
-                    style={styles.image}
-                />
-                <Text
-                    style={styles.text_sub}
-                    onPress={() => Linking.openURL('https://github.com/Dylanc55')}
-                >GitHub</Text>
-            </View>
-        </ScrollView>
+        <Container>
+            <ScrollView style={styles.container}>
+                <Nav />
+                <View style={styles.box1}>
+                    <Text style={styles.text}>Eri Shimada</Text>
+                    <Image
+                        source={{
+                            uri: 'https://ca.slack-edge.com/T0139VDCF27-U013CHJSHRT-ac0cf8bdb88e-512',
+                        }}
+                        style={styles.image}
+                    />
+                    <Text
+                        style={styles.text_sub}
+                        onPress={() => Linking.openURL('https://github.com/Erismd')}
+                    >GitHub</Text>
+                </View>
+                <View style={styles.box2}>
+                    <Text style={styles.text}>Shaun Darragh</Text>
+                    <Image
+                        source={{
+                            uri: 'https://ottotsuma.github.io/tsuma2.jpg',
+                        }}
+                        style={styles.image}
+                    />
+                    <Text
+                        style={styles.text_sub}
+                        onPress={() => Linking.openURL('https://github.com/ottotsuma')}
+                    >GitHub</Text>
+                </View>
+                <View style={styles.box3}>
+                    <Text style={styles.text}>Alberto Medellin</Text>
+                    <Image
+                        source={{
+                            uri: 'https://ca.slack-edge.com/T0139VDCF27-U013T9A9NF3-768002e495e2-512',
+                        }}
+                        style={styles.image}
+                    />
+                    <Text
+                        style={styles.text_sub}
+                        onPress={() => Linking.openURL('https://github.com/MEGAALBERT')}
+                    >GitHub</Text>
+                </View>
+                <View style={styles.box4}>
+                    <Text style={styles.text}>Yuri Amami</Text>
+                    <Image
+                        source={{
+                            uri: 'https://avatars0.githubusercontent.com/u/59043522?s=460&u=c51394ea0198c52f18a767eb68861fc300a7f8bd&v=4',
+                        }}
+                        style={styles.image}
+                    />
+                    <Text
+                        style={styles.text_sub}
+                        onPress={() => Linking.openURL('https://github.com/yuriamm')}
+                    >GitHub</Text>
+                </View>
+                <View style={styles.box5}>
+                    <Text style={styles.text}>Dylan Cooper</Text>
+                    <Image
+                        source={{
+                            uri: 'https://ca.slack-edge.com/T0139VDCF27-U013K8SSE6Q-fb608ad7d078-512',
+                        }}
+                        style={styles.image}
+                    />
+                    <Text
+                        style={styles.text_sub}
+                        onPress={() => Linking.openURL('https://github.com/Dylanc55')}
+                    >GitHub</Text>
+                </View>
+            </ScrollView>
+            <Footer>
+                <FooterTab>
+                    <Button vertical onPress={() => navigation.navigate("Home")}>
+                        <Icon name="home" />
+                        <Text>Home</Text>
+                    </Button>
+                    <Button vertical onPress={() => navigation.navigate("Search")}>
+                        <Icon name="eye" />
+                        <Text>Search</Text>
+                    </Button>
+                    <Button vertical onPress={() => navigation.navigate("Preferences")}>
+                        <Icon active name="pizza" />
+                        <Text>Preference</Text>
+                    </Button>
+                    <Button vertical onPress={() => navigation.navigate("Favorites")}>
+                        <Icon name="heart" />
+                        <Text>Favorites</Text>
+                    </Button>
+                </FooterTab>
+            </Footer>
+        </Container>
     );
 }
 
