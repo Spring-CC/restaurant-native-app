@@ -32,18 +32,18 @@ export default function Preferences({ navigation }) {
       const filtBudget = restaurants.filter(res => (res.budget >= price.min && res.budget <= price.max));
       const filtCat = categoryFilter(filtBudget, categories);
       // console.log(filtCat)
-      if(filtCat.length === 0){
+      if (filtCat.length === 0) {
         setLoading(false)
         alert("No restaurants found with those preferences, please change the prefrences");
         return;
       }
       const finalFil = locationFilter(filtCat, location)
       dispatch(setRestaurantsList(filtCat));
-      setTimeout(()=>{
-            setLoading(false)
-            navigation.navigate('Search');
-       }, 2000);
-       
+      setTimeout(() => {
+        setLoading(false)
+        navigation.navigate('Search');
+      }, 2000);
+
     } catch (err) {
       setLoading(false)
       return
@@ -108,12 +108,12 @@ export default function Preferences({ navigation }) {
         <ScrollView style={styles.container}>
           <View>
             <Spinner
-          visible={true}
-          textContent={'Loading...'}
-          textStyle={styles.spinnerTextStyle}
-          size="large" 
-          color="#90be6d" // green too light ?
-        />
+              visible={true}
+              textContent={'Loading...'}
+              textStyle={styles.spinnerTextStyle}
+              size="large"
+              color="#90be6d" // green too light ?
+            />
           </View>
         </ScrollView>
       </Container>
@@ -510,18 +510,17 @@ export default function Preferences({ navigation }) {
             </Picker>
         </View> */}
 
-        <InputAutoSuggest
+          {/* <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
         onDataSelectedChange={loc => {
           dispatch(setLocations((loc)))
-          
         }}
-        />
+        /> */}
 
-          </View>
+        </View>
 
-      
+
         <View style={styles.buttonContainer}>
           <TouchableOpacity
             style={styles.buttons}
