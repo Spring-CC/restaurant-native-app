@@ -24,6 +24,7 @@ import {
   priceRange,
   setLocations,
   setRestaurantsList,
+  setpriceCheckBox
 } from "../actions";
 import axios from "axios";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -38,6 +39,7 @@ import locationFilter from "../actions/locationFilter";
 export default function Preferences({ navigation }) {
   const [loading, setLoading] = useState(false);
 
+  //function to filter restaurants through preferences
   async function getRestaurants() {
     setLoading(true);
     try {
@@ -87,35 +89,9 @@ export default function Preferences({ navigation }) {
     }
   }
 
-  const [priceSelected, setSelected] = useState([
-    {
-      id: 0,
-      checked: false,
-    },
-    {
-      id: 1,
-      checked: false,
-    },
-    {
-      id: 2,
-      checked: false,
-    },
-    {
-      id: 3,
-      checked: false,
-    },
-    {
-      id: 4,
-      checked: false,
-    },
-    {
-      id: 5,
-      checked: false,
-    },
-  ]);
 
   const checkBoxSelected = (id) => {
-    const selection = priceSelected.map((value, i) => {
+    const selection = priceCheck.map((value, i) => {
       if (value.id === id) {
         return {
           id: i,
@@ -128,13 +104,15 @@ export default function Preferences({ navigation }) {
         };
       }
     });
-    // console.log(selection);
-    setSelected(selection);
+    console.log(selection);
+    //setSelected(selection);
+    dispatch(setpriceCheckBox(selection))
   };
 
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
   const location = useSelector((state) => state.locationReducer);
+  const priceCheck = useSelector((state) => state.priceCheckReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const dispatch = useDispatch();
 
@@ -468,18 +446,18 @@ export default function Preferences({ navigation }) {
           <CardItem>
             <Body style={styles.checkboxContainer}>
               <BouncyCheckbox
-                isChecked={priceSelected[0].checked}
+                isChecked={priceCheck[0].checked}
                 text="¥500 - ¥1000 💴"
                 textDecoration={true}
                 onPress={() => {
                   dispatch(priceRange((price.min = 500)));
                   dispatch(priceRange((price.max = 1000)));
                   checkBoxSelected(0);
-                  // console.log(priceSelected[0])
+                  console.log(priceCheck)
                 }}
               />
               <BouncyCheckbox
-                isChecked={priceSelected[1].checked}
+                isChecked={priceCheck[1].checked}
                 text="¥1000 - ¥2000 💴"
                 textDecoration={true}
                 onPress={() => {
@@ -489,7 +467,7 @@ export default function Preferences({ navigation }) {
                 }}
               />
               <BouncyCheckbox
-                isChecked={priceSelected[2].checked}
+                isChecked={priceCheck[2].checked}
                 text="¥2000 - ¥5000 💴"
                 textDecoration={true}
                 onPress={() => {
@@ -499,7 +477,7 @@ export default function Preferences({ navigation }) {
                 }}
               />
               <BouncyCheckbox
-                isChecked={priceSelected[3].checked}
+                isChecked={priceCheck[3].checked}
                 text="¥5000 - ¥10000 💴"
                 textDecoration={true}
                 onPress={() => {
@@ -509,7 +487,7 @@ export default function Preferences({ navigation }) {
                 }}
               />
               <BouncyCheckbox
-                isChecked={priceSelected[4].checked}
+                isChecked={priceCheck[4].checked}
                 text="¥10000 - ¥15000 💴"
                 textDecoration={true}
                 onPress={() => {
@@ -519,7 +497,7 @@ export default function Preferences({ navigation }) {
                 }}
               />
               <BouncyCheckbox
-                isChecked={priceSelected[5].checked}
+                isChecked={priceCheck[5].checked}
                 text="¥15000 - ¥20000 💴"
                 textDecoration={true}
                 onPress={() => {

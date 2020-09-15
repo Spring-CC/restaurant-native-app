@@ -8,6 +8,7 @@ import picReducer from "./profilepic";
 import restaurantsListReducer from "./restaurantsList";
 import userIdReducer from "./userId";
 import addFavoritesReducer from './favorites' 
+import priceCheckReducer from './priceCheckBox'
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   restaurantsListReducer,
   addFavoritesReducer,
   userIdReducer,
+  priceCheckReducer,
 });
 
 export default rootReducer;

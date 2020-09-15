@@ -12,6 +12,7 @@ import {
   Alert,
   Platform,
 } from "react-native";
+
 import { useDispatch } from "react-redux";
 import { setProfile, setPic, setUserId } from "../actions";
 
@@ -131,7 +132,7 @@ export default function Landing({ navigation }) {
             activeOpacity={0.8}
             style={styles.button}
           >
-            <Text style={styles.text}>SKIP</Text>
+            <Text style={styles.text}>SEARCH</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -176,7 +177,7 @@ export default function Landing({ navigation }) {
             activeOpacity={0.8}
             style={styles.button}
           >
-            <Text style={styles.text}>SKIP</Text>
+            <Text style={styles.text}>SEARCH</Text>
           </TouchableOpacity>
 
           <TouchableOpacity

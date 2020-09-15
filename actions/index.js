@@ -66,3 +66,10 @@ export const setUserId = (user) => {
     payload: user,
   };
 };
+
+export const setpriceCheckBox = (obj) => {
+  return {
+    type: "SET_PRICE_CHECKBOX",
+    payload: obj,
+  };
+};

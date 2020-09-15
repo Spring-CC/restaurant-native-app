@@ -20,7 +20,7 @@ export default function Details({ navigation }) {
 
   async function updateToDatabase(id, restId) {
 
-    if (id === '') {
+    if (id === '' || id === null || id===undefined) {
       alert("No user login")
       return
     }
@@ -40,15 +40,6 @@ export default function Details({ navigation }) {
       }
     }
 
-    //if the user dont exist it will post a new user with the restaurant Id
-    // if(newInfo){
-    //   const favorite = await axios.post("http://localhost:8080/Favorites", {
-    //     user_Id : id,
-    //     restaurant_Id : restId
-    //   })
-    //   alert("Added to Favorites, Deletion is manage in Favorites Option")
-    //   return;
-    // }
     if (newInfo) {
 
       const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
@@ -136,10 +127,10 @@ export default function Details({ navigation }) {
           <Text style={styles.text_title}>Location Details</Text>
           <Text style={styles.text_sub}>Address:</Text>
           <Text style={styles.text}>{restData.address}</Text>
-          <Text style={styles.text_sub}>Latitude:</Text>
+          {/* <Text style={styles.text_sub}>Latitude:</Text>
           <Text style={styles.text}>{restData.latitude}</Text>
           <Text style={styles.text_sub}>Longitude:</Text>
-          <Text style={styles.text}>{restData.longitude}</Text>
+          <Text style={styles.text}>{restData.longitude}</Text> */}
           <Text style={styles.text_sub}>Station:</Text>
           <Text style={styles.text}>{restData.access["station"]}</Text>
           <Text style={styles.text_sub}>Open Time:</Text>

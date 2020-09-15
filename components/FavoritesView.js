@@ -110,13 +110,13 @@ export default function FavoritesView({ navigation }) {
                     <Card style={styles.card}>
                       <CardItem>
                         <Body>
-                          <Text style={styles.textTitle}>Name</Text>
+                          <Text style={styles.textTitle}>Name:</Text>
                           <Text style={styles.textBody}>{favorite.name}</Text>
-                          <Text style={styles.textTitle}>Open time</Text>
-                          <Text style={styles.textBody}>{favorite.opentime}</Text>
-                          <Text style={styles.textTitle}>Telephone</Text>
+                          <Text style={styles.textTitle}>Type of Restaurant:</Text>
+                          <Text style={styles.textBody}>{favorite.category}</Text>
+                          <Text style={styles.textTitle}>Telephone:</Text>
                           <Text style={styles.textBody}>{favorite.tel}</Text>
-                          <Text style={styles.textTitle}>Link to Restaurant</Text>
+                          <Text style={styles.textTitle}>Link to Restaurant:</Text>
                           <Text style={styles.linkText}
                             onPress={() => Linking.openURL(favorite.url)}>
                             Press To Go to Restaurant Page</Text>
@@ -195,6 +195,7 @@ const styles = StyleSheet.create({
   textBody: {
     fontSize: 20,
     fontFamily: "MPLUS1p-Bold",
+    marginBottom: 10,
     // textAlign: "center",
   },
   textLogin: {
@@ -205,13 +206,16 @@ const styles = StyleSheet.create({
   linkText: {
     fontSize: 20,
     fontFamily: "MPLUS1p-Bold",
+    marginBottom: 20,
     // textAlign: "center",
     color: "#3780E8",
   },
   textTitle: {
+    color: '#F3722C',
     fontSize: 20,
-    textDecorationLine: "underline",
+    // textDecorationLine: "underline",
     fontFamily: "MPLUS1p-Bold",
+    fontWeight: 'bold',
     // textAlign: "center",
   },
   buttons: {
