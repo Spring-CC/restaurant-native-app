@@ -136,10 +136,10 @@ export default function Details({ navigation }) {
           <Text style={styles.text_title}>Location Details</Text>
           <Text style={styles.text_sub}>Address:</Text>
           <Text style={styles.text}>{restData.address}</Text>
-          <Text style={styles.text_sub}>Latitude:</Text>
+          {/* <Text style={styles.text_sub}>Latitude:</Text>
           <Text style={styles.text}>{restData.latitude}</Text>
           <Text style={styles.text_sub}>Longitude:</Text>
-          <Text style={styles.text}>{restData.longitude}</Text>
+          <Text style={styles.text}>{restData.longitude}</Text> */}
           <Text style={styles.text_sub}>Station:</Text>
           <Text style={styles.text}>{restData.access["station"]}</Text>
           <Text style={styles.text_sub}>Open Time:</Text>

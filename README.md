@@ -1,8 +1,10 @@
 # Spring APP
 <!-- ![logo](assets/logo_bowl.png) -->
-<img src="./assets/logo_bowl.png" width="400">
+<img src="./assets/logo_bowl.png" width="400" alt="Logo">
 
 This was created during our time as students at Code Chrysalis.
+
+The application can be downloaded from [PlayStore](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
 
 ## Table of Contents
 
@@ -13,10 +15,9 @@ This was created during our time as students at Code Chrysalis.
 1.  [Authors](#authors)
 
 ## Description
-This app allows users to like or dislike jokes made specifically for them!
-Users can also see the most liked and disliked jokes of all time!
+This app allows users to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!   
 
-<img src="assets/logo_bowl.png" width="400" alt="shaun">
+<img src="assets/logo_bowl.png" width="400" alt="Logo">
 
 ## Link
 [Munchify](https://www.google.com/)
@@ -24,28 +25,20 @@ Users can also see the most liked and disliked jokes of all time!
 
 ## Project setup
 
+### Install Expo
+```
+Install expo from the expo website [Expo](https://expo.io/)
+```
+
 ### Install dependencies
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
+### Run Expo
 ```
-yarn serve
+yarn start
 ```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Built With
 
