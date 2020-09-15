@@ -112,8 +112,8 @@ export default function FavoritesView({ navigation }) {
                         <Body>
                           <Text style={styles.textTitle}>Name:</Text>
                           <Text style={styles.textBody}>{favorite.name}</Text>
-                          <Text style={styles.textTitle}>Open time:</Text>
-                          <Text style={styles.textBody}>{favorite.opentime}</Text>
+                          <Text style={styles.textTitle}>Type of Restaurant:</Text>
+                          <Text style={styles.textBody}>{favorite.category}</Text>
                           <Text style={styles.textTitle}>Telephone:</Text>
                           <Text style={styles.textBody}>{favorite.tel}</Text>
                           <Text style={styles.textTitle}>Link to Restaurant:</Text>
