@@ -67,6 +67,8 @@ export default function Auth({ navigation }) {
   }, [result]);
 
   function handleRedirect() {
+    dispatch(setUserId(null));
+    dispatch(setProfile(null));
     WebBrowser.dismissBrowser();
     navigation.navigate("Home");
   }
@@ -93,8 +95,10 @@ export default function Auth({ navigation }) {
             await WebBrowser.openBrowserAsync(
               `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
             );
+            console.log(redirectUrl);
             Linking.removeEventListener("url", handleRedirect);
             setName(null);
+            dispatch(setUserId(null));
           }}
         />
       </View>

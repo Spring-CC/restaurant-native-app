@@ -8,17 +8,14 @@ import {
   Alert,
   Platform,
 } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as AuthSession from "expo-auth-session";
-import * as WebBrowser from "expo-web-browser";
 import jwtDecode from "jwt-decode";
 import { setProfile, setPic, setUserId } from "../actions";
-import UserInfo from "./UserInfo";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
-WebBrowser.maybeCompleteAuthSession();
 
 export default function Landing({ navigation }) {
   const [name, setName] = useState(null);
@@ -41,6 +38,7 @@ export default function Landing({ navigation }) {
     },
     { authorizationEndpoint }
   );
+  console.log(`Redirect URL: ${redirectUri}`);
 
   useEffect(() => {
     if (result) {
@@ -84,10 +82,11 @@ export default function Landing({ navigation }) {
           </View>
 
           <TouchableOpacity
+            disabled={!request}
             accessibilityTraits="button"
             title="LOGIN"
             onPress={() => {
-              promptAsync();
+              promptAsync({ useProxy });
             }}
             activeOpacity={0.8}
             style={styles.button}
@@ -120,8 +119,46 @@ export default function Landing({ navigation }) {
           </TouchableOpacity>
         </View>
       ) : (
-        <View>
-          <UserInfo />
+        <View style={styles.container}>
+          <View style={styles.image}>
+            <Image
+              style={styles.logo}
+              source={require("../assets/logo_bowl.png")}
+            />
+          </View>
+
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={() => {
+              navigation.navigate("Profile");
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>PROFILE</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={() => {
+              navigation.navigate("Search");
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>SKIP</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={() => {
+              navigation.navigate("About");
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>ABOUT</Text>
+          </TouchableOpacity>
         </View>
       )}
     </View>

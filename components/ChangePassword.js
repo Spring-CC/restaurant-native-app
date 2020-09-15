@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import * as WebBrowser from "expo-web-browser";
-import { Button, StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  Button,
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+} from "react-native";
 
 // problems on this page are if I sign up with a random email, then go to my profile to click change password. Then I type in something random, it returns success, even though my password has not changed.
 
@@ -51,17 +58,31 @@ export default function changePassword({ navigation }) {
               />
             </View>
             <View>
-              <Button title="change password" onPress={() => change(email)} />
+              <TouchableOpacity
+                style={styles.change}
+                onPress={() => change(email)}
+              >
+                <Text> Change password </Text>
+              </TouchableOpacity>
             </View>
           </View>
         )}
       </View>
       <View>
-        <Button
+        <TouchableOpacity
           style={styles.button}
-          title="Go Home"
+          onPress={() => navigation.navigate("Profile", { screen: "UserInfo" })}
+        >
+          <Text> Go back to profile </Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity
+          style={styles.button}
           onPress={() => navigation.navigate("Home")}
-        />
+        >
+          <Text> Home </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -72,7 +93,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: "10",
+    padding: 10,
   },
   input: {
     height: 40,
@@ -82,7 +103,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button: {
-    padding: "10",
+    padding: 10,
     color: "#841584",
+  },
+  change: {
+    marginTop: 10,
+    padding: 10,
+    alignItems: "center",
   },
 });
