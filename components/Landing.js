@@ -103,7 +103,7 @@ export default function Landing({ navigation }) {
             activeOpacity={0.8}
             style={styles.button}
           >
-            <Text style={styles.text}>SKIP</Text>
+            <Text style={styles.text}>SEARCH</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
@@ -119,48 +119,48 @@ export default function Landing({ navigation }) {
           </TouchableOpacity>
         </View>
       ) : (
-        <View style={styles.container}>
-          <View style={styles.image}>
-            <Image
-              style={styles.logo}
-              source={require("../assets/logo_bowl.png")}
-            />
+          <View style={styles.container}>
+            <View style={styles.image}>
+              <Image
+                style={styles.logo}
+                source={require("../assets/logo_bowl.png")}
+              />
+            </View>
+
+            <TouchableOpacity
+              accessibilityTraits="button"
+              onPress={() => {
+                navigation.navigate("Profile");
+              }}
+              activeOpacity={0.8}
+              style={styles.button}
+            >
+              <Text style={styles.text}>PROFILE</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              accessibilityTraits="button"
+              onPress={() => {
+                navigation.navigate("Search");
+              }}
+              activeOpacity={0.8}
+              style={styles.button}
+            >
+              <Text style={styles.text}>SKIP</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              accessibilityTraits="button"
+              onPress={() => {
+                navigation.navigate("About");
+              }}
+              activeOpacity={0.8}
+              style={styles.button}
+            >
+              <Text style={styles.text}>ABOUT</Text>
+            </TouchableOpacity>
           </View>
-
-          <TouchableOpacity
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("Profile");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>PROFILE</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("Search");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>SKIP</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("About");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>ABOUT</Text>
-          </TouchableOpacity>
-        </View>
-      )}
+        )}
     </View>
   );
 }
