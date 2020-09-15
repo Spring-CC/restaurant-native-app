@@ -8,6 +8,7 @@ import {
   Alert,
   Platform,
 } from "react-native";
+
 import { useDispatch } from "react-redux";
 import * as AuthSession from "expo-auth-session";
 import jwtDecode from "jwt-decode";
@@ -146,7 +147,7 @@ export default function Landing({ navigation }) {
               activeOpacity={0.8}
               style={styles.button}
             >
-              <Text style={styles.text}>SKIP</Text>
+              <Text style={styles.text}>SEARCH</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
