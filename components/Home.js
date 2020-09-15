@@ -42,9 +42,8 @@ export default function Home({ navigation }) {
 
   async function getUserRecommendation(user) {
     console.log("In recommended");
-    const results = await axios.post(
-      `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
-      { userId: user }
+    const results = await axios.get(
+      `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
     );
     const data = results.data;
     console.log(userId);
