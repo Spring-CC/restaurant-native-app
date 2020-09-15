@@ -46,7 +46,7 @@ export default function Details({ navigation }) {
         user_Id: id,
         restaurant_Id: restId
       })
-      alert("Added to Favorites, Deletion is manage in Favorites Option")
+      alert("Added to Favorites")
       return;
     }
     //if the user exist it will check if the restaurant it is already on its favorites list
@@ -61,7 +61,7 @@ export default function Details({ navigation }) {
       user_Id: id,
       restaurant_Id: restId
     })
-    alert("Added to Favorites, Deletion is manage in Favorites Option")
+    alert("Added to Favorites")
 
   }
 
