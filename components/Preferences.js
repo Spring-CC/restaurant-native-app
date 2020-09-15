@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputAutoSuggest } from 'react-native-autocomplete-search';
+// import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -30,7 +30,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
 //import Slider from './Slider'
-// import Spinner from 'react-native-loading-spinner-overlay';
+import Spinner from 'react-native-loading-spinner-overlay';
 import data from "../data/autoinfo.json";
 import locationFilter from "../actions/locationFilter";
 
@@ -550,13 +550,13 @@ export default function Preferences({ navigation }) {
             </Picker>
         </View> */}
 
-          <InputAutoSuggest
+          {/* <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
         onDataSelectedChange={loc => {
           dispatch(setLocations((loc)))
         }}
-        />
+        /> */}
         </Card>
 
         <Button
