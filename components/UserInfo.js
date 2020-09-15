@@ -12,6 +12,7 @@ import Icon from "react-native-vector-icons/Foundation";
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
 import { useSelector, useDispatch } from "react-redux";
+import { setProfile, setPic, setUserId } from "../actions";
 
 export default function UserInfo({ navigation }) {
   // const profileImage = require("../assets/profile.jpeg");
@@ -22,6 +23,7 @@ export default function UserInfo({ navigation }) {
 
   function handleRedirect() {
     dispatch(setUserId(null));
+    dispatch(setProfile(null));
     WebBrowser.dismissBrowser();
     navigation.navigate("Home");
   }
