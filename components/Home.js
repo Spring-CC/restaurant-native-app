@@ -43,7 +43,7 @@ export default function Home({ navigation }) {
   async function getUserRecommendation(user) {
     console.log("In recommended");
     const results = await axios.get(
-      `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
+      `https://localhost:8080/dummyfavorites/${user}`
     );
     const data = results.data;
     console.log(userId);
@@ -52,7 +52,7 @@ export default function Home({ navigation }) {
   }
 
   useEffect(() => {
-    if (userId === "") {
+    if (userId === "" ) {
       getRestaurants();
     } else {
       getUserRecommendation(userId);
