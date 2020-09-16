@@ -1,16 +1,12 @@
 import * as React from "react";
+
 import { Button, View, Text, StyleSheet } from "react-native";
-import { createAppContainer } from "react-navigation";
-import {
-  createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-} from "@react-navigation/drawer";
+
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
 // import Icon from "react-native-vector-icons/FontAwesome";
-import Login from "./Auth";
-import SignUp from "./SignUp";
+
 import Search from "./Home";
 import Landing from "./Landing";
 import About from "./About";
@@ -21,9 +17,9 @@ import Preferences from "./Preferences";
 import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
 
-export default function DrawerNavigator() {
+export default function DrawerNavigator({ navigation }) {
   const MainDrawerNavigator = createDrawerNavigator();
-  const name = useSelector((state) => state.profileReducer)[0].name;
+  const name = useSelector((state) => state.profileReducer);
 
   const Stack = createStackNavigator();
   function SearchStack() {
@@ -53,16 +49,15 @@ export default function DrawerNavigator() {
       </Stack.Navigator>
     );
   }
-
-  function UserInfoStack() {
+  function LandingStack() {
     return (
       <Stack.Navigator
         headerShown={false}
         options={{ headerMode: "none", headerShown: false }}
       >
         <Stack.Screen
-          name="UserInfo"
-          component={UserInfo}
+          name="Landing"
+          component={Landing}
           options={{
             headerMode: "none",
             header: null,
@@ -82,10 +77,37 @@ export default function DrawerNavigator() {
     );
   }
 
+  // function UserInfoStack() {
+  //   return (
+  //     <Stack.Navigator
+  //       headerShown={false}
+  //       options={{ headerMode: "none", headerShown: false }}
+  //     >
+  //       <Stack.Screen
+  //         name="UserInfo"
+  //         component={UserInfo}
+  //         options={{
+  //           headerMode: "none",
+  //           header: null,
+  //           headerShown: false,
+  //         }}
+  //       />
+  //       <Stack.Screen
+  //         name="ChangePassword"
+  //         component={ChangePassword}
+  //         options={{
+  //           headerMode: "none",
+  //           header: null,
+  //           headerShown: false,
+  //         }}
+  //       />
+  //     </Stack.Navigator>
+  // );
+  // }
+
   return (
     <MainDrawerNavigator.Navigator
-      initialRouteName="Landing"
-      // drawerContent={(props) => <CustomDrawerContent {...props} />}
+      initialRouteName="Home"
       options={{
         headerStyle: { backgroundColor: "#f4511e" },
         headerTintColor: "#fff",
@@ -105,13 +127,14 @@ export default function DrawerNavigator() {
         drawerBackgroundColor: "#F8961E", // sets background color of drawer
       }}
     >
-      <MainDrawerNavigator.Screen name="Home" component={Landing} />
+      <MainDrawerNavigator.Screen name="Home" component={LandingStack} />
       <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
 
-      <MainDrawerNavigator.Screen name="Profile" component={UserInfoStack} />
-
-      <MainDrawerNavigator.Screen name="Login" component={Auth} />
-      {/* TODO: switch to signout when logged in */}
+      {/* {name ? (
+        <MainDrawerNavigator.Screen name="Profile" component={UserInfoStack} />
+      ) : (
+        <MainDrawerNavigator.Screen name="Login" component={Auth} />
+      )} */}
 
       <MainDrawerNavigator.Screen name="Preferences" component={Preferences} />
       <MainDrawerNavigator.Screen name="About" component={About} />
