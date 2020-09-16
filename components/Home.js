@@ -44,6 +44,7 @@ export default function Home({ navigation }) {
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
+      
     );
     const data = results.data;
     console.log(userId);
@@ -67,7 +68,7 @@ export default function Home({ navigation }) {
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
         {
-          restId: swiped_left,
+          restId: likedResId,
         }
       );
       await axios.post(
@@ -133,13 +134,13 @@ export default function Home({ navigation }) {
               <CardItem>
                 <ScrollView>
                   <Body>
-                    <Text style={styles.text_sub}>Name:</Text>
+                    <Text style={styles.text}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text_sub}>Type of Restaurant:</Text>
+                    <Text style={styles.text}>Type of Restaurant:</Text>
                     <Text style={styles.text}>{item.category}</Text>
-                    <Text style={styles.text_sub}>Station:</Text>
+                    <Text style={styles.text}>Station:</Text>
                     <Text style={styles.text}>{item.access["station"]}</Text>
-                    <Text style={styles.text_sub}>Open Hours:</Text>
+                    <Text style={styles.text}>Open Hours:</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
                   </Body>
                 </ScrollView>
@@ -187,10 +188,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "MPLUS1p-Bold",
-    marginBottom: 10,
   },
   text_sub: {
     fontFamily: "MPLUS1p-Bold",
-    color: '#F3722C',
+    textDecorationLine: "underline",
   },
 });
