@@ -150,22 +150,27 @@ export default function Home({ navigation }) {
         />
       </View>
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
-          <Button active vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+          <Button
+            active
+            vertical
+            onPress={() => navigation.navigate("Search")}
+            style={{ backgroundColor: "#F8961E" }}
+          >
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>

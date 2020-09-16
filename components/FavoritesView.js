@@ -41,7 +41,7 @@ export default function FavoritesView({ navigation }) {
     const resultsRes = await axios.get(
       "https://restaurantserverspring.herokuapp.com/restAtlas"
     );
-      const dataRes = resultsRes.data;
+    const dataRes = resultsRes.data;
     // console.log(id)
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
@@ -153,22 +153,27 @@ export default function FavoritesView({ navigation }) {
         </View>
       </ScrollView>
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
-          <Button active vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+          <Button
+            active
+            vertical
+            onPress={() => navigation.navigate("Favorites")}
+            style={{ backgroundColor: "#F8961E" }}
+          >
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
