@@ -146,13 +146,6 @@ export default function Home({ navigation }) {
               </CardItem>
             </Card>
           )}
-          renderEmpty={() => (
-            <Card style={{ elevation: 3 }}>
-              <CardItem>
-                <Text>No restaurants match your selected preference.</Text>
-              </CardItem>
-            </Card>
-          )}
         />
       </View>
       <Footer>
