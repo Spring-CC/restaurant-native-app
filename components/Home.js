@@ -62,7 +62,7 @@ export default function Home({ navigation }) {
 
   async function liked(card) {
     try {
-      const swiped_left = card.id;
+      const likedResId = card.id;
       const likedRes = card;
 
       await axios.post(
