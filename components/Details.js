@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   StyleSheet,
@@ -14,7 +14,7 @@ import axios from 'axios';
 
 export default function Details({ navigation }) {
 
-
+  const [isSelected, setSelection] = useState(false)
   const restData = useSelector((state) => state.restaurantReducer);
   const userId = useSelector((state) => state.userIdReducer);
 
@@ -65,6 +65,32 @@ export default function Details({ navigation }) {
 
   }
 
+async function checkFavorites(){
+
+const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
+
+const data = favoritesUsers.data;
+
+const result = data.filter(item => item.user_Id === userId)
+console.log(result);
+if(result[0].restaurant_Id.includes(restData.id)){
+  setSelection(true);
+}
+
+}
+
+useEffect(() => {
+  checkFavorites();
+}, [])
+
+async function deleteFavorite(userId, restId) {
+
+  await axios.patch("https://restaurantserverspring.herokuapp.com/deleteFavorite", {
+    user_Id: userId,
+    restaurant_Id: restId,
+  })
+  console.log("restaurant remove from favorites")
+}
 
 
   return (
@@ -81,13 +107,26 @@ export default function Details({ navigation }) {
             }} />
         </View>
         <View style={styles.text_title}>
-
-          <Button
+          {isSelected ? (
+            <Button
+            title="Delete from Favorites 💔"
+            color="#ff3300"
+            onPress={() => {
+              deleteFavorite(userId, restData.id);
+              setSelection(false);
+            }
+          } />
+          ):(
+            <Button
             title="Add to Favorites ❤️"
             color="#ff3300"
             onPress={() => {
               updateToDatabase(userId, restData.id);
+              setSelection(true);
             }} />
+
+          )}
+
 
         </View>
         <Image

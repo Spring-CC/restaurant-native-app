@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { InputAutoSuggest } from 'react-native-autocomplete-search';
+import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -38,27 +38,37 @@ import locationFilter from "../actions/locationFilter";
 // needs comments
 export default function Preferences({ navigation }) {
   const [loading, setLoading] = useState(false);
+  const categories = useSelector((state) => state.categoryReducer);
+  const price = useSelector((state) => state.priceReducer);
+  const location = useSelector((state) => state.locationReducer);
+  const priceCheck = useSelector((state) => state.priceCheckReducer);
+  const restaurantList = useSelector((state) => state.restaurantsListReducer);
+  const dispatch = useDispatch();
 
   //function to filter restaurants through preferences
   async function getRestaurants() {
     setLoading(true);
+    //Get all restaurants from DB
     try {
       const results = await axios.get(
         "https://restaurantserverspring.herokuapp.com/restAtlas"
       );
       const restaurants = results.data;
+      //Filter restaurants by budget
       const filtBudget = restaurants.filter(
         (res) => res.budget >= price.min && res.budget <= price.max
       );
       const filtCat = categoryFilter(filtBudget, categories);
 
-      if (location === "" || location === null) {
+      //if location is selected filter by location as well
+      if (location !== "") {
         const finalFil = locationFilter(filtCat, location);
         if (finalFil.length === 0) {
           setLoading(false);
           alert(
             "No restaurants found with those preferences, please change the preferences"
           );
+          dispatch(setLocations(("")))
           return;
         }
         dispatch(setRestaurantsList(finalFil));
@@ -66,9 +76,12 @@ export default function Preferences({ navigation }) {
           setLoading(false);
           navigation.navigate("Search");
         }, 2000);
+        dispatch(setLocations(("")))
+        console.log(location)
         return;
       }
 
+      //if no location is selected, filter by other preferences only
       // console.log(filtCat)
       if (filtCat.length === 0) {
         setLoading(false);
@@ -83,6 +96,8 @@ export default function Preferences({ navigation }) {
         setLoading(false);
         navigation.navigate("Search");
       }, 2000);
+      dispatch(setLocations(("")))
+      console.log(location)
     } catch (err) {
       setLoading(false);
       return;
@@ -109,12 +124,6 @@ export default function Preferences({ navigation }) {
     dispatch(setpriceCheckBox(selection))
   };
 
-  const categories = useSelector((state) => state.categoryReducer);
-  const price = useSelector((state) => state.priceReducer);
-  const location = useSelector((state) => state.locationReducer);
-  const priceCheck = useSelector((state) => state.priceCheckReducer);
-  const restaurantList = useSelector((state) => state.restaurantsListReducer);
-  const dispatch = useDispatch();
 
   if (loading === true) {
     return (
@@ -528,13 +537,13 @@ export default function Preferences({ navigation }) {
             </Picker>
         </View> */}
 
-          {/* <InputAutoSuggest
+          <InputAutoSuggest
         style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
         staticData={data}
         onDataSelectedChange={loc => {
           dispatch(setLocations((loc)))
         }}
-        /> */}
+        />
         </Card>
 
         <Button
