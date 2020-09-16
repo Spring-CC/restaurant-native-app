@@ -61,13 +61,13 @@ export default function Home({ navigation }) {
 
   async function liked() {
     try {
-      const likedResId = restaurants[0].id;
+      const swiped_left = restaurants[0].id;
       const likedRes = restaurant[0];
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
         {
-          restId: likedResId,
+          restId: swiped_left,
         }
       );
       await axios.post(
@@ -89,8 +89,13 @@ export default function Home({ navigation }) {
 
   async function unlicked() {
     try {
+      const swiped_left = restaurants[0].id;
+
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`
+        `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
+        {
+          restId: swiped_left,
+        }
       );
     } catch (err) {
       console.log(err);
@@ -104,7 +109,7 @@ export default function Home({ navigation }) {
         <DeckSwiper
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
-          onSwipeLeft={() => console.log("No")}
+          onSwipeLeft={() => unlicked()}
           renderItem={(item) => (
             <Card style={{ elevation: 3 }}>
               <CardItem>
