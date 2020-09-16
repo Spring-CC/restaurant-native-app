@@ -20,7 +20,7 @@ export default function Details({ navigation }) {
 
   async function updateToDatabase(id, restId) {
 
-    if (id === '' || id === null || id===undefined) {
+    if (id === '' || id === null || id === undefined) {
       alert("No user login")
       return
     }
@@ -98,13 +98,15 @@ async function deleteFavorite(userId, restId) {
     <ScrollView>
       <Nav />
       <ScrollView style={styles.container}>
-        <View>
+        <View style={{ backgroundColor: "#F3722C" }}>
           <Button
             title="Go Back"
+            color='#fff'
             onPress={() => {
               // Navigate using the `navigation` prop that you received
               navigation.navigate('Search');
-            }} />
+            }}
+          />
         </View>
         <View style={styles.text_title}>
           {isSelected ? (
@@ -135,10 +137,11 @@ async function deleteFavorite(userId, restId) {
           }}
           style={styles.image}
         />
-        <View>
+        <View style={{ backgroundColor: "#90BE6D", marginBottom: 5 }}>
           <Button
             style={styles.button}
             title="Go To Maps"
+            color='#fff'
             onPress={() =>
               Linking.openURL(
                 `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`

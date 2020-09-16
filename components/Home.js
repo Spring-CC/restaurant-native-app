@@ -42,14 +42,14 @@ export default function Home({ navigation }) {
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
-      
+
     );
     const data = results.data;
-    
+
     console.log(data);
     dispatch(setRestaurantsList(data));
   }
-  
+
   useEffect(() => {
     if (userId === "") {
       getRestaurants();
@@ -132,40 +132,45 @@ export default function Home({ navigation }) {
                 />
               </CardItem>
               <CardItem>
-                <ScrollView>
-                  <Body>
-                    <Text style={styles.text}>Name:</Text>
+                <Body>
+                  <ScrollView>
+                    <Text style={styles.text_sub}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text}>Type of Restaurant:</Text>
+                    <Text style={styles.text_sub}>Type of Restaurant:</Text>
                     <Text style={styles.text}>{item.category}</Text>
-                    <Text style={styles.text}>Station:</Text>
+                    <Text style={styles.text_sub}>Station:</Text>
                     <Text style={styles.text}>{item.access["station"]}</Text>
-                    <Text style={styles.text}>Open Hours:</Text>
+                    <Text style={styles.text_sub}>Open Hours:</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
-                  </Body>
-                </ScrollView>
+                  </ScrollView>
+                </Body>
               </CardItem>
             </Card>
           )}
         />
       </View>
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
-          <Button active vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+          <Button
+            active
+            vertical
+            onPress={() => navigation.navigate("Search")}
+            style={{ backgroundColor: "#F8961E" }}
+          >
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
@@ -184,6 +189,6 @@ const styles = StyleSheet.create({
   },
   text_sub: {
     fontFamily: "MPLUS1p-Bold",
-    textDecorationLine: "underline",
+    color: '#F3722C',
   },
 });
