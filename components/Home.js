@@ -89,7 +89,8 @@ export default function Home({ navigation }) {
 
   async function unliked(card) {
     try {
-      const swiped_left = card.id;
+      const swiped_left = restData.id;
+
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
@@ -143,13 +144,6 @@ export default function Home({ navigation }) {
                     <Text style={styles.text}>{item.opentime}</Text>
                   </Body>
                 </ScrollView>
-              </CardItem>
-            </Card>
-          )}
-          renderEmpty={() => (
-            <Card style={{ elevation: 3 }}>
-              <CardItem>
-                <Text>No restaurants match your selected preference.</Text>
               </CardItem>
             </Card>
           )}

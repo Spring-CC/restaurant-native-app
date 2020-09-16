@@ -57,7 +57,7 @@ export default function Preferences({ navigation }) {
         if (finalFil.length === 0) {
           setLoading(false);
           alert(
-            "No restaurants found with those preferences, please change the prefrences"
+            "No restaurants found with those preferences, please change the preferences"
           );
           return;
         }
@@ -73,7 +73,7 @@ export default function Preferences({ navigation }) {
       if (filtCat.length === 0) {
         setLoading(false);
         alert(
-          "No restaurants found with those preferences, please change the prefrences"
+          "No restaurants found with those preferences, please change the preferences"
         );
         return;
       }
