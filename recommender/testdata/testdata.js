@@ -14,7 +14,6 @@ const createData = () => {
     }
     result.push(obj);
   }
-
   return result;
 };
 

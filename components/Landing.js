@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import * as WebBrowser from "expo-web-browser";
+import * as Linking from "expo-linking";
+import * as AuthSession from "expo-auth-session";
+import jwtDecode from "jwt-decode";
 import {
   StyleSheet,
   View,
@@ -10,8 +14,6 @@ import {
 } from "react-native";
 
 import { useDispatch } from "react-redux";
-import * as AuthSession from "expo-auth-session";
-import jwtDecode from "jwt-decode";
 import { setProfile, setPic, setUserId } from "../actions";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
@@ -69,11 +71,82 @@ export default function Landing({ navigation }) {
     }
   }, [result]);
 
+  function handleRedirect() {
+    dispatch(setUserId(null));
+    dispatch(setProfile(null));
+    WebBrowser.dismissBrowser();
+    navigation.navigate("Home", { screen: "Landing" });
+  }
+
   return (
-    //only renders first time
-    //then will show user profile
     <View>
-      {!name ? (
+      {name ? (
+        <View style={styles.container}>
+          <View style={styles.image}>
+            <Image
+              style={styles.logo}
+              source={require("../assets/logo_bowl.png")}
+            />
+          </View>
+          <View>
+            <Text>Welcome, {name}!</Text>
+          </View>
+
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={async () => {
+              Linking.addEventListener("url", handleRedirect);
+              const redirectUrl = Linking.makeUrl("/");
+              await WebBrowser.openBrowserAsync(
+                `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
+              );
+              console.log(redirectUrl);
+              Linking.removeEventListener("url", handleRedirect);
+              setName(null);
+              dispatch(setUserId(null));
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>LOGOUT</Text>
+          </TouchableOpacity>
+
+          <View>
+            <TouchableOpacity
+              accessibilityTraits="button"
+              onPress={() => {
+                navigation.navigate("ChangePassword");
+              }}
+              activeOpacity={0.8}
+              style={styles.button}
+            >
+              <Text style={styles.text}>CHANGE PASSWORD</Text>
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={() => {
+              navigation.navigate("Search");
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>SEARCH</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={() => {
+              navigation.navigate("About");
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>ABOUT</Text>
+          </TouchableOpacity>
+        </View>
+      ) : (
         <View style={styles.container}>
           <View style={styles.image}>
             <Image
@@ -119,49 +192,7 @@ export default function Landing({ navigation }) {
             <Text style={styles.text}>ABOUT</Text>
           </TouchableOpacity>
         </View>
-      ) : (
-          <View style={styles.container}>
-            <View style={styles.image}>
-              <Image
-                style={styles.logo}
-                source={require("../assets/logo_bowl.png")}
-              />
-            </View>
-
-            <TouchableOpacity
-              accessibilityTraits="button"
-              onPress={() => {
-                navigation.navigate("Profile");
-              }}
-              activeOpacity={0.8}
-              style={styles.button}
-            >
-              <Text style={styles.text}>PROFILE</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              accessibilityTraits="button"
-              onPress={() => {
-                navigation.navigate("Search");
-              }}
-              activeOpacity={0.8}
-              style={styles.button}
-            >
-              <Text style={styles.text}>SEARCH</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              accessibilityTraits="button"
-              onPress={() => {
-                navigation.navigate("About");
-              }}
-              activeOpacity={0.8}
-              style={styles.button}
-            >
-              <Text style={styles.text}>ABOUT</Text>
-            </TouchableOpacity>
-          </View>
-        )}
+      )}
     </View>
   );
 }

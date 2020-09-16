@@ -21,8 +21,6 @@ import Nav from "./Nav";
 
 export default function Home({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
-  const categories = useSelector((state) => state.categoryReducer);
-  const price = useSelector((state) => state.priceReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
 
@@ -59,19 +57,19 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-  async function liked() {
+  async function liked(user, restaurant) {
     try {
-      const likedResId = restaurants[0].id;
-      const likedRes = restaurant[0];
+      const likedResId = restaurant.id;
+      const likedRes = restaurant;
 
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
+        `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
         {
           restId: likedResId,
         }
       );
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`,
+        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
         {
           rest: likedRes,
         }
@@ -83,14 +81,20 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-    liked();
+    console.log(restData)
+    liked(userId, restData);
     navigation.navigate("Details");
   }
 
   async function unlicked() {
     try {
+      const swiped_left = restData.id;
+
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`
+        `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
+        {
+          restId: swiped_left,
+        }
       );
     } catch (err) {
       console.log(err);
@@ -104,7 +108,7 @@ export default function Home({ navigation }) {
         <DeckSwiper
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
-          onSwipeLeft={() => console.log("No")}
+          onSwipeLeft={() => unlicked()}
           renderItem={(item) => (
             <Card style={{ elevation: 3 }}>
               <CardItem>

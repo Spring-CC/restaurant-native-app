@@ -68,20 +68,20 @@ export default function changePassword({ navigation }) {
           </View>
         )}
       </View>
-      <View>
+      {/* <View>
         <TouchableOpacity
           style={styles.button}
           onPress={() => navigation.navigate("Profile", { screen: "UserInfo" })}
         >
           <Text> Go back to profile </Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
       <View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Home", { screen: "Landing" })}
         >
-          <Text> Home </Text>
+          <Text>Go Home </Text>
         </TouchableOpacity>
       </View>
     </View>
