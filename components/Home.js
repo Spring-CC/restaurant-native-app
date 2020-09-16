@@ -21,8 +21,6 @@ import Nav from "./Nav";
 
 export default function Home({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
-  const categories = useSelector((state) => state.categoryReducer);
-  const price = useSelector((state) => state.priceReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
 
@@ -47,11 +45,11 @@ export default function Home({ navigation }) {
       
     );
     const data = results.data;
-    console.log(userId);
+    
     console.log(data);
     dispatch(setRestaurantsList(data));
   }
-
+  
   useEffect(() => {
     if (userId === "") {
       getRestaurants();
@@ -60,19 +58,21 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-  async function liked(card) {
+
+  async function liked(user, restaurant) {
     try {
-      const swiped_left = card.id;
-      const likedRes = card;
+      const likedResId = restaurant.id;
+      const likedRes = restaurant;
+
 
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
+        `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
         {
           restId: likedResId,
         }
       );
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`,
+        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
         {
           rest: likedRes,
         }
@@ -84,13 +84,17 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-    liked(card);
+
+    console.log(restData)
+    liked(userId, restData);
+
     navigation.navigate("Details");
   }
 
   async function unliked(card) {
     try {
-      const swiped_left = card.id;
+      const swiped_left = restData.id;
+
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,

@@ -42,7 +42,7 @@ export default function Details({ navigation }) {
 
     if (newInfo) {
 
-      const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
+      await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
         user_Id: id,
         restaurant_Id: restId
       })
@@ -57,7 +57,7 @@ export default function Details({ navigation }) {
       }
     }
 
-    const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
+    await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
       user_Id: id,
       restaurant_Id: restId
     })
