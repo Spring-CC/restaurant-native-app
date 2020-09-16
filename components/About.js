@@ -9,10 +9,8 @@ import {
 import {
   Container,
   View,
-  DeckSwiper,
   Card,
   CardItem,
-  Left,
   Body,
   Footer,
   FooterTab,
@@ -28,23 +26,21 @@ export default function About({ navigation }) {
     <Container>
       <ScrollView style={styles.container}>
         <Nav />
-        <View style={styles.about}>
-          <Text>
-            THIS WILL BE WHAT OUR APP IS ABOUT, THIS IS JUST THE PLACEHOLDER
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-            {"\n"}
-          </Text>
-        </View>
+        <Card style={styles.about}>
+          <CardItem header style={{ backgroundColor: '#2A9D8F' }}>
+            <Text style={{ color: '#fff' }}>Munchify</Text>
+          </CardItem>
+          <CardItem style={{ backgroundColor: '#2A9D8F' }}>
+            <Body>
+              <Text style={{ color: '#fff' }}>
+                This app allows you to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!
+              </Text>
+            </Body>
+          </CardItem>
+          <CardItem footer style={{ backgroundColor: '#2A9D8F' }}>
+            <Text style={{ color: '#fff' }}>Munchify Team</Text>
+          </CardItem>
+        </Card>
         <View style={styles.box1}>
           <Text style={styles.text}>Eri Shimada</Text>
           <Image
@@ -125,22 +121,22 @@ export default function About({ navigation }) {
         </View>
       </ScrollView>
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
@@ -169,11 +165,13 @@ const styles = StyleSheet.create({
     color: "dodgerblue",
   },
   about: {
-    margin: 10,
+    marginLeft: 10,
+    marginRight: 10,
     borderRadius: 12,
     backgroundColor: "#2A9D8F",
     alignItems: "center",
     borderRadius: 12,
+    padding: 10,
   },
   box1: {
     justifyContent: "center",
