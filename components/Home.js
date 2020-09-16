@@ -134,13 +134,13 @@ export default function Home({ navigation }) {
               <CardItem>
                 <Body>
                   <ScrollView>
-                    <Text style={styles.text_sub}>Name:</Text>
+                    <Text style={styles.text_sub}>Name</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text_sub}>Type of Restaurant:</Text>
+                    <Text style={styles.text_sub}>Type of Restaurant</Text>
                     <Text style={styles.text}>{item.category}</Text>
-                    <Text style={styles.text_sub}>Station:</Text>
+                    <Text style={styles.text_sub}>Station</Text>
                     <Text style={styles.text}>{item.access["station"]}</Text>
-                    <Text style={styles.text_sub}>Open Hours:</Text>
+                    <Text style={styles.text_sub}>Open Hours</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
                   </ScrollView>
                 </Body>

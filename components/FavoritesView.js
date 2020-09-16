@@ -135,13 +135,13 @@ export default function FavoritesView({ navigation }) {
                     <Card key={index} style={styles.card}>
                       <CardItem>
                         <Body>
-                          <Text style={styles.textTitle}>Name:</Text>
+                          <Text style={styles.textTitle}>Name</Text>
                           <Text style={styles.textBody}>{favorite.name}</Text>
-                          <Text style={styles.textTitle}>Type of Restaurant:</Text>
+                          <Text style={styles.textTitle}>Type of Restaurant</Text>
                           <Text style={styles.textBody}>{favorite.category}</Text>
-                          <Text style={styles.textTitle}>Telephone:</Text>
+                          <Text style={styles.textTitle}>Telephone</Text>
                           <Text style={styles.textBody}>{favorite.tel}</Text>
-                          <Text style={styles.textTitle}>Link to Restaurant:</Text>
+                          <Text style={styles.textTitle}>Link to Restaurant</Text>
                           <Text style={styles.linkText}
                             onPress={() => Linking.openURL(favorite.url)}>
                             Press To Go to Restaurant Page</Text>
