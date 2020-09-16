@@ -46,11 +46,11 @@ export default function Home({ navigation }) {
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
     );
     const data = results.data;
-    console.log(userId);
+    
     console.log(data);
     dispatch(setRestaurantsList(data));
   }
-
+  
   useEffect(() => {
     if (userId === "" ) {
       getRestaurants();
