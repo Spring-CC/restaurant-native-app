@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import { InputAutoSuggest } from 'react-native-autocomplete-search';
+// import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -151,7 +151,7 @@ export default function Preferences({ navigation }) {
                   );
                 }}
               />
-              <BouncyCheckbox
+              {/* <BouncyCheckbox
                 isChecked={categories["日本料理"]}
                 text="Japanese 🍙"
                 textDecoration={true}
@@ -160,7 +160,7 @@ export default function Preferences({ navigation }) {
                     category((categories["日本料理"] = !categories["日本料理"]))
                   );
                 }}
-              />
+              /> */}
               <BouncyCheckbox
                 isChecked={categories["寿司"]}
                 text="Sushi / Seafood 🍣"
@@ -522,7 +522,7 @@ export default function Preferences({ navigation }) {
                 dispatch(setLocations((location.name = itemValue)));
               }}
             >
-              {mockdata.map((elem) => (
+              {data.map((elem) => (
                 <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
               ))}
             </Picker>
