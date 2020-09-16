@@ -6,6 +6,7 @@ import {
   // Text,
   // Button,
   SafeAreaView,
+  TouchableOpacity,
 } from "react-native";
 import {
   Container,
@@ -16,12 +17,12 @@ import {
   Icon,
   Text,
 } from "native-base";
-import Icon2 from "react-native-vector-icons/Foundation";
 
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
 import { useSelector, useDispatch } from "react-redux";
 import { setProfile, setPic, setUserId } from "../actions";
+import Nav from "./Nav";
 
 export default function UserInfo({ navigation }) {
   // const profileImage = require("../assets/profile.jpeg");
@@ -90,63 +91,44 @@ export default function UserInfo({ navigation }) {
   } else {
     return (
       <Container>
+        <Nav />
         <View style={styles.container}>
-          <View style={styles.header}>
-            <View style={styles.headerContent}>
-              <Image style={styles.avatar} source={{ uri: profileImage }} />
-              <Text style={styles.name}>Hello, {name} !</Text>
-            </View>
-          </View>
           <View style={styles.body}>
-            <View style={styles.item}>
-              <View style={styles.iconContent}>
-                <Icon2 style={styles.icon} name="key" size={30} />
-              </View>
-              <View style={styles.infoContent}>
-                <Text
-                  style={styles.info}
-                  onPress={() => navigation.navigate("ChangePassword")}
-                >
-                  Change Password
-              </Text>
-              </View>
+            <Text style={styles.name}>Hello, {name} !</Text>
+            <View style={styles.button}>
+              <TouchableOpacity onPress={() => navigation.navigate("Share")}>
+                <Text style={styles.text}>Share</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.button}>
+              <TouchableOpacity onPress={() => navigation.navigate("Receive")}>
+                <Text style={styles.text}>Receive</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.button}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("ChangePassword")}
+              >
+                <Text style={styles.text}>Change Password</Text>
+              </TouchableOpacity>
             </View>
 
-            <View style={styles.item}>
-              <View style={styles.iconContent}>
-                <Icon2 style={styles.icon} name="heart" size={30} />
-              </View>
-              <View style={styles.infoContent}>
-                <Text
-                  style={styles.info}
-                  onPress={() => navigation.navigate("Favorites")}
-                >
-                  Favorites
-              </Text>
-              </View>
-            </View>
-            <View style={styles.item}>
-              <View style={styles.iconContent}>
-                <Icon2 style={styles.icon} name="x" size={30} />
-              </View>
-              <View style={styles.infoContent}>
-                <Text
-                  style={styles.info}
-                  onPress={async () => {
-                    Linking.addEventListener("url", handleRedirect);
-                    const redirectUrl = Linking.makeUrl("/");
-                    await WebBrowser.openBrowserAsync(
-                      `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
-                    );
-                    console.log(redirectUrl);
-                    Linking.removeEventListener("url", handleRedirect);
-                    dispatch(setProfile(null));
-                    dispatch(setUserId(null));
-                  }}
-                >
-                  Log Out
-              </Text>
-              </View>
+            <View style={styles.button}>
+              <TouchableOpacity
+                onPress={async () => {
+                  Linking.addEventListener("url", handleRedirect);
+                  const redirectUrl = Linking.makeUrl("/");
+                  await WebBrowser.openBrowserAsync(
+                    `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
+                  );
+                  console.log(redirectUrl);
+                  Linking.removeEventListener("url", handleRedirect);
+                  dispatch(setProfile(null));
+                  dispatch(setUserId(null));
+                }}
+              >
+                <Text style={styles.text}>Logout</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -176,38 +158,19 @@ export default function UserInfo({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  header: {
+  container: {
+    flex: 1,
     backgroundColor: "#F9C74F",
+    padding: 5,
   },
-  background: {
-    alignItems: "center",
-  },
-  headerContent: {
-    marginTop: 30,
-    padding: 30,
-    alignItems: "center",
-  },
-  avatar: {
-    width: 130,
-    height: 130,
-    borderRadius: 63,
-    borderWidth: 4,
-    borderColor: "white",
-    marginBottom: 10,
-  },
+
   name: {
     fontSize: 22,
     color: "#000000",
     fontWeight: "600",
   },
-  userInfo: {
-    fontSize: 16,
-    color: "#778899",
-    fontWeight: "600",
-  },
+
   body: {
-    // backgroundColor: "#DCDCDC",
-    height: 500,
     alignItems: "center",
   },
   logo: {
@@ -215,27 +178,11 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  item: {
-    flexDirection: "row",
-  },
-  infoContent: {
-    flex: 1,
-    alignItems: "flex-start",
-    paddingLeft: 5,
-  },
-  iconContent: {
-    flex: 1,
-    alignItems: "flex-end",
-    paddingRight: 5,
-  },
-  icon: {
-    height: 30,
-    marginTop: 20,
-  },
-  info: {
-    fontSize: 18,
-    marginTop: 20,
-    // color: "#FFFFFF",
+  text: {
+    marginVertical: 10,
+    fontFamily: "MPLUS1p-Medium",
+    textAlign: "center",
+    color: "#fff",
   },
   button: {
     marginTop: 10,
@@ -246,6 +193,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     width: 250,
     borderRadius: 30,
-    backgroundColor: "#00BFFF",
+    backgroundColor: "#E6772E",
   },
 });

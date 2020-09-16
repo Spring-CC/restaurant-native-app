@@ -100,10 +100,10 @@ export default function Landing({ navigation }) {
     }
   }, [result]);
 
-  function handleRedirect() {
-    WebBrowser.dismissBrowser();
-    navigation.navigate("Home", { screen: "Landing" });
-  }
+  // function handleRedirect() {
+  //   WebBrowser.dismissBrowser();
+  //   navigation.navigate("Home", { screen: "Landing" });
+  // }
 
   return (
     <View style={styles.container}>
@@ -116,77 +116,64 @@ export default function Landing({ navigation }) {
       {name ? (
         <View>
           <View>
-            <Text style={styles.text}>Welcome, {name}!</Text>
+            <Text style={styles.welcometext}>Welcome, {name}!</Text>
           </View>
-
-          <TouchableOpacity
-            accessibilityTraits="button"
-            onPress={async () => {
-              Linking.addEventListener("url", handleRedirect);
-              const redirectUrl = Linking.makeUrl("/");
-              await WebBrowser.openBrowserAsync(
-                `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
-              );
-              console.log(redirectUrl);
-              Linking.removeEventListener("url", handleRedirect);
-              setName(null);
-              dispatch(setUserId(null));
-              dispatch(setProfile(null));
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>LOGOUT</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("Change Password");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>CHANGE PASSWORD</Text>
-          </TouchableOpacity>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              accessibilityTraits="button"
+              onPress={() => {
+                navigation.navigate("Profile");
+              }}
+              activeOpacity={0.8}
+              style={styles.button}
+            >
+              <Text style={styles.text}>PROFILE</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       ) : (
         <View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              disabled={!request}
+              accessibilityTraits="button"
+              title="LOGIN"
+              onPress={() => {
+                promptAsync({ useProxy });
+              }}
+              activeOpacity={0.8}
+              style={styles.button}
+            >
+              <Text style={styles.text}>LOGIN</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      )}
+      <View>
+        <View style={styles.buttonContainer}>
           <TouchableOpacity
-            disabled={!request}
             accessibilityTraits="button"
-            title="LOGIN"
             onPress={() => {
-              promptAsync({ useProxy });
+              navigation.navigate("Search");
             }}
             activeOpacity={0.8}
             style={styles.button}
           >
-            <Text style={styles.text}>LOGIN</Text>
+            <Text style={styles.text}>SEARCH</Text>
           </TouchableOpacity>
         </View>
-      )}
-      <View>
-        <TouchableOpacity
-          accessibilityTraits="button"
-          onPress={() => {
-            navigation.navigate("Search");
-          }}
-          activeOpacity={0.8}
-          style={styles.button}
-        >
-          <Text style={styles.text}>SEARCH</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          accessibilityTraits="button"
-          onPress={() => {
-            navigation.navigate("About");
-          }}
-          activeOpacity={0.8}
-          style={styles.button}
-        >
-          <Text style={styles.text}>ABOUT</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            accessibilityTraits="button"
+            onPress={() => {
+              navigation.navigate("About");
+            }}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.text}>ABOUT</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -203,7 +190,7 @@ const styles = StyleSheet.create({
     height: 200,
   },
   button: {
-    minWidth: "60%",
+    minWidth: "80%",
     backgroundColor: "transparent",
     elevation: 8,
     paddingVertical: 8,
@@ -218,9 +205,23 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     fontFamily: "MPLUS1p-Medium",
     textAlign: "center",
+    color: "#fff",
   },
   separatorOr: {
     color: "#9B9FA4",
     paddingVertical: 5,
+  },
+  buttonContainer: {
+    backgroundColor: "#E6772E",
+    borderRadius: 5,
+    padding: 8,
+    margin: 8,
+  },
+  welcometext: {
+    marginVertical: 10,
+    fontFamily: "MPLUS1p-Medium",
+    textAlign: "center",
+    color: "#fff",
+    fontSize: 20,
   },
 });
