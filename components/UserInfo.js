@@ -107,7 +107,7 @@ export default function UserInfo({ navigation }) {
             </View>
             <View style={styles.button}>
               <TouchableOpacity
-                onPress={() => navigation.navigate("ChangePassword")}
+                onPress={() => navigation.navigate("Change Password")}
               >
                 <Text style={styles.text}>Change Password</Text>
               </TouchableOpacity>
