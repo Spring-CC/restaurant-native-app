@@ -52,17 +52,17 @@ export default function Home({ navigation }) {
   }
 
   useEffect(() => {
-    if (userId === "" ) {
+    if (userId === "") {
       getRestaurants();
     } else {
       getUserRecommendation(userId);
     }
   }, []);
 
-  async function liked() {
+  async function liked(card) {
     try {
-      const swiped_left = restaurants[0].id;
-      const likedRes = restaurant[0];
+      const swiped_left = card.id;
+      const likedRes = card;
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
@@ -83,13 +83,13 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-    liked();
+    liked(card);
     navigation.navigate("Details");
   }
 
-  async function unlicked() {
+  async function unliked(card) {
     try {
-      const swiped_left = restaurants[0].id;
+      const swiped_left = card.id;
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
@@ -109,7 +109,7 @@ export default function Home({ navigation }) {
         <DeckSwiper
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
-          onSwipeLeft={() => unlicked()}
+          onSwipeLeft={(card) => unliked(card)}
           renderItem={(item) => (
             <Card style={{ elevation: 3 }}>
               <CardItem>
