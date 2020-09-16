@@ -106,8 +106,8 @@ export default function FavoritesView({ navigation }) {
                 </Button>
 
                 <View>
-                  {favoritesList.map(favorite => (
-                    <Card style={styles.card}>
+                  {favoritesList.map((favorite, index) => (
+                    <Card key={index} style={styles.card}>
                       <CardItem>
                         <Body>
                           <Text style={styles.textTitle}>Name:</Text>
