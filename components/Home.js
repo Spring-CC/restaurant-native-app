@@ -42,6 +42,7 @@ export default function Home({ navigation }) {
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
+      
     );
     const data = results.data;
     
@@ -50,17 +51,19 @@ export default function Home({ navigation }) {
   }
   
   useEffect(() => {
-    if (userId === "" ) {
+    if (userId === "") {
       getRestaurants();
     } else {
       getUserRecommendation(userId);
     }
   }, []);
 
+
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
       const likedRes = restaurant;
+
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
@@ -81,14 +84,17 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
+
     console.log(restData)
     liked(userId, restData);
+
     navigation.navigate("Details");
   }
 
-  async function unlicked() {
+  async function unliked(card) {
     try {
       const swiped_left = restData.id;
+
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
@@ -108,7 +114,7 @@ export default function Home({ navigation }) {
         <DeckSwiper
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
-          onSwipeLeft={() => unlicked()}
+          onSwipeLeft={(card) => unliked(card)}
           renderItem={(item) => (
             <Card style={{ elevation: 3 }}>
               <CardItem>
@@ -132,23 +138,16 @@ export default function Home({ navigation }) {
               <CardItem>
                 <ScrollView>
                   <Body>
-                    <Text style={styles.text_sub}>Name:</Text>
+                    <Text style={styles.text}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text_sub}>Type of Restaurant:</Text>
+                    <Text style={styles.text}>Type of Restaurant:</Text>
                     <Text style={styles.text}>{item.category}</Text>
-                    <Text style={styles.text_sub}>Station:</Text>
+                    <Text style={styles.text}>Station:</Text>
                     <Text style={styles.text}>{item.access["station"]}</Text>
-                    <Text style={styles.text_sub}>Open Hours:</Text>
+                    <Text style={styles.text}>Open Hours:</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
                   </Body>
                 </ScrollView>
-              </CardItem>
-            </Card>
-          )}
-          renderEmpty={() => (
-            <Card style={{ elevation: 3 }}>
-              <CardItem>
-                <Text>No restaurants match your selected preference.</Text>
               </CardItem>
             </Card>
           )}
@@ -186,10 +185,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: "MPLUS1p-Bold",
-    marginBottom: 10,
   },
   text_sub: {
     fontFamily: "MPLUS1p-Bold",
-    color: '#F3722C',
+    textDecorationLine: "underline",
   },
 });
