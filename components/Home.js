@@ -58,12 +58,10 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
       const likedRes = restaurant;
-
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
@@ -84,10 +82,8 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-
     console.log(restData)
     liked(userId, restData);
-
     navigation.navigate("Details");
   }
 
