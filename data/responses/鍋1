@@ -64,9 +64,9 @@
             },
             "budget": 4000,
             "party": 3980,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,UC,DC,UFJ,アメリカン・エキスプレス,JCB,セゾン,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -214,9 +214,9 @@
             },
             "budget": 8000,
             "party": 5000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -289,9 +289,9 @@
             },
             "budget": 4000,
             "party": 5000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン,MUFG,Discover Card",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -364,7 +364,7 @@
             },
             "budget": 4000,
             "party": 5000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,アメリカン・エキスプレス,JCB",
             "e_money": "nanaco,楽天Edy,Suica,PASMO,ICOCA,WAON,Alipay,PayPay",
             "flags": {
@@ -441,7 +441,7 @@
             "party": 4000,
             "lunch": 750,
             "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -589,7 +589,7 @@
             },
             "budget": 3500,
             "party": 2980,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,セゾン,銀聯",
             "e_money": "Suica,PASMO,ICOCA,iD,QUICPay,TOICA,はやかけん,LINE Pay,Alipay,Airペイ,楽天ペイ,QUICPay＋,PayPay",
             "flags": {
@@ -664,9 +664,9 @@
             },
             "budget": 3500,
             "party": 4000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -741,7 +741,7 @@
             "party": 3980,
             "lunch": 700,
             "credit_card": "UC,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -814,9 +814,9 @@
             },
             "budget": 2500,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -891,7 +891,7 @@
             "party": 3000,
             "lunch": 800,
             "credit_card": "VISA,MasterCard",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -966,7 +966,7 @@
             "party": 4000,
             "lunch": 4000,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -1039,9 +1039,9 @@
             },
             "budget": 3500,
             "party": 4500,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1113,10 +1113,10 @@
                 ]
             },
             "budget": 2500,
-            "party": "",
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1189,9 +1189,9 @@
             },
             "budget": 2980,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1266,7 +1266,7 @@
             "party": 3000,
             "lunch": 3000,
             "credit_card": "VISA,MasterCard,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1341,7 +1341,7 @@
             "party": 3500,
             "lunch": 1500,
             "credit_card": "VISA,MasterCard,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -1413,8 +1413,8 @@
                 ]
             },
             "budget": 6000,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯",
             "e_money": "nanaco,楽天Edy,Suica,PASMO,ICOCA,iD,QUICPay,WAON,SUGOCA,nimoca,楽天ペイ",
             "flags": {
@@ -1491,7 +1491,7 @@
             "party": 2980,
             "lunch": 800,
             "credit_card": "UC,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1564,9 +1564,9 @@
             },
             "budget": 2980,
             "party": 3480,
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1639,7 +1639,7 @@
             },
             "budget": 3200,
             "party": 4000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン,銀聯,MUFG",
             "e_money": "WeChat Pay,LINE Pay,Alipay,楽天ペイ,PayPay",
             "flags": {
@@ -1791,7 +1791,7 @@
             "party": 4500,
             "lunch": 980,
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,アプラス,セゾン,J-DEBIT,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1864,9 +1864,9 @@
             },
             "budget": 3500,
             "party": 4000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -1938,7 +1938,7 @@
                 ]
             },
             "budget": 3500,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 800,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
             "e_money": "PayPay",
@@ -2014,9 +2014,9 @@
             },
             "budget": 3000,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -2091,7 +2091,7 @@
             "party": 3500,
             "lunch": 2500,
             "credit_card": "VISA,MasterCard,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -2166,7 +2166,7 @@
             "party": 2980,
             "lunch": 990,
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,アメリカン・エキスプレス,JCB,NICOS,アプラス,セゾン,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -2314,9 +2314,9 @@
             },
             "budget": 3000,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -2388,7 +2388,7 @@
                 ]
             },
             "budget": 3500,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 1500,
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NC",
             "e_money": "Suica,PASMO,PiTaPa,ICOCA,SUGOCA,Kitaca,TOICA,manaca,nimoca,はやかけん,SAPICA",
@@ -2464,7 +2464,7 @@
             },
             "budget": 3000,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯,Discover Card",
             "e_money": "PayPay",
             "flags": {
@@ -2541,7 +2541,7 @@
             "party": 4000,
             "lunch": 1500,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -2616,7 +2616,7 @@
             "party": 4000,
             "lunch": 800,
             "credit_card": "VISA,MasterCard",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -2691,7 +2691,7 @@
             "party": 5000,
             "lunch": 1500,
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -2764,7 +2764,7 @@
             },
             "budget": 2800,
             "party": 3800,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン,銀聯,MUFG",
             "e_money": "WeChat Pay,LINE Pay,Alipay",
             "flags": {
@@ -2838,8 +2838,8 @@
                 ]
             },
             "budget": 1700,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,アメリカン・エキスプレス,JCB,銀聯",
             "e_money": "楽天Edy,Suica,PASMO,iD,QUICPay,LINE Pay,楽天ペイ",
             "flags": {
@@ -2913,10 +2913,10 @@
                 ]
             },
             "budget": 3500,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -3064,9 +3064,9 @@
             },
             "budget": 3000,
             "party": 3500,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -3140,7 +3140,7 @@
             "budget": 3150,
             "party": 3500,
             "lunch": 3150,
-            "credit_card": "",
+            "credit_card": "Information is not provided",
             "e_money": "PayPay",
             "flags": {
                 "mobile_site": 1,
@@ -3289,9 +3289,9 @@
             },
             "budget": 2500,
             "party": 3000,
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -3366,7 +3366,7 @@
             "party": 2500,
             "lunch": 680,
             "credit_card": "VISA,MasterCard",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -3441,7 +3441,7 @@
             "party": 4000,
             "lunch": 850,
             "credit_card": "VISA,MasterCard,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -3515,8 +3515,8 @@
             "budget": 3000,
             "party": 2500,
             "lunch": 760,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -3589,9 +3589,9 @@
             },
             "budget": 5000,
             "party": 4000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -3663,8 +3663,8 @@
                 ]
             },
             "budget": 1700,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,アメリカン・エキスプレス,JCB,銀聯",
             "e_money": "nanaco,楽天Edy,Suica,PASMO,iD,QUICPay,LINE Pay,楽天ペイ",
             "flags": {
@@ -3741,7 +3741,7 @@
             "party": 3800,
             "lunch": 800,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,JAL",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -3816,7 +3816,7 @@
             "party": 4500,
             "lunch": 800,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,JAL",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -4114,7 +4114,7 @@
             },
             "budget": 2600,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン,銀聯,MUFG",
             "e_money": "WeChat Pay,LINE Pay,Alipay",
             "flags": {
@@ -4191,7 +4191,7 @@
             "party": 3500,
             "lunch": 1800,
             "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -4263,10 +4263,10 @@
                 ]
             },
             "budget": 10000,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,ダイナースクラブ,アメリカン・エキスプレス,JCB,アプラス,セゾン,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -4339,7 +4339,7 @@
             },
             "budget": 3900,
             "party": 3000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,アメリカン・エキスプレス,JCB,Discover Card",
             "e_money": "nanaco,楽天Edy,Suica,PASMO,ICOCA,iD,QUICPay,SUGOCA,Kitaca,TOICA,WeChat Pay,au WALLET,manaca,nimoca,はやかけん,uniko,LINE Pay,Alipay,楽天ペイ,QUICPay＋,Apple Pay,PayPay",
             "flags": {
@@ -4413,10 +4413,10 @@
                 ]
             },
             "budget": 7000,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -4489,7 +4489,7 @@
             },
             "budget": 4500,
             "party": 4500,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,MUFG",
             "e_money": "Alipay,PayPay",
             "flags": {
@@ -4639,7 +4639,7 @@
             },
             "budget": 2600,
             "party": 3800,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,セゾン,銀聯,MUFG",
             "e_money": "WeChat Pay,LINE Pay,Alipay",
             "flags": {
@@ -4791,7 +4791,7 @@
             "party": 4000,
             "lunch": 999,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -4864,9 +4864,9 @@
             },
             "budget": 3000,
             "party": 4000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,アプラス,セゾン,J-DEBIT,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -5016,7 +5016,7 @@
             "party": 2980,
             "lunch": 2500,
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,アプラス,セゾン,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -5088,7 +5088,7 @@
                 ]
             },
             "budget": 3000,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 800,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,Discover Card",
             "e_money": "nanaco,Suica,PASMO,PiTaPa,ICOCA,PayPay",
@@ -5314,7 +5314,7 @@
             },
             "budget": 2800,
             "party": 3800,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,銀聯,MUFG",
             "e_money": "WeChat Pay,LINE Pay,Alipay",
             "flags": {
@@ -5391,7 +5391,7 @@
             "party": 7500,
             "lunch": 1200,
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -5463,10 +5463,10 @@
                 ]
             },
             "budget": 8000,
-            "party": "",
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -5538,10 +5538,10 @@
                 ]
             },
             "budget": 5000,
-            "party": "",
-            "lunch": "",
+            "party": "Information is not provided",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -5614,9 +5614,9 @@
             },
             "budget": 3500,
             "party": 4500,
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -5691,7 +5691,7 @@
             "party": 4000,
             "lunch": 800,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -5765,8 +5765,8 @@
             "budget": 2200,
             "party": 3800,
             "lunch": 800,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -5914,7 +5914,7 @@
             },
             "budget": 2980,
             "party": 2980,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,Discover Card",
             "e_money": "WeChat Pay,LINE Pay,Alipay,Airペイ,PayPay",
             "flags": {
@@ -5989,9 +5989,9 @@
             },
             "budget": 4500,
             "party": 5000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -6063,7 +6063,7 @@
                 ]
             },
             "budget": 1700,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 1700,
             "credit_card": "VISA,MasterCard,UC,アメリカン・エキスプレス,JCB,銀聯",
             "e_money": "楽天Edy,Suica,PASMO,iD,QUICPay,WAON,LINE Pay,楽天ペイ",
@@ -6141,7 +6141,7 @@
             "party": 3500,
             "lunch": 900,
             "credit_card": "VISA,MasterCard,DC,アメリカン・エキスプレス,JCB,ジャックス,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -6289,9 +6289,9 @@
             },
             "budget": 2500,
             "party": 3500,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -6439,9 +6439,9 @@
             },
             "budget": 5000,
             "party": 5000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,ダイナースクラブ,アメリカン・エキスプレス,JCB,NICOS,オリコ,ジャックス,楽天,セゾン,イオン,J-DEBIT,JAL,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -6589,9 +6589,9 @@
             },
             "budget": 4000,
             "party": 4500,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,アメリカン・エキスプレス,JCB,アプラス,セゾン,J-DEBIT,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -6663,10 +6663,10 @@
                 ]
             },
             "budget": 3500,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 1000,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -6738,10 +6738,10 @@
                 ]
             },
             "budget": 4000,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 1280,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -6814,9 +6814,9 @@
             },
             "budget": 3000,
             "party": 3500,
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -6888,7 +6888,7 @@
                 ]
             },
             "budget": 2500,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 800,
             "credit_card": "VISA,MasterCard,ダイナースクラブ,アメリカン・エキスプレス,JCB,銀聯,Discover Card",
             "e_money": "PayPay",
@@ -6964,9 +6964,9 @@
             },
             "budget": 3000,
             "party": 4000,
-            "lunch": "",
-            "credit_card": "",
-            "e_money": "",
+            "lunch": "Information is not provided",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -7040,8 +7040,8 @@
             "budget": 2000,
             "party": 2800,
             "lunch": 1000,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -7115,8 +7115,8 @@
             "budget": 3500,
             "party": 1999,
             "lunch": 680,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -7188,10 +7188,10 @@
                 ]
             },
             "budget": 900,
-            "party": "",
+            "party": "Information is not provided",
             "lunch": 900,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 0,
@@ -7265,8 +7265,8 @@
             "budget": 3000,
             "party": 2500,
             "lunch": 850,
-            "credit_card": "",
-            "e_money": "",
+            "credit_card": "Information is not provided",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
@@ -7414,9 +7414,9 @@
             },
             "budget": 5000,
             "party": 5000,
-            "lunch": "",
+            "lunch": "Information is not provided",
             "credit_card": "VISA,MasterCard,UC,DC,UFJ,アメリカン・エキスプレス,JCB,NICOS,セゾン,MUFG",
-            "e_money": "",
+            "e_money": "Information is not provided",
             "flags": {
                 "mobile_site": 1,
                 "mobile_coupon": 1,
