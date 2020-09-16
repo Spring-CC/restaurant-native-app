@@ -19,12 +19,41 @@ import { setProfile, setPic, setUserId } from "../actions";
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
 const redirectUri = AuthSession.makeRedirectUri({ useProxy });
+WebBrowser.maybeCompleteAuthSession();
 
 export default function Landing({ navigation }) {
   const [name, setName] = useState(null);
   const [snap, setSnap] = useState(null);
   const [userId, setId] = useState(null);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (result) {
+      if (result.error) {
+        Alert.alert(
+          "Authentication error",
+          result.params.error_description || "something went wrong"
+        );
+        return;
+      }
+      if (result.type === "success") {
+        // Retrieve the JWT token and decode it
+        const jwtToken = result.params.id_token;
+        const decoded = jwtDecode(jwtToken);
+        console.log(decoded);
+        const { nickname } = decoded;
+        const { picture } = decoded;
+        const { sub } = decoded;
+        const userId = sub.substr(6);
+        setId(userId);
+        setSnap(picture);
+        setName(nickname);
+        dispatch(setProfile(nickname));
+        dispatch(setPic(picture));
+        dispatch(setUserId(userId));
+      }
+    }
+  }, [result]);
 
   const [request, result, promptAsync] = AuthSession.useAuthRequest(
     {
@@ -72,24 +101,22 @@ export default function Landing({ navigation }) {
   }, [result]);
 
   function handleRedirect() {
-    dispatch(setUserId(null));
-    dispatch(setProfile(null));
     WebBrowser.dismissBrowser();
     navigation.navigate("Home", { screen: "Landing" });
   }
 
   return (
-    <View>
+    <View style={styles.container}>
+      <View style={styles.image}>
+        <Image
+          style={styles.logo}
+          source={require("../assets/logo_bowl.png")}
+        />
+      </View>
       {name ? (
-        <View style={styles.container}>
-          <View style={styles.image}>
-            <Image
-              style={styles.logo}
-              source={require("../assets/logo_bowl.png")}
-            />
-          </View>
+        <View>
           <View>
-            <Text>Welcome, {name}!</Text>
+            <Text style={styles.text}>Welcome, {name}!</Text>
           </View>
 
           <TouchableOpacity
@@ -104,6 +131,7 @@ export default function Landing({ navigation }) {
               Linking.removeEventListener("url", handleRedirect);
               setName(null);
               dispatch(setUserId(null));
+              dispatch(setProfile(null));
             }}
             activeOpacity={0.8}
             style={styles.button}
@@ -111,50 +139,19 @@ export default function Landing({ navigation }) {
             <Text style={styles.text}>LOGOUT</Text>
           </TouchableOpacity>
 
-          <View>
-            <TouchableOpacity
-              accessibilityTraits="button"
-              onPress={() => {
-                navigation.navigate("ChangePassword");
-              }}
-              activeOpacity={0.8}
-              style={styles.button}
-            >
-              <Text style={styles.text}>CHANGE PASSWORD</Text>
-            </TouchableOpacity>
-          </View>
-
           <TouchableOpacity
             accessibilityTraits="button"
             onPress={() => {
-              navigation.navigate("Search");
+              navigation.navigate("Change Password");
             }}
             activeOpacity={0.8}
             style={styles.button}
           >
-            <Text style={styles.text}>SEARCH</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("About");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>ABOUT</Text>
+            <Text style={styles.text}>CHANGE PASSWORD</Text>
           </TouchableOpacity>
         </View>
       ) : (
-        <View style={styles.container}>
-          <View style={styles.image}>
-            <Image
-              style={styles.logo}
-              source={require("../assets/logo_bowl.png")}
-            />
-          </View>
-
+        <View>
           <TouchableOpacity
             disabled={!request}
             accessibilityTraits="button"
@@ -167,32 +164,30 @@ export default function Landing({ navigation }) {
           >
             <Text style={styles.text}>LOGIN</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            title="SKIP"
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("Search");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>SEARCH</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            title="about"
-            accessibilityTraits="button"
-            onPress={() => {
-              navigation.navigate("About");
-            }}
-            activeOpacity={0.8}
-            style={styles.button}
-          >
-            <Text style={styles.text}>ABOUT</Text>
-          </TouchableOpacity>
         </View>
       )}
+      <View>
+        <TouchableOpacity
+          accessibilityTraits="button"
+          onPress={() => {
+            navigation.navigate("Search");
+          }}
+          activeOpacity={0.8}
+          style={styles.button}
+        >
+          <Text style={styles.text}>SEARCH</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          accessibilityTraits="button"
+          onPress={() => {
+            navigation.navigate("About");
+          }}
+          activeOpacity={0.8}
+          style={styles.button}
+        >
+          <Text style={styles.text}>ABOUT</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
