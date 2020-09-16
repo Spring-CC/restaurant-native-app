@@ -9,12 +9,18 @@ import {
   TouchableOpacity,
   Image,
   Linking,
+  RefreshControl,
 } from "react-native";
 import { Container, Footer, FooterTab, Button, Icon, Text, Card, CardItem, Body } from 'native-base';
 import axios from 'axios';
 import { addFavorites } from "../actions";
 
-
+//*** wait function for refresh control ***//
+const wait = (timeout) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+}
 
 export default function FavoritesView({ navigation }) {
 
@@ -34,9 +40,23 @@ export default function FavoritesView({ navigation }) {
   const favoritesList = useSelector((state) => state.addFavoritesReducer);
   const dispatch = useDispatch()
 
+  //*** Refresh Control ***//
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    getUserFavorites(userId)
+
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
 
   async function getUserFavorites(id) {
 
+    //getting all restaurants to filter
+    const resultsRes = await axios.get(
+      "https://restaurantserverspring.herokuapp.com/restAtlas"
+    );
+    const dataRes = resultsRes.data;
     // console.log(id)
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
@@ -46,7 +66,7 @@ export default function FavoritesView({ navigation }) {
 
     const restIds = userFavorite[0].restaurant_Id
     // console.log(restIds)
-    const results = restaurantList.filter(item => {
+    const results = dataRes.filter(item => {
       if (restIds.includes(item.id)) {
         return item;
       }
@@ -76,7 +96,12 @@ export default function FavoritesView({ navigation }) {
   return (
     <Container>
       <Nav />
-      <ScrollView style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         <Card style={styles.card}>
           <Text style={styles.title}>Favorites</Text>
         </Card>
@@ -94,7 +119,7 @@ export default function FavoritesView({ navigation }) {
             :
             (
               <>
-                <Button
+                {/* <Button
                   success
                   block
                   onPress={() => getUserFavorites(userId)}
@@ -103,7 +128,7 @@ export default function FavoritesView({ navigation }) {
                   <Text
                     style={{ fontSize: 25 }}
                   >Refresh Favorites</Text>
-                </Button>
+                </Button> */}
 
                 <View>
                   {favoritesList.map((favorite, index) => (
@@ -148,22 +173,27 @@ export default function FavoritesView({ navigation }) {
         </View>
       </ScrollView>
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
-          <Button active vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+          <Button
+            active
+            vertical
+            onPress={() => navigation.navigate("Favorites")}
+            style={{ backgroundColor: "#F8961E" }}
+          >
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>

@@ -20,7 +20,7 @@ export default function Details({ navigation }) {
 
   async function updateToDatabase(id, restId) {
 
-    if (id === '' || id === null || id===undefined) {
+    if (id === '' || id === null || id === undefined) {
       alert("No user login")
       return
     }
@@ -42,7 +42,7 @@ export default function Details({ navigation }) {
 
     if (newInfo) {
 
-      const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
+      await axios.post("https://restaurantserverspring.herokuapp.com/Favorites", {
         user_Id: id,
         restaurant_Id: restId
       })
@@ -57,7 +57,7 @@ export default function Details({ navigation }) {
       }
     }
 
-    const favorite = await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
+    await axios.post("https://restaurantserverspring.herokuapp.com/favoritesUpdate", {
       user_Id: id,
       restaurant_Id: restId
     })
@@ -72,13 +72,15 @@ export default function Details({ navigation }) {
     <ScrollView>
       <Nav />
       <ScrollView style={styles.container}>
-        <View>
+        <View style={{ backgroundColor: "#F3722C" }}>
           <Button
             title="Go Back"
+            color='#fff'
             onPress={() => {
               // Navigate using the `navigation` prop that you received
               navigation.navigate('Search');
-            }} />
+            }}
+          />
         </View>
         <View style={styles.text_title}>
 
@@ -96,10 +98,11 @@ export default function Details({ navigation }) {
           }}
           style={styles.image}
         />
-        <View>
+        <View style={{ backgroundColor: "#90BE6D", marginBottom: 5 }}>
           <Button
             style={styles.button}
             title="Go To Maps"
+            color='#fff'
             onPress={() =>
               Linking.openURL(
                 `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`
