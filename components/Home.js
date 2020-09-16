@@ -41,13 +41,14 @@ export default function Home({ navigation }) {
   }
 
   async function getUserRecommendation(user) {
+    console.log("userid!!!!!!: ", user)
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
       
     );
     const data = results.data;
-    console.log(userId);
+    console.log("!!!!!!!!", userId);
     console.log(data);
     dispatch(setRestaurantsList(data));
   }
@@ -62,8 +63,8 @@ export default function Home({ navigation }) {
 
   async function liked(card) {
     try {
-      const likedResId = card.id;
-      const likedRes = card;
+      const likedResId = card.id;  //restaurants[0].id
+      const likedRes = card;  // restaurant[0]
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
