@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import { InputAutoSuggest } from 'react-native-autocomplete-search';
+// import { InputAutoSuggest } from 'react-native-autocomplete-search';
 import {
   StyleSheet,
   View,
@@ -57,7 +57,7 @@ export default function Preferences({ navigation }) {
         if (finalFil.length === 0) {
           setLoading(false);
           alert(
-            "No restaurants found with those preferences, please change the prefrences"
+            "No restaurants found with those preferences, please change the preferences"
           );
           return;
         }
@@ -73,7 +73,7 @@ export default function Preferences({ navigation }) {
       if (filtCat.length === 0) {
         setLoading(false);
         alert(
-          "No restaurants found with those preferences, please change the prefrences"
+          "No restaurants found with those preferences, please change the preferences"
         );
         return;
       }
@@ -151,7 +151,7 @@ export default function Preferences({ navigation }) {
                   );
                 }}
               />
-              <BouncyCheckbox
+              {/* <BouncyCheckbox
                 isChecked={categories["日本料理"]}
                 text="Japanese 🍙"
                 textDecoration={true}
@@ -160,7 +160,7 @@ export default function Preferences({ navigation }) {
                     category((categories["日本料理"] = !categories["日本料理"]))
                   );
                 }}
-              />
+              /> */}
               <BouncyCheckbox
                 isChecked={categories["寿司"]}
                 text="Sushi / Seafood 🍣"
@@ -522,7 +522,7 @@ export default function Preferences({ navigation }) {
                 dispatch(setLocations((location.name = itemValue)));
               }}
             >
-              {mockdata.map((elem) => (
+              {data.map((elem) => (
                 <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
               ))}
             </Picker>
@@ -548,26 +548,27 @@ export default function Preferences({ navigation }) {
       </ScrollView>
 
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button
             active
             vertical
             onPress={() => navigation.navigate("Preferences")}
+            style={{ backgroundColor: "#F8961E" }}
           >
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>

@@ -21,8 +21,6 @@ import Nav from "./Nav";
 
 export default function Home({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
-  const categories = useSelector((state) => state.categoryReducer);
-  const price = useSelector((state) => state.priceReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
 
@@ -45,10 +43,9 @@ export default function Home({ navigation }) {
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
-      
+
     );
     const data = results.data;
-    console.log("!!!!!!!!", userId);
     console.log(data);
     dispatch(setRestaurantsList(data));
   }
@@ -61,19 +58,19 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-  async function liked(card) {
+  async function liked(user, restaurant) {
     try {
-      const likedResId = card.id;  //restaurants[0].id
-      const likedRes = card;  // restaurant[0]
+      const likedResId = restaurant.id;
+      const likedRes = restaurant;
 
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/testdata/${userId}`,
+        `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
         {
           restId: likedResId,
         }
       );
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${userId}`,
+        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
         {
           rest: likedRes,
         }
@@ -85,13 +82,15 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-    liked(card);
+    console.log(restData)
+    liked(userId, restData);
     navigation.navigate("Details");
   }
 
   async function unliked(card) {
     try {
-      const swiped_left = card.id;
+      const swiped_left = restData.id;
+
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
@@ -135,45 +134,43 @@ export default function Home({ navigation }) {
               <CardItem>
                 <ScrollView>
                   <Body>
-                    <Text style={styles.text}>Name:</Text>
+                    <Text style={styles.text_sub}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
-                    <Text style={styles.text}>Type of Restaurant:</Text>
+                    <Text style={styles.text_sub}>Type of Restaurant:</Text>
                     <Text style={styles.text}>{item.category}</Text>
-                    <Text style={styles.text}>Station:</Text>
+                    <Text style={styles.text_sub}>Station:</Text>
                     <Text style={styles.text}>{item.access["station"]}</Text>
-                    <Text style={styles.text}>Open Hours:</Text>
+                    <Text style={styles.text_sub}>Open Hours:</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
                   </Body>
                 </ScrollView>
               </CardItem>
             </Card>
           )}
-          renderEmpty={() => (
-            <Card style={{ elevation: 3 }}>
-              <CardItem>
-                <Text>No restaurants match your selected preference.</Text>
-              </CardItem>
-            </Card>
-          )}
         />
       </View>
       <Footer>
-        <FooterTab>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" />
-            <Text>Home</Text>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
           </Button>
-          <Button active vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" />
-            <Text>Search</Text>
+          <Button
+            active
+            vertical
+            onPress={() => navigation.navigate("Search")}
+            style={{ backgroundColor: "#F8961E" }}
+          >
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" />
-            <Text>Preference</Text>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" />
-            <Text>Favorites</Text>
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
@@ -192,6 +189,6 @@ const styles = StyleSheet.create({
   },
   text_sub: {
     fontFamily: "MPLUS1p-Bold",
-    textDecorationLine: "underline",
+    color: '#F3722C',
   },
 });

@@ -52,6 +52,7 @@ export default function DrawerNavigator({ navigation }) {
   function LandingStack() {
     return (
       <Stack.Navigator
+        initialRouteName="Landing"
         headerShown={false}
         options={{ headerMode: "none", headerShown: false }}
       >
@@ -127,8 +128,12 @@ export default function DrawerNavigator({ navigation }) {
         drawerBackgroundColor: "#F8961E", // sets background color of drawer
       }}
     >
-      <MainDrawerNavigator.Screen name="Home" component={LandingStack} />
+      <MainDrawerNavigator.Screen name="Home" component={Landing} />
       <MainDrawerNavigator.Screen name="Search" component={SearchStack} />
+      <MainDrawerNavigator.Screen
+        name="Change Password"
+        component={ChangePassword}
+      />
 
       {/* {name ? (
         <MainDrawerNavigator.Screen name="Profile" component={UserInfoStack} />
