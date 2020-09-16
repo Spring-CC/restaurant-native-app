@@ -1,5 +1,5 @@
 const priceRange = {
-    min: 500,
+    min: 0,
     max: 50000,
     }
     
