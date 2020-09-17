@@ -120,7 +120,6 @@ export default function Preferences({ navigation }) {
       }
     });
     console.log(selection);
-    //setSelected(selection);
     dispatch(setpriceCheckBox(selection))
   };
 
@@ -461,8 +460,7 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 500)));
                   dispatch(priceRange((price.max = 1000)));
-                  checkBoxSelected(0);
-                  console.log(priceCheck)
+                  checkBoxSelected(0)
                 }}
               />
               <BouncyCheckbox
@@ -472,7 +470,7 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 1000)));
                   dispatch(priceRange((price.max = 2000)));
-                  checkBoxSelected(1);
+                checkBoxSelected(1)
                 }}
               />
               <BouncyCheckbox
@@ -482,7 +480,8 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 2000)));
                   dispatch(priceRange((price.max = 5000)));
-                  checkBoxSelected(2);
+                 checkBoxSelected(2)
+  
                 }}
               />
               <BouncyCheckbox
@@ -492,7 +491,7 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 5000)));
                   dispatch(priceRange((price.max = 10000)));
-                  checkBoxSelected(3);
+                  checkBoxSelected(3)
                 }}
               />
               <BouncyCheckbox
@@ -502,7 +501,8 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 10000)));
                   dispatch(priceRange((price.max = 15000)));
-                  checkBoxSelected(4);
+                  checkBoxSelected(4)
+  
                 }}
               />
               <BouncyCheckbox
@@ -513,7 +513,8 @@ export default function Preferences({ navigation }) {
                   dispatch(priceRange((price.min = 10000)));
                   dispatch(priceRange((price.max = 15000)));
                   // console.log(price);
-                  checkBoxSelected(5);
+                checkBoxSelected(5)
+                 
                 }}
               />
             </Body>

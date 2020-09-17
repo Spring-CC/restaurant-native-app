@@ -24,17 +24,6 @@ const wait = (timeout) => {
 
 export default function FavoritesView({ navigation }) {
 
-  // rerender***************************************
-  const [updateVal, setUpdateVal] = useState(false);
-  const forceUpdate = newState => {
-    if (newState === 'active')
-      setUpdateVal(!updateVal); // forces a rerender
-  }
-  useEffect(() => {
-    AppState.addEventListener('change', forceUpdate);
-    return () => AppState.removeEventListener('change', forceUpdate);
-  }, []);
-  //************************************************** */
   const userId = useSelector((state) => state.userIdReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const favoritesList = useSelector((state) => state.addFavoritesReducer);
@@ -45,8 +34,7 @@ export default function FavoritesView({ navigation }) {
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    getUserFavorites(userId)
-
+      getUserFavorites(userId);
     wait(2000).then(() => setRefreshing(false));
   }, []);
 
@@ -61,6 +49,8 @@ export default function FavoritesView({ navigation }) {
     const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
 
     const usersData = favoritesUsers.data;
+
+    console.log(id);
 
     const userFavorite = usersData.filter(user => user.user_Id === id);
 
