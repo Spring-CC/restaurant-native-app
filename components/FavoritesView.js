@@ -99,7 +99,12 @@ export default function FavoritesView({ navigation }) {
       <ScrollView
         style={styles.container}
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            tintColor='#F3722C'
+            colors={['#F3722C']}
+          />
         }
       >
         <Card style={styles.card}>
