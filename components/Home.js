@@ -39,15 +39,15 @@ export default function Home({ navigation }) {
   }
 
   async function getUserRecommendation(user) {
+    console.log("userid!!!!!!: ", user)
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
 
     );
     const data = results.data;
-
     console.log(data);
-    dispatch(setRestaurantsList(data));
+    dispatch({type: "SORT_RESTAURANTS", payload: data});
   }
 
   useEffect(() => {
