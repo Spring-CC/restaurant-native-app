@@ -41,31 +41,21 @@ export default function UserInfo({ navigation }) {
   if (!name) {
     return (
       <Container>
-        <SafeAreaView style={styles.background}>
-          <Image
-            source={require("./../assets/logo_bowl.png")}
-            style={styles.logo}
-          />
-          <Text>
-            You are not logged in, please log in before trying to view your
-            profile.
-          </Text>
-          <Button
-            title="Go To Home"
-            onPress={() => {
-              // Navigate using the `navigation` prop that you received
-              navigation.navigate("Home");
-            }}
-          />
+        <Nav />
+        <View style={styles.container}>
+          <View style={styles.body}>
+            <Text style={styles.text}>
+              You are not logged in, please log in before trying to view your
+              profile.
+            </Text>
+            <View style={styles.button}>
+              <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <Text style={styles.text}>Go home to login</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
 
-          <Button
-            title="Go To Login"
-            onPress={() => {
-              // Navigate using the `navigation` prop that you received
-              navigation.navigate("Login");
-            }}
-          />
-        </SafeAreaView>
         <Footer>
           <FooterTab style={{ backgroundColor: "#F3722C" }}>
             <Button vertical onPress={() => navigation.navigate("Home")}>
