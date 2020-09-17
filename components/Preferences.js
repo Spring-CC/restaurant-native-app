@@ -122,12 +122,8 @@ export default function Preferences({ navigation }) {
       }
     });
     console.log(selection);
-<<<<<<< HEAD
-    dispatch(setpriceCheckBox(selection))
-=======
     //setSelected(selection);
     dispatch(setpriceCheckBox(selection));
->>>>>>> 55a7912079e75aedfb48e2668cebd1629d9fd884
   };
 
   if (loading === true) {
@@ -468,12 +464,8 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 500)));
                   dispatch(priceRange((price.max = 1000)));
-<<<<<<< HEAD
-                  checkBoxSelected(0)
-=======
                   checkBoxSelected(0);
                   console.log(priceCheck);
->>>>>>> 55a7912079e75aedfb48e2668cebd1629d9fd884
                 }}
               />
               <BouncyCheckbox
