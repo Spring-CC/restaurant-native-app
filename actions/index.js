@@ -73,3 +73,9 @@ export const setpriceCheckBox = (obj) => {
     payload: obj,
   };
 };
+
+export const setLoginStatus = () => {
+  return {
+    type: "TOGGLE",
+  };
+};
