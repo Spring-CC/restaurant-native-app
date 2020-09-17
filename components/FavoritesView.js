@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { AppState } from 'react-native';
+import { AppState } from "react-native";
 import Nav from "./Nav";
 import {
   StyleSheet,
@@ -11,73 +11,84 @@ import {
   Linking,
   RefreshControl,
 } from "react-native";
-import { Container, Footer, FooterTab, Button, Icon, Text, Card, CardItem, Body } from 'native-base';
-import axios from 'axios';
+import {
+  Container,
+  Footer,
+  FooterTab,
+  Button,
+  Icon,
+  Text,
+  Card,
+  CardItem,
+  Body,
+} from "native-base";
+import axios from "axios";
 import { addFavorites } from "../actions";
 
 //*** wait function for refresh control ***//
 const wait = (timeout) => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, timeout);
   });
-}
+};
 
 export default function FavoritesView({ navigation }) {
-
   const userId = useSelector((state) => state.userIdReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const favoritesList = useSelector((state) => state.addFavoritesReducer);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   //*** Refresh Control ***//
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    getUserFavorites(userId)
+    getUserFavorites(userId);
 
     wait(2000).then(() => setRefreshing(false));
   }, []);
 
   async function getUserFavorites(id) {
-
     //getting all restaurants to filter
     const resultsRes = await axios.get(
       "https://restaurantserverspring.herokuapp.com/restAtlas"
     );
     const dataRes = resultsRes.data;
     // console.log(id)
-    const favoritesUsers = await axios.get("https://restaurantserverspring.herokuapp.com/favoritesInfo");
+    const favoritesUsers = await axios.get(
+      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+    );
 
     const usersData = favoritesUsers.data;
 
-    const userFavorite = usersData.filter(user => user.user_Id === id);
+    const userFavorite = usersData.filter((user) => user.user_Id === id);
 
-    const restIds = userFavorite[0].restaurant_Id
+    const restIds = userFavorite[0].restaurant_Id;
     // console.log(restIds)
-    const results = dataRes.filter(item => {
+    const results = dataRes.filter((item) => {
       if (restIds.includes(item.id)) {
         return item;
       }
-    })
+    });
     // console.log(results)
 
     //setUserFavorites(results);
-    dispatch(addFavorites(results))
-
+    dispatch(addFavorites(results));
   }
 
   async function deleteFavorite(userId, restId) {
-
-    await axios.patch("https://restaurantserverspring.herokuapp.com/deleteFavorite", {
-      user_Id: userId,
-      restaurant_Id: restId,
-    })
-    console.log("restaurant remove from favorites")
+    await axios.patch(
+      "https://restaurantserverspring.herokuapp.com/deleteFavorite",
+      {
+        user_Id: userId,
+        restaurant_Id: restId,
+      }
+    );
+    console.log("restaurant remove from favorites");
   }
 
   useEffect(() => {
-    if (userId !== '') {
+    if (userId !== "") {
       getUserFavorites(userId);
     }
   }, []);
@@ -91,8 +102,8 @@ export default function FavoritesView({ navigation }) {
           <RefreshControl
             refreshing={refreshing}
             onRefresh={onRefresh}
-            tintColor='#F3722C'
-            colors={['#F3722C']}
+            tintColor="#F3722C"
+            colors={["#F3722C"]}
           />
         }
       >
@@ -100,18 +111,15 @@ export default function FavoritesView({ navigation }) {
           <Text style={styles.title}>Favorites</Text>
         </Card>
         <View>
-          {userId === '' ?
-            (
-              <Card style={styles.card}>
-                <Body>
-                  <Text style={styles.textLogin}>
-                    You must be Logged In to use this option
-                  </Text>
-                </Body>
-              </Card>
-            )
-            :
-            (
+          {userId === "" ? (
+            <Card style={styles.card}>
+              <Body>
+                <Text style={styles.textLogin}>
+                  You must be Logged In to use this option
+                </Text>
+              </Body>
+            </Card>
+          ) : (
               <>
                 {/* <Button
                   success
@@ -136,11 +144,14 @@ export default function FavoritesView({ navigation }) {
                           <Text style={styles.textTitle}>Telephone</Text>
                           <Text style={styles.textBody}>{favorite.tel}</Text>
                           <Text style={styles.textTitle}>Link to Restaurant</Text>
-                          <Text style={styles.linkText}
-                            onPress={() => Linking.openURL(favorite.url)}>
-                            Press To Go to Restaurant Page</Text>
+                          <Text
+                            style={styles.linkText}
+                            onPress={() => Linking.openURL(favorite.url)}
+                          >
+                            Press To Go to Restaurant Page
+                        </Text>
                           <Button
-                            style={{ alignSelf: 'center' }}
+                            style={{ alignSelf: "center" }}
                             iconLeft
                             danger
                             onPress={() => {
@@ -150,35 +161,39 @@ export default function FavoritesView({ navigation }) {
                               }, 2000);
                             }}
                           >
-                            <Icon name='trash' />
+                            <Icon name="trash" />
                             <Text
-                              style={{ fontSize: 20, fontWeight: "bold", color: "white" }}
-                            >Delete</Text>
+                              style={{
+                                fontSize: 20,
+                                fontWeight: "bold",
+                                color: "white",
+                              }}
+                            >
+                              Delete
+                          </Text>
                           </Button>
                         </Body>
                       </CardItem>
                     </Card>
-                  )
-                  )}
+                  ))}
                 </View>
               </>
             )}
-
         </View>
       </ScrollView>
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Home</Text>
+            <Icon name="home" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Search</Text>
+            <Icon name="eye" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Preference</Text>
+            <Icon active name="pizza" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
           <Button
             active
@@ -186,32 +201,33 @@ export default function FavoritesView({ navigation }) {
             onPress={() => navigation.navigate("Favorites")}
             style={{ backgroundColor: "#F8961E" }}
           >
-            <Icon name="heart" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Favorites</Text>
+            <Icon name="heart" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
     </Container>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9C74F',
+    backgroundColor: "#F9C74F",
   },
   title: {
-    textAlign: 'center',
+    textAlign: "center",
     fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
+    color: "#F3722C",
   },
   buttonContainer: {
     justifyContent: "center",
-    alignItems: 'center',
+    alignItems: "center",
     margin: 20,
   },
   checkboxContainer: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     margin: 10,
     borderRadius: 12,
     padding: 10,
@@ -235,11 +251,11 @@ const styles = StyleSheet.create({
     color: "#3780E8",
   },
   textTitle: {
-    color: '#F3722C',
+    color: "#F3722C",
     fontSize: 20,
     // textDecorationLine: "underline",
     fontFamily: "MPLUS1p-Bold",
-    fontWeight: 'bold',
+    fontWeight: "bold",
     // textAlign: "center",
   },
   buttons: {
@@ -263,9 +279,11 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
+    borderRadius: 12,
+    padding: 10,
   },
   button: {
-    alignItems: 'center',
+    alignItems: "center",
     margin: 20,
   },
-})
+});

@@ -38,51 +38,41 @@ export default function UserInfo({ navigation }) {
     navigation.navigate("Home");
   }
 
-  if (name === "" || null) {
+  if (!name) {
     return (
       <Container>
-        <SafeAreaView style={styles.background}>
-          <Image
-            source={require("./../assets/logo_bowl.png")}
-            style={styles.logo}
-          />
-          <Text>
-            You are not logged in, please log in before trying to view your
-            profile.
-          </Text>
-          <Button
-            title="Go To Home"
-            onPress={() => {
-              // Navigate using the `navigation` prop that you received
-              navigation.navigate("Home");
-            }}
-          />
+        <Nav />
+        <View style={styles.container}>
+          <View style={styles.body}>
+            <Text style={styles.text}>
+              You are not logged in, please log in before trying to view your
+              profile.
+            </Text>
+            <View style={styles.button}>
+              <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                <Text style={styles.text}>Go home to login</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
 
-          <Button
-            title="Go To Login"
-            onPress={() => {
-              // Navigate using the `navigation` prop that you received
-              navigation.navigate("Login");
-            }}
-          />
-        </SafeAreaView>
         <Footer>
           <FooterTab style={{ backgroundColor: "#F3722C" }}>
             <Button vertical onPress={() => navigation.navigate("Home")}>
-              <Icon name="home" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Home</Text>
+              <Icon name="home" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Home</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate("Search")}>
-              <Icon name="eye" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Search</Text>
+              <Icon name="eye" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Search</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate("Preferences")}>
-              <Icon active name="pizza" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Preference</Text>
+              <Icon active name="pizza" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Preference</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate("Favorites")}>
-              <Icon name="heart" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Favorites</Text>
+              <Icon name="heart" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Favorites</Text>
             </Button>
           </FooterTab>
         </Footer>
@@ -103,6 +93,13 @@ export default function UserInfo({ navigation }) {
             <View style={styles.button}>
               <TouchableOpacity onPress={() => navigation.navigate("Receive")}>
                 <Text style={styles.text}>Receive</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.button}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Favorites")}
+              >
+                <Text style={styles.text}>Favorites</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.button}>
@@ -135,20 +132,20 @@ export default function UserInfo({ navigation }) {
         <Footer>
           <FooterTab style={{ backgroundColor: "#F3722C" }}>
             <Button vertical onPress={() => navigation.navigate("Home")}>
-              <Icon name="home" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Home</Text>
+              <Icon name="home" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Home</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate("Search")}>
-              <Icon name="eye" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Search</Text>
+              <Icon name="eye" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Search</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate("Preferences")}>
-              <Icon active name="pizza" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Preference</Text>
+              <Icon active name="pizza" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Preference</Text>
             </Button>
             <Button vertical onPress={() => navigation.navigate("Favorites")}>
-              <Icon name="heart" style={{ color: '#fff' }} />
-              <Text style={{ color: '#fff' }}>Favorites</Text>
+              <Icon name="heart" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>Favorites</Text>
             </Button>
           </FooterTab>
         </Footer>
