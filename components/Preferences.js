@@ -62,6 +62,8 @@ export default function Preferences({ navigation }) {
           return;
         }
         dispatch(setRestaurantsList(finalFil));
+        // add dispatch , create a state that has recommended restaurant data 
+        
         setTimeout(() => {
           setLoading(false);
           navigation.navigate("Search");

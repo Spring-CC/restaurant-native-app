@@ -47,7 +47,7 @@ export default function Home({ navigation }) {
     );
     const data = results.data;
     console.log(data);
-    dispatch(setRestaurantsList(data));
+    dispatch({type: "SORT_RESTAURANTS", payload: data});
   }
 
   useEffect(() => {
@@ -132,8 +132,8 @@ export default function Home({ navigation }) {
                 />
               </CardItem>
               <CardItem>
-                <ScrollView>
-                  <Body>
+                <Body>
+                  <ScrollView>
                     <Text style={styles.text_sub}>Name:</Text>
                     <Text style={styles.text}>{item.name}</Text>
                     <Text style={styles.text_sub}>Type of Restaurant:</Text>
@@ -142,8 +142,8 @@ export default function Home({ navigation }) {
                     <Text style={styles.text}>{item.access["station"]}</Text>
                     <Text style={styles.text_sub}>Open Hours:</Text>
                     <Text style={styles.text}>{item.opentime}</Text>
-                  </Body>
-                </ScrollView>
+                  </ScrollView>
+                </Body>
               </CardItem>
             </Card>
           )}

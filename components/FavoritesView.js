@@ -9,12 +9,18 @@ import {
   TouchableOpacity,
   Image,
   Linking,
+  RefreshControl,
 } from "react-native";
 import { Container, Footer, FooterTab, Button, Icon, Text, Card, CardItem, Body } from 'native-base';
 import axios from 'axios';
 import { addFavorites } from "../actions";
 
-
+//*** wait function for refresh control ***//
+const wait = (timeout) => {
+  return new Promise(resolve => {
+    setTimeout(resolve, timeout);
+  });
+}
 
 export default function FavoritesView({ navigation }) {
 
@@ -34,6 +40,15 @@ export default function FavoritesView({ navigation }) {
   const favoritesList = useSelector((state) => state.addFavoritesReducer);
   const dispatch = useDispatch()
 
+  //*** Refresh Control ***//
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    getUserFavorites(userId)
+
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
 
   async function getUserFavorites(id) {
 
@@ -81,7 +96,12 @@ export default function FavoritesView({ navigation }) {
   return (
     <Container>
       <Nav />
-      <ScrollView style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         <Card style={styles.card}>
           <Text style={styles.title}>Favorites</Text>
         </Card>
@@ -99,7 +119,7 @@ export default function FavoritesView({ navigation }) {
             :
             (
               <>
-                <Button
+                {/* <Button
                   success
                   block
                   onPress={() => getUserFavorites(userId)}
@@ -108,7 +128,7 @@ export default function FavoritesView({ navigation }) {
                   <Text
                     style={{ fontSize: 25 }}
                   >Refresh Favorites</Text>
-                </Button>
+                </Button> */}
 
                 <View>
                   {favoritesList.map((favorite, index) => (
