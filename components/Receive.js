@@ -42,7 +42,7 @@ export default function Receive({ navigation }) {
         }
       );
       setIsSent(true);
-      textInput.clear();
+      // textInput.clear();
       dispatch(setRestaurantsList(response));
     } catch (err) {
       console.log(err);
