@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputAutoSuggest } from 'react-native-autocomplete-search';
+import { InputAutoSuggest } from "react-native-autocomplete-search";
 import {
   StyleSheet,
   View,
@@ -25,14 +25,14 @@ import {
   priceRange,
   setLocations,
   setRestaurantsList,
-  setpriceCheckBox
+  setpriceCheckBox,
 } from "../actions";
 import axios from "axios";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
 //import Slider from './Slider'
-import Spinner from 'react-native-loading-spinner-overlay';
+import Spinner from "react-native-loading-spinner-overlay";
 import data from "../data/autoinfo.json";
 import locationFilter from "../actions/locationFilter";
 
@@ -69,16 +69,18 @@ export default function Preferences({ navigation }) {
           alert(
             "No restaurants found with those preferences, please change the preferences"
           );
-          dispatch(setLocations(("")))
+          dispatch(setLocations(""));
           return;
         }
         dispatch(setRestaurantsList(finalFil));
+        // add dispatch , create a state that has recommended restaurant data
+
         setTimeout(() => {
           setLoading(false);
           navigation.navigate("Search");
         }, 2000);
-        dispatch(setLocations(("")))
-        console.log(location)
+        dispatch(setLocations(""));
+        console.log(location);
         return;
       }
 
@@ -97,14 +99,13 @@ export default function Preferences({ navigation }) {
         setLoading(false);
         navigation.navigate("Search");
       }, 2000);
-      dispatch(setLocations(("")))
-      console.log(location)
+      dispatch(setLocations(""));
+      console.log(location);
     } catch (err) {
       setLoading(false);
       return;
     }
   }
-
 
   const checkBoxSelected = (id) => {
     const selection = priceCheck.map((value, i) => {
@@ -121,9 +122,13 @@ export default function Preferences({ navigation }) {
       }
     });
     console.log(selection);
+<<<<<<< HEAD
     dispatch(setpriceCheckBox(selection))
+=======
+    //setSelected(selection);
+    dispatch(setpriceCheckBox(selection));
+>>>>>>> 55a7912079e75aedfb48e2668cebd1629d9fd884
   };
-
 
   if (loading === true) {
     return (
@@ -463,7 +468,12 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 500)));
                   dispatch(priceRange((price.max = 1000)));
+<<<<<<< HEAD
                   checkBoxSelected(0)
+=======
+                  checkBoxSelected(0);
+                  console.log(priceCheck);
+>>>>>>> 55a7912079e75aedfb48e2668cebd1629d9fd884
                 }}
               />
               <BouncyCheckbox
@@ -542,12 +552,17 @@ export default function Preferences({ navigation }) {
         </View> */}
 
           <InputAutoSuggest
-        style={{flex:1, margin: 20, padding: 20, justifyContent: "center"}}
-        staticData={data}
-        onDataSelectedChange={loc => {
-          dispatch(setLocations((loc)))
-        }}
-        />
+            style={{
+              flex: 1,
+              margin: 20,
+              padding: 20,
+              justifyContent: "center",
+            }}
+            staticData={data}
+            onDataSelectedChange={(loc) => {
+              dispatch(setLocations(loc));
+            }}
+          />
         </Card>
         
         <Button
@@ -564,12 +579,12 @@ export default function Preferences({ navigation }) {
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Home</Text>
+            <Icon name="home" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Search</Text>
+            <Icon name="eye" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Search</Text>
           </Button>
           <Button
             active
@@ -577,12 +592,12 @@ export default function Preferences({ navigation }) {
             onPress={() => navigation.navigate("Preferences")}
             style={{ backgroundColor: "#F8961E" }}
           >
-            <Icon active name="pizza" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Preference</Text>
+            <Icon active name="pizza" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Favorites</Text>
+            <Icon name="heart" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
@@ -620,6 +635,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
+    color: "#F3722C",
   },
   pickerItem: {
     color: "red",
@@ -643,5 +659,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
+    borderRadius: 12,
+    padding: 10,
   },
 });

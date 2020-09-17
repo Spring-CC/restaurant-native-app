@@ -56,6 +56,7 @@ export default function About({ navigation }) {
           >
             <IconAlt style={styles.icon} name="social-github" size={50} />
           </TouchableOpacity>
+          <Text style={styles.textGit}>Erismd</Text>
         </View>
         <View style={styles.box2}>
           <Text style={styles.text}>Shaun Darragh</Text>
@@ -70,6 +71,7 @@ export default function About({ navigation }) {
           >
             <IconAlt style={styles.icon} name="social-github" size={50} />
           </TouchableOpacity>
+          <Text style={styles.textGit}>ottotsuma</Text>
         </View>
         <View style={styles.box3}>
           <Text style={styles.text}>Alberto Medellin</Text>
@@ -86,6 +88,7 @@ export default function About({ navigation }) {
           >
             <IconAlt style={styles.icon} name="social-github" size={50} />
           </TouchableOpacity>
+          <Text style={styles.textGit}>MEGAALBERT</Text>
         </View>
         <View style={styles.box4}>
           <Text style={styles.text}>Yuri Amami</Text>
@@ -102,6 +105,7 @@ export default function About({ navigation }) {
           >
             <IconAlt style={styles.icon} name="social-github" size={50} />
           </TouchableOpacity>
+          <Text style={styles.textGit}>yuriamm</Text>
         </View>
         <View style={styles.box5}>
           <Text style={styles.text}>Dylan Cooper</Text>
@@ -118,6 +122,7 @@ export default function About({ navigation }) {
           >
             <IconAlt style={styles.icon} name="social-github" size={50} />
           </TouchableOpacity>
+          <Text style={styles.textGit}>Dylanc55</Text>
         </View>
       </ScrollView>
       <Footer>
@@ -158,11 +163,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "MPLUS1p-Black",
     color: "white",
+    marginTop: 20,
+    marginBottom: 20,
   },
-  text_sub: {
-    fontSize: 20,
-    fontFamily: "MPLUS1p-Medium",
-    color: "dodgerblue",
+  textGit: {
+    fontSize: 15,
+    fontFamily: "MPLUS1p-Black",
+    marginBottom: 15,
   },
   about: {
     marginLeft: 10,
