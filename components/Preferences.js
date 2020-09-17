@@ -151,9 +151,10 @@ export default function Preferences({ navigation }) {
       
       <ScrollView style={styles.container}>
       <KeyboardAwareScrollView 
+      resetScrollToCoords={{ x: 0, y: 0 }}
       contentContainerStyle={styles.container}
-      enableOnAndroid= {true}
       extraHeight={10}
+      scrollEnabled
       >
         <Card style={styles.card}>
           <Text style={styles.title}>Preferences</Text>
@@ -572,7 +573,7 @@ export default function Preferences({ navigation }) {
           <Text style={{ fontSize: 25 }}>Set Preferences</Text>
         </Button>
         </KeyboardAwareScrollView>
-      </ScrollView>
+        </ScrollView>
       
 
       <Footer>
@@ -607,7 +608,7 @@ export default function Preferences({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: "#F9C74F",
   },
   descriptionContainer: {
