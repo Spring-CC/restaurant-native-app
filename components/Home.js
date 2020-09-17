@@ -32,6 +32,12 @@ export default function Home({ navigation }) {
         "https://restaurantserverspring.herokuapp.com/restAtlas"
       );
       const restaurants = results.data;
+      for(let i = restaurants.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * i)
+        const temp = restaurants[i]
+        restaurants[i] = restaurants[j]
+        restaurants[j] = temp
+      }
       dispatch(setRestaurantsList(restaurants));
     } catch (err) {
       console.log(err);
