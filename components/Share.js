@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
 import {
-  View,
-  Text,
+  // View,
+  // Text,
   StyleSheet,
   Clipboard,
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
+import {
+  Container,
+  View,
+  Footer,
+  FooterTab,
+  Button,
+  Icon,
+  Text,
+} from "native-base";
 import Nav from "./Nav";
 import { useSelector } from "react-redux";
 
@@ -25,24 +34,46 @@ export default function Receive({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Nav />
-      <View style={styles.container}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => copyToClipboard()}
-        >
-          <Text style={styles.text}>{userId}</Text>
-        </TouchableOpacity>
-        <Text>tap to copy</Text>
+    <Container>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Nav />
+        <View style={styles.container}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => copyToClipboard()}
+          >
+            <Text style={styles.text}>{userId}</Text>
+          </TouchableOpacity>
+          <Text>tap to copy</Text>
 
-        {/* {copiedText !== "" ?():()} */}
-        <TouchableOpacity onPress={() => fetchCopiedText()}>
-          <Text>View copied text</Text>
-        </TouchableOpacity>
-        <Text style={styles.copiedText}>{copiedText}</Text>
-      </View>
-    </SafeAreaView>
+          {/* {copiedText !== "" ?():()} */}
+          <TouchableOpacity onPress={() => fetchCopiedText()}>
+            <Text>View copied text</Text>
+          </TouchableOpacity>
+          <Text style={styles.copiedText}>{copiedText}</Text>
+        </View>
+      </SafeAreaView>
+      <Footer>
+        <FooterTab style={{ backgroundColor: "#F3722C" }}>
+          <Button vertical onPress={() => navigation.navigate("Home")}>
+            <Icon name="home" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Home</Text>
+          </Button>
+          <Button vertical onPress={() => navigation.navigate("Search")}>
+            <Icon name="eye" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Search</Text>
+          </Button>
+          <Button vertical onPress={() => navigation.navigate("Preferences")}>
+            <Icon active name="pizza" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Preference</Text>
+          </Button>
+          <Button vertical onPress={() => navigation.navigate("Favorites")}>
+            <Icon name="heart" style={{ color: '#fff' }} />
+            <Text style={{ color: '#fff' }}>Favorites</Text>
+          </Button>
+        </FooterTab>
+      </Footer>
+    </Container>
   );
 }
 
