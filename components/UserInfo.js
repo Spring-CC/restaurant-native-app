@@ -28,6 +28,7 @@ export default function UserInfo({ navigation }) {
   // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
   const profileImage = useSelector((state) => state.picReducer);
+  const isLoggedIn = useSelector((state) => state.loginStatusReducer);
 
   const dispatch = useDispatch();
 
@@ -38,7 +39,7 @@ export default function UserInfo({ navigation }) {
     navigation.navigate("Home");
   }
 
-  if (!name) {
+  if (!isLoggedIn) {
     return (
       <Container>
         <Nav />
