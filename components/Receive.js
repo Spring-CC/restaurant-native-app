@@ -32,12 +32,17 @@ export default function Receive({ navigation }) {
         }
       );
       setIsSent(true);
+      textInput.clear();
       dispatch(setRestaurantsList(response));
     } catch (err) {
       console.log(err);
     }
   }
 
+  function back() {
+    navigation.navigate("Profile");
+    clear();
+  }
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Nav />
@@ -54,22 +59,29 @@ export default function Receive({ navigation }) {
           </View>
         ) : (
           <View>
-            <TextInput
-              placeholder="Type your unique number"
-              style={styles.input}
-              onChangeText={(num) => {
-                onChangeNumber(num);
-              }}
-              value={number}
-              keyboardType="default"
-            />
+            <View>
+              <TextInput
+                placeholder="Type your unique number"
+                style={styles.input}
+                onChangeText={(num) => {
+                  onChangeNumber(num);
+                }}
+                value={number}
+                keyboardType="default"
+              />
+            </View>
+            <View style={styles.buttonlineup}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={() => submit(number)}
+              >
+                <Text style={styles.text}> Submit </Text>
+              </TouchableOpacity>
 
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => submit(number)}
-            >
-              <Text style={styles.text}> Submit </Text>
-            </TouchableOpacity>
+              <TouchableOpacity style={styles.button} onPress={() => back()}>
+                <Text style={styles.text}> Go Back </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         )}
       </View>
@@ -92,12 +104,17 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   button: {
-    backgroundColor: "#E6772E",
-    borderRadius: 5,
-    padding: 10,
-    margin: 8,
+    marginTop: 10,
+    height: 45,
+    flexDirection: "row",
+    justifyContent: "center",
     alignItems: "center",
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
+    backgroundColor: "#E6772E",
   },
+
   text: {
     marginVertical: 10,
     fontFamily: "MPLUS1p-Medium",
@@ -110,4 +127,5 @@ const styles = StyleSheet.create({
     fontFamily: "MPLUS1p-Medium",
     color: "#F3722C",
   },
+  buttonlineup: { alignItems: "center" },
 });
