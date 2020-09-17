@@ -28,6 +28,7 @@ export default function UserInfo({ navigation }) {
   // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
   const profileImage = useSelector((state) => state.picReducer);
+  const isLoggedIn = useSelector((state) => state.loginStatusReducer);
 
   const dispatch = useDispatch();
 
@@ -38,7 +39,7 @@ export default function UserInfo({ navigation }) {
     navigation.navigate("Home");
   }
 
-  if (!name) {
+  if (!isLoggedIn) {
     return (
       <Container>
         <Nav />
@@ -70,9 +71,14 @@ export default function UserInfo({ navigation }) {
               <Icon active name="pizza" style={{ color: "#fff" }} />
               <Text style={{ color: "#fff" }}>Preference</Text>
             </Button>
-            <Button vertical onPress={() => navigation.navigate("Favorites")}>
-              <Icon name="heart" style={{ color: "#fff" }} />
-              <Text style={{ color: "#fff" }}>Favorites</Text>
+            <Button
+              active
+              vertical
+              onPress={() => navigation.navigate("Profile")}
+              style={{ backgroundColor: "#F8961E" }}
+            >
+              <Icon name="person" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>User</Text>
             </Button>
           </FooterTab>
         </Footer>
@@ -144,9 +150,14 @@ export default function UserInfo({ navigation }) {
               <Icon active name="pizza" style={{ color: "#fff" }} />
               <Text style={{ color: "#fff" }}>Preference</Text>
             </Button>
-            <Button vertical onPress={() => navigation.navigate("Favorites")}>
-              <Icon name="heart" style={{ color: "#fff" }} />
-              <Text style={{ color: "#fff" }}>Favorites</Text>
+            <Button
+              active
+              vertical
+              onPress={() => navigation.navigate("Profile")}
+              style={{ backgroundColor: "#F8961E" }}
+            >
+              <Icon name="person" style={{ color: "#fff" }} />
+              <Text style={{ color: "#fff" }}>User</Text>
             </Button>
           </FooterTab>
         </Footer>

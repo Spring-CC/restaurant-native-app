@@ -587,9 +587,9 @@ export default function Preferences({ navigation }) {
             <Icon active name="pizza" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Favorites</Text>
+          <Button vertical onPress={() => navigation.navigate("Profile")}>
+            <Icon name="person" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>

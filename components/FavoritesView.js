@@ -120,8 +120,8 @@ export default function FavoritesView({ navigation }) {
               </Body>
             </Card>
           ) : (
-            <>
-              {/* <Button
+              <>
+                {/* <Button
                   success
                   block
                   onPress={() => getUserFavorites(userId)}
@@ -132,53 +132,53 @@ export default function FavoritesView({ navigation }) {
                   >Refresh Favorites</Text>
                 </Button> */}
 
-              <View>
-                {favoritesList.map((favorite, index) => (
-                  <Card key={index} style={styles.card}>
-                    <CardItem>
-                      <Body>
-                        <Text style={styles.textTitle}>Name</Text>
-                        <Text style={styles.textBody}>{favorite.name}</Text>
-                        <Text style={styles.textTitle}>Type of Restaurant</Text>
-                        <Text style={styles.textBody}>{favorite.category}</Text>
-                        <Text style={styles.textTitle}>Telephone</Text>
-                        <Text style={styles.textBody}>{favorite.tel}</Text>
-                        <Text style={styles.textTitle}>Link to Restaurant</Text>
-                        <Text
-                          style={styles.linkText}
-                          onPress={() => Linking.openURL(favorite.url)}
-                        >
-                          Press To Go to Restaurant Page
-                        </Text>
-                        <Button
-                          style={{ alignSelf: "center" }}
-                          iconLeft
-                          danger
-                          onPress={() => {
-                            deleteFavorite(userId, favorite.id);
-                            setTimeout(() => {
-                              getUserFavorites(userId);
-                            }, 2000);
-                          }}
-                        >
-                          <Icon name="trash" />
+                <View>
+                  {favoritesList.map((favorite, index) => (
+                    <Card key={index} style={styles.card}>
+                      <CardItem>
+                        <Body>
+                          <Text style={styles.textTitle}>Name</Text>
+                          <Text style={styles.textBody}>{favorite.name}</Text>
+                          <Text style={styles.textTitle}>Type of Restaurant</Text>
+                          <Text style={styles.textBody}>{favorite.category}</Text>
+                          <Text style={styles.textTitle}>Telephone</Text>
+                          <Text style={styles.textBody}>{favorite.tel}</Text>
+                          <Text style={styles.textTitle}>Link to Restaurant</Text>
                           <Text
-                            style={{
-                              fontSize: 20,
-                              fontWeight: "bold",
-                              color: "white",
+                            style={styles.linkText}
+                            onPress={() => Linking.openURL(favorite.url)}
+                          >
+                            Press To Go to Restaurant Page
+                        </Text>
+                          <Button
+                            style={{ alignSelf: "center" }}
+                            iconLeft
+                            danger
+                            onPress={() => {
+                              deleteFavorite(userId, favorite.id);
+                              setTimeout(() => {
+                                getUserFavorites(userId);
+                              }, 2000);
                             }}
                           >
-                            Delete
+                            <Icon name="trash" />
+                            <Text
+                              style={{
+                                fontSize: 20,
+                                fontWeight: "bold",
+                                color: "white",
+                              }}
+                            >
+                              Delete
                           </Text>
-                        </Button>
-                      </Body>
-                    </CardItem>
-                  </Card>
-                ))}
-              </View>
-            </>
-          )}
+                          </Button>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                  ))}
+                </View>
+              </>
+            )}
         </View>
       </ScrollView>
       <Footer>
@@ -195,14 +195,9 @@ export default function FavoritesView({ navigation }) {
             <Icon active name="pizza" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
-          <Button
-            active
-            vertical
-            onPress={() => navigation.navigate("Favorites")}
-            style={{ backgroundColor: "#F8961E" }}
-          >
-            <Icon name="heart" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Favorites</Text>
+          <Button vertical onPress={() => navigation.navigate("Profile")}>
+            <Icon name="person" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>
