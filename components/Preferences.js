@@ -6,6 +6,7 @@ import {
   ScrollView,
   Picker,
   TouchableOpacity,
+  KeyboardAvoidingView
 } from "react-native";
 import {
   Container,
@@ -142,8 +143,10 @@ export default function Preferences({ navigation }) {
     );
   }
   return (
+    
     <Container>
       <Nav />
+      
       <ScrollView style={styles.container}>
         <Card style={styles.card}>
           <Text style={styles.title}>Preferences</Text>
@@ -520,7 +523,7 @@ export default function Preferences({ navigation }) {
             </Body>
           </CardItem>
         </Card>
-
+       
         <Card style={styles.card}>
           <Text style={styles.title}>Location</Text>
 
@@ -546,7 +549,7 @@ export default function Preferences({ navigation }) {
         }}
         />
         </Card>
-
+        
         <Button
           success
           block
@@ -556,6 +559,7 @@ export default function Preferences({ navigation }) {
           <Text style={{ fontSize: 25 }}>Set Preferences</Text>
         </Button>
       </ScrollView>
+      
 
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
@@ -583,6 +587,7 @@ export default function Preferences({ navigation }) {
         </FooterTab>
       </Footer>
     </Container>
+    
   );
 }
 
