@@ -103,6 +103,7 @@ export default function FavoritesView({ navigation }) {
             refreshing={refreshing}
             onRefresh={onRefresh}
             tintColor='#F3722C'
+            colors={['#F3722C']}
           />
         }
       >
