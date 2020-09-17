@@ -24,17 +24,6 @@ const wait = (timeout) => {
 
 export default function FavoritesView({ navigation }) {
 
-  // rerender***************************************
-  const [updateVal, setUpdateVal] = useState(false);
-  const forceUpdate = newState => {
-    if (newState === 'active')
-      setUpdateVal(!updateVal); // forces a rerender
-  }
-  useEffect(() => {
-    AppState.addEventListener('change', forceUpdate);
-    return () => AppState.removeEventListener('change', forceUpdate);
-  }, []);
-  //************************************************** */
   const userId = useSelector((state) => state.userIdReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const favoritesList = useSelector((state) => state.addFavoritesReducer);
