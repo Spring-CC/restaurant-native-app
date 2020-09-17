@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { InputAutoSuggest } from "react-native-autocomplete-search";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {
   StyleSheet,
   View,
@@ -149,6 +150,11 @@ export default function Preferences({ navigation }) {
       <Nav />
       
       <ScrollView style={styles.container}>
+      <KeyboardAwareScrollView 
+      contentContainerStyle={styles.container}
+      enableOnAndroid= {true}
+      extraHeight={10}
+      >
         <Card style={styles.card}>
           <Text style={styles.title}>Preferences</Text>
           <CardItem>
@@ -565,6 +571,7 @@ export default function Preferences({ navigation }) {
         >
           <Text style={{ fontSize: 25 }}>Set Preferences</Text>
         </Button>
+        </KeyboardAwareScrollView>
       </ScrollView>
       
 
