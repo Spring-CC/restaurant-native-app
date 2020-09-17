@@ -21,7 +21,7 @@ import {
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
 import { useSelector, useDispatch } from "react-redux";
-import { setProfile, setPic, setUserId } from "../actions";
+import { setProfile, setPic, setUserId, setLoginStatus } from "../actions";
 import Nav from "./Nav";
 
 export default function UserInfo({ navigation }) {
@@ -127,6 +127,7 @@ export default function UserInfo({ navigation }) {
                   Linking.removeEventListener("url", handleRedirect);
                   dispatch(setProfile(null));
                   dispatch(setUserId(null));
+                  dispatch(setLoginStatus());
                 }}
               >
                 <Text style={styles.text}>Logout</Text>

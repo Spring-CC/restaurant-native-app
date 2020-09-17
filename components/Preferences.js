@@ -6,6 +6,7 @@ import {
   ScrollView,
   Picker,
   TouchableOpacity,
+  KeyboardAvoidingView
 } from "react-native";
 import {
   Container,
@@ -143,8 +144,10 @@ export default function Preferences({ navigation }) {
     );
   }
   return (
+    
     <Container>
       <Nav />
+      
       <ScrollView style={styles.container}>
         <Card style={styles.card}>
           <Text style={styles.title}>Preferences</Text>
@@ -472,7 +475,7 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 1000)));
                   dispatch(priceRange((price.max = 2000)));
-                  checkBoxSelected(1);
+                checkBoxSelected(1)
                 }}
               />
               <BouncyCheckbox
@@ -482,7 +485,8 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 2000)));
                   dispatch(priceRange((price.max = 5000)));
-                  checkBoxSelected(2);
+                 checkBoxSelected(2)
+  
                 }}
               />
               <BouncyCheckbox
@@ -492,7 +496,7 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 5000)));
                   dispatch(priceRange((price.max = 10000)));
-                  checkBoxSelected(3);
+                  checkBoxSelected(3)
                 }}
               />
               <BouncyCheckbox
@@ -502,7 +506,8 @@ export default function Preferences({ navigation }) {
                 onPress={() => {
                   dispatch(priceRange((price.min = 10000)));
                   dispatch(priceRange((price.max = 15000)));
-                  checkBoxSelected(4);
+                  checkBoxSelected(4)
+  
                 }}
               />
               <BouncyCheckbox
@@ -513,13 +518,14 @@ export default function Preferences({ navigation }) {
                   dispatch(priceRange((price.min = 10000)));
                   dispatch(priceRange((price.max = 15000)));
                   // console.log(price);
-                  checkBoxSelected(5);
+                checkBoxSelected(5)
+                 
                 }}
               />
             </Body>
           </CardItem>
         </Card>
-
+       
         <Card style={styles.card}>
           <Text style={styles.title}>Location</Text>
 
@@ -550,7 +556,7 @@ export default function Preferences({ navigation }) {
             }}
           />
         </Card>
-
+        
         <Button
           success
           block
@@ -560,6 +566,7 @@ export default function Preferences({ navigation }) {
           <Text style={{ fontSize: 25 }}>Set Preferences</Text>
         </Button>
       </ScrollView>
+      
 
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
@@ -587,6 +594,7 @@ export default function Preferences({ navigation }) {
         </FooterTab>
       </Footer>
     </Container>
+    
   );
 }
 

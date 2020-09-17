@@ -13,8 +13,8 @@ import {
   Platform,
 } from "react-native";
 
-import { useDispatch } from "react-redux";
-import { setProfile, setPic, setUserId } from "../actions";
+import { useSelector, useDispatch } from "react-redux";
+import { setProfile, setPic, setUserId, setLoginStatus } from "../actions";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
@@ -26,34 +26,7 @@ export default function Landing({ navigation }) {
   const [snap, setSnap] = useState(null);
   const [userId, setId] = useState(null);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (result) {
-      if (result.error) {
-        Alert.alert(
-          "Authentication error",
-          result.params.error_description || "something went wrong"
-        );
-        return;
-      }
-      if (result.type === "success") {
-        // Retrieve the JWT token and decode it
-        const jwtToken = result.params.id_token;
-        const decoded = jwtDecode(jwtToken);
-        console.log(decoded);
-        const { nickname } = decoded;
-        const { picture } = decoded;
-        const { sub } = decoded;
-        const userId = sub.substr(6);
-        setId(userId);
-        setSnap(picture);
-        setName(nickname);
-        dispatch(setProfile(nickname));
-        dispatch(setPic(picture));
-        dispatch(setUserId(userId));
-      }
-    }
-  }, [result]);
+  const isLoggedIn = useSelector((state) => state.loginStatusReducer);
 
   const [request, result, promptAsync] = AuthSession.useAuthRequest(
     {
@@ -96,6 +69,7 @@ export default function Landing({ navigation }) {
         dispatch(setProfile(nickname));
         dispatch(setPic(picture));
         dispatch(setUserId(userId));
+        dispatch(setLoginStatus(""));
       }
     }
   }, [result]);
@@ -113,7 +87,7 @@ export default function Landing({ navigation }) {
           source={require("../assets/logo_bowl.png")}
         />
       </View>
-      {name ? (
+      {isLoggedIn ? (
         <View>
           <View>
             <Text style={styles.welcometext}>Welcome, {name}!</Text>

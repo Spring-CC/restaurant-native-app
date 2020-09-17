@@ -23,6 +23,8 @@ export default function Home({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
+  const status = useSelector((state) => state.loginStatusReducer);
+  console.log("this is the status", status);
 
   const dispatch = useDispatch();
 
