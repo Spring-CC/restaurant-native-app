@@ -32,11 +32,11 @@ export default function Home({ navigation }) {
         "https://restaurantserverspring.herokuapp.com/restAtlas"
       );
       const restaurants = results.data;
-      for(let i = restaurants.length - 1; i > 0; i--){
-        const j = Math.floor(Math.random() * i)
-        const temp = restaurants[i]
-        restaurants[i] = restaurants[j]
-        restaurants[j] = temp
+      for (let i = restaurants.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i);
+        const temp = restaurants[i];
+        restaurants[i] = restaurants[j];
+        restaurants[j] = temp;
       }
       dispatch(setRestaurantsList(restaurants));
     } catch (err) {
@@ -45,15 +45,14 @@ export default function Home({ navigation }) {
   }
 
   async function getUserRecommendation(user) {
-    console.log("userid!!!!!!: ", user)
+    console.log("userid!!!!!!: ", user);
     console.log("In recommended");
     const results = await axios.get(
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
-
     );
     const data = results.data;
     console.log(data);
-    dispatch({type: "SORT_RESTAURANTS", payload: data});
+    dispatch({ type: "SORT_RESTAURANTS", payload: data });
   }
 
   useEffect(() => {
@@ -88,7 +87,7 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-    console.log(restData)
+    console.log(restData);
     liked(userId, restData);
     navigation.navigate("Details");
   }
@@ -96,7 +95,6 @@ export default function Home({ navigation }) {
   async function unliked(card) {
     try {
       const swiped_left = restData.id;
-
 
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
@@ -118,7 +116,7 @@ export default function Home({ navigation }) {
           onSwipeRight={(card) => onSwipeRight(card)}
           onSwipeLeft={(card) => unliked(card)}
           renderItem={(item) => (
-            <Card style={{ elevation: 3 }}>
+            <Card style={styles.card}>
               <CardItem>
                 <Left>
                   <Body>
@@ -158,8 +156,8 @@ export default function Home({ navigation }) {
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Home</Text>
+            <Icon name="home" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Home</Text>
           </Button>
           <Button
             active
@@ -167,16 +165,16 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate("Search")}
             style={{ backgroundColor: "#F8961E" }}
           >
-            <Icon name="eye" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Search</Text>
+            <Icon name="eye" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Preference</Text>
+            <Icon active name="pizza" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff' }}>Favorites</Text>
+            <Icon name="heart" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>Favorites</Text>
           </Button>
         </FooterTab>
       </Footer>
@@ -195,6 +193,17 @@ const styles = StyleSheet.create({
   },
   text_sub: {
     fontFamily: "MPLUS1p-Bold",
-    color: '#F3722C',
+    color: "#F3722C",
+  },
+  card: {
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
 });
