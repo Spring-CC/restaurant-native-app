@@ -547,7 +547,7 @@ export default function Preferences({ navigation }) {
             style={{
               flex: 1,
               margin: 20,
-              padding: 20,
+              padding: 50,
               justifyContent: "center",
             }}
             staticData={data}
