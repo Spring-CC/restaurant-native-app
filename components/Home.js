@@ -23,6 +23,8 @@ export default function Home({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
+  const status = useSelector((state) => state.loginStatusReducer);
+  console.log("this is the status", status);
 
   const dispatch = useDispatch();
 
@@ -172,9 +174,9 @@ export default function Home({ navigation }) {
             <Icon active name="pizza" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
-          <Button vertical onPress={() => navigation.navigate("Favorites")}>
-            <Icon name="heart" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Favorites</Text>
+          <Button vertical onPress={() => navigation.navigate("Profile")}>
+            <Icon name="person" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff" }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>
