@@ -51,38 +51,28 @@ export default function Receive({ navigation }) {
     }
   }
 
-  const DismissKeyboard = ({ children }) => (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      {children}
-    </TouchableWithoutFeedback>
-  );
-
   function back() {
     navigation.navigate("Profile");
     onChangeNumber("");
   }
   return (
     <Container>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Nav />
-        <View style={styles.container}>
-          {isSent ? (
-            <View>
-              <Text style={styles.success}>Number has been sent!</Text>
-              <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate("Search")}
-              >
-                <Text style={styles.text}>Go Home</Text>
-              </TouchableOpacity>
-            </View>
-          ) : (
-            <View>
-              {/* <DismissKeyboard> */}
-              <TouchableWithoutFeedback
-                onPress={Keyboard.dismiss}
-                accessible={false}
-              >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <SafeAreaView style={{ flex: 1 }}>
+          <Nav />
+          <View style={styles.container}>
+            {isSent ? (
+              <View>
+                <Text style={styles.success}>Number has been sent!</Text>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => navigation.navigate("Search")}
+                >
+                  <Text style={styles.text}>Go Home</Text>
+                </TouchableOpacity>
+              </View>
+            ) : (
+              <View>
                 <View>
                   <TextInput
                     placeholder="Type your secret code"
@@ -94,25 +84,27 @@ export default function Receive({ navigation }) {
                     keyboardType="default"
                   />
                 </View>
-              </TouchableWithoutFeedback>
-              {/* </DismissKeyboard> */}
 
-              <View style={styles.buttonlineup}>
-                <TouchableOpacity
-                  style={styles.button}
-                  onPress={() => submit(number)}
-                >
-                  <Text style={styles.text}> Submit </Text>
-                </TouchableOpacity>
+                <View style={styles.buttonlineup}>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => submit(number)}
+                  >
+                    <Text style={styles.text}> Submit </Text>
+                  </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button} onPress={() => back()}>
-                  <Text style={styles.text}> Go Back </Text>
-                </TouchableOpacity>
+                  <TouchableOpacity
+                    style={styles.button}
+                    onPress={() => back()}
+                  >
+                    <Text style={styles.text}> Go Back </Text>
+                  </TouchableOpacity>
+                </View>
               </View>
-            </View>
-          )}
-        </View>
-      </SafeAreaView>
+            )}
+          </View>
+        </SafeAreaView>
+      </TouchableWithoutFeedback>
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
