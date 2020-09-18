@@ -44,20 +44,21 @@ export default function Receive({ navigation }) {
       <SafeAreaView style={{ flex: 1 }}>
         <Nav />
         <View style={styles.container}>
+          <Text>Tap the secret code to share</Text>
           <TouchableOpacity
             style={styles.button}
             onPress={() => copyToClipboard()}
           >
             <Text style={styles.text}>{userId}</Text>
           </TouchableOpacity>
-          <Text>tap to copy</Text>
+
           {isCopied ? (
             <View>
               <Text>Copied!</Text>
             </View>
           ) : (
-              <View></View>
-            )}
+            <View></View>
+          )}
 
           {/* <TouchableOpacity onPress={() => fetchCopiedText()}>
           <Text>View copied text</Text>

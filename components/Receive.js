@@ -5,6 +5,8 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  Keyboard,
+  TouchableWithoutFeedback,
   // Text,
 } from "react-native";
 import {
@@ -22,7 +24,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setRestaurantsList } from "../actions";
 
 export default function Receive({ navigation }) {
-  function submit() { }
+  function submit() {}
   const [number, onChangeNumber] = useState("");
   const [isSent, setIsSent] = useState(false);
   const userId = useSelector((state) => state.userIdReducer);
@@ -42,16 +44,22 @@ export default function Receive({ navigation }) {
         }
       );
       setIsSent(true);
-      // textInput.clear();
+      onChangeNumber("");
       dispatch(setRestaurantsList(response));
     } catch (err) {
       console.log(err);
     }
   }
 
+  const DismissKeyboard = ({ children }) => (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      {children}
+    </TouchableWithoutFeedback>
+  );
+
   function back() {
     navigation.navigate("Profile");
-    clear();
+    onChangeNumber("");
   }
   return (
     <Container>
@@ -69,10 +77,15 @@ export default function Receive({ navigation }) {
               </TouchableOpacity>
             </View>
           ) : (
-              <View>
+            <View>
+              {/* <DismissKeyboard> */}
+              <TouchableWithoutFeedback
+                onPress={Keyboard.dismiss}
+                accessible={false}
+              >
                 <View>
                   <TextInput
-                    placeholder="Type your unique number"
+                    placeholder="Type your secret code"
                     style={styles.input}
                     onChangeText={(num) => {
                       onChangeNumber(num);
@@ -81,20 +94,23 @@ export default function Receive({ navigation }) {
                     keyboardType="default"
                   />
                 </View>
-                <View style={styles.buttonlineup}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => submit(number)}
-                  >
-                    <Text style={styles.text}> Submit </Text>
-                  </TouchableOpacity>
+              </TouchableWithoutFeedback>
+              {/* </DismissKeyboard> */}
 
-                  <TouchableOpacity style={styles.button} onPress={() => back()}>
-                    <Text style={styles.text}> Go Back </Text>
-                  </TouchableOpacity>
-                </View>
+              <View style={styles.buttonlineup}>
+                <TouchableOpacity
+                  style={styles.button}
+                  onPress={() => submit(number)}
+                >
+                  <Text style={styles.text}> Submit </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.button} onPress={() => back()}>
+                  <Text style={styles.text}> Go Back </Text>
+                </TouchableOpacity>
               </View>
-            )}
+            </View>
+          )}
         </View>
       </SafeAreaView>
       <Footer>
