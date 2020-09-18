@@ -16,7 +16,7 @@ import {
   Text,
 } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
-import { restaurant, setRestaurantsList } from "../actions";
+import { restaurant, setRestaurantsList, setRestaurantsListSorted } from "../actions";
 import Nav from "./Nav";
 
 export default function Home({ navigation }) {
@@ -53,8 +53,10 @@ export default function Home({ navigation }) {
       `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
     );
     const data = results.data;
-    console.log(data);
-    dispatch({ type: "SORT_RESTAURANTS", payload: data });
+    console.log(data); // [1,2,3]
+      // add the restaurantsList (shuffled) to the bottom of the dataArray 
+
+    dispatch(setRestaurantsListSorted(data))
   }
 
   useEffect(() => {
