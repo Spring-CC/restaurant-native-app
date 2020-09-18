@@ -12,7 +12,7 @@ const restaurantsListReducer = (state = initialState, action) => {
           for(let j=0; j < restaurants.length; j++){ // current restaurant state
             if(action.payload[i].id === restaurants[j].id){ 
                 restaurants.splice(j,1)  // remove duplicated
-                restaurants.unshift(action.paylod[i]) // move it to the front
+                restaurants.unshift(action.payload[i]) // move it to the front
             }
           }
       }
