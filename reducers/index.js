@@ -1,4 +1,3 @@
-import incrementReducer from "./increment";
 import restaurantReducer from "./restaurant";
 import categoryReducer from "./categories";
 import priceReducer from "./priceRange";
@@ -14,7 +13,6 @@ import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   picReducer,
-  incrementReducer,
   restaurantReducer,
   categoryReducer,
   priceReducer,
