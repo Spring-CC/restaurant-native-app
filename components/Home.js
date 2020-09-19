@@ -87,6 +87,10 @@ export default function Home({ navigation }) {
     }
   }, []);
 
+  useEffect(()=>{
+    console.log(restaurantList[0].name);
+  })
+
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
