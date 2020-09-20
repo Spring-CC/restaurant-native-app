@@ -140,6 +140,7 @@ export default function Home({ navigation }) {
       <Nav />
       <View style={styles.container}>
         <DeckSwiper
+          key ={restaurantList.length}
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
           onSwipeLeft={(card) => unliked(card)}
