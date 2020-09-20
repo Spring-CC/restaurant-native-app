@@ -65,14 +65,14 @@ export default function Home({ navigation }) {
       allRestaurants[j] = temp;
     }
 
-    for(let i = 0; i< data.length; i++){ // recommended restaurabt
-      for(let j=0; j < allRestaurants.length; j++){ // current restaurant state
-        if(data[i].id === allRestaurants[j].id){ 
-          allRestaurants.splice(j,1)  // remove duplicated
+    for (let i = 0; i < data.length; i++) { // recommended restaurabt
+      for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
+        if (data[i].id === allRestaurants[j].id) {
+          allRestaurants.splice(j, 1)  // remove duplicated
           allRestaurants.unshift(data[i]) // move it to the front
         }
       }
-  }
+    }
 
     console.log(data);
     //dispatch({ type: "SORT_RESTAURANTS", payload: data });
@@ -87,7 +87,7 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log(restaurantList[0].name);
   })
 
@@ -140,7 +140,7 @@ export default function Home({ navigation }) {
       <Nav />
       <View style={styles.container}>
         <DeckSwiper
-          key ={restaurantList.length}
+          key={restaurantList.length}
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
           onSwipeLeft={(card) => unliked(card)}
@@ -194,11 +194,11 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate("Search")}
             style={{ backgroundColor: "#F8961E" }}
           >
-            <Icon name="eye" style={{ color: "#fff" }} />
+            <Icon name="search" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: "#fff" }} />
+            <Icon active name="cog" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>

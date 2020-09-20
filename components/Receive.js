@@ -24,7 +24,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setRestaurantsList } from "../actions";
 
 export default function Receive({ navigation }) {
-  function submit() {}
+  function submit() { }
   const [number, onChangeNumber] = useState("");
   const [isSent, setIsSent] = useState(false);
   const userId = useSelector((state) => state.userIdReducer);
@@ -72,36 +72,36 @@ export default function Receive({ navigation }) {
                 </TouchableOpacity>
               </View>
             ) : (
-              <View>
                 <View>
-                  <TextInput
-                    placeholder="Type your secret code"
-                    style={styles.input}
-                    onChangeText={(num) => {
-                      onChangeNumber(num);
-                    }}
-                    value={number}
-                    keyboardType="default"
-                  />
-                </View>
+                  <View>
+                    <TextInput
+                      placeholder="Type your secret code"
+                      style={styles.input}
+                      onChangeText={(num) => {
+                        onChangeNumber(num);
+                      }}
+                      value={number}
+                      keyboardType="default"
+                    />
+                  </View>
 
-                <View style={styles.buttonlineup}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => submit(number)}
-                  >
-                    <Text style={styles.text}> Submit </Text>
-                  </TouchableOpacity>
+                  <View style={styles.buttonlineup}>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={() => submit(number)}
+                    >
+                      <Text style={styles.text}> Submit </Text>
+                    </TouchableOpacity>
 
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => back()}
-                  >
-                    <Text style={styles.text}> Go Back </Text>
-                  </TouchableOpacity>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={() => back()}
+                    >
+                      <Text style={styles.text}> Go Back </Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
-              </View>
-            )}
+              )}
           </View>
         </SafeAreaView>
       </TouchableWithoutFeedback>
@@ -112,11 +112,11 @@ export default function Receive({ navigation }) {
             <Text style={{ color: "#fff" }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" style={{ color: "#fff" }} />
+            <Icon name="search" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: "#fff" }} />
+            <Icon active name="cog" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
