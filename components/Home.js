@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { StyleSheet, ScrollView, Image } from "react-native";
+import { StyleSheet, ScrollView, Image, Text } from "react-native";
 import {
   Container,
   View,
@@ -13,7 +13,7 @@ import {
   FooterTab,
   Button,
   Icon,
-  Text,
+  // Text,
 } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
 import { restaurant, setRestaurantsList } from "../actions";
@@ -194,7 +194,7 @@ export default function Home({ navigation }) {
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="home" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Home</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Home</Text>
           </Button>
           <Button
             active
@@ -203,15 +203,15 @@ export default function Home({ navigation }) {
             style={{ backgroundColor: "#F8961E" }}
           >
             <Icon name="search" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Search</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
             <Icon active name="cog" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Preference</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
             <Icon name="person" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>User</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>

@@ -5,6 +5,7 @@ import {
   Image,
   Linking,
   TouchableOpacity,
+  Text,
 } from "react-native";
 import {
   Container,
@@ -16,7 +17,7 @@ import {
   FooterTab,
   Button,
   Icon,
-  Text,
+  // Text,
 } from "native-base";
 import Nav from "./Nav";
 import IconAlt from "react-native-vector-icons/Foundation";
