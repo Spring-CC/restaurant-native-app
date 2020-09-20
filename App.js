@@ -21,6 +21,7 @@ import { YellowBox } from "react-native";
 
 YellowBox.ignoreWarnings([
   "Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`",
+  "VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.",
 ]);
 // ------- END OF WARNING SUPPRESSION
 
