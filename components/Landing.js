@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
@@ -106,23 +107,23 @@ export default function Landing({ navigation }) {
           </View>
         </View>
       ) : (
-        <View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity
-              disabled={!request}
-              accessibilityTraits="button"
-              title="LOGIN"
-              onPress={() => {
-                promptAsync({ useProxy });
-              }}
-              activeOpacity={0.8}
-              style={styles.button}
-            >
-              <Text style={styles.text}>LOGIN</Text>
-            </TouchableOpacity>
+          <View>
+            <View style={styles.buttonContainer}>
+              <TouchableOpacity
+                disabled={!request}
+                accessibilityTraits="button"
+                title="LOGIN"
+                onPress={() => {
+                  promptAsync({ useProxy });
+                }}
+                activeOpacity={0.8}
+                style={styles.button}
+              >
+                <Text style={styles.text}>LOGIN</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-      )}
+        )}
       <View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity

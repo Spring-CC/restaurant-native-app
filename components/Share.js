@@ -57,8 +57,8 @@ export default function Receive({ navigation }) {
               <Text>Copied!</Text>
             </View>
           ) : (
-            <View></View>
-          )}
+              <View></View>
+            )}
 
           {/* <TouchableOpacity onPress={() => fetchCopiedText()}>
           <Text>View copied text</Text>
@@ -82,11 +82,11 @@ export default function Receive({ navigation }) {
             <Text style={{ color: "#fff" }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" style={{ color: "#fff" }} />
+            <Icon name="search" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: "#fff" }} />
+            <Icon active name="cog" style={{ color: "#fff" }} />
             <Text style={{ color: "#fff" }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
