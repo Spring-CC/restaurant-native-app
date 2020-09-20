@@ -135,6 +135,14 @@ export default function Home({ navigation }) {
     }
   }
 
+  // Updating the CSV
+  // function updateCsv() {
+  //   axios.post("https://restaurantserverspring.herokuapp.com/updatecsv");
+  // }
+  // useEffect(() => {
+  //   updateCsv();
+  // }, []);
+
   return (
     <Container>
       <Nav />
