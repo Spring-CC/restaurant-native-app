@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Keyboard,
   TouchableWithoutFeedback,
-  // Text,
+  Text,
 } from "react-native";
 import {
   Container,
@@ -16,7 +16,7 @@ import {
   FooterTab,
   Button,
   Icon,
-  Text,
+  // Text,
 } from "native-base";
 import Nav from "./Nav";
 import axios from "axios";
@@ -109,19 +109,19 @@ export default function Receive({ navigation }) {
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="home" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Home</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
             <Icon name="search" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Search</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
             <Icon active name="cog" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Preference</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
             <Icon name="person" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>User</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>
