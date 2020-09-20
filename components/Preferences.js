@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { InputAutoSuggest } from "react-native-autocomplete-search";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {
@@ -27,6 +27,7 @@ import {
   setLocations,
   setRestaurantsList,
   setpriceCheckBox,
+  restaurant
 } from "../actions";
 import axios from "axios";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -45,6 +46,7 @@ export default function Preferences({ navigation }) {
   const location = useSelector((state) => state.locationReducer);
   const priceCheck = useSelector((state) => state.priceCheckReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
+  const restData = useSelector((state) => state.restaurantReducer);
   const dispatch = useDispatch();
 
   //function to filter restaurants through preferences
@@ -73,6 +75,7 @@ export default function Preferences({ navigation }) {
           dispatch(setLocations(""));
           return;
         }
+        
         dispatch(setRestaurantsList(finalFil));
         // add dispatch , create a state that has recommended restaurant data
 
@@ -94,7 +97,7 @@ export default function Preferences({ navigation }) {
         );
         return;
       }
-
+     
       dispatch(setRestaurantsList(filtCat));
       setTimeout(() => {
         setLoading(false);
@@ -107,6 +110,10 @@ export default function Preferences({ navigation }) {
       return;
     }
   }
+
+  useEffect(()=>{
+    console.log(categories);
+  })
 
   const checkBoxSelected = (id) => {
     const selection = priceCheck.map((value, i) => {
@@ -122,8 +129,6 @@ export default function Preferences({ navigation }) {
         };
       }
     });
-    console.log(selection);
-    //setSelected(selection);
     dispatch(setpriceCheckBox(selection));
   };
 
@@ -469,8 +474,7 @@ export default function Preferences({ navigation }) {
                 text="¥500 - ¥1000 💴"
                 textDecoration={true}
                 onPress={() => {
-                  dispatch(priceRange((price.min = 500)));
-                  dispatch(priceRange((price.max = 1000)));
+                  dispatch(priceRange(({min : 500, max : 1000})));
                   checkBoxSelected(0);
                   console.log(priceCheck);
                 }}
@@ -480,8 +484,7 @@ export default function Preferences({ navigation }) {
                 text="¥1000 - ¥2000 💴"
                 textDecoration={true}
                 onPress={() => {
-                  dispatch(priceRange((price.min = 1000)));
-                  dispatch(priceRange((price.max = 2000)));
+                dispatch(priceRange(({min : 100, max : 2000})));
                 checkBoxSelected(1)
                 }}
               />
@@ -490,8 +493,7 @@ export default function Preferences({ navigation }) {
                 text="¥2000 - ¥5000 💴"
                 textDecoration={true}
                 onPress={() => {
-                  dispatch(priceRange((price.min = 2000)));
-                  dispatch(priceRange((price.max = 5000)));
+                  dispatch(priceRange(({min : 2000, max : 5000})));
                  checkBoxSelected(2)
   
                 }}
@@ -501,8 +503,7 @@ export default function Preferences({ navigation }) {
                 text="¥5000 - ¥10000 💴"
                 textDecoration={true}
                 onPress={() => {
-                  dispatch(priceRange((price.min = 5000)));
-                  dispatch(priceRange((price.max = 10000)));
+                  dispatch(priceRange(({min : 5000, max : 10000})));
                   checkBoxSelected(3)
                 }}
               />
@@ -511,8 +512,7 @@ export default function Preferences({ navigation }) {
                 text="¥10000 - ¥15000 💴"
                 textDecoration={true}
                 onPress={() => {
-                  dispatch(priceRange((price.min = 10000)));
-                  dispatch(priceRange((price.max = 15000)));
+                  dispatch(priceRange(({min : 10000, max : 15000})));
                   checkBoxSelected(4)
   
                 }}
@@ -522,9 +522,7 @@ export default function Preferences({ navigation }) {
                 text="¥15000 - ¥20000 💴"
                 textDecoration={true}
                 onPress={() => {
-                  dispatch(priceRange((price.min = 10000)));
-                  dispatch(priceRange((price.max = 15000)));
-                  // console.log(price);
+                  dispatch(priceRange(({min : 15000, max : 20000})));
                 checkBoxSelected(5)
                  
                 }}

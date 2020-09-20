@@ -87,6 +87,10 @@ export default function Home({ navigation }) {
     }
   }, []);
 
+  useEffect(()=>{
+    console.log(restaurantList[0].name);
+  })
+
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
@@ -136,6 +140,7 @@ export default function Home({ navigation }) {
       <Nav />
       <View style={styles.container}>
         <DeckSwiper
+          key ={restaurantList.length}
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
           onSwipeLeft={(card) => unliked(card)}
