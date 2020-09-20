@@ -6,7 +6,7 @@ const priceRange = {
     const priceReducer = (state = priceRange, action) => {
         switch (action.type) {
             case "PRICE_RANGE":
-                return {...state, priceRange: action.payload}
+                return action.payload;
             default:
                 return state;
         }
