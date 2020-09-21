@@ -10,6 +10,7 @@ import {
   Image,
   Linking,
   RefreshControl,
+  Text,
 } from "react-native";
 import {
   Container,
@@ -17,7 +18,7 @@ import {
   FooterTab,
   Button,
   Icon,
-  Text,
+  // Text,
   Card,
   CardItem,
   Body,
@@ -120,8 +121,8 @@ export default function FavoritesView({ navigation }) {
               </Body>
             </Card>
           ) : (
-            <>
-              {/* <Button
+              <>
+                {/* <Button
                   success
                   block
                   onPress={() => getUserFavorites(userId)}
@@ -132,72 +133,72 @@ export default function FavoritesView({ navigation }) {
                   >Refresh Favorites</Text>
                 </Button> */}
 
-              <View>
-                {favoritesList.map((favorite, index) => (
-                  <Card key={index} style={styles.card}>
-                    <CardItem>
-                      <Body>
-                        <Text style={styles.textTitle}>Name</Text>
-                        <Text style={styles.textBody}>{favorite.name}</Text>
-                        <Text style={styles.textTitle}>Type of Restaurant</Text>
-                        <Text style={styles.textBody}>{favorite.category}</Text>
-                        <Text style={styles.textTitle}>Telephone</Text>
-                        <Text style={styles.textBody}>{favorite.tel}</Text>
-                        <Text style={styles.textTitle}>Link</Text>
-                        <Text
-                          style={styles.linkText}
-                          onPress={() => Linking.openURL(favorite.url)}
-                        >
-                          Go to Restaurant Page
-                        </Text>
-                        <Button
-                          style={{ alignSelf: "center" }}
-                          iconLeft
-                          danger
-                          onPress={() => {
-                            deleteFavorite(userId, favorite.id);
-                            setTimeout(() => {
-                              getUserFavorites(userId);
-                            }, 2000);
-                          }}
-                        >
-                          <Icon name="trash" />
+                <View>
+                  {favoritesList.map((favorite, index) => (
+                    <Card key={index} style={styles.card}>
+                      <CardItem>
+                        <Body>
+                          <Text style={styles.textTitle}>Name</Text>
+                          <Text style={styles.textBody}>{favorite.name}</Text>
+                          <Text style={styles.textTitle}>Type of Restaurant</Text>
+                          <Text style={styles.textBody}>{favorite.category}</Text>
+                          <Text style={styles.textTitle}>Telephone</Text>
+                          <Text style={styles.textBody}>{favorite.tel}</Text>
+                          <Text style={styles.textTitle}>Link</Text>
                           <Text
-                            style={{
-                              fontSize: 20,
-                              fontWeight: "bold",
-                              color: "white",
+                            style={styles.linkText}
+                            onPress={() => Linking.openURL(favorite.url)}
+                          >
+                            Go to Restaurant Page
+                        </Text>
+                          <Button
+                            style={{ alignSelf: "center" }}
+                            iconLeft
+                            danger
+                            onPress={() => {
+                              deleteFavorite(userId, favorite.id);
+                              setTimeout(() => {
+                                getUserFavorites(userId);
+                              }, 2000);
                             }}
                           >
-                            Delete
+                            <Icon name="trash" />
+                            <Text
+                              style={{
+                                fontSize: 20,
+                                fontWeight: "bold",
+                                color: "white",
+                              }}
+                            >
+                              Delete
                           </Text>
-                        </Button>
-                      </Body>
-                    </CardItem>
-                  </Card>
-                ))}
-              </View>
-            </>
-          )}
+                          </Button>
+                        </Body>
+                      </CardItem>
+                    </Card>
+                  ))}
+                </View>
+              </>
+            )}
         </View>
       </ScrollView>
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="home" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Home</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="eye" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Search</Text>
+            <Icon name="search" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Preference</Text>
+            <Icon active name="cog" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
             <Icon name="person" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>User</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>
