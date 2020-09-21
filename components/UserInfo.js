@@ -1,11 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   StyleSheet,
-  // View,
-  Image,
   Text,
-  // Button,
-  SafeAreaView,
   TouchableOpacity,
 } from "react-native";
 import {
@@ -15,19 +11,16 @@ import {
   FooterTab,
   Button,
   Icon,
-  // Text,
 } from "native-base";
 
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
 import { useSelector, useDispatch } from "react-redux";
-import { setProfile, setPic, setUserId, setLoginStatus } from "../actions";
+import { setProfile, setUserId, setLoginStatus } from "../actions";
 import Nav from "./Nav";
 
 export default function UserInfo({ navigation }) {
-  // const profileImage = require("../assets/profile.jpeg");
   const name = useSelector((state) => state.profileReducer);
-  const profileImage = useSelector((state) => state.picReducer);
   const isLoggedIn = useSelector((state) => state.loginStatusReducer);
 
   const dispatch = useDispatch();
@@ -124,7 +117,6 @@ export default function UserInfo({ navigation }) {
                   await WebBrowser.openBrowserAsync(
                     `https://${process.env.REACT_APP_APP_AUTHDOMAIN}/v2/logout?client_id=${process.env.REACT_APP_APP_AUTHID}&returnTo=${redirectUrl}`
                   );
-                  console.log(redirectUrl);
                   Linking.removeEventListener("url", handleRedirect);
                   dispatch(setProfile(null));
                   dispatch(setUserId(null));
