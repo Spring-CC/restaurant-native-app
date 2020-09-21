@@ -57,25 +57,20 @@ export default function FavoritesView({ navigation }) {
     const usersData = favoritesUsers.data;
 
     const userFavorite = usersData.filter((user) => user.user_Id === id);
-
+  
     const restIds = userFavorite[0].restaurant_Id;
-
+    
     const results = dataRes.filter((item) => {
       if (restIds.includes(item.id)) {
         return item;
       }
     });
-
+    
     dispatch(addFavorites(results));
   }
 
-  async function deleteFavorite(userId, restId) {
-    await axios.delete(
-      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
-      {
-        user_Id: userId,
-      }
-    );
+  async function deleteFavorite(id, restId) {
+    await axios.delete(`https://restaurantserverspring.herokuapp.com/favorites/${id}/${restId}`);
   }
 
   useEffect(() => {
