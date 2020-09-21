@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputAutoSuggest } from "react-native-autocomplete-search";
+//import { InputAutoSuggest } from "react-native-autocomplete-search";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import {
   StyleSheet,
@@ -506,7 +506,7 @@ export default function Preferences({ navigation }) {
                   checkBoxSelected(3)
                 }}
               />
-              <BouncyCheckbox
+              {/* <BouncyCheckbox
                 isChecked={priceCheck[4].checked}
                 text="¥10000 - ¥15000 💴"
                 textDecoration={true}
@@ -516,7 +516,7 @@ export default function Preferences({ navigation }) {
                   checkBoxSelected(4)
   
                 }}
-              />
+              /> */}
               <BouncyCheckbox
                 isChecked={priceCheck[5].checked}
                 text="¥15000 - ¥20000 💴"
