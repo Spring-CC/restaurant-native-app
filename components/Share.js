@@ -1,21 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {
-  // View,
   Text,
   StyleSheet,
   Clipboard,
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import {
-  Container,
-  View,
-  Footer,
-  FooterTab,
-  Button,
-  Icon,
-  // Text,
-} from "native-base";
+import { Container, View, Footer, FooterTab, Button, Icon } from "native-base";
 import Nav from "./Nav";
 import { useSelector } from "react-redux";
 
@@ -57,13 +48,8 @@ export default function Receive({ navigation }) {
               <Text>Copied!</Text>
             </View>
           ) : (
-              <View></View>
-            )}
-
-          {/* <TouchableOpacity onPress={() => fetchCopiedText()}>
-          <Text>View copied text</Text>
-        </TouchableOpacity>
-        <Text style={styles.copiedText}>{copiedText}</Text> */}
+            <View></View>
+          )}
 
           <TouchableOpacity
             style={styles.backButton}
