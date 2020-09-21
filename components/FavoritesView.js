@@ -147,6 +147,7 @@ export default function FavoritesView({ navigation }) {
                                 fontSize: 20,
                                 fontWeight: "bold",
                                 color: "white",
+                                marginLeft: 10,
                               }}
                             >
                               Delete
