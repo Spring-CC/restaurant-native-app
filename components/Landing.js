@@ -13,7 +13,7 @@ import {
 } from "react-native";
 
 import { useSelector, useDispatch } from "react-redux";
-import { setProfile, setPic, setUserId, setLoginStatus } from "../actions";
+import { setProfile, setUserId, setLoginStatus } from "../actions";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
@@ -65,7 +65,6 @@ export default function Landing({ navigation }) {
         setSnap(picture);
         setName(nickname);
         dispatch(setProfile(nickname));
-        dispatch(setPic(picture));
         dispatch(setUserId(userId));
         dispatch(setLoginStatus(""));
       }
