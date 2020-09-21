@@ -9,8 +9,6 @@ import {
   TextInput,
 } from "react-native";
 
-// problems on this page are if I sign up with a random email, then go to my profile to click change password. Then I type in something random, it returns success, even though my password has not changed.
-
 export default function changePassword({ navigation }) {
   const [email, onChangeEmail] = useState("");
   const [isSent, setSent] = useState(false);
@@ -68,14 +66,7 @@ export default function changePassword({ navigation }) {
           </View>
         )}
       </View>
-      {/* <View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate("Profile", { screen: "UserInfo" })}
-        >
-          <Text> Go back to profile </Text>
-        </TouchableOpacity>
-      </View> */}
+
       <View>
         <TouchableOpacity
           style={styles.button}
