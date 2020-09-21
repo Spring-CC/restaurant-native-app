@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { InputAutoSuggest } from "react-native-autocomplete-search";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { StyleSheet, View, ScrollView, Text } from "react-native";
