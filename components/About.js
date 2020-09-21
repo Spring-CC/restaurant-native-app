@@ -132,7 +132,7 @@ export default function About({ navigation }) {
               >
                 <IconAlt style={styles.icon} name="social-linkedin" size={50} />
               </TouchableOpacity>
-              <Text style={styles.textGit}>Alberto Medellin</Text>ex
+              <Text style={styles.textGit}>Alberto Medellin</Text>
             </View>
           </View>
         </View>
