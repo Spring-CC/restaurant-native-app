@@ -1,7 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import * as WebBrowser from "expo-web-browser";
-import * as Linking from "expo-linking";
 import * as AuthSession from "expo-auth-session";
 import jwtDecode from "jwt-decode";
 import {
@@ -59,7 +57,6 @@ export default function Landing({ navigation }) {
         // Retrieve the JWT token and decode it
         const jwtToken = result.params.id_token;
         const decoded = jwtDecode(jwtToken);
-        console.log(decoded);
         const { nickname } = decoded;
         const { picture } = decoded;
         const { sub } = decoded;
@@ -74,11 +71,6 @@ export default function Landing({ navigation }) {
       }
     }
   }, [result]);
-
-  // function handleRedirect() {
-  //   WebBrowser.dismissBrowser();
-  //   navigation.navigate("Home", { screen: "Landing" });
-  // }
 
   return (
     <View style={styles.container}>
