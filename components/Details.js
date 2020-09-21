@@ -83,13 +83,8 @@ export default function Details({ navigation }) {
     checkFavorites();
   }, []);
 
-  async function deleteFavorite(userId, restId) {
-    await axios.delete(
-      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
-      {
-        user_Id: userId,
-      }
-    );
+  async function deleteFavorite(id, restId) {
+    await axios.delete(`https://restaurantserverspring.herokuapp.com/favorites/${id}/${restId}`);
   }
 
   return (
