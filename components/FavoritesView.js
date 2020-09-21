@@ -151,7 +151,7 @@ export default function FavoritesView({ navigation }) {
                             Go to Restaurant Page
                         </Text>
                           <Button
-                            style={{ alignSelf: "center" }}
+                            style={{ alignSelf: "center", paddingRight: 15 }}
                             iconLeft
                             danger
                             onPress={() => {

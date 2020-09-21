@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { InputAutoSuggest } from "react-native-autocomplete-search";
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-  Picker,
-  TouchableOpacity,
-  KeyboardAvoidingView,
-  Text,
-} from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { StyleSheet, View, ScrollView, Text } from "react-native";
 import {
   Container,
   Footer,
   FooterTab,
   Button,
   Icon,
-  // Text,
   Card,
   CardItem,
   Body,
@@ -28,32 +19,27 @@ import {
   setLocations,
   setRestaurantsList,
   setpriceCheckBox,
-  restaurant
 } from "../actions";
 import axios from "axios";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import categoryFilter from "../actions/cateforyFilter";
 import Nav from "./Nav";
-//import Slider from './Slider'
 import Spinner from "react-native-loading-spinner-overlay";
 import data from "../data/autoinfo.json";
 import locationFilter from "../actions/locationFilter";
 
-// needs comments
 export default function Preferences({ navigation }) {
   const [loading, setLoading] = useState(false);
   const categories = useSelector((state) => state.categoryReducer);
   const price = useSelector((state) => state.priceReducer);
   const location = useSelector((state) => state.locationReducer);
   const priceCheck = useSelector((state) => state.priceCheckReducer);
-  const restaurantList = useSelector((state) => state.restaurantsListReducer);
-  const restData = useSelector((state) => state.restaurantReducer);
+
   const dispatch = useDispatch();
 
-  //function to filter restaurants through preferences
   async function getRestaurants() {
     setLoading(true);
-    //Get all restaurants from DB
+
     try {
       // const results = await axios.get(
       //   "https://restaurantserverspring.herokuapp.com/restaurants"
@@ -62,13 +48,12 @@ export default function Preferences({ navigation }) {
         "https://restaurantserverspring.herokuapp.com/restaurants"
       );
       const restaurants = results.data;
-      //Filter restaurants by budget
+
       const filtBudget = restaurants.filter(
         (res) => res.budget >= price.min && res.budget <= price.max
       );
       const filtCat = categoryFilter(filtBudget, categories);
 
-      //if location is selected filter by location as well
       if (location !== "") {
         const finalFil = locationFilter(filtCat, location);
         if (finalFil.length === 0) {
@@ -81,7 +66,6 @@ export default function Preferences({ navigation }) {
         }
 
         dispatch(setRestaurantsList(finalFil));
-        // add dispatch , create a state that has recommended restaurant data
 
         setTimeout(() => {
           setLoading(false);
@@ -92,8 +76,6 @@ export default function Preferences({ navigation }) {
         return;
       }
 
-      //if no location is selected, filter by other preferences only
-      // console.log(filtCat)
       if (filtCat.length === 0) {
         setLoading(false);
         alert(
@@ -117,7 +99,7 @@ export default function Preferences({ navigation }) {
 
   useEffect(() => {
     console.log(categories);
-  })
+  });
 
   const checkBoxSelected = (id) => {
     const selection = priceCheck.map((value, i) => {
@@ -146,7 +128,7 @@ export default function Preferences({ navigation }) {
               textContent={"Loading..."}
               textStyle={styles.spinnerTextStyle}
               size="large"
-              color="#90be6d" // green too light ?
+              color="#90be6d"
             />
           </View>
         </ScrollView>
@@ -154,7 +136,6 @@ export default function Preferences({ navigation }) {
     );
   }
   return (
-
     <Container>
       <Nav />
 
@@ -179,16 +160,7 @@ export default function Preferences({ navigation }) {
                     );
                   }}
                 />
-                {/* <BouncyCheckbox
-                isChecked={categories["日本料理"]}
-                text="Japanese 🍙"
-                textDecoration={true}
-                onPress={() => {
-                  dispatch(
-                    category((categories["日本料理"] = !categories["日本料理"]))
-                  );
-                }}
-              /> */}
+
                 <BouncyCheckbox
                   isChecked={categories["寿司"]}
                   text="Sushi / Seafood 🍣"
@@ -259,7 +231,9 @@ export default function Preferences({ navigation }) {
                   textDecoration={true}
                   onPress={() => {
                     dispatch(
-                      category((categories["郷土料理"] = !categories["郷土料理"]))
+                      category(
+                        (categories["郷土料理"] = !categories["郷土料理"])
+                      )
                     );
                   }}
                 />
@@ -303,7 +277,9 @@ export default function Preferences({ navigation }) {
                   textDecoration={true}
                   onPress={() => {
                     dispatch(
-                      category((categories["フレンチ"] = !categories["フレンチ"]))
+                      category(
+                        (categories["フレンチ"] = !categories["フレンチ"])
+                      )
                     );
                   }}
                   style={styles.checkbox}
@@ -314,7 +290,9 @@ export default function Preferences({ navigation }) {
                   textDecoration={true}
                   onPress={() => {
                     dispatch(
-                      category((categories["ラーメン"] = !categories["ラーメン"]))
+                      category(
+                        (categories["ラーメン"] = !categories["ラーメン"])
+                      )
                     );
                   }}
                 />
@@ -345,7 +323,9 @@ export default function Preferences({ navigation }) {
                   onPress={() => {
                     dispatch(
                       category(
-                        (categories["メキシコ料理"] = !categories["メキシコ料理"])
+                        (categories["メキシコ料理"] = !categories[
+                          "メキシコ料理"
+                        ])
                       )
                     );
                   }}
@@ -371,7 +351,9 @@ export default function Preferences({ navigation }) {
                   onPress={() => {
                     dispatch(
                       category(
-                        (categories["定食・食事処"] = !categories["定食・食事処"])
+                        (categories["定食・食事処"] = !categories[
+                          "定食・食事処"
+                        ])
                       )
                     );
                   }}
@@ -393,7 +375,9 @@ export default function Preferences({ navigation }) {
                   onPress={() => {
                     dispatch(
                       category(
-                        (categories["しゃぶしゃぶ"] = !categories["しゃぶしゃぶ"])
+                        (categories["しゃぶしゃぶ"] = !categories[
+                          "しゃぶしゃぶ"
+                        ])
                       )
                     );
                   }}
@@ -404,7 +388,9 @@ export default function Preferences({ navigation }) {
                   textDecoration={true}
                   onPress={() => {
                     dispatch(
-                      category((categories["ステーキ"] = !categories["ステーキ"]))
+                      category(
+                        (categories["ステーキ"] = !categories["ステーキ"])
+                      )
                     );
                   }}
                 />
@@ -418,7 +404,6 @@ export default function Preferences({ navigation }) {
                         (categories["ハンバーグ"] = !categories["ハンバーグ"])
                       )
                     );
-                    // console.log(categories);
                   }}
                 />
                 <BouncyCheckbox
@@ -429,7 +414,6 @@ export default function Preferences({ navigation }) {
                     dispatch(
                       category((categories["洋食屋"] = !categories["洋食屋"]))
                     );
-                    // console.log(categories);
                   }}
                 />
                 <BouncyCheckbox
@@ -440,7 +424,6 @@ export default function Preferences({ navigation }) {
                     dispatch(
                       category((categories["火鍋"] = !categories["火鍋"]))
                     );
-                    // console.log(categories);
                   }}
                 />
                 <BouncyCheckbox
@@ -451,7 +434,6 @@ export default function Preferences({ navigation }) {
                     dispatch(
                       category((categories["バー"] = !categories["バー"]))
                     );
-                    // console.log(categories);
                   }}
                 />
                 <BouncyCheckbox
@@ -478,7 +460,7 @@ export default function Preferences({ navigation }) {
                   text="¥500 - ¥1000 💴"
                   textDecoration={true}
                   onPress={() => {
-                    dispatch(priceRange(({ min: 500, max: 1000 })));
+                    dispatch(priceRange({ min: 500, max: 1000 }));
                     checkBoxSelected(0);
                     console.log(priceCheck);
                   }}
@@ -488,8 +470,8 @@ export default function Preferences({ navigation }) {
                   text="¥1000 - ¥2000 💴"
                   textDecoration={true}
                   onPress={() => {
-                    dispatch(priceRange(({ min: 100, max: 2000 })));
-                    checkBoxSelected(1)
+                    dispatch(priceRange({ min: 100, max: 2000 }));
+                    checkBoxSelected(1);
                   }}
                 />
                 <BouncyCheckbox
@@ -497,9 +479,8 @@ export default function Preferences({ navigation }) {
                   text="¥2000 - ¥5000 💴"
                   textDecoration={true}
                   onPress={() => {
-                    dispatch(priceRange(({ min: 2000, max: 5000 })));
-                    checkBoxSelected(2)
-
+                    dispatch(priceRange({ min: 2000, max: 5000 }));
+                    checkBoxSelected(2);
                   }}
                 />
                 <BouncyCheckbox
@@ -507,8 +488,8 @@ export default function Preferences({ navigation }) {
                   text="¥5000 - ¥10000 💴"
                   textDecoration={true}
                   onPress={() => {
-                    dispatch(priceRange(({ min: 5000, max: 10000 })));
-                    checkBoxSelected(3)
+                    dispatch(priceRange({ min: 5000, max: 10000 }));
+                    checkBoxSelected(3);
                   }}
                 />
                 <BouncyCheckbox
@@ -516,9 +497,8 @@ export default function Preferences({ navigation }) {
                   text="¥10000 - ¥15000 💴"
                   textDecoration={true}
                   onPress={() => {
-                    dispatch(priceRange(({ min: 10000, max: 15000 })));
-                    checkBoxSelected(4)
-
+                    dispatch(priceRange({ min: 10000, max: 15000 }));
+                    checkBoxSelected(4);
                   }}
                 />
                 <BouncyCheckbox
@@ -526,9 +506,8 @@ export default function Preferences({ navigation }) {
                   text="¥15000 - ¥20000 💴"
                   textDecoration={true}
                   onPress={() => {
-                    dispatch(priceRange(({ min: 15000, max: 20000 })));
-                    checkBoxSelected(5)
-
+                    dispatch(priceRange({ min: 15000, max: 20000 }));
+                    checkBoxSelected(5);
                   }}
                 />
               </Body>
@@ -537,20 +516,6 @@ export default function Preferences({ navigation }) {
 
           <Card style={styles.card}>
             <Text style={styles.title}>Location</Text>
-
-            {/* <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={location.name}
-              itemStyle={styles.pickerItem}
-              onValueChange={(itemValue) => {
-                dispatch(setLocations((location.name = itemValue)));
-              }}
-            >
-              {data.map((elem) => (
-                <Picker.Item key={elem.id} label={elem.name} value={elem.name} />
-              ))}
-            </Picker>
-        </View> */}
 
             <InputAutoSuggest
               style={{
@@ -572,11 +537,10 @@ export default function Preferences({ navigation }) {
             onPress={() => getRestaurants()}
             style={styles.button}
           >
-            <Text style={{ fontSize: 25 }}>Set Preferences</Text>
+            <Text style={{ fontSize: 25, color: "#fff" }}>Set Preferences</Text>
           </Button>
         </KeyboardAwareScrollView>
       </ScrollView>
-
 
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
@@ -604,7 +568,6 @@ export default function Preferences({ navigation }) {
         </FooterTab>
       </Footer>
     </Container>
-
   );
 }
 
@@ -628,31 +591,17 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 10,
   },
-  pickerContainer: {
-    backgroundColor: "white",
-    margin: 10,
-    borderRadius: 12,
-  },
   title: {
     textAlign: "center",
     fontFamily: "MPLUS1p-Medium",
     fontSize: 40,
     color: "#F3722C",
   },
-  pickerItem: {
-    color: "red",
-  },
   button: {
     alignItems: "center",
     margin: 20,
-  },
-  buttons: {
-    height: 50,
-    width: 200,
-    backgroundColor: "#90BE6D",
-    borderRadius: 12,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#E6772E",
+    borderRadius: 5,
   },
   spinnerTextStyle: {
     color: "#FFF",
