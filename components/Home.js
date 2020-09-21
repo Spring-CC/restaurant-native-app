@@ -31,7 +31,7 @@ export default function Home({ navigation }) {
   async function getRestaurants() {
     try {
       const results = await axios.get(
-        "https://restaurantserverspring.herokuapp.com/restAtlas"
+        "https://restaurantserverspring.herokuapp.com/restaurants"
       );
       const restaurants = results.data;
       for (let i = restaurants.length - 1; i > 0; i--) {
@@ -50,12 +50,12 @@ export default function Home({ navigation }) {
     console.log("userid!!!!!!: ", user);
     console.log("In recommended");
     const results = await axios.get(
-      `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
+      `https://restaurantserverspring.herokuapp.com/recommender/${user}`
     );
     const data = results.data;
 
     const allResults = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/restAtlas"
+      "https://restaurantserverspring.herokuapp.com/restaurants"
     );
     const allRestaurants = allResults.data;
     for (let i = allRestaurants.length - 1; i > 0; i--) {
@@ -97,15 +97,9 @@ export default function Home({ navigation }) {
       const likedRes = restaurant;
 
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
+        `https://restaurantserverspring.herokuapp.com/recommender/${user}`,
         {
           restId: likedResId,
-        }
-      );
-      await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
-        {
-          rest: likedRes,
         }
       );
     } catch (err) {
@@ -120,20 +114,20 @@ export default function Home({ navigation }) {
     navigation.navigate("Details");
   }
 
-  async function unliked(card) {
-    try {
-      const swiped_left = restData.id;
+  // async function unliked(card) {
+  //   try {
+  //     const swiped_left = restData.id;
 
-      await axios.post(
-        `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
-        {
-          restId: swiped_left,
-        }
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  //     await axios.post(
+  //       `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
+  //       {
+  //         restId: swiped_left,
+  //       }
+  //     );
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
 
   // Updating the CSV
   // function updateCsv() {
@@ -151,7 +145,7 @@ export default function Home({ navigation }) {
           key={restaurantList.length}
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
-          onSwipeLeft={(card) => unliked(card)}
+          //onSwipeLeft={(card) => unliked(card)}
           renderItem={(item) => (
             <Card style={styles.card}>
               <CardItem>
