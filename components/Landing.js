@@ -1,7 +1,5 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import * as WebBrowser from "expo-web-browser";
-import * as Linking from "expo-linking";
 import * as AuthSession from "expo-auth-session";
 import jwtDecode from "jwt-decode";
 import {
@@ -15,7 +13,7 @@ import {
 } from "react-native";
 
 import { useSelector, useDispatch } from "react-redux";
-import { setProfile, setPic, setUserId, setLoginStatus } from "../actions";
+import { setProfile, setUserId, setLoginStatus } from "../actions";
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
@@ -59,7 +57,6 @@ export default function Landing({ navigation }) {
         // Retrieve the JWT token and decode it
         const jwtToken = result.params.id_token;
         const decoded = jwtDecode(jwtToken);
-        console.log(decoded);
         const { nickname } = decoded;
         const { picture } = decoded;
         const { sub } = decoded;
@@ -68,17 +65,11 @@ export default function Landing({ navigation }) {
         setSnap(picture);
         setName(nickname);
         dispatch(setProfile(nickname));
-        dispatch(setPic(picture));
         dispatch(setUserId(userId));
         dispatch(setLoginStatus(""));
       }
     }
   }, [result]);
-
-  // function handleRedirect() {
-  //   WebBrowser.dismissBrowser();
-  //   navigation.navigate("Home", { screen: "Landing" });
-  // }
 
   return (
     <View style={styles.container}>
