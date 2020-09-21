@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
@@ -44,6 +45,11 @@ export default function Landing({ navigation }) {
     { authorizationEndpoint }
   );
   console.log(`Redirect URL: ${redirectUri}`);
+
+  function updateCsv() {
+    axios.post("https://restaurantserverspring.herokuapp.com/updatecsv");
+    console.log("working!!!!")
+  }
 
   useEffect(() => {
     if (result) {
@@ -113,7 +119,7 @@ export default function Landing({ navigation }) {
               accessibilityTraits="button"
               title="LOGIN"
               onPress={() => {
-                promptAsync({ useProxy });
+                promptAsync({ useProxy }), updateCsv();
               }}
               activeOpacity={0.8}
               style={styles.button}

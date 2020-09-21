@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { StyleSheet, ScrollView, Image } from "react-native";
+import { StyleSheet, ScrollView, Image, Text } from "react-native";
 import {
   Container,
   View,
@@ -13,7 +13,7 @@ import {
   FooterTab,
   Button,
   Icon,
-  Text,
+  // Text,
 } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
 import { restaurant, setRestaurantsList } from "../actions";
@@ -27,14 +27,6 @@ export default function Home({ navigation }) {
   console.log("this is the status", status);
 
   const dispatch = useDispatch();
-
-  function updateCsv() {
-    axios.post("https://restaurantserverspring.herokuapp.com/updatecsv");
-  }
-
-  useEffect(() => {
-    updateCsv();
-  }, []);
 
   async function getRestaurants() {
     try {
@@ -73,16 +65,15 @@ export default function Home({ navigation }) {
       allRestaurants[j] = temp;
     }
 
-    for (let i = 0; i < data.length; i++) {
-      // recommended restaurabt
-      for (let j = 0; j < allRestaurants.length; j++) {
-        // current restaurant state
+    for (let i = 0; i < data.length; i++) { // recommended restaurabt
+      for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
         if (data[i].id === allRestaurants[j].id) {
-          allRestaurants.splice(j, 1); // remove duplicated
-          allRestaurants.unshift(data[i]); // move it to the front
+          allRestaurants.splice(j, 1)  // remove duplicated
+          allRestaurants.unshift(data[i]) // move it to the front
         }
       }
     }
+
     console.log(data);
     //dispatch({ type: "SORT_RESTAURANTS", payload: data });
     dispatch(setRestaurantsList(allRestaurants));
@@ -95,6 +86,14 @@ export default function Home({ navigation }) {
       getUserRecommendation(userId);
     }
   }, []);
+
+  useEffect(() => {
+    console.log(restaurantList[0].name);
+  })
+
+  // useEffect(() => {
+  //   updateCsv();
+  // }, []);
 
   async function liked(user, restaurant) {
     try {
@@ -140,11 +139,20 @@ export default function Home({ navigation }) {
     }
   }
 
+  // Updating the CSV
+  // function updateCsv() {
+  //   axios.post("https://restaurantserverspring.herokuapp.com/updatecsv");
+  // }
+  // useEffect(() => {
+  //   updateCsv();
+  // }, []);
+
   return (
     <Container>
       <Nav />
       <View style={styles.container}>
         <DeckSwiper
+          key={restaurantList.length}
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
           onSwipeLeft={(card) => unliked(card)}
@@ -190,7 +198,7 @@ export default function Home({ navigation }) {
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
             <Icon name="home" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Home</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>Home</Text>
           </Button>
           <Button
             active
@@ -198,16 +206,16 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate("Search")}
             style={{ backgroundColor: "#F8961E" }}
           >
-            <Icon name="eye" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Search</Text>
+            <Icon name="search" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="pizza" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>Preference</Text>
+            <Icon active name="cog" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
             <Icon name="person" style={{ color: "#fff" }} />
-            <Text style={{ color: "#fff" }}>User</Text>
+            <Text style={{ color: "#fff", fontSize: 12 }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>

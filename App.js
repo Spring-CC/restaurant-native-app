@@ -21,6 +21,7 @@ import { YellowBox } from "react-native";
 
 YellowBox.ignoreWarnings([
   "Animated: `useNativeDriver` was not specified. This is a required option and must be explicitly set to `true` or `false`",
+  "VirtualizedLists should never be nested inside plain ScrollViews with the same orientation - use another VirtualizedList-backed container instead.",
 ]);
 // ------- END OF WARNING SUPPRESSION
 
@@ -31,8 +32,13 @@ const fetchFonts = () => {
     "MPLUS1p-ExtraBold": require("./assets/fonts/MPLUS1p-ExtraBold.ttf"),
     "MPLUS1p-Medium": require("./assets/fonts/MPLUS1p-Medium.ttf"),
     "Roboto-Medium": require("./assets/fonts/Roboto-Medium.ttf"),
+    Roboto: require('native-base/Fonts/Roboto.ttf'),
+    Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
   });
 };
+
+
+
 
 const store = createStore(rootReducer);
 

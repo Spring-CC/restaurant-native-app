@@ -1,9 +1,3 @@
-export const increment = () => {
-  return {
-    type: "INCREMENT",
-  };
-};
-
 export const restaurant = (obj) => {
   return {
     type: "RESTAURANT",
@@ -35,6 +29,13 @@ export const setLocations = (obj) => {
 export const setRestaurantsList = (obj) => {
   return {
     type: "RESTAURANT_LIST",
+    payload: obj,
+  };
+};
+
+export const setRestaurantsListSorted = (obj) => {
+  return {
+    type: "SORT_RESTAURANTS",
     payload: obj,
   };
 };
