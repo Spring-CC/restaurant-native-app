@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   StyleSheet,
   Text,
@@ -76,7 +76,6 @@ export default function Details({ navigation }) {
     const data = favoritesUsers.data;
 
     const result = data.filter((item) => item.user_Id === userId);
-    console.log(result);
     if (result[0].restaurant_Id.includes(restData.id)) {
       setSelection(true);
     }
@@ -94,7 +93,6 @@ export default function Details({ navigation }) {
         restaurant_Id: restId,
       }
     );
-    console.log("restaurant remove from favorites");
   }
 
   return (
@@ -122,15 +120,15 @@ export default function Details({ navigation }) {
               }}
             />
           ) : (
-            <Button
-              title="Add to Favorites ❤️"
-              color="#ff3300"
-              onPress={() => {
-                updateToDatabase(userId, restData.id);
-                setSelection(true);
-              }}
-            />
-          )}
+              <Button
+                title="Add to Favorites ❤️"
+                color="#ff3300"
+                onPress={() => {
+                  updateToDatabase(userId, restData.id);
+                  setSelection(true);
+                }}
+              />
+            )}
         </View>
         <Image
           source={{
@@ -172,10 +170,6 @@ export default function Details({ navigation }) {
           <Text style={styles.text_title}>Location Details</Text>
           <Text style={styles.text_sub}>Address</Text>
           <Text style={styles.text}>{restData.address}</Text>
-          {/* <Text style={styles.text_sub}>Latitude:</Text>
-          <Text style={styles.text}>{restData.latitude}</Text>
-          <Text style={styles.text_sub}>Longitude:</Text>
-          <Text style={styles.text}>{restData.longitude}</Text> */}
           <Text style={styles.text_sub}>Station</Text>
           <Text style={styles.text}>{restData.access["station"]}</Text>
           <Text style={styles.text_sub}>Open Time</Text>
