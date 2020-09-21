@@ -24,7 +24,7 @@ export default function Details({ navigation }) {
     }
 
     const favoritesUsers = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+      "https://restaurantserverspring.herokuapp.com/favorites"
     );
 
     let newInfo = true;
@@ -38,16 +38,15 @@ export default function Details({ navigation }) {
         userIndex = i;
       }
     }
-
+    //mongodb endpoint
     if (newInfo) {
       await axios.post(
-        "https://restaurantserverspring.herokuapp.com/Favorites",
+        `https://restaurantserverspring.herokuapp.com/favorites/user/${id}`,
         {
-          user_Id: id,
           restaurant_Id: restId,
         }
       );
-      alert("Added to Favorites");
+      alert("Added to Favorites"); // <-- this should not be an alert ? 
       return;
     }
     //if the user exist it will check if the restaurant it is already on its favorites list
@@ -59,10 +58,9 @@ export default function Details({ navigation }) {
     }
 
     await axios.post(
-      "https://restaurantserverspring.herokuapp.com/favoritesUpdate",
+      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
       {
         user_Id: id,
-        restaurant_Id: restId,
       }
     );
     alert("Added to Favorites");
@@ -70,7 +68,7 @@ export default function Details({ navigation }) {
 
   async function checkFavorites() {
     const favoritesUsers = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+      "https://restaurantserverspring.herokuapp.com/favorites"
     );
 
     const data = favoritesUsers.data;
@@ -86,11 +84,10 @@ export default function Details({ navigation }) {
   }, []);
 
   async function deleteFavorite(userId, restId) {
-    await axios.patch(
-      "https://restaurantserverspring.herokuapp.com/deleteFavorite",
+    await axios.delete(
+      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
       {
         user_Id: userId,
-        restaurant_Id: restId,
       }
     );
   }

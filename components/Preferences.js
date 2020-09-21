@@ -41,8 +41,11 @@ export default function Preferences({ navigation }) {
     setLoading(true);
 
     try {
+      // const results = await axios.get(
+      //   "https://restaurantserverspring.herokuapp.com/restaurants"
+      // );
       const results = await axios.get(
-        "https://restaurantserverspring.herokuapp.com/restAtlas"
+        "https://restaurantserverspring.herokuapp.com/restaurants"
       );
       const restaurants = results.data;
 

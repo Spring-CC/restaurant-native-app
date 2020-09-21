@@ -47,11 +47,11 @@ export default function FavoritesView({ navigation }) {
   async function getUserFavorites(id) {
     //getting all restaurants to filter
     const resultsRes = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/restAtlas"
+      "https://restaurantserverspring.herokuapp.com/restaurants"
     );
     const dataRes = resultsRes.data;
     const favoritesUsers = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+      "https://restaurantserverspring.herokuapp.com/favorites"
     );
 
     const usersData = favoritesUsers.data;
@@ -70,11 +70,10 @@ export default function FavoritesView({ navigation }) {
   }
 
   async function deleteFavorite(userId, restId) {
-    await axios.patch(
-      "https://restaurantserverspring.herokuapp.com/deleteFavorite",
+    await axios.delete(
+      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
       {
         user_Id: userId,
-        restaurant_Id: restId,
       }
     );
   }
