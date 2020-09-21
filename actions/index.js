@@ -33,6 +33,13 @@ export const setRestaurantsList = (obj) => {
   };
 };
 
+export const setRestaurantsListSorted = (obj) => {
+  return {
+    type: "SORT_RESTAURANTS",
+    payload: obj,
+  };
+};
+
 export const setProfile = (obj) => {
   return {
     type: "NAME",
