@@ -69,7 +69,6 @@ export default function Preferences({ navigation }) {
           navigation.navigate("Search");
         }, 2000);
         dispatch(setLocations(""));
-        console.log(location);
         return;
       }
 
@@ -87,16 +86,11 @@ export default function Preferences({ navigation }) {
         navigation.navigate("Search");
       }, 2000);
       dispatch(setLocations(""));
-      console.log(location);
     } catch (err) {
       setLoading(false);
       return;
     }
   }
-
-  useEffect(() => {
-    console.log(categories);
-  });
 
   const checkBoxSelected = (id) => {
     const selection = priceCheck.map((value, i) => {
@@ -441,7 +435,6 @@ export default function Preferences({ navigation }) {
                     dispatch(
                       category((categories["そば"] = !categories["そば"]))
                     );
-                    // console.log(categories);
                   }}
                 />
               </Body>
@@ -459,7 +452,6 @@ export default function Preferences({ navigation }) {
                   onPress={() => {
                     dispatch(priceRange({ min: 500, max: 1000 }));
                     checkBoxSelected(0);
-                    console.log(priceCheck);
                   }}
                 />
                 <BouncyCheckbox
@@ -574,8 +566,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#F9C74F",
   },
   descriptionContainer: {
-    // `backgroundColor` needs to be set otherwise the
-    // autocomplete input will disappear on text input.
+    /*
+    `backgroundColor` needs to be set otherwise the
+    autocomplete input will disappear on text input.
+    */
     backgroundColor: "#F5FCFF",
     marginTop: 8,
   },
