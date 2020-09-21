@@ -104,7 +104,7 @@ export default function Details({ navigation }) {
         <View style={{ backgroundColor: "#F3722C" }}>
           <Button
             title="Go Back"
-            color="#fff"
+            color="#F3722C"
             onPress={() => {
               // Navigate using the `navigation` prop that you received
               navigation.navigate("Search");
@@ -138,11 +138,11 @@ export default function Details({ navigation }) {
           }}
           style={styles.image}
         />
-        <View style={{ backgroundColor: "#90BE6D", marginBottom: 5 }}>
+        <View style={{ marginBottom: 5 }}>
           <Button
             style={styles.button}
             title="Go To Maps"
-            color="#fff"
+            color="#90BE6D"
             onPress={() =>
               Linking.openURL(
                 `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: "10",
-    color: "#841584",
+    color: "#F3722C",
   },
   location_container: {
     backgroundColor: "#F9C74F",
