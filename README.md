@@ -10,6 +10,7 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 
 1.  [Description](#description)
 1.  [Link](#link)
+1.  [Usage](#usage)
 1.  [Project Setup](#project-setup)
 1.  [Tech Stack](#built-with)
 1.  [Contributing](#contributing)
@@ -19,6 +20,10 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 This app allows users to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!   
 
 <img src="assets/logo_bowl.png" width="400" alt="Logo">
+
+##Usage
+
+![Home Screen](https://user-images.githubusercontent.com/59043522/93848916-dea74280-fc78-11ea-9464-c8bf668ed2a6.gif)
 
 ## Link
 [Munchify](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
