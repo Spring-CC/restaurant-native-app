@@ -12,7 +12,7 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 1.  [Usage](#usage-)
 1.  [Link](#link-)
 1.  [Project Setup](#project-setup-)
-1.  [Tech Stack](#tech-stack-)
+1.  [Tech Stack](#built-with-)
 1.  [Contributing](#contributing-)
 1.  [Authors](#authors-)
 
@@ -30,11 +30,10 @@ This app allows users to find restaurants in Tokyo, the best part about this app
 
 ## Project setup 🍣
 
-### Install Expo
+### Install [Expo](https://expo.io/)
 ```
 Install expo from the expo website 
 ```
-[Expo](https://expo.io/)
 
 ### Install dependencies
 ```
