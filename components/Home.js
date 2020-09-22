@@ -43,56 +43,15 @@ export default function Home({ navigation }) {
     }
   }
 
-  async function getUserRecommendation(user) {
-    try {
-      const results = await axios.get(
-        `https://restaurantserverspring.herokuapp.com/recommender/${user}`
-      );
-      const data = results.data;
-
-      const allResults = await axios.get(
-        "https://restaurantserverspring.herokuapp.com/restaurants"
-      );
-      const allRestaurants = allResults.data;
-      for (let i = allRestaurants.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * i);
-        const temp = allRestaurants[i];
-        allRestaurants[i] = allRestaurants[j];
-        allRestaurants[j] = temp;
-      }
-
-      const result = data.concat(allRestaurants);
-
-      // for (let i = 0; i < data.length; i++) { // recommended restaurant
-      //   for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
-      //     if (data[i].id === allRestaurants[j].id) {
-      //       allRestaurants.splice(j, 1)  // remove duplicated
-      //       allRestaurants.unshift(data[i]) // move it to the front
-      //     }
-      //   }
-      // }
-
-      dispatch(setRestaurantsList(result));
-
-    } catch (err) {
-      console.log(err);
-    }
-  }
-
   useEffect(() => {
     if (userId === "") {
       getRestaurants();
-    } else {
-      // getUserRecommendation(userId);
     }
   }, []);
-
 
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
-      const likedRes = restaurant;
-
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`,
         {
@@ -109,31 +68,6 @@ export default function Home({ navigation }) {
     liked(userId, restData);
     navigation.navigate("Details");
   }
-
-
-  // async function unliked(card) {
-  //   try {
-  //     const swiped_left = restData.id;
-
-  //     await axios.post(
-  //       `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
-  //       {
-  //         restId: swiped_left,
-  //       }
-  //     );
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
-
-  // Updating the CSV
-  // function updateCsv() {
-  //   axios.post("https://restaurantserverspring.herokuapp.com/updatecsv");
-  // }
-  // useEffect(() => {
-  //   updateCsv();
-  // }, []);
 
   return (
     <Container>
