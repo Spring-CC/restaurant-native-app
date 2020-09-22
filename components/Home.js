@@ -60,17 +60,19 @@ export default function Home({ navigation }) {
           allRestaurants[i] = allRestaurants[j];
           allRestaurants[j] = temp;
         }
-    
-        for (let i = 0; i < data.length; i++) { // recommended restaurant
-          for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
-            if (data[i].id === allRestaurants[j].id) {
-              allRestaurants.splice(j, 1)  // remove duplicated
-              allRestaurants.unshift(data[i]) // move it to the front
-            }
-          }
-        }
-    
-        dispatch(setRestaurantsList(allRestaurants));
+        
+        const result = data.concat(allRestaurants);
+
+        // for (let i = 0; i < data.length; i++) { // recommended restaurant
+        //   for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
+        //     if (data[i].id === allRestaurants[j].id) {
+        //       allRestaurants.splice(j, 1)  // remove duplicated
+        //       allRestaurants.unshift(data[i]) // move it to the front
+        //     }
+        //   }
+        // }
+        
+        dispatch(setRestaurantsList(result));
 
     } catch (err) {
       console.log(err);
