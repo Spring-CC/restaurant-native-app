@@ -24,8 +24,8 @@
       "favicon": "./assets/favicon.png"
     },
     "android": {
-      "package": "com.ccspring.munchify",
-      "versionCode": 1
+      "package": "com.ottotsuma.restaurantnativeapp",
+      "versionCode": 2
     },
     "description": "cc13 Senior Project"
   }

@@ -32,7 +32,7 @@ export default function Receive({ navigation }) {
       );
       setIsSent(true);
       onChangeNumber("");
-      dispatch(setRestaurantsList(response));
+      dispatch(setRestaurantsList(response.data));
     } catch (err) {
       console.log(err);
     }
