@@ -47,7 +47,7 @@ yarn start
 
 ## Built With 🍻
 
-- [React-native](http://www.https://vuejs.org/) - Framework for mobile development
+- [React-native](https://reactnative.dev/) - Framework for mobile development
 - [Yarn](https://yarnpkg.com/) - Package Management
 - [Express](https://expressjs.com/) - Server framework
 - [MongoDB](https://www.mongodb.com/) - Database Management
