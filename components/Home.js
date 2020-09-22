@@ -49,20 +49,7 @@ export default function Home({ navigation }) {
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`
       );
       const data = results.data;
-    
-      if(data.length===0){
-        const allResults = await axios.get(
-          "https://restaurantserverspring.herokuapp.com/restaurants"
-        );
-        const allRestaurants = allResults.data;
-        for (let i = allRestaurants.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * i);
-          const temp = allRestaurants[i];
-          allRestaurants[i] = allRestaurants[j];
-          allRestaurants[j] = temp;
-        }
-        dispatch(setRestaurantsList(allRestaurants));
-      } else {
+        
         const allResults = await axios.get(
           "https://restaurantserverspring.herokuapp.com/restaurants"
         );
@@ -84,7 +71,6 @@ export default function Home({ navigation }) {
         }
     
         dispatch(setRestaurantsList(allRestaurants));
-      }
 
     } catch (err) {
       console.log(err);

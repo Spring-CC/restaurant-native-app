@@ -46,19 +46,36 @@ export default function Landing({ navigation }) {
   console.log(`Redirect URL: ${redirectUri}`);
 
 
-  async function getRestaurants() {
+
+  async function getUserRecommendation(user) {
     try {
       const results = await axios.get(
-        "https://restaurantserverspring.herokuapp.com/restaurants"
+        `https://restaurantserverspring.herokuapp.com/recommender/${user}`
       );
-      const restaurants = results.data;
-      for (let i = restaurants.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * i);
-        const temp = restaurants[i];
-        restaurants[i] = restaurants[j];
-        restaurants[j] = temp;
-      }
-      dispatch(setRestaurantsList(restaurants));
+      const data = results.data;
+        
+        const allResults = await axios.get(
+          "https://restaurantserverspring.herokuapp.com/restaurants"
+        );
+        const allRestaurants = allResults.data;
+        for (let i = allRestaurants.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * i);
+          const temp = allRestaurants[i];
+          allRestaurants[i] = allRestaurants[j];
+          allRestaurants[j] = temp;
+        }
+    
+        for (let i = 0; i < data.length; i++) { // recommended restaurant
+          for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
+            if (data[i].id === allRestaurants[j].id) {
+              allRestaurants.splice(j, 1)  // remove duplicated
+              allRestaurants.unshift(data[i]) // move it to the front
+            }
+          }
+        }
+    
+        dispatch(setRestaurantsList(allRestaurants));
+
     } catch (err) {
       console.log(err);
     }
@@ -87,7 +104,7 @@ export default function Landing({ navigation }) {
         dispatch(setProfile(nickname));
         dispatch(setUserId(userId));
         dispatch(setLoginStatus(""));
-        getRestaurants();
+        getUserRecommendation(userId);
       }
     }
   }, [result]);
