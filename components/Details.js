@@ -91,7 +91,7 @@ export default function Details({ navigation }) {
     <ScrollView>
       <Nav />
       <ScrollView style={styles.container}>
-        <View style={{ backgroundColor: "#F3722C" }}>
+        <View >
           <Button
             title="Go Back"
             color="#F3722C"
