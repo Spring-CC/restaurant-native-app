@@ -23,8 +23,6 @@ WebBrowser.maybeCompleteAuthSession();
 
 export default function Landing({ navigation }) {
   const [name, setName] = useState(null);
-  const [snap, setSnap] = useState(null);
-  const [userId, setId] = useState(null);
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.loginStatusReducer);
 
@@ -45,15 +43,12 @@ export default function Landing({ navigation }) {
   );
   console.log(`Redirect URL: ${redirectUri}`);
 
-
-
   async function getUserRecommendation(user) {
     try {
       const results = await axios.get(
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`
       );
       const data = results.data;
-        
         const allResults = await axios.get(
           "https://restaurantserverspring.herokuapp.com/restaurants"
         );
@@ -64,20 +59,8 @@ export default function Landing({ navigation }) {
           allRestaurants[i] = allRestaurants[j];
           allRestaurants[j] = temp;
         }
-        
         const result = data.concat(allRestaurants);
-
-        // for (let i = 0; i < data.length; i++) { // recommended restaurant
-        //   for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
-        //     if (data[i].id === allRestaurants[j].id) {
-        //       allRestaurants.splice(j, 1)  // remove duplicated
-        //       allRestaurants.unshift(data[i]) // move it to the front
-        //     }
-        //   }
-        // }
-    
-        dispatch(setRestaurantsList(allRestaurants));
-
+        dispatch(setRestaurantsList(result));
     } catch (err) {
       console.log(err);
     }
@@ -97,11 +80,8 @@ export default function Landing({ navigation }) {
         const jwtToken = result.params.id_token;
         const decoded = jwtDecode(jwtToken);
         const { nickname } = decoded;
-        const { picture } = decoded;
         const { sub } = decoded;
         const userId = sub.substr(6);
-        setId(userId);
-        setSnap(picture);
         setName(nickname);
         dispatch(setProfile(nickname));
         dispatch(setUserId(userId));
