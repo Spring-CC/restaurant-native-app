@@ -8,7 +8,7 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 
 ## :ramen:Table of Contents
 
-1.  [Description](#burrito-) 
+1.  [Description](#-description) 
 1.  [Usage](#pizza-)
 1.  [Link](#dumpling-)
 1.  [Project Setup](#sushi-)
