@@ -8,13 +8,13 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 
 ## :ramen:Table of Contents
 
-1.  [Description](#burrito-description) 
-1.  [Usage](#pizza-usage)
+1.  [Description](#-description) 
+1.  [Usage](#-usage)
 1.  [Link](#dumpling-link)
-1.  [Project Setup](#sushi-project-setup)
-1.  [Tech Stack](#beers-built-with)
-1.  [Contributing](#dango-contributing)
-1.  [Authors](#chocolate_bar-authors)
+1.  [Project Setup](#-project-setup)
+1.  [Tech Stack](#-built-with)
+1.  [Contributing](#-contributing)
+1.  [Authors](#-authors)
 
 ## :burrito:Description
 This app allows users to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!   
