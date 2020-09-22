@@ -55,7 +55,7 @@ export default function FavoritesView({ navigation }) {
     );
 
     const usersData = favoritesUsers.data;
-
+      
     const userFavorite = usersData.filter((user) => user.user_Id === id);
   
     const restIds = userFavorite[0].restaurant_Id;
@@ -65,7 +65,6 @@ export default function FavoritesView({ navigation }) {
         return item;
       }
     });
-    
     dispatch(addFavorites(results));
   }
 

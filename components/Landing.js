@@ -13,7 +13,8 @@ import {
 } from "react-native";
 
 import { useSelector, useDispatch } from "react-redux";
-import { setProfile, setUserId, setLoginStatus } from "../actions";
+import { setProfile, setUserId, setLoginStatus, setRestaurantsList } from "../actions";
+import axios from 'axios';
 
 const authorizationEndpoint = process.env.REACT_APP_APP_AUTHENDPOINT;
 const useProxy = Platform.select({ web: false, native: true, default: true });
@@ -44,6 +45,25 @@ export default function Landing({ navigation }) {
   );
   console.log(`Redirect URL: ${redirectUri}`);
 
+
+  async function getRestaurants() {
+    try {
+      const results = await axios.get(
+        "https://restaurantserverspring.herokuapp.com/restaurants"
+      );
+      const restaurants = results.data;
+      for (let i = restaurants.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i);
+        const temp = restaurants[i];
+        restaurants[i] = restaurants[j];
+        restaurants[j] = temp;
+      }
+      dispatch(setRestaurantsList(restaurants));
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     if (result) {
       if (result.error) {
@@ -67,6 +87,7 @@ export default function Landing({ navigation }) {
         dispatch(setProfile(nickname));
         dispatch(setUserId(userId));
         dispatch(setLoginStatus(""));
+        getRestaurants();
       }
     }
   }, [result]);
