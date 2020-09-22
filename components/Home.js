@@ -49,7 +49,7 @@ export default function Home({ navigation }) {
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`
       );
       const data = results.data;
-    
+      console.log(data)
       if(data.length===0){
         const allResults = await axios.get(
           "https://restaurantserverspring.herokuapp.com/restaurants"
@@ -82,7 +82,7 @@ export default function Home({ navigation }) {
             }
           }
         }
-    
+        console.log(allRestaurants)
         dispatch(setRestaurantsList(allRestaurants));
       }
 
