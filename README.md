@@ -8,13 +8,13 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 
 ## :ramen:Table of Contents
 
-1.  [Description](#description)
-1.  [Link](#link)
-1.  [Usage](#usage)
-1.  [Project Setup](#project-setup)
-1.  [Tech Stack](#built-with)
-1.  [Contributing](#contributing)
-1.  [Authors](#authors)
+1.  [Description](#:burrito:description) 
+1.  [Usage](#:pizza:usage)
+1.  [Link](#:dumpling:link)
+1.  [Project Setup](#:sushi:project-setup)
+1.  [Tech Stack](#:beers:built-with)
+1.  [Contributing](#:dango:contributing)
+1.  [Authors](#:chocolate_bar:authors)
 
 ## :burrito:Description
 This app allows users to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!   
@@ -23,7 +23,7 @@ This app allows users to find restaurants in Tokyo, the best part about this app
 
 ![Home Screen](https://user-images.githubusercontent.com/59043522/93848916-dea74280-fc78-11ea-9464-c8bf668ed2a6.gif)
 
-## Link
+## :dumpling:Link
 [Munchify](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
 
 
