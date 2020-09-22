@@ -18,7 +18,7 @@ export default function Details({ navigation }) {
   const userId = useSelector((state) => state.userIdReducer);
 
   async function updateToDatabase(id, restId) {
-    if (id === "" || id === null || id === undefined) {
+    if (id === "" || id === null || id === undefined) { 
       alert("No user login");
       return;
     }
@@ -33,7 +33,6 @@ export default function Details({ navigation }) {
     const usersData = favoritesUsers.data;
     //Check if user exist, if not will change newInfo variable to false and set the userIndex
     for (let i = 0; i < usersData.length; i++) {
-      console.log("!!!!!", usersData[i])
       if (id === usersData[i].user_Id) {
         newInfo = false;
         userIndex = i;
@@ -71,13 +70,19 @@ export default function Details({ navigation }) {
     const favoritesUsers = await axios.get(
       "https://restaurantserverspring.herokuapp.com/favorites"
     );
+    console.log("!!!!",favoritesUsers)
 
     const data = favoritesUsers.data;
 
     const result = data.filter((item) => item.user_Id === userId);
-    if (result[0].restaurant_Id.includes(restData.id)) {
-      setSelection(true);
-    }
+    // if (result[0].restaurant_Id.includes(restData.id)) {
+    //   setSelection(true);
+    // }
+    result.forEach((ele)=>{
+      if(ele.restaurant_Id == restData.id){
+        setSelection(true)
+      }
+    })
   }
 
   useEffect(() => {

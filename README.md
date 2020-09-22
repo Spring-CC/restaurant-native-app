@@ -1,4 +1,4 @@
-# Spring APP
+# Munchify
 <!-- ![logo](assets/logo_bowl.png) -->
 <img src="./assets/logo_bowl.png" width="400" alt="Logo">
 
@@ -9,8 +9,9 @@ The application can be downloaded from [PlayStore](https://play.google.com/store
 ## Table of Contents
 
 1.  [Description](#description)
-1.  [Usage](#usage)
-1.  [Environment](#environment)
+1.  [Link](#link)
+1.  [Project Setup](#project-setup)
+1.  [Tech Stack](#built-with)
 1.  [Contributing](#contributing)
 1.  [Authors](#authors)
 
@@ -20,7 +21,7 @@ This app allows users to find restaurants in Tokyo, the best part about this app
 <img src="assets/logo_bowl.png" width="400" alt="Logo">
 
 ## Link
-[Munchify](https://www.google.com/)
+[Munchify](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
 
 
 ## Project setup
@@ -42,13 +43,12 @@ yarn start
 
 ## Built With
 
-- [React-native](http://www.https://vuejs.org/) - Framework
+- [React-native](http://www.https://vuejs.org/) - Framework for mobile development
 - [Yarn](https://yarnpkg.com/) - Package Management
-- [Hapi/Joi](https://www.npmjs.com/package/@hapi/joi) - 
+- [Express](https://expressjs.com/) - Server framework
 - [MongoDB](https://www.mongodb.com/) - Database Management
-- [express](https://expressjs.com/) - Routing
 - [Python](https://www.python.org/) - Machine Learning
-- [Auth0](https://auth0.com/) - Login
+- [Auth0](https://auth0.com/) - User Login
 - [Redux](https://redux.js.org/) - State management
 
 ## Contributing
