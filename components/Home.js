@@ -49,30 +49,30 @@ export default function Home({ navigation }) {
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`
       );
       const data = results.data;
-        
-        const allResults = await axios.get(
-          "https://restaurantserverspring.herokuapp.com/restaurants"
-        );
-        const allRestaurants = allResults.data;
-        for (let i = allRestaurants.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * i);
-          const temp = allRestaurants[i];
-          allRestaurants[i] = allRestaurants[j];
-          allRestaurants[j] = temp;
-        }
-        
-        const result = data.concat(allRestaurants);
 
-        // for (let i = 0; i < data.length; i++) { // recommended restaurant
-        //   for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
-        //     if (data[i].id === allRestaurants[j].id) {
-        //       allRestaurants.splice(j, 1)  // remove duplicated
-        //       allRestaurants.unshift(data[i]) // move it to the front
-        //     }
-        //   }
-        // }
-        
-        dispatch(setRestaurantsList(result));
+      const allResults = await axios.get(
+        "https://restaurantserverspring.herokuapp.com/restaurants"
+      );
+      const allRestaurants = allResults.data;
+      for (let i = allRestaurants.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i);
+        const temp = allRestaurants[i];
+        allRestaurants[i] = allRestaurants[j];
+        allRestaurants[j] = temp;
+      }
+
+      const result = data.concat(allRestaurants);
+
+      // for (let i = 0; i < data.length; i++) { // recommended restaurant
+      //   for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
+      //     if (data[i].id === allRestaurants[j].id) {
+      //       allRestaurants.splice(j, 1)  // remove duplicated
+      //       allRestaurants.unshift(data[i]) // move it to the front
+      //     }
+      //   }
+      // }
+
+      dispatch(setRestaurantsList(result));
 
     } catch (err) {
       console.log(err);
@@ -83,7 +83,7 @@ export default function Home({ navigation }) {
     if (userId === "") {
       getRestaurants();
     } else {
-      getUserRecommendation(userId);
+      // getUserRecommendation(userId);
     }
   }, []);
 
