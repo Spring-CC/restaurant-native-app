@@ -44,6 +44,7 @@ export default function Landing({ navigation }) {
   );
   console.log(`Redirect URL: ${redirectUri}`);
 
+
   useEffect(() => {
     if (result) {
       if (result.error) {
