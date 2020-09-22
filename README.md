@@ -20,7 +20,7 @@ This app allows users to find restaurants in Tokyo, the best part about this app
 <img src="assets/logo_bowl.png" width="400" alt="Logo">
 
 ## Link
-[Munchify](https://www.google.com/)
+[Munchify](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
 
 
 ## Project setup
@@ -44,7 +44,7 @@ yarn start
 
 - [React-native](http://www.https://vuejs.org/) - Framework
 - [Yarn](https://yarnpkg.com/) - Package Management
-- [Hapi/Joi](https://www.npmjs.com/package/@hapi/joi) - 
+- [Express](https://expressjs.com/) - 
 - [MongoDB](https://www.mongodb.com/) - Database Management
 - [express](https://expressjs.com/) - Routing
 - [Python](https://www.python.org/) - Machine Learning
