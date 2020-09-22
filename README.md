@@ -6,28 +6,29 @@ This was created during our time as students at Code Chrysalis.
 
 The application can be downloaded from [PlayStore](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
 
-## :ramen:Table of Contents
+## Table of Contents :ramen:
 
-1.  [Description](#-description) 
-1.  [Usage](#pizza-)
-1.  [Link](#dumpling-)
-1.  [Project Setup](#sushi-)
-1.  [Tech Stack](#beers-)
-1.  [Contributing](#dango-)
-1.  [Authors](#chocolate_bar-)
+1.  [Description](#description-) 
+1.  [Usage](#usage-)
+1.  [Link](#link-)
+1.  [Project Setup](#project-setup-)
+1.  [Tech Stack](#tech-stack-)
+1.  [Contributing](#contributing-)
+1.  [Authors](#authors-)
 
-## 🌯Description
+## Description 🌯
+
 This app allows users to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!   
 
-## :pizza:Usage
+## Usage 🍕
 
 ![Home Screen](https://user-images.githubusercontent.com/59043522/93848916-dea74280-fc78-11ea-9464-c8bf668ed2a6.gif)
 
-## :dumpling:Link
+## Link 🥟
+
 [Munchify](https://play.google.com/store/apps/details?id=com.ottotsuma.restaurantnativeapp)
 
-
-## :sushi:Project setup
+## Project setup 🍣
 
 ### Install Expo
 ```
@@ -45,7 +46,7 @@ yarn install
 yarn start
 ```
 
-## :beers:Built With
+## Built With 🍻
 
 - [React-native](http://www.https://vuejs.org/) - Framework for mobile development
 - [Yarn](https://yarnpkg.com/) - Package Management
@@ -55,9 +56,10 @@ yarn start
 - [Auth0](https://auth0.com/) - User Login
 - [Redux](https://redux.js.org/) - State management
 
-## :dango:Contributing
+## Contributing 🍡
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## :chocolate_bar:Authors
+## Authors 🍫
+
 [@MEGAALBERT](https://github.com/MEGAALBERT) [@Dylanc55](https://github.com/Dylanc55) [@Ottotsuma](https://github.com/ottotsuma) [@Erismd](https://github.com/Erismd) [@yuriamm](https://github.com/yuriamm)
