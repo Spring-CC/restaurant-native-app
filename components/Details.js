@@ -33,6 +33,7 @@ export default function Details({ navigation }) {
     const usersData = favoritesUsers.data;
     //Check if user exist, if not will change newInfo variable to false and set the userIndex
     for (let i = 0; i < usersData.length; i++) {
+      console.log("!!!!!", usersData[i])
       if (id === usersData[i].user_Id) {
         newInfo = false;
         userIndex = i;
@@ -91,7 +92,7 @@ export default function Details({ navigation }) {
     <ScrollView>
       <Nav />
       <ScrollView style={styles.container}>
-        <View style={{ backgroundColor: "#F3722C" }}>
+        <View >
           <Button
             title="Go Back"
             color="#F3722C"
