@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   StyleSheet,
   Text,
@@ -24,7 +24,7 @@ export default function Details({ navigation }) {
     }
 
     const favoritesUsers = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+      "https://restaurantserverspring.herokuapp.com/favorites"
     );
 
     let newInfo = true;
@@ -38,16 +38,15 @@ export default function Details({ navigation }) {
         userIndex = i;
       }
     }
-
+    //mongodb endpoint
     if (newInfo) {
       await axios.post(
-        "https://restaurantserverspring.herokuapp.com/Favorites",
+        `https://restaurantserverspring.herokuapp.com/favorites/user/${id}`,
         {
-          user_Id: id,
           restaurant_Id: restId,
         }
       );
-      alert("Added to Favorites");
+      alert("Added to Favorites"); // <-- this should not be an alert ? 
       return;
     }
     //if the user exist it will check if the restaurant it is already on its favorites list
@@ -59,10 +58,9 @@ export default function Details({ navigation }) {
     }
 
     await axios.post(
-      "https://restaurantserverspring.herokuapp.com/favoritesUpdate",
+      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
       {
         user_Id: id,
-        restaurant_Id: restId,
       }
     );
     alert("Added to Favorites");
@@ -70,13 +68,12 @@ export default function Details({ navigation }) {
 
   async function checkFavorites() {
     const favoritesUsers = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+      "https://restaurantserverspring.herokuapp.com/favorites"
     );
 
     const data = favoritesUsers.data;
 
     const result = data.filter((item) => item.user_Id === userId);
-    console.log(result);
     if (result[0].restaurant_Id.includes(restData.id)) {
       setSelection(true);
     }
@@ -87,14 +84,12 @@ export default function Details({ navigation }) {
   }, []);
 
   async function deleteFavorite(userId, restId) {
-    await axios.patch(
-      "https://restaurantserverspring.herokuapp.com/deleteFavorite",
+    await axios.delete(
+      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
       {
         user_Id: userId,
-        restaurant_Id: restId,
       }
     );
-    console.log("restaurant remove from favorites");
   }
 
   return (
@@ -104,7 +99,7 @@ export default function Details({ navigation }) {
         <View style={{ backgroundColor: "#F3722C" }}>
           <Button
             title="Go Back"
-            color="#fff"
+            color="#F3722C"
             onPress={() => {
               // Navigate using the `navigation` prop that you received
               navigation.navigate("Search");
@@ -122,15 +117,15 @@ export default function Details({ navigation }) {
               }}
             />
           ) : (
-            <Button
-              title="Add to Favorites ❤️"
-              color="#ff3300"
-              onPress={() => {
-                updateToDatabase(userId, restData.id);
-                setSelection(true);
-              }}
-            />
-          )}
+              <Button
+                title="Add to Favorites ❤️"
+                color="#ff3300"
+                onPress={() => {
+                  updateToDatabase(userId, restData.id);
+                  setSelection(true);
+                }}
+              />
+            )}
         </View>
         <Image
           source={{
@@ -138,11 +133,11 @@ export default function Details({ navigation }) {
           }}
           style={styles.image}
         />
-        <View style={{ backgroundColor: "#90BE6D", marginBottom: 5 }}>
+        <View style={{ marginBottom: 5 }}>
           <Button
             style={styles.button}
             title="Go To Maps"
-            color="#fff"
+            color="#90BE6D"
             onPress={() =>
               Linking.openURL(
                 `https://www.google.com/maps/place/${restData.latitude},${restData.longitude}`
@@ -172,10 +167,6 @@ export default function Details({ navigation }) {
           <Text style={styles.text_title}>Location Details</Text>
           <Text style={styles.text_sub}>Address</Text>
           <Text style={styles.text}>{restData.address}</Text>
-          {/* <Text style={styles.text_sub}>Latitude:</Text>
-          <Text style={styles.text}>{restData.latitude}</Text>
-          <Text style={styles.text_sub}>Longitude:</Text>
-          <Text style={styles.text}>{restData.longitude}</Text> */}
           <Text style={styles.text_sub}>Station</Text>
           <Text style={styles.text}>{restData.access["station"]}</Text>
           <Text style={styles.text_sub}>Open Time</Text>
@@ -207,7 +198,7 @@ const styles = StyleSheet.create({
   },
   button: {
     padding: "10",
-    color: "#841584",
+    color: "#F3722C",
   },
   location_container: {
     backgroundColor: "#F9C74F",

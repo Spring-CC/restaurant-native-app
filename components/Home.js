@@ -13,7 +13,6 @@ import {
   FooterTab,
   Button,
   Icon,
-  // Text,
 } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
 import { restaurant, setRestaurantsList } from "../actions";
@@ -23,15 +22,13 @@ export default function Home({ navigation }) {
   const restData = useSelector((state) => state.restaurantReducer);
   const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const userId = useSelector((state) => state.userIdReducer);
-  const status = useSelector((state) => state.loginStatusReducer);
-  console.log("this is the status", status);
 
   const dispatch = useDispatch();
 
   async function getRestaurants() {
     try {
       const results = await axios.get(
-        "https://restaurantserverspring.herokuapp.com/restAtlas"
+        "https://restaurantserverspring.herokuapp.com/restaurants"
       );
       const restaurants = results.data;
       for (let i = restaurants.length - 1; i > 0; i--) {
@@ -47,15 +44,13 @@ export default function Home({ navigation }) {
   }
 
   async function getUserRecommendation(user) {
-    console.log("userid!!!!!!: ", user);
-    console.log("In recommended");
     const results = await axios.get(
-      `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`
+      `https://restaurantserverspring.herokuapp.com/recommender/${user}`
     );
     const data = results.data;
 
     const allResults = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/restAtlas"
+      "https://restaurantserverspring.herokuapp.com/restaurants"
     );
     const allRestaurants = allResults.data;
     for (let i = allRestaurants.length - 1; i > 0; i--) {
@@ -65,7 +60,7 @@ export default function Home({ navigation }) {
       allRestaurants[j] = temp;
     }
 
-    for (let i = 0; i < data.length; i++) { // recommended restaurabt
+    for (let i = 0; i < data.length; i++) { // recommended restaurant
       for (let j = 0; j < allRestaurants.length; j++) { // current restaurant state
         if (data[i].id === allRestaurants[j].id) {
           allRestaurants.splice(j, 1)  // remove duplicated
@@ -74,8 +69,6 @@ export default function Home({ navigation }) {
       }
     }
 
-    console.log(data);
-    //dispatch({ type: "SORT_RESTAURANTS", payload: data });
     dispatch(setRestaurantsList(allRestaurants));
   }
 
@@ -87,29 +80,15 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(restaurantList[0].name);
-  })
-
-  // useEffect(() => {
-  //   updateCsv();
-  // }, []);
-
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
       const likedRes = restaurant;
 
       await axios.post(
-        `https://restaurantserverspring.herokuapp.com/testdata/${user}`,
+        `https://restaurantserverspring.herokuapp.com/recommender/${user}`,
         {
           restId: likedResId,
-        }
-      );
-      await axios.post(
-        `https://restaurantserverspring.herokuapp.com/dummyfavorites/${user}`,
-        {
-          rest: likedRes,
         }
       );
     } catch (err) {
@@ -119,25 +98,26 @@ export default function Home({ navigation }) {
 
   function onSwipeRight(card) {
     dispatch(restaurant(card));
-    console.log(restData);
     liked(userId, restData);
     navigation.navigate("Details");
   }
 
-  async function unliked(card) {
-    try {
-      const swiped_left = restData.id;
 
-      await axios.post(
-        `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
-        {
-          restId: swiped_left,
-        }
-      );
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  // async function unliked(card) {
+  //   try {
+  //     const swiped_left = restData.id;
+
+  //     await axios.post(
+  //       `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
+  //       {
+  //         restId: swiped_left,
+  //       }
+  //     );
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+
 
   // Updating the CSV
   // function updateCsv() {
@@ -155,7 +135,7 @@ export default function Home({ navigation }) {
           key={restaurantList.length}
           dataSource={restaurantList}
           onSwipeRight={(card) => onSwipeRight(card)}
-          onSwipeLeft={(card) => unliked(card)}
+          //onSwipeLeft={(card) => unliked(card)}
           renderItem={(item) => (
             <Card style={styles.card}>
               <CardItem>
@@ -235,16 +215,5 @@ const styles = StyleSheet.create({
   text_sub: {
     fontFamily: "MPLUS1p-Bold",
     color: "#F3722C",
-  },
-  card: {
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
   },
 });

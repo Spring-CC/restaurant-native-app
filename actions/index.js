@@ -54,13 +54,6 @@ export const addFavorites = (obj) => {
   };
 };
 
-export const setPic = (obj) => {
-  return {
-    type: "IMG",
-    payload: obj,
-  };
-};
-
 export const setUserId = (user) => {
   return {
     type: "USERID",

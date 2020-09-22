@@ -17,7 +17,6 @@ import {
   FooterTab,
   Button,
   Icon,
-  // Text,
 } from "native-base";
 import Nav from "./Nav";
 import IconAlt from "react-native-vector-icons/Foundation";
@@ -28,18 +27,21 @@ export default function About({ navigation }) {
       <ScrollView style={styles.container}>
         <Nav />
         <Card style={styles.about}>
-          <CardItem header style={{ backgroundColor: '#2A9D8F' }}>
-            <Text style={{ color: '#fff' }}>Munchify</Text>
+          <CardItem header style={{ backgroundColor: "#2A9D8F" }}>
+            <Text style={{ color: "#fff" }}>Munchify</Text>
           </CardItem>
-          <CardItem style={{ backgroundColor: '#2A9D8F' }}>
+          <CardItem style={{ backgroundColor: "#2A9D8F" }}>
             <Body>
-              <Text style={{ color: '#fff' }}>
-                This app allows you to find restaurants in Tokyo, the best part about this app though is the more you use the app the more it learns about your preference and starts to predict what restaurant would be perfect for you today!
+              <Text style={{ color: "#fff" }}>
+                This app allows you to find restaurants in Tokyo, the best part
+                about this app though is the more you use the app the more it
+                learns about your preference and starts to predict what
+                restaurant would be perfect for you today!
               </Text>
             </Body>
           </CardItem>
-          <CardItem footer style={{ backgroundColor: '#2A9D8F' }}>
-            <Text style={{ color: '#fff' }}>Munchify Team</Text>
+          <CardItem footer style={{ backgroundColor: "#2A9D8F" }}>
+            <Text style={{ color: "#fff" }}>Munchify Team</Text>
           </CardItem>
         </Card>
         <View style={styles.box1}>
@@ -51,28 +53,58 @@ export default function About({ navigation }) {
             }}
             style={styles.image}
           />
-
-          <TouchableOpacity
-            onPress={() => Linking.openURL("https://github.com/Erismd")}
-          >
-            <IconAlt style={styles.icon} name="social-github" size={50} />
-          </TouchableOpacity>
-          <Text style={styles.textGit}>Erismd</Text>
+          <View style={styles.socials}>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL("https://github.com/Erismd")}
+              >
+                <IconAlt style={styles.icon} name="social-github" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Erismd</Text>
+            </View>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL("https://linkedin.com/in/erismd")
+                }
+              >
+                <IconAlt style={styles.icon} name="social-linkedin" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Eri Shimada</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.box2}>
           <Text style={styles.text}>Shaun Darragh</Text>
+
           <Image
             source={{
               uri: "https://ottotsuma.github.io/tsuma2.jpg",
             }}
             style={styles.image}
           />
-          <TouchableOpacity
-            onPress={() => Linking.openURL("https://github.com/ottotsuma")}
-          >
-            <IconAlt style={styles.icon} name="social-github" size={50} />
-          </TouchableOpacity>
-          <Text style={styles.textGit}>ottotsuma</Text>
+          <View style={styles.socials}>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL("https://github.com/ottotsuma")}
+              >
+                <IconAlt style={styles.icon} name="social-github" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>ottotsuma</Text>
+            </View>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL(
+                    "https://www.linkedin.com/in/%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%B3-%E3%83%80%E3%83%A9%E3%83%BC-32b227183/"
+                  )
+                }
+              >
+                <IconAlt style={styles.icon} name="social-linkedin" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Shaun Darragh</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.box3}>
           <Text style={styles.text}>Alberto Medellin</Text>
@@ -83,13 +115,26 @@ export default function About({ navigation }) {
             }}
             style={styles.image}
           />
-
-          <TouchableOpacity
-            onPress={() => Linking.openURL("https://github.com/MEGAALBERT")}
-          >
-            <IconAlt style={styles.icon} name="social-github" size={50} />
-          </TouchableOpacity>
-          <Text style={styles.textGit}>MEGAALBERT</Text>
+          <View style={styles.socials}>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL("https://github.com/MEGAALBERT")}
+              >
+                <IconAlt style={styles.icon} name="social-github" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>MEGAALBERT</Text>
+            </View>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL("https://linkedin/in/medellinalberto")
+                }
+              >
+                <IconAlt style={styles.icon} name="social-linkedin" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Alberto Medellin</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.box4}>
           <Text style={styles.text}>Yuri Amami</Text>
@@ -100,13 +145,26 @@ export default function About({ navigation }) {
             }}
             style={styles.image}
           />
-
-          <TouchableOpacity
-            onPress={() => Linking.openURL("https://github.com/yuriamm")}
-          >
-            <IconAlt style={styles.icon} name="social-github" size={50} />
-          </TouchableOpacity>
-          <Text style={styles.textGit}>yuriamm</Text>
+          <View style={styles.socials}>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL("https://github.com/yuriamm")}
+              >
+                <IconAlt style={styles.icon} name="social-github" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>yuriamm</Text>
+            </View>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL("https://linkedin.com/in/yuriamami")
+                }
+              >
+                <IconAlt style={styles.icon} name="social-linkedin" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Yuri Amami</Text>
+            </View>
+          </View>
         </View>
         <View style={styles.box5}>
           <Text style={styles.text}>Dylan Cooper</Text>
@@ -117,33 +175,45 @@ export default function About({ navigation }) {
             }}
             style={styles.image}
           />
-
-          <TouchableOpacity
-            onPress={() => Linking.openURL("https://github.com/Dylanc55")}
-          >
-            <IconAlt style={styles.icon} name="social-github" size={50} />
-          </TouchableOpacity>
-          <Text style={styles.textGit}>Dylanc55</Text>
+          <View style={styles.socials}>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL("https://github.com/Dylanc55")}
+              >
+                <IconAlt style={styles.icon} name="social-github" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Dylanc55</Text>
+            </View>
+            <View style={styles.socialIcon}>
+              <TouchableOpacity
+                onPress={() =>
+                  Linking.openURL("https://linkedin.com/in/Dylanc55")
+                }
+              >
+                <IconAlt style={styles.icon} name="social-linkedin" size={50} />
+              </TouchableOpacity>
+              <Text style={styles.textGit}>Dylan Cooper</Text>
+            </View>
+          </View>
         </View>
       </ScrollView>
       <Footer>
         <FooterTab style={{ backgroundColor: "#F3722C" }}>
           <Button vertical onPress={() => navigation.navigate("Home")}>
-            <Icon name="home" style={{ color: '#fff' }} />
-            <Text
-              style={{ color: '#fff', fontSize: 12 }}>Home</Text>
+            <Icon name="home" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Home</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Search")}>
-            <Icon name="search" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff', fontSize: 12 }}>Search</Text>
+            <Icon name="search" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Search</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Preferences")}>
-            <Icon active name="cog" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff', fontSize: 12 }}>Preference</Text>
+            <Icon active name="cog" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>Preference</Text>
           </Button>
           <Button vertical onPress={() => navigation.navigate("Profile")}>
-            <Icon name="person" style={{ color: '#fff' }} />
-            <Text style={{ color: '#fff', fontSize: 12 }}>User</Text>
+            <Icon name="person" style={{ color: "#fff" }} />
+            <Text style={{ color: "#fff", fontSize: 12 }}>User</Text>
           </Button>
         </FooterTab>
       </Footer>
@@ -216,5 +286,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#F9C74F",
     margin: 10,
     borderRadius: 12,
+  },
+  socials: {
+    alignItems: "center",
+    justifyContent: "space-evenly",
+    flexDirection: "row",
+  },
+  socialIcon: {
+    alignItems: "center",
+    margin: 20,
   },
 });

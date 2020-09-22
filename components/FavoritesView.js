@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { AppState } from "react-native";
 import Nav from "./Nav";
 import {
   StyleSheet,
   ScrollView,
   View,
-  TouchableOpacity,
-  Image,
   Linking,
   RefreshControl,
   Text,
@@ -18,7 +15,6 @@ import {
   FooterTab,
   Button,
   Icon,
-  // Text,
   Card,
   CardItem,
   Body,
@@ -35,7 +31,6 @@ const wait = (timeout) => {
 
 export default function FavoritesView({ navigation }) {
   const userId = useSelector((state) => state.userIdReducer);
-  const restaurantList = useSelector((state) => state.restaurantsListReducer);
   const favoritesList = useSelector((state) => state.addFavoritesReducer);
   const dispatch = useDispatch();
 
@@ -52,12 +47,11 @@ export default function FavoritesView({ navigation }) {
   async function getUserFavorites(id) {
     //getting all restaurants to filter
     const resultsRes = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/restAtlas"
+      "https://restaurantserverspring.herokuapp.com/restaurants"
     );
     const dataRes = resultsRes.data;
-    // console.log(id)
     const favoritesUsers = await axios.get(
-      "https://restaurantserverspring.herokuapp.com/favoritesInfo"
+      "https://restaurantserverspring.herokuapp.com/favorites"
     );
 
     const usersData = favoritesUsers.data;
@@ -65,27 +59,23 @@ export default function FavoritesView({ navigation }) {
     const userFavorite = usersData.filter((user) => user.user_Id === id);
 
     const restIds = userFavorite[0].restaurant_Id;
-    // console.log(restIds)
+
     const results = dataRes.filter((item) => {
       if (restIds.includes(item.id)) {
         return item;
       }
     });
-    // console.log(results)
 
-    //setUserFavorites(results);
     dispatch(addFavorites(results));
   }
 
   async function deleteFavorite(userId, restId) {
-    await axios.patch(
-      "https://restaurantserverspring.herokuapp.com/deleteFavorite",
+    await axios.delete(
+      `https://restaurantserverspring.herokuapp.com/favorites/${restId}`,
       {
         user_Id: userId,
-        restaurant_Id: restId,
       }
     );
-    console.log("restaurant remove from favorites");
   }
 
   useEffect(() => {
@@ -122,17 +112,6 @@ export default function FavoritesView({ navigation }) {
             </Card>
           ) : (
               <>
-                {/* <Button
-                  success
-                  block
-                  onPress={() => getUserFavorites(userId)}
-                  style={styles.button}
-                >
-                  <Text
-                    style={{ fontSize: 25 }}
-                  >Refresh Favorites</Text>
-                </Button> */}
-
                 <View>
                   {favoritesList.map((favorite, index) => (
                     <Card key={index} style={styles.card}>
@@ -152,7 +131,7 @@ export default function FavoritesView({ navigation }) {
                             Go to Restaurant Page
                         </Text>
                           <Button
-                            style={{ alignSelf: "center" }}
+                            style={{ alignSelf: "center", paddingRight: 15 }}
                             iconLeft
                             danger
                             onPress={() => {
@@ -168,6 +147,7 @@ export default function FavoritesView({ navigation }) {
                                 fontSize: 20,
                                 fontWeight: "bold",
                                 color: "white",
+                                marginLeft: 10,
                               }}
                             >
                               Delete
@@ -232,7 +212,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "MPLUS1p-Bold",
     marginBottom: 10,
-    // textAlign: "center",
   },
   textLogin: {
     fontSize: 20,
@@ -243,16 +222,13 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: "MPLUS1p-Bold",
     marginBottom: 20,
-    // textAlign: "center",
     color: "#4169e1",
   },
   textTitle: {
     color: "#F3722C",
     fontSize: 17,
-    // textDecorationLine: "underline",
     fontFamily: "MPLUS1p-Bold",
     fontWeight: "bold",
-    // textAlign: "center",
   },
   buttons: {
     height: 50,

@@ -1,12 +1,8 @@
 import * as React from "react";
-
-import { Button, View, Text, StyleSheet } from "react-native";
-
+import { StyleSheet } from "react-native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useSelector } from "react-redux";
-// import Icon from "react-native-vector-icons/FontAwesome";
-
 import Search from "./Home";
 import Landing from "./Landing";
 import About from "./About";
@@ -14,7 +10,6 @@ import Details from "./Details";
 import UserInfo from "./UserInfo";
 import FavoritesView from "./FavoritesView";
 import Preferences from "./Preferences";
-import Auth from "./Auth";
 import ChangePassword from "./ChangePassword";
 import Share from "./Share";
 import Receive from "./Receive";
@@ -51,62 +46,6 @@ export default function DrawerNavigator({ navigation }) {
       </Stack.Navigator>
     );
   }
-  // function LandingStack() {
-  //   return (
-  //     <Stack.Navigator
-  //       initialRouteName="Landing"
-  //       headerShown={false}
-  //       options={{ headerMode: "none", headerShown: false }}
-  //     >
-  //       <Stack.Screen
-  //         name="Landing"
-  //         component={Landing}
-  //         options={{
-  //           headerMode: "none",
-  //           header: null,
-  //           headerShown: false,
-  //         }}
-  //       />
-  //       <Stack.Screen
-  //         name="ChangePassword"
-  //         component={ChangePassword}
-  //         options={{
-  //           headerMode: "none",
-  //           header: null,
-  //           headerShown: false,
-  //         }}
-  //       />
-  //     </Stack.Navigator>
-  //   );
-  // }
-
-  // function UserInfoStack() {
-  //   return (
-  //     <Stack.Navigator
-  //       headerShown={false}
-  //       options={{ headerMode: "none", headerShown: false }}
-  //     >
-  //       <Stack.Screen
-  //         name="UserInfo"
-  //         component={UserInfo}
-  //         options={{
-  //           headerMode: "none",
-  //           header: null,
-  //           headerShown: false,
-  //         }}
-  //       />
-  //       <Stack.Screen
-  //         name="ChangePassword"
-  //         component={ChangePassword}
-  //         options={{
-  //           headerMode: "none",
-  //           header: null,
-  //           headerShown: false,
-  //         }}
-  //       />
-  //     </Stack.Navigator>
-  //   );
-  // }
 
   return (
     <MainDrawerNavigator.Navigator
@@ -139,12 +78,6 @@ export default function DrawerNavigator({ navigation }) {
       <MainDrawerNavigator.Screen name="Profile" component={UserInfo} />
       <MainDrawerNavigator.Screen name="Share" component={Share} />
       <MainDrawerNavigator.Screen name="Receive" component={Receive} />
-      {/* {name ? (
-        <MainDrawerNavigator.Screen name="Profile" component={UserInfoStack} />
-      ) : (
-        <MainDrawerNavigator.Screen name="Login" component={Auth} />
-      )} */}
-
       <MainDrawerNavigator.Screen name="Preferences" component={Preferences} />
       <MainDrawerNavigator.Screen name="About" component={About} />
       <MainDrawerNavigator.Screen name="Favorites" component={FavoritesView} />
