@@ -59,8 +59,8 @@ export default function Landing({ navigation }) {
           allRestaurants[i] = allRestaurants[j];
           allRestaurants[j] = temp;
         }
-        data.concat(allRestaurants)
-        dispatch(setRestaurantsList(allRestaurants));
+        const result = data.concat(allRestaurants);
+        dispatch(setRestaurantsList(result));
     } catch (err) {
       console.log(err);
     }

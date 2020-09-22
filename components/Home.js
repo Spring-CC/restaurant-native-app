@@ -53,8 +53,6 @@ export default function Home({ navigation }) {
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
-      const likedRes = restaurant;
-
       await axios.post(
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`,
         {
@@ -71,31 +69,6 @@ export default function Home({ navigation }) {
     liked(userId, restData);
     navigation.navigate("Details");
   }
-
-
-  // async function unliked(card) {
-  //   try {
-  //     const swiped_left = restData.id;
-
-  //     await axios.post(
-  //       `https://restaurantserverspring.herokuapp.com/swipedleft/${userId}`,
-  //       {
-  //         restId: swiped_left,
-  //       }
-  //     );
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
-
-  // Updating the CSV
-  // function updateCsv() {
-  //   axios.post("https://restaurantserverspring.herokuapp.com/updatecsv");
-  // }
-  // useEffect(() => {
-  //   updateCsv();
-  // }, []);
 
   return (
     <Container>
