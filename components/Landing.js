@@ -49,18 +49,18 @@ export default function Landing({ navigation }) {
         `https://restaurantserverspring.herokuapp.com/recommender/${user}`
       );
       const data = results.data;
-        const allResults = await axios.get(
-          "https://restaurantserverspring.herokuapp.com/restaurants"
-        );
-        const allRestaurants = allResults.data;
-        for (let i = allRestaurants.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * i);
-          const temp = allRestaurants[i];
-          allRestaurants[i] = allRestaurants[j];
-          allRestaurants[j] = temp;
-        }
-        const result = data.concat(allRestaurants);
-        dispatch(setRestaurantsList(result));
+      const allResults = await axios.get(
+        "https://restaurantserverspring.herokuapp.com/restaurants"
+      );
+      const allRestaurants = allResults.data;
+      for (let i = allRestaurants.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * i);
+        const temp = allRestaurants[i];
+        allRestaurants[i] = allRestaurants[j];
+        allRestaurants[j] = temp;
+      }
+      const result = data.concat(allRestaurants);
+      dispatch(setRestaurantsList(result));
     } catch (err) {
       console.log(err);
     }
@@ -102,7 +102,7 @@ export default function Landing({ navigation }) {
       {isLoggedIn ? (
         <View>
           <View>
-            <Text style={styles.welcometext}>Welcome, {name}!</Text>
+            <Text style={styles.welcometext}>Welcome, Sam!</Text>
           </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity

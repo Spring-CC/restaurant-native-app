@@ -49,7 +49,6 @@ export default function Home({ navigation }) {
     }
   }, []);
 
-
   async function liked(user, restaurant) {
     try {
       const likedResId = restaurant.id;
