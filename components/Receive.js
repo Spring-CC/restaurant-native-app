@@ -50,7 +50,7 @@ export default function Receive({ navigation }) {
           <View style={styles.container}>
             {isSent ? (
               <View>
-                <Text style={styles.success}>Recommended Restaurants are ready!</Text>
+                <Text style={styles.success}>New restaurants are ready!</Text>
                 <TouchableOpacity
                   style={styles.button}
                   onPress={() => navigation.navigate("Search")}
