@@ -83,7 +83,7 @@ export default function UserInfo({ navigation }) {
         <Nav />
         <View style={styles.container}>
           <View style={styles.body}>
-            <Text style={styles.name}>Hello, {name} !</Text>
+            <Text style={styles.name}>Hello, Sam!</Text>
             <View style={styles.button}>
               <TouchableOpacity onPress={() => navigation.navigate("Share")}>
                 <Text style={styles.text}>Share</Text>
