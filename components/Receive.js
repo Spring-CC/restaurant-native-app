@@ -15,7 +15,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setRestaurantsList } from "../actions";
 
 export default function Receive({ navigation }) {
-  function submit() {}
+  function submit() { }
   const [number, onChangeNumber] = useState("");
   const [isSent, setIsSent] = useState(false);
   const userId = useSelector((state) => state.userIdReducer);
@@ -59,36 +59,36 @@ export default function Receive({ navigation }) {
                 </TouchableOpacity>
               </View>
             ) : (
-              <View>
                 <View>
-                  <TextInput
-                    placeholder="Type your secret code"
-                    style={styles.input}
-                    onChangeText={(num) => {
-                      onChangeNumber(num);
-                    }}
-                    value={number}
-                    keyboardType="default"
-                  />
-                </View>
+                  <View>
+                    <TextInput
+                      placeholder="Type your secret code"
+                      style={styles.input}
+                      onChangeText={(num) => {
+                        onChangeNumber(num);
+                      }}
+                      value={number}
+                      keyboardType="default"
+                    />
+                  </View>
 
-                <View style={styles.buttonlineup}>
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => submit(number)}
-                  >
-                    <Text style={styles.text}> Submit </Text>
-                  </TouchableOpacity>
+                  <View style={styles.buttonlineup}>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={() => submit(number)}
+                    >
+                      <Text style={styles.text}> Submit </Text>
+                    </TouchableOpacity>
 
-                  <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => back()}
-                  >
-                    <Text style={styles.text}> Go Back </Text>
-                  </TouchableOpacity>
+                    <TouchableOpacity
+                      style={styles.button}
+                      onPress={() => back()}
+                    >
+                      <Text style={styles.text}> Go Back </Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
-              </View>
-            )}
+              )}
           </View>
         </SafeAreaView>
       </TouchableWithoutFeedback>
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     height: 45,
     flexDirection: "row",
     justifyContent: "center",
-    alignItems: "center",
+    alignSelf: "center",
     marginBottom: 20,
     width: 250,
     borderRadius: 30,
