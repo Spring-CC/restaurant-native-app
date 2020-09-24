@@ -1,17 +1,6 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from "react-native";
-import {
-  Container,
-  View,
-  Footer,
-  FooterTab,
-  Button,
-  Icon,
-} from "native-base";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Container, View, Footer, FooterTab, Button, Icon } from "native-base";
 
 import * as WebBrowser from "expo-web-browser";
 import * as Linking from "expo-linking";
@@ -83,7 +72,7 @@ export default function UserInfo({ navigation }) {
         <Nav />
         <View style={styles.container}>
           <View style={styles.body}>
-            <Text style={styles.name}>Hello, Sam!</Text>
+            <Text style={styles.name}>Hello, {name}!</Text>
             <View style={styles.button}>
               <TouchableOpacity onPress={() => navigation.navigate("Share")}>
                 <Text style={styles.text}>Share</Text>
