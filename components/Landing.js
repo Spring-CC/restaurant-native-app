@@ -102,7 +102,7 @@ export default function Landing({ navigation }) {
       {isLoggedIn ? (
         <View>
           <View>
-            <Text style={styles.welcometext}>Welcome, Sam!</Text>
+            <Text style={styles.welcometext}>Welcome, {name}!</Text>
           </View>
           <View style={styles.buttonContainer}>
             <TouchableOpacity
